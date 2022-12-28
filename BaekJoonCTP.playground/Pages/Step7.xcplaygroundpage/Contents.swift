@@ -1,5 +1,20 @@
 import Foundation
 
+// 손익분기점
+func solution10() {
+    let line = "2100000000 9 10"//readLine()!
+    let lineArr = line.split(separator: " ").map { Int($0)! }
+    var count = 1
+    if lineArr[1] >= lineArr[2] {
+        count = -1
+    } else {
+        count = lineArr[0]/(lineArr[2]-lineArr[1]) + 1
+    }
+    print(count)
+}
+
+solution10()
+
 // 그룹 단어 체커
 func solution9() {
     readLine()

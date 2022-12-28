@@ -1,5 +1,27 @@
 import Foundation
 
+let n = 12//Int(readLine()!)!
+
+if n == 1 || n == 0 {
+    print(1)
+} else {
+    var value:Int = 1
+    for i in 1...n {
+        value *= i
+    }
+    print(value)
+}
+
+var listss:[Int] = []
+for value in [3,4,5,5,5,3,2,21] {
+    if !listss.contains(value) {
+        listss.append(value)
+    }
+}
+listss.sorted().map {
+    print($0)
+}
+
 func solution8() {
     let n = "A"//readLine()!
     
