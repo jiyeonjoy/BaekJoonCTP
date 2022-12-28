@@ -1,5 +1,19 @@
 import Foundation
 
+// 벌집
+func solution11(_ n: Int) {
+//    let n = Int(readLine()!)!
+    var count:Int = 1
+    var value:Int = 1
+    while value < n {
+        value += 6*count
+        count += 1
+    }
+    print(count)
+}
+
+solution11(58)
+
 // 손익분기점
 func solution10() {
     let line = "2100000000 9 10"//readLine()!
