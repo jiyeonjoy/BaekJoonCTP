@@ -1,5 +1,15 @@
 import Foundation
 
+// 단어의 개수
+func solution5() {
+    let line = "The first character is a blank"//readLine()!
+    let lineArr = line.split(separator: " ")
+
+    print(lineArr.count)
+}
+
+solution5()
+
 // 단어 공부
 func solution4() {
     let s = "baekjoon".uppercased() // readLine()!.uppercased()
