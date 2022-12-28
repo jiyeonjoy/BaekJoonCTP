@@ -1,5 +1,24 @@
 import Foundation
 
+// 문자열 반복
+func solution3() {
+    while true {
+        guard let line = readLine() else { break }
+//        let line = "5 /HTP"
+        let lineArr = line.split(separator: " ")
+        if lineArr.count > 1 {
+            var str:String = ""
+            for s in lineArr[1] {
+                str += String(repeating: s, count: Int(lineArr[0]) ?? 0)
+            }
+            print(str)
+        }
+//        break
+    }
+}
+
+solution3()
+
 func solution2() {
     let s = "baekjoon" // readLine()!
     var str:String = ""
