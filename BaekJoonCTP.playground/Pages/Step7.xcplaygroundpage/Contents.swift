@@ -1,5 +1,18 @@
 import Foundation
 
+// 단어 공부
+func solution4() {
+    let s = "baekjoon".uppercased() // readLine()!.uppercased()
+    let sorted = Dictionary(grouping: s ) { $0 }.sorted{ $0.value.count > $1.value.count }
+    if sorted.count > 1 && sorted[0].value.count == sorted[1].value.count {
+        print("?")
+    } else {
+        print(sorted[0].key)
+    }
+}
+
+solution4()
+
 // 문자열 반복
 func solution3() {
     while true {
