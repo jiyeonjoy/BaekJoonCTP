@@ -1,7 +1,7 @@
 import Foundation
 
 func solution8() {
-    let n = readLine()!
+    let n = "A"//readLine()!
     
     print(Character(n).asciiValue!)
 }
@@ -9,7 +9,7 @@ func solution8() {
 solution8()
 
 func solution7() {
-    let n = Int(readLine()!)!
+    let n = 11//Int(readLine()!)!
     var count:Int = 0
     if n < 100 {
         count = n
@@ -93,6 +93,7 @@ var sum:Double = 0
 for s in lineArr {
     sum += Double(s)/Double(maxValue)*100
 }
+//print(sum/Double(count))
 
 var list:[Int] = []
 for _ in 1...10 {
@@ -284,8 +285,3 @@ r`-_   ,'  ,/
       |
 """#
 print(str)
-
-      
-
-
-
