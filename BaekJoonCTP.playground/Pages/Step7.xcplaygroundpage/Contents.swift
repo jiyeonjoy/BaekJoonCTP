@@ -1,5 +1,36 @@
 import Foundation
 
+// 그룹 단어 체커
+func solution9() {
+    readLine()
+    var count:Int = 0
+    while true {
+        guard let line = readLine() else { break }
+//        let line = "happy"
+        var saved:[Character] = []
+        var currentC:Character = Character(" ")
+        var isAdd = true
+        for c in line {
+            if c != currentC {
+                currentC = c
+                if saved.contains(c) {
+                    isAdd = false
+                    break
+                } else {
+                    saved.append(c)
+                }
+            }
+        }
+        if isAdd {
+            count += 1
+        }
+//        break
+    }
+    print(count)
+}
+
+solution9()
+
 // 크로아티아 알파벳
 func solution8() {
     let list:[String] = ["c=", "c-", "dz=", "d-", "lj", "nj", "s=", "z="]
