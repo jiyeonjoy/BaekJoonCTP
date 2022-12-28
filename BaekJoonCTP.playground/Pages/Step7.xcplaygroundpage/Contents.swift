@@ -1,5 +1,20 @@
 import Foundation
 
+// 상수
+func solution6() {
+    let line = "734 893"//readLine()!
+    let lineArr = line.split(separator: " ")
+    var firstValue = Int(String(lineArr[0].reversed()))!
+    var secondValue = Int(String(lineArr[1].reversed()))!
+    if firstValue > secondValue {
+        print(firstValue)
+    } else {
+        print(secondValue)
+    }
+}
+
+solution6()
+
 // 단어의 개수
 func solution5() {
     let line = "The first character is a blank"//readLine()!
