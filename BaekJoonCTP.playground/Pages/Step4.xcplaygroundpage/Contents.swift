@@ -11,12 +11,48 @@ func solution11() {}
 func solution10() {}
 func solution9() {}
 func solution8() {}
-func solution7() {}
-func solution6() {}
-func solution5() {}
-func solution4() {}
+
 
 import Foundation
+
+func solution7() {
+    let list = readLine()!.split(separator: " ")
+    if list[0] == list[1] {
+        print(1)
+    } else {
+        print(0)
+    }
+}
+
+func solution6() {
+    let m = Int(readLine()!)!
+    let d = Int(readLine()!)!
+    if m > 2 {
+        print("After")
+    } else if m == 2 {
+        if d > 18 {
+            print("After")
+        } else if d == 18 {
+            print("Special")
+        } else {
+            print("Before")
+        }
+    } else {
+        print("Before")
+    }
+}
+
+func solution5() {
+    let c = Int(readLine()!)!
+    let b = Int(readLine()!)!
+    print(b+b-c)
+}
+
+func solution4() {
+    let a = readLine()!.split(separator: " ").map{ Int($0)! }
+    let b = readLine()!.split(separator: " ").map{ Int($0)! }
+    print(min(a[0]+b[1], a[1]+b[0]))
+}
 
 func solution3() {
     while true {
