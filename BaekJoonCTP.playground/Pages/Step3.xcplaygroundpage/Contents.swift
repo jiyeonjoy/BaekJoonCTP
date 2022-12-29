@@ -14,10 +14,15 @@ func solution8() {}
 func solution7() {}
 func solution6() {}
 func solution5() {}
-func solution4() {}
-func solution3() {}
 
 import Foundation
+
+func solution4() {
+    //let list = readLine()!.split(separator: " ").map{ Int($0)! }
+    let list = "15 18 11".split(separator: " ").map{ Int($0)! }
+    var v = (list[0]+1)*(list[1]+1)/(list[2]+1)-1
+    print(v)
+}
 
 func solution3() {
     let h = readLine()!
