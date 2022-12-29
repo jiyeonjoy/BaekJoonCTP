@@ -14,9 +14,30 @@ func solution8() {}
 func solution7() {}
 func solution6() {}
 func solution5() {}
-func solution4() {}
 
 import Foundation
+
+func solution4() {
+    let list = "9223372036854775807 9223372036854775808".split(separator: " ")
+    var firstBigInt:[Int] = list[0].map{ Int(String($0))! }.reversed()
+    var secondBigInt:[Int] = list[1].map{ Int(String($0))! }.reversed()
+    var sumList:[Int] = []
+    var onePlus = 0
+    for i in 0...max(firstBigInt.count-1, secondBigInt.count-1) {
+        var value = (firstBigInt.count > i ? firstBigInt[i] : 0) + (secondBigInt.count > i ? secondBigInt[i] : 0) + (onePlus)
+        if value < 10 {
+            sumList.append(value)
+            onePlus = 0
+        } else {
+            sumList.append(value%10)
+            onePlus = 1
+        }
+    }
+    if onePlus == 1 {
+        sumList.append(1)
+    }
+    sumList.reversed().map{ print($0, terminator: "") }
+}
 
 func solution3() {
     let n = Int(readLine()!)!
