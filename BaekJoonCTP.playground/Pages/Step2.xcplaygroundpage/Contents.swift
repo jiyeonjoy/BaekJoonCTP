@@ -10,9 +10,17 @@ func solution12() {}
 func solution11() {}
 func solution10() {}
 func solution9() {}
-func solution8() {}
 
 import Foundation
+
+func solution8() {
+    let str = #"""
+    .  .   .
+    |  | _ | _. _ ._ _  _
+    |/\|(/.|(_.(_)[ | )(/.
+    """#
+    print(str)
+}
 
 func solution7() {
     let list = readLine()!.split(separator: " ").map{ Int($0)! }
