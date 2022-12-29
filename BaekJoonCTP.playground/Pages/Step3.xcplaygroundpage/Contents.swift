@@ -12,10 +12,24 @@ func solution10() {}
 func solution9() {}
 func solution8() {}
 func solution7() {}
-func solution6() {}
-func solution5() {}
 
 import Foundation
+
+func solution6() {
+    var sum = Int(readLine()!)!
+    var cha = Int(readLine()!)!
+    var second = (sum-cha)/2
+    var first = sum - second
+    print(first)
+    print(second)
+}
+
+func solution5() {
+    //let list = readLine()!.split(separator: " ").map{ Int($0)! }
+    let list = "1 10 100 1000".split(separator: " ").map{ Int($0)! }
+    var v = 56*list[0]+24*list[1]+14*list[2]+6*list[3]
+    print(v)
+}
 
 func solution4() {
     //let list = readLine()!.split(separator: " ").map{ Int($0)! }
