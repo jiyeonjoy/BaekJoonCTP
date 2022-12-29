@@ -2,9 +2,13 @@ func solution20() {}
 func solution19() {}
 func solution18() {}
 func solution17() {}
-func solution16() {}
 
 import Foundation
+
+func solution16() {
+    let list = readLine()!.split(separator: " ").map{ Int($0)! }
+    print((list[0]+list[1])*(list[0]-list[1]))
+}
 
 func solution15() {
     let count = 3//Int(readLine()!)!
