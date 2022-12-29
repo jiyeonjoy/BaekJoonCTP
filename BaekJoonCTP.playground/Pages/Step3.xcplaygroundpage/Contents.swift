@@ -2,9 +2,17 @@ func solution20() {}
 func solution19() {}
 func solution18() {}
 func solution17() {}
-func solution16() {}
 
 import Foundation
+
+func solution16() {
+    let list = [20,6,120]//readLine()!.split(separator: " ").map{ Int($0)! }
+    if list[0]*list[1] <= list[2] {
+        print(0)
+    } else {
+        print(list[0]*list[1]-list[2])
+    }
+}
 
 func solution15() {
     let list = [23,48,59]//readLine()!.split(separator: " ").map{ Int($0)! }
