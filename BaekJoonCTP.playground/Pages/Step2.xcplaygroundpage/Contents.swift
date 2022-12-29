@@ -13,9 +13,18 @@ func solution9() {}
 func solution8() {}
 func solution7() {}
 func solution6() {}
-func solution5() {}
 
 import Foundation
+
+func solution5() {
+    //let list = readLine()!.split(separator: " ").map{ Int($0)! }
+    let list = "0 4 2 5 6".split(separator: " ").map{ Int($0)! }
+    var sum:Int = 0
+    for i in list {
+        sum += Int(pow(Double(i), Double(2)))
+    }
+    print(sum%10)
+}
 
 func solution4() {
     let list = "9223372036854775807 9223372036854775808".split(separator: " ")
