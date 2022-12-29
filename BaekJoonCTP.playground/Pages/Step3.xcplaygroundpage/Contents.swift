@@ -9,9 +9,18 @@ func solution13() {}
 func solution12() {}
 func solution11() {}
 func solution10() {}
-func solution9() {}
 
 import Foundation
+
+func solution9() {
+    //let list = readLine()!.split(separator: " ").map{ Int($0)! }
+    let list = "200 20".split(separator: " ").map{ Int($0)! }
+    if list[0]*(100-list[1])/100 >= 100 {
+        print(0)
+    } else {
+        print(1)
+    }
+}
 
 func solution8() {
     //let list = readLine()!.split(separator: " ").map{ Int($0)! }
