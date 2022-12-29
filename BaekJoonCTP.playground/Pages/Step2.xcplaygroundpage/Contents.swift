@@ -11,9 +11,17 @@ func solution11() {}
 func solution10() {}
 func solution9() {}
 func solution8() {}
-func solution7() {}
 
 import Foundation
+
+func solution7() {
+    let list = readLine()!.split(separator: " ").map{ Int($0)! }
+    if list[0] < list[1] {
+        print(list[1]-list[0])
+    } else {
+        print(list[0]-list[1])
+    }
+}
 
 func solution6() {
     var formatter = DateFormatter()
