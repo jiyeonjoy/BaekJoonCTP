@@ -4,9 +4,33 @@ func solution18() {}
 func solution17() {}
 func solution16() {}
 func solution15() {}
-func solution14() {}
 
 import Foundation
+
+func solution14() {
+    let str = """
+           SHIP NAME      CLASS          DEPLOYMENT IN SERVICE
+           N2 Bomber      Heavy Fighter  Limited    21
+           J-Type 327     Light Combat   Unlimited  1
+           NX Cruiser     Medium Fighter Limited    18
+           N1 Starfighter Medium Fighter Unlimited  25
+           Royal Cruiser  Light Combat   Limited    4
+           """
+    print(str)
+
+    let dic = [
+        "A+": 4.3, "A0": 4.0, "A-": 3.7,
+
+        "B+": 3.3, "B0": 3.0, "B-": 2.7,
+
+        "C+": 2.3, "C0": 2.0, "C-": 1.7,
+
+        "D+": 1.3, "D0": 1.0, "D-": 0.7,
+
+            "F": 0.0
+    ]
+    print(dic["F"]!)
+}
 
 func solution13() {
     let list = readLine()!.split(separator: " ").map{ Int($0)! }
