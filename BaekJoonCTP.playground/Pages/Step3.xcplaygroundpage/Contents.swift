@@ -19,6 +19,16 @@ func solution3() {}
 
 import Foundation
 
+func solution3() {
+    let h = readLine()!
+    let str = """
+:fan::fan::fan:
+:fan::\(h)::fan:
+:fan::fan::fan:
+"""
+    print(str)
+}
+
 func solution2() {
     let aList = readLine()!.split(separator: " ").map{ Int($0)! }
     let cList = readLine()!.split(separator: " ").map{ Int($0)! }
