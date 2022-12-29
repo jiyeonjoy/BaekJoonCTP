@@ -1,5 +1,33 @@
 import Foundation
 
+// 1로 만들기
+func solution12(_ n: Int) {
+    //    let n = Int(readLine()!)!
+    if n == 1 {
+        print(0)
+    } else {
+        var list:[Int] = [0, 0, 1, 1]
+        if (n > 3) {
+            list += Array.init(repeating: 0, count: n - 3)
+            for i in 4...n {
+                if i%2==0 && i%3==0 {
+                    list[i] = min(list[i-1], list[i/2], list[i/3])+1
+                } else if i%2==0 {
+                    list[i] = min(list[i-1], list[i/2])+1
+                } else if i%3==0 {
+                    list[i] = min(list[i-1], list[i/3])+1
+                } else {
+                    list[i] = list[i-1]+1
+                }
+            }
+        }
+        print(list[n])
+    }
+}
+
+solution12(2)
+solution12(1000000)
+
 // 벌집
 func solution11(_ n: Int) {
 //    let n = Int(readLine()!)!
