@@ -4,9 +4,20 @@ func solution18() {}
 func solution17() {}
 func solution16() {}
 func solution15() {}
-func solution14() {}
 
 import Foundation
+
+func solutionc14() {
+    let num = 1//Int(readLine()!)!
+    let list = [1,2,3,4,5]//readLine()!.split(separator: " ").map{ Int($0)! }
+    var count = 0
+    for v in list {
+        if v%10 == num {
+            count += 1
+        }
+    }
+    print(count)
+}
 
 func solution13() {
     let second = 189//Int(readLine()!)!
