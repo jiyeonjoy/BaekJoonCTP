@@ -1,5 +1,11 @@
 import Foundation
 
+// 별찍기
+let n = 5 //let n = Int(readLine()!)!
+for i in 0...n-1 {
+    print(String(repeating: "*", count: n-i))
+}
+
 struct Stack<T> {
     private var stack: [T] = []
     
