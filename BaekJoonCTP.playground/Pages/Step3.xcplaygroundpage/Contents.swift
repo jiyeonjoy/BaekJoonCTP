@@ -6,9 +6,14 @@ func solution16() {}
 func solution15() {}
 func solution14() {}
 func solution13() {}
-func solution12() {}
 
 import Foundation
+
+func solution12() {
+//    print(readLine()!.split(separator: " ").map{ Int($0)! }.sorted())
+    let list = "3 1 2".split(separator: " ").map{ Int($0)! }.sorted()
+    print("\(list[0]) \(list[1]) \(list[2])")
+}
 
 func solution11() {
     let s = "baekjoon" // readLine()!
