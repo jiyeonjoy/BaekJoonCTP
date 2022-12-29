@@ -7,9 +7,24 @@ func solution15() {}
 func solution14() {}
 func solution13() {}
 func solution12() {}
-func solution11() {}
 
 import Foundation
+
+func solution11() {
+    let s = "baekjoon" // readLine()!
+    var str:String = ""
+    for a in "abcdefghijklmnopqrstuvwxyz" {
+        let count:Int = s.filter{ $0 == a }.count
+        if str == "" {
+            str += "\(count)"
+        } else {
+            str += " \(count)"
+        }
+    }
+    print(str)
+}
+
+solution11()
 
 func solution10() {
     let count = Int(readLine()!)!
