@@ -15,10 +15,16 @@ func solution7() {}
 func solution6() {}
 func solution5() {}
 func solution4() {}
-func solution3() {}
-
 
 import Foundation
+
+func solution3() {
+    let n = Int(readLine()!)!
+    for i in 0...n-1 {
+        var str:String = String(repeating: " ", count: i) + String(repeating: "*", count: n-i)
+        print(str)
+    }
+}
 
 func solution2() {
     //let list = readLine()!.split(separator: " ").map{ Int($0)! }
