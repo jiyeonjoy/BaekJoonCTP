@@ -5,9 +5,17 @@ func solution17() {}
 func solution16() {}
 func solution15() {}
 func solution14() {}
-func solution13() {}
 
 import Foundation
+
+func solution13() {
+    let list = readLine()!.split(separator: " ").map{ Int($0)! }
+    var sum:Int = 0
+    for v in list {
+        sum += v
+    }
+    print(sum)
+}
 
 func solution12() {
     let line = "WrongAnswer" //readLine()!
