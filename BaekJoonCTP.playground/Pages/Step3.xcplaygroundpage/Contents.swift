@@ -5,9 +5,20 @@ func solution17() {}
 func solution16() {}
 func solution15() {}
 func solution14() {}
-func solution13() {}
 
 import Foundation
+
+func solution13() {
+    let second = 189//Int(readLine()!)!
+    if second%10 != 0 {
+        print(-1)
+    } else {
+        let fM = second/300
+        let oM = (second%300)/60
+        let tS = (second%60)/10
+        print("\(fM) \(oM) \(tS)")
+    }
+}
 
 func solution12() {
 //    print(readLine()!.split(separator: " ").map{ Int($0)! }.sorted())
