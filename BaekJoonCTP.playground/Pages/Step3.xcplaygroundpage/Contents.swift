@@ -1,8 +1,16 @@
 func solution20() {}
 func solution19() {}
-func solution18() {}
 
 import Foundation
+
+func solution18() {
+    var second = 0
+    for _ in 1...4 {
+        second += Int(readLine()!)!
+    }
+    print(second/60)
+    print(second%60)
+}
 
 func solution17() {
     let list = [5,20]//readLine()!.split(separator: " ").map{ Int($0)! }
