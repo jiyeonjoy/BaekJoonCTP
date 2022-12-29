@@ -1,7 +1,27 @@
-func solution20() {}
-func solution19() {}
-
 import Foundation
+
+func solution20() {
+    let list = "3 4 6".split(separator: " ").map{ Int($0)! }
+//    let list = readLine()!.split(separator: " ").map{ Int($0)! }
+    var n:Int = 0
+    var m:Int = -1
+    for _ in 0...list[2] {
+        if m < list[1]-1 {
+            m += 1
+        } else {
+            n += 1
+            m = 0
+        }
+    }
+    print("\(n) \(m)")
+}
+
+solution20()
+
+func solution19() {
+    let list = readLine()!.split(separator: " ").map{ Int($0)! }
+    print(list[0]*list[1] + list[2]*list[3])
+}
 
 func solution18() {
     let list = readLine()!.split(separator: " ").map{ Int($0)! }
