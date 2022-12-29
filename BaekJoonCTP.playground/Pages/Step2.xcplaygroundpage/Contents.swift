@@ -1,8 +1,13 @@
 func solution20() {}
 func solution19() {}
-func solution18() {}
 
 import Foundation
+
+func solution18() {
+    let list = readLine()!.split(separator: " ").map{ Int($0)! }
+    var str = "\(list[1]-list[0]) \(list[1])"
+    print(str)
+}
 
 func solution17() {
     let first = readLine()!
