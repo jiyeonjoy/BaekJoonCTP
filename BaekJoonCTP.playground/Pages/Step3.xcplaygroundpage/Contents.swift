@@ -1,7 +1,33 @@
-func solution20() {}
-func solution19() {}
-
 import Foundation
+
+func solution20() {
+    let a = Int(readLine()!)!
+    let b = Int(readLine()!)!
+    let c = Int(readLine()!)!
+    if a+b+c != 180 {
+        print("Error")
+    } else if a==b && a==c {
+        print("Equilateral")
+    } else if a==b || a==c || b==c {
+        print("Isosceles")
+    } else {
+        print("Scalene")
+    }
+}
+
+func solution19() {
+    let vD = 20//Int(readLine()!)!
+    let mP = 25//Int(readLine()!)!
+    let kP = 30//Int(readLine()!)!
+    let maxMP = 6//Int(readLine()!)!
+    let maxKP = 8//Int(readLine()!)!
+    var sD = max((mP+maxMP-1)/maxMP, (kP+maxKP-1)/maxKP)
+    if vD > sD {
+        print(vD-sD)
+    } else {
+        print(0)
+    }
+}
 
 func solution18() {
     var second = 0
