@@ -7,9 +7,19 @@ func solution15() {}
 func solution14() {}
 func solution13() {}
 func solution12() {}
-func solution11() {}
 
 import Foundation
+
+func solution11() {
+    var sum:Int = 0
+    while true {
+        guard let line = readLine() else { break }
+        sum += Int(line)!
+    }
+    print(sum)
+}
+
+solution11()
 
 func solution10() {
     let length = readLine()!.split(separator: " ").map{ Int($0)! }
