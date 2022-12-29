@@ -6,9 +6,21 @@ func solution16() {}
 func solution15() {}
 func solution14() {}
 func solution13() {}
-func solution12() {}
 
 import Foundation
+
+func solution12() {
+    let line = "WrongAnswer" //readLine()!
+    var list:[String] = []
+    for c in line {
+        if c.isLowercase {
+            list.append(c.uppercased())
+        } else {
+            list.append(c.lowercased())
+        }
+    }
+    print(list.joined())
+}
 
 func solution11() {
     var sum:Int = 0
@@ -18,8 +30,6 @@ func solution11() {
     }
     print(sum)
 }
-
-solution11()
 
 func solution10() {
     let length = readLine()!.split(separator: " ").map{ Int($0)! }
