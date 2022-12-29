@@ -1,5 +1,49 @@
 import Foundation
 
+func combinations<T>(source: [T], takenBy : Int) -> [[T]] {
+    if(source.count == takenBy) {
+        return [source]
+    }
+
+    if(source.isEmpty) {
+        return []
+    }
+
+    if(takenBy == 0) {
+        return []
+    }
+
+    if(takenBy == 1) {
+        return source.map { [$0] }
+    }
+
+    var result : [[T]] = []
+
+    let rest = Array(source.suffix(from: 1))
+    let subCombos = combinations(source: rest, takenBy: takenBy - 1)
+    result += subCombos.map { [source[0]] + $0 }
+    result += combinations(source: rest, takenBy: takenBy)
+    return result
+}
+// 블랙잭
+let str = """
+10 500
+93 181 245 214 315 36 185 138 216 295
+"""
+//let firstLine = readLine()!.split(separator: " ").map { Int($0)! }
+//let secondLine = readLine()!.split(separator: " ").map { Int($0)! }
+let firstLine = "10 500".split(separator: " ").map { Int($0)! }
+let secondLine = "93 181 245 214 315 36 185 138 216 295".split(separator: " ").map { Int($0)! }
+let list = combinations(source:secondLine, takenBy:3).map { $0.reduce(0, +) }.sorted {
+    firstLine[1]-$0 < firstLine[1]-$1
+}
+for v in list {
+    if firstLine[1]-v >= 0 {
+        print(v)
+        break
+    }
+}
+
 // 별찍기
 let n = 5 //let n = Int(readLine()!)!
 for i in 0...n-1 {
