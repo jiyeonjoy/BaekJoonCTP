@@ -3,9 +3,22 @@ func solution19() {}
 func solution18() {}
 func solution17() {}
 func solution16() {}
-func solution15() {}
 
 import Foundation
+
+func solution15() {
+    let list = [23,48,59]//readLine()!.split(separator: " ").map{ Int($0)! }
+    let second = 2515//Int(readLine()!)!
+    var s = list[2] + second%60
+    var m = list[1] + (second%3600)/60 + s/60
+    s = s%60
+    var h = list[0] + second/3600 + m/60
+    m = m%60
+    if h > 23 {
+        h = h%24
+    }
+    print("\(h) \(m) \(s)")
+}
 
 func solutionc14() {
     let num = 1//Int(readLine()!)!
