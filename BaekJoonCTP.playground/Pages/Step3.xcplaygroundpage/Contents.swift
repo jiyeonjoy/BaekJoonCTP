@@ -10,14 +10,34 @@ func solution12() {}
 func solution11() {}
 func solution10() {}
 func solution9() {}
-func solution8() {}
-func solution7() {}
 
 import Foundation
 
+func solution8() {
+    //let list = readLine()!.split(separator: " ").map{ Int($0)! }
+    let list = "0 0 0 23 3 100".split(separator: " ").map{ Int($0)! }
+    var sum:Int = 0
+    for v in list {
+        if v == 0 {
+//            sum -= 10
+//            sum += 5
+        } else {
+            sum += v*5
+        }
+    }
+    print(sum)
+}
+
+solution8()
+
+func solution7() {
+    var n = 20/4//Int(readLine()!)!/4
+    print(String(repeating: "long ", count: n)+"int")
+}
+
 func solution6() {
-    var sum = Int(readLine()!)!
-    var cha = Int(readLine()!)!
+    var sum = 10//Int(readLine()!)!
+    var cha = 2//Int(readLine()!)!
     var second = (sum-cha)/2
     var first = sum - second
     print(first)
