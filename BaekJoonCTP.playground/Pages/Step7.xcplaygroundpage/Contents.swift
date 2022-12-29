@@ -26,10 +26,6 @@ func combinations<T>(source: [T], takenBy : Int) -> [[T]] {
     return result
 }
 // 블랙잭
-let str = """
-10 500
-93 181 245 214 315 36 185 138 216 295
-"""
 //let firstLine = readLine()!.split(separator: " ").map { Int($0)! }
 //let secondLine = readLine()!.split(separator: " ").map { Int($0)! }
 let firstLine = "10 500".split(separator: " ").map { Int($0)! }

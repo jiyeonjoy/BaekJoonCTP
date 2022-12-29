@@ -8,9 +8,27 @@ func solution14() {}
 func solution13() {}
 func solution12() {}
 func solution11() {}
-func solution10() {}
 
 import Foundation
+
+func solution10() {
+    let length = readLine()!.split(separator: " ").map{ Int($0)! }
+    var list:[[Int]] = []
+    for _ in 1...length[0]*2 {
+        list.append(readLine()!.split(separator: " ").map{ Int($0)! })
+    }
+    for i in 0...length[0]-1 {
+        var str:String = ""
+        for j in 0...length[1]-1 {
+            if str == "" {
+                str += "\(list[i][j] + list[i+length[0]][j])"
+            } else {
+                str += " \(list[i][j] + list[i+length[0]][j])"
+            }
+        }
+        print(str)
+    }
+}
 
 func solution9() {
     while true {
