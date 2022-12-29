@@ -1,5 +1,46 @@
 import Foundation
 
+// 괄호
+func solution13(_ line: String) {
+    var count = Int(readLine()!)!
+    var str:String = ""
+    for _ in 1...count {
+        var line = readLine()!
+        var value:Int = 0
+        var isTrue = true
+        for c in line {
+            if c == "(" {
+                value += 1
+            } else {
+                value -= 1
+            }
+            if value < 0 {
+                isTrue = false
+                break
+            }
+        }
+        if value != 0 && isTrue {
+            isTrue = false
+        }
+        if str != "" {
+            str += "\n"
+        }
+        if isTrue {
+            str += "YES"
+        } else {
+            str += "NO"
+        }
+    }
+    print(str)
+}
+
+solution13("(())())")
+solution13("(((()())()")
+solution13("(()())((()))")
+solution13("((()()(()))(((())))()")
+solution13("()()()()(()()())()")
+solution13("(()((())()(")
+
 // 1로 만들기
 func solution12(_ n: Int) {
     //    let n = Int(readLine()!)!
