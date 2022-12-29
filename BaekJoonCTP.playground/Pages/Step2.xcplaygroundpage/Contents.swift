@@ -1,9 +1,19 @@
 func solution20() {}
 func solution19() {}
 func solution18() {}
-func solution17() {}
 
 import Foundation
+
+func solution17() {
+    let first = readLine()!
+    let second = readLine()!
+
+    if first.count < second.count {
+        print("no")
+    } else {
+        print("go")
+    }
+}
 
 func solution16() {
     let list = readLine()!.split(separator: " ").map{ Int($0)! }
