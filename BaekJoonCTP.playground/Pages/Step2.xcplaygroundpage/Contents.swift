@@ -9,9 +9,23 @@ func solution13() {}
 func solution12() {}
 func solution11() {}
 func solution10() {}
-func solution9() {}
 
 import Foundation
+
+func solution9() {
+    while true {
+        let line = readLine()!
+        if line == "0 0" {
+            break
+        }
+        let list = line.split(separator: " ").map{ Int($0)! }
+        if list[0] > list[1] {
+            print("Yes")
+        } else {
+            print("No")
+        }
+    }
+}
 
 func solution8() {
     let str = #"""
