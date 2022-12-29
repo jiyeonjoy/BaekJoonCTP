@@ -1,5 +1,65 @@
 import Foundation
 
+struct Stack<T> {
+    private var stack: [T] = []
+    
+    public var count: Int {
+        return stack.count
+    }
+    
+    public var isEmpty: Bool {
+        return stack.isEmpty
+    }
+    
+    public mutating func push(_ element: T) {
+        stack.append(element)
+    }
+    
+    public mutating func pop() -> T? {
+        return isEmpty ? nil : stack.popLast()!
+    }
+}
+
+// 스택
+let str = """
+14
+push 1
+push 2
+top
+size
+empty
+pop
+pop
+pop
+size
+empty
+pop
+push 3
+empty
+top
+"""
+let strList:[String] = str.components(separatedBy: "\n")
+let count = Int(strList[0])! //let count = Int(readLine()!)!
+var stack: Stack = Stack<Int>()
+for i in 1...count {
+    let line = strList[i] //let line = readLine()!
+    if line.contains("push") {
+        stack.push(Int(line.split(separator: " ")[1])!)
+    } else if line.contains("pop") {
+        print(stack.pop() ?? -1)
+    } else if line.contains("size") {
+        print(stack.count)
+    } else if line.contains("empty") {
+        print(stack.isEmpty ? 1 : 0)
+    } else if line.contains("top") {
+        let top = stack.pop() ?? -1
+        print(top)
+        if top != -1 {
+            stack.push(top)
+        }
+    }
+}
+
 // 괄호
 func solution13(_ line: String) {
     var count = Int(readLine()!)!
