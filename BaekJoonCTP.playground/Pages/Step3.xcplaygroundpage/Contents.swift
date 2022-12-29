@@ -1,9 +1,23 @@
 func solution20() {}
 func solution19() {}
 func solution18() {}
-func solution17() {}
 
 import Foundation
+
+func solution17() {
+    let list = [5,20]//readLine()!.split(separator: " ").map{ Int($0)! }
+    let npl = [99, 101, 1000, 0, 97]//readLine()!.split(separator: " ").map{ Int($0)! }
+    let sum = list[0] * list[1]
+    var str = ""
+    for v in npl {
+        if str == "" {
+            str += "\(v-sum)"
+        } else {
+            str += " \(v-sum)"
+        }
+    }
+    print(str)
+}
 
 func solution16() {
     let list = [20,6,120]//readLine()!.split(separator: " ").map{ Int($0)! }
