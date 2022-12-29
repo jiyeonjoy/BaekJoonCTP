@@ -12,9 +12,16 @@ func solution10() {}
 func solution9() {}
 func solution8() {}
 func solution7() {}
-func solution6() {}
 
 import Foundation
+
+func solution6() {
+    var formatter = DateFormatter()
+    formatter.dateFormat = "yyyy-MM-dd"
+    formatter.timeZone = NSTimeZone(name: "ko_KR") as TimeZone?
+    var current_date_string = formatter.string(from: Date())
+    print(current_date_string)
+}
 
 func solution5() {
     //let list = readLine()!.split(separator: " ").map{ Int($0)! }
