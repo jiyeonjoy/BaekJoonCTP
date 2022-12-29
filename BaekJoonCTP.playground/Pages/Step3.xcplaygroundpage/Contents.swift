@@ -16,9 +16,14 @@ func solution6() {}
 func solution5() {}
 func solution4() {}
 func solution3() {}
-func solution2() {}
 
 import Foundation
+
+func solution2() {
+    let aList = readLine()!.split(separator: " ").map{ Int($0)! }
+    let cList = readLine()!.split(separator: " ").map{ Int($0)! }
+    print("\(cList[0]-aList[2]) \(cList[1]/aList[1]) \(cList[2]-aList[0])")
+}
 
 func solution1() {
     let price:Double = 10000000//Int(readLine()!)!
