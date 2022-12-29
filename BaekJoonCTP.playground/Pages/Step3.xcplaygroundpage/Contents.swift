@@ -8,9 +8,20 @@ func solution14() {}
 func solution13() {}
 func solution12() {}
 func solution11() {}
-func solution10() {}
 
 import Foundation
+
+func solution10() {
+    let count = Int(readLine()!)!
+    for _ in 1...count {
+        let line = readLine()!
+        if line.count >= 6 && line.count <= 9 {
+            print("yes")
+        } else {
+            print("no")
+        }
+    }
+}
 
 func solution9() {
     //let list = readLine()!.split(separator: " ").map{ Int($0)! }
