@@ -1,6 +1,14 @@
-func solution20() {}
-
 import Foundation
+
+func solution20() {
+    let sum = readLine()!.split(separator: " ").map{ Int($0)! }.reduce(0, +)
+    let cp = Int(readLine()!)!*2
+    if sum >= cp {
+        print(sum-cp)
+    } else {
+        print(sum)
+    }
+}
 
 func solution19() {
     let list = readLine()!.split(separator: " ").map{ Int($0)! }
