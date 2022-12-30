@@ -10,7 +10,34 @@ func solution34() {}
 
 import Foundation
 
-func solution33() {}
+func solution33() {
+//    let birthDay = readLine()!.split(separator: " ").map{ Int($0)! }
+//    let current = readLine()!.split(separator: " ").map{ Int($0)! }
+    let birthDay = "2006 1 1".split(separator: " ").map{ Int($0)! }
+    let current = "2007 1 1".split(separator: " ").map{ Int($0)! }
+    if current[0] == birthDay[0] {
+        print(0)
+    } else {
+        var oneMinus = true
+        if current[1] > birthDay[1] {
+            oneMinus = false
+        } else if current[1] == birthDay[1] {
+            if current[2] >= birthDay[2] {
+                oneMinus = false
+            } else {
+                oneMinus = true
+            }
+        } else {
+            oneMinus = true
+        }
+        let age = current[0]-birthDay[0] - (oneMinus ? 1 : 0)
+        print(age)
+    }
+    print(current[0]-birthDay[0]+1)
+    print(current[0]-birthDay[0])
+}
+
+solution33()
 
 func solution32() {
     let list = readLine()!.split(separator: " ").map{ Int($0)! }
