@@ -1,9 +1,13 @@
 func solution20() {}
 func solution19() {}
 func solution18() {}
-func solution17() {}
 
 import Foundation
+
+func solution17() {
+    let list = readLine()!.split(separator: " ").map{ Int($0)! }.sorted()
+    print(abs(list[3]+list[0]-list[2]-list[1]))
+}
 
 func solution16() {
     //let list = readLine()!.split(separator: " ").map{ Int($0)! }
