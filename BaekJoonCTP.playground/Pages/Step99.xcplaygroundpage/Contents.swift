@@ -1,3 +1,6 @@
+let list = readLine()!.split(separator: " ").map{ Int($0)! }
+Int(readLine()!)!
+
 func solution20() {}
 func solution19() {}
 func solution18() {}

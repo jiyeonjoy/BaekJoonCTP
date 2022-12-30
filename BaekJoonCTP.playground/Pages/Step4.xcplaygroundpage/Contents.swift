@@ -1,11 +1,18 @@
-let list = readLine()!.split(separator: " ").map{ Int($0)! }
-Int(readLine()!)!
-
-func solution42() {}
-func solution41() {}
-
-
 import Foundation
+
+func solution42() {
+    let l:Double = 5//Double(readLine()!)!
+    print(l*l*sqrt(3)/4)
+}
+
+func solution41() {
+    let str = readLine()!
+    if str == "n" || str == "N" {
+        print("Naver D2")
+    } else {
+        print("Naver Whale")
+    }
+}
 
 func solution40() {
     let list = readLine()!.split(separator: " ")
