@@ -1,9 +1,26 @@
 //let list = readLine()!.split(separator: " ").map{ Int($0)! }
 //Int(readLine()!)!
 func solution50() {}
-func solution49() {}
 
 import Foundation
+
+func solution49() {
+    let a = Int(readLine()!)!
+    let b = Int(readLine()!)!
+    if a >= b {
+        print("Congratulations, you are within the speed limit!")
+    } else {
+        var f = 0
+        if b-a >= 31 {
+            f = 500
+        } else if b-a >= 21 {
+            f = 270
+        } else {
+            f = 100
+        }
+        print("You are speeding and your fine is $\(f).")
+    }
+}
 
 func solution48() {
     let n = 3//Int(readLine()!)!
