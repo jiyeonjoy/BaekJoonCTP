@@ -1,5 +1,111 @@
 import Foundation
 
+func solution30() {
+    let tea = Int(readLine()!)!
+    let count = readLine()!.split(separator: " ").map{ Int($0)! }.filter{ $0 == tea}.count
+    print(count)
+}
+
+func solution29(_ list:[Int]) {
+    let list = readLine()!.split(separator: " ").map{ Int($0)! }
+    var sum:Int = getSum(list, 0)
+    
+    func getSum(_ list:[Int], _ sum:Int) -> Int {
+        var sum = sum
+        var list = list
+        if list[0] < 2 && list[1] < 2 {
+            return sum
+        }
+        if list[0] > list[1] {
+            sum += (list[0]/2)*list[1]
+            if list[0]%2 == 1 {
+                sum = getSum([1, list[1]], sum)
+            }
+        } else {
+            sum += (list[1]/2)*list[0]
+            if list[1]%2 == 1 {
+                sum = getSum([list[0], 1], sum)
+            }
+        }
+        return sum
+    }
+    print(sum)
+}
+
+solution29([3,3])
+
+func solution28() {
+    while true {
+        let list = readLine()!.split(separator: " ")
+        if list[0] == "#" {
+            break
+        }
+        let age = Int(list[1])!
+        let weight = Int(list[2])!
+        if age > 17 || weight >= 80 {
+            print("\(list[0]) Senior")
+        } else {
+            print("\(list[0]) Junior")
+        }
+    }
+}
+
+func solution27() {
+    let count = Int(readLine()!)!
+    for _ in 1...count {
+        let str = readLine()!
+        print(str.lowercased())
+    }
+}
+
+func solution26() {
+    let start = Int(readLine()!)!
+    let end = Int(readLine()!)!
+    let c = Int(readLine()!)!
+    let d = Int(readLine()!)!
+    let e = Int(readLine()!)!
+    var sum = 0
+    if start < 0 {
+        sum += c*(-start) + d
+        sum += end*e
+    } else {
+        sum += (end-start)*e
+    }
+    print(sum)
+}
+
+func solution25() {
+//    let list = readLine()!.split(separator: " ").map{ Int($0)! }
+    let list = "32 16 8".split(separator: " ").map{ Double($0)! }
+    let v = max((list[0]/list[1])*list[2], (list[0]*list[1])/list[2])
+    print(Int(v))
+}
+
+solution25()
+
+func solution24() {
+    let ch:String = readLine()!
+    print(Int(UnicodeScalar(ch)!.value)-44031)
+}
+
+func solution23() {
+    let num = Int(readLine()!, radix: 2)! * 17
+    print(String(num, radix: 2))
+}
+
+func solution22() {
+    let count = Int(readLine()!)!
+    for i in 1...count {
+        let str = readLine()!
+        print("\(i). \(str)")
+    }
+}
+
+func solution21() {
+    let list = readLine()!.split(separator: " ").map{ Int($0)! }
+    print(list[2]/(list[0]*2) * list[1])
+}
+
 func solution20() {
     let sum = readLine()!.split(separator: " ").map{ Int($0)! }.reduce(0, +)
     let cp = Int(readLine()!)!*2
