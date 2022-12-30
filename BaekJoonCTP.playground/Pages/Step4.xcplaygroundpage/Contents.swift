@@ -1,8 +1,19 @@
 //let list = readLine()!.split(separator: " ").map{ Int($0)! }
 //Int(readLine()!)!
-func solution50() {}
-
 import Foundation
+
+func solution50() {
+//    let list1 = readLine()!.split(separator: " ").map{ Int($0)! }
+//    let list2 = readLine()!.split(separator: " ").map{ Int($0)! }
+    let list1 = "6 6 8 8".split(separator: " ").map{ Int($0)! }
+    let list2 = "1 8 4 9".split(separator: " ").map{ Int($0)! }
+    let xList = [list1[0], list1[2], list2[0], list2[2]].sorted()
+    let yList = [list1[1], list1[3], list2[1], list2[3]].sorted()
+    let l = max(xList[3]-xList[0], yList[3]-yList[0])
+    print(l*l)
+}
+
+solution50()
 
 func solution49() {
     let a = Int(readLine()!)!
