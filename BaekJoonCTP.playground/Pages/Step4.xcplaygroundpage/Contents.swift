@@ -8,9 +8,18 @@ func solution14() {}
 func solution13() {}
 func solution12() {}
 func solution11() {}
-func solution10() {}
 
 import Foundation
+
+func solution10() {
+    let list = readLine()!.split(separator: " ").map{ Int($0)! }
+    if list[0] > 0 {
+        for _ in 1...list[0] {
+            let line = readLine()!
+            print(String(line.reversed()))
+        }
+    }
+}
 
 func solution9() {
     for _ in 1...3 {
