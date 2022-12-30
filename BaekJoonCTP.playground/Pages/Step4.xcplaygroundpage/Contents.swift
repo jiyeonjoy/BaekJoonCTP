@@ -1,4 +1,26 @@
+func solution42() {}
+func solution41() {}
+func solution40() {}
+func solution39() {}
+func solution38() {}
+func solution37() {}
+func solution36() {}
+func solution35() {}
+func solution34() {}
+func solution33() {}
+func solution32() {}
+
 import Foundation
+
+func solution31() {
+    let list = readLine()!.split(separator: " ").map{ Int($0)! }
+    let oCount = list[1]
+    let xCount = list[0] - list[1]
+    let k = list[2]
+    let k2 = list[0] - list[2]
+    
+    print(min(oCount, k)+min(xCount, k2))
+}
 
 func solution30() {
     let tea = Int(readLine()!)!
