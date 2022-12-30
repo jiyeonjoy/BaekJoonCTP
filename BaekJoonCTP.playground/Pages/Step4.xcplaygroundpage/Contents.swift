@@ -1,12 +1,66 @@
+let list = readLine()!.split(separator: " ").map{ Int($0)! }
+Int(readLine()!)!
+
 func solution42() {}
 func solution41() {}
-func solution40() {}
-func solution39() {}
-func solution38() {}
-func solution37() {}
-func solution36() {}
+
 
 import Foundation
+
+func solution40() {
+    let list = readLine()!.split(separator: " ")
+    let first = Int(list[0])!
+    let second = Int(list[2])!
+    let sum = Int(list[4])!
+    if first+second == sum {
+        print("YES")
+    } else {
+        print("NO")
+    }
+}
+
+func solution39() {
+    let a3 = Int(readLine()!)!
+    let a2 = Int(readLine()!)!
+    let a1 = Int(readLine()!)!
+    let b3 = Int(readLine()!)!
+    let b2 = Int(readLine()!)!
+    let b1 = Int(readLine()!)!
+    let a = a3*3 + a2*2 + a1
+    let b = b3*3 + b2*2 + b1
+    if a > b {
+        print("A")
+    } else if a == b {
+        print("T")
+    } else {
+        print("B")
+    }
+}
+
+func solution38() {
+    let list = readLine()!.split(separator: " ").map{ Int($0)! }
+    print(min(list[0]/2, list[1]/2))
+}
+
+func solution37() {
+    let maxChicken = Int(readLine()!)!
+    let list = readLine()!.split(separator: " ").map{ Int($0)! }
+    var count:Int = 0
+    count += list[0]/2
+    count += list[1]
+    if count > maxChicken {
+        print(maxChicken)
+    } else {
+        print(count)
+    }
+}
+
+func solution36() {
+    let list = readLine()!.split(separator: " ").map{ Int($0)! }
+    let a = list[0]%list[2] == 0 ? list[0]/list[2] : (list[0]/list[2])+1
+    let b = list[1]%list[2] == 0 ? list[1]/list[2] : (list[1]/list[2])+1
+    print(a*b)
+}
 
 func solution35() {
     let antena = 2//Int(readLine()!)!
@@ -21,8 +75,6 @@ func solution35() {
         print("GraemeMercurian")
     }
 }
-
-solution35()
 
 func solution34() {
     let num = 1+44031//Int(readLine()!)!
