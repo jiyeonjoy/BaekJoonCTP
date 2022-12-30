@@ -5,10 +5,34 @@ func solution17() {}
 func solution16() {}
 func solution15() {}
 func solution14() {}
-func solution13() {}
-func solution12() {}
 
 import Foundation
+
+func solution13() {
+    let line = "1001" // readLine()!
+    var n:Int = 0
+    if line.count > 3 {
+        n = Int(String(Array(line)[line.count-3..<line.count]))!%8
+    } else {
+        n = Int(line)!%8
+    }
+    if n == 1 {
+        print(1)
+    } else if n == 2 || n == 0 {
+        print(2)
+    } else if n == 3 || n == 7 {
+        print(3)
+    } else if n == 4 || n == 6 {
+        print(4)
+    } else {
+        print(5)
+    }
+}
+
+func solution12() {
+    let n = Int(readLine()!)!
+    print(n*n-n)
+}
 
 func solution11() {
     let list = readLine()!.split(separator: " ").map{ Int($0)! }
