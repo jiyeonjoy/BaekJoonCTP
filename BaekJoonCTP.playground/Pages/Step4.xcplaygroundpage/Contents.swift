@@ -7,10 +7,24 @@ func solution37() {}
 func solution36() {}
 func solution35() {}
 func solution34() {}
-func solution33() {}
-func solution32() {}
 
 import Foundation
+
+func solution33() {}
+
+func solution32() {
+    let list = readLine()!.split(separator: " ").map{ Int($0)! }
+    let cows = list[0]
+    let w = list[1]
+    let h = list[2]
+    let l = list[3]
+    let max = (w/l)*(h/l)
+    if max > cows {
+        print(cows)
+    } else {
+        print(max)
+    }
+}
 
 func solution31() {
     let list = readLine()!.split(separator: " ").map{ Int($0)! }
