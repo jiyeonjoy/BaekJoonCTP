@@ -1,7 +1,17 @@
 func solution20() {}
-func solution19() {}
 
 import Foundation
+
+func solution19() {
+    let list = readLine()!.split(separator: " ").map{ Int($0)! }
+    if list[1] == 1 || list[1] == 2 {
+        print("NEWBIE!")
+    } else if list[1] <= list[0] {
+        print("OLDBIE!")
+    } else {
+        print("TLE!")
+    }
+}
 
 func solution18() {
     let line = readLine()!
