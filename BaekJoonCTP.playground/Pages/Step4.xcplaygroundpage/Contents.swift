@@ -9,9 +9,20 @@ func solution13() {}
 func solution12() {}
 func solution11() {}
 func solution10() {}
-func solution9() {}
 
 import Foundation
+
+func solution9() {
+    for _ in 1...3 {
+        let line = readLine()!.split(separator: " ").map{ Int($0)! }
+        let oneMinusM:Bool = line[5] < line[2]
+        let s = !oneMinusM ? line[5] - line[2] : 60+line[5] - line[2]
+        let oneMinusH:Bool = line[4] - (oneMinusM ? 1 : 0) < line[1]
+        let m = !oneMinusH ? line[4] - (oneMinusM ? 1 : 0) - line[1] : 60+line[4] - (oneMinusM ? 1 : 0) - line[1]
+        let h = line[3] - (oneMinusH ? 1 : 0) - line[0]
+        print("\(h) \(m) \(s)")
+    }
+}
 
 func solution8() {
     var list1:[Int] = []
