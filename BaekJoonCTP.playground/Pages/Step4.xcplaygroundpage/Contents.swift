@@ -1,8 +1,28 @@
 func solution20() {}
 func solution19() {}
-func solution18() {}
 
 import Foundation
+
+func solution18() {
+    let line = readLine()!
+    if line.count == 2 {
+        let a = Int(String(line.first!))!
+        let b = Int(String(line.last!))!
+        print(a+b)
+    } else if line.count == 3 {
+        if Array(line)[1] == "0" {
+            let a = 10
+            let b = Int(String(line.last!))!
+            print(a+b)
+        } else {
+            let a = Int(String(line.first!))!
+            let b = 10
+            print(a+b)
+        }
+    } else {
+        print(20)
+    }
+}
 
 func solution17() {
     let list = readLine()!.split(separator: " ").map{ Int($0)! }.sorted()
