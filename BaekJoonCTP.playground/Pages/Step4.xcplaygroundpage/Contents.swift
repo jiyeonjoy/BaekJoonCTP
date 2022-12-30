@@ -2,10 +2,24 @@ func solution20() {}
 func solution19() {}
 func solution18() {}
 func solution17() {}
-func solution16() {}
-func solution15() {}
 
 import Foundation
+
+func solution16() {
+    //let list = readLine()!.split(separator: " ").map{ Int($0)! }
+    let list = "3 1".split(separator: " ").map{ Int($0)! }
+    if (list[0]+list[1])%2 == 1 || list[0] < list[1] {
+        print(-1)
+    } else {
+        print("\((list[0]+list[1])/2) \((list[0]+list[1])/2-list[1])")
+    }
+}
+
+func solution15() {
+    let width = Double(readLine()!)!
+    let r = Double(readLine()!)!
+    print(width*2 + r*2*3.141592)
+}
 
 func solution14() {
     let list = readLine()!.split(separator: "/").map{ Int($0)! }
