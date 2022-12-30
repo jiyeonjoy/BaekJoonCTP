@@ -7,9 +7,25 @@ func solution15() {}
 func solution14() {}
 func solution13() {}
 func solution12() {}
-func solution11() {}
 
 import Foundation
+
+func solution11() {
+    let list = readLine()!.split(separator: " ").map{ Int($0)! }
+    var sum = list.reduce(0, +)
+    if sum >= 100 {
+        print("OK")
+    } else {
+        let index = list.firstIndex(of: list.min()!)!
+        if index == 0 {
+            print("Soongsil")
+        } else if index == 1 {
+            print("Korea")
+        } else {
+            print("Hanyang")
+        }
+    }
+}
 
 func solution10() {
     let list = readLine()!.split(separator: " ").map{ Int($0)! }
