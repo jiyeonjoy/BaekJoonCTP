@@ -1,4 +1,66 @@
+//let list = readLine()!.split(separator: " ").map{ Int($0)! }
+//Int(readLine()!)!
+
+func solution50() {}
+func solution49() {}
+func solution48() {}
+
 import Foundation
+
+func solution47() {}
+
+func solution46() {
+    var sum = 0
+    var list = [9,7,8,0,9,2,1,4,1,8]
+    for _ in 1...3 {
+        list.append(Int(readLine()!)!)
+    }
+    var oneMultiply = true
+    for v in list {
+        if oneMultiply {
+            oneMultiply = false
+            sum += v*1
+        } else {
+            oneMultiply = true
+            sum += v*3
+        }
+    }
+    
+    print("The 1-3-sum is \(sum)")
+}
+
+solution46()
+
+func solution45() {
+    //let list = readLine()!.split(separator: " ").map{ Int($0)! }
+    let list = "12 13 14".split(separator: " ").map{ Int($0)! }
+    if list[0] < 11 || (list[0] == 11 && (list[1] < 11 || (list[1] == 11 && list[2] < 11))) {
+        print(-1)
+    } else {
+        let m = list[2] + list[1]*60 + (list[0]-11)*60*24 - 11 - 11*60
+        print(m)
+    }
+}
+
+func solution44() {
+    var sum:Int = 0
+    while true {
+        let m = Int(readLine()!)!
+        if m == -1 {
+            break
+        }
+        sum += m
+    }
+    print(sum)
+}
+
+func solution43() {
+    let count = Int(readLine()!)!
+    for _ in 1...count {
+        let sum = readLine()!.split(separator: " ").map{ Int($0)! }.reduce(0, +)
+        print(sum)
+    }
+}
 
 func solution42() {
     let l:Double = 5//Double(readLine()!)!
