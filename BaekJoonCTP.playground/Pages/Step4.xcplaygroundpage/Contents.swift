@@ -7,7 +7,14 @@ func solution48() {}
 
 import Foundation
 
-func solution47() {}
+func solution47() {
+    let str:String = String(Array(readLine()!)[0...2])
+    if str == "555" {
+        print("YES")
+    } else {
+        print("NO")
+    }
+}
 
 func solution46() {
     var sum = 0
