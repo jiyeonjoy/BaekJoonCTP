@@ -1,11 +1,18 @@
 //let list = readLine()!.split(separator: " ").map{ Int($0)! }
 //Int(readLine()!)!
-
 func solution50() {}
 func solution49() {}
-func solution48() {}
 
 import Foundation
+
+func solution48() {
+    let n = 3//Int(readLine()!)!
+    var v = 1
+    for _ in 1...n {
+        v *= 2
+    }
+    print(v)
+}
 
 func solution47() {
     let str:String = String(Array(readLine()!)[0...2])
