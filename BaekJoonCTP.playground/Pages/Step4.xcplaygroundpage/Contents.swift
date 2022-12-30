@@ -5,10 +5,29 @@ func solution39() {}
 func solution38() {}
 func solution37() {}
 func solution36() {}
-func solution35() {}
-func solution34() {}
 
 import Foundation
+
+func solution35() {
+    let antena = 2//Int(readLine()!)!
+    let eyes = 3//Int(readLine()!)!
+    if antena >= 3 && eyes <= 4 {
+        print("TroyMartian")
+    }
+    if antena <= 6 && eyes >= 2 {
+        print("VladSaturnian")
+    }
+    if antena <= 2 && eyes <= 3 {
+        print("GraemeMercurian")
+    }
+}
+
+solution35()
+
+func solution34() {
+    let num = 1+44031//Int(readLine()!)!
+    print(String(UnicodeScalar(num)!))
+}
 
 func solution33() {
 //    let birthDay = readLine()!.split(separator: " ").map{ Int($0)! }
