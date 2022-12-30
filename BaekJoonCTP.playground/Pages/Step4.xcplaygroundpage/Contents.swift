@@ -4,9 +4,17 @@ func solution18() {}
 func solution17() {}
 func solution16() {}
 func solution15() {}
-func solution14() {}
 
 import Foundation
+
+func solution14() {
+    let list = readLine()!.split(separator: "/").map{ Int($0)! }
+    if list[0]+list[2] < list[1] || list[1] == 0 {
+        print("hasu")
+    } else {
+        print("gosu")
+    }
+}
 
 func solution13() {
     let line = "1001" // readLine()!
