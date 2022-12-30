@@ -10,10 +10,23 @@ func solution12() {}
 func solution11() {}
 func solution10() {}
 func solution9() {}
-func solution8() {}
-
 
 import Foundation
+
+func solution8() {
+    var list1:[Int] = []
+    var list2:[Int] = []
+    for _ in 1...4 {
+        list1.append(Int(readLine()!)!)
+    }
+    for _ in 1...2 {
+        list2.append(Int(readLine()!)!)
+    }
+    list1.sort()
+    list2.sort()
+    var sum = list1[1]+list1[2]+list1[3]+list2[1]
+    print(sum)
+}
 
 func solution7() {
     let list = readLine()!.split(separator: " ")
