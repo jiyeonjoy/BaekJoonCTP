@@ -43,13 +43,47 @@ func solution12() {}
 func solution11() {}
 func solution10() {}
 func solution9() {}
-func solution8() {}
-func solution7() {}
-func solution6() {}
 
 import Foundation
 
-func solution5() {}
+func solution8() {
+    let list = readLine()!.split(separator: " ").map{ Int($0)! }
+    let a = list[0]
+    let b = list[1]
+    let maxV = max(a-b, a+b)
+    let minV = min(a-b, a+b)
+    print(maxV)
+    print(minV)
+}
+
+func solution7() {
+    let list = readLine()!.split(separator: " ").map{ Int($0)! }
+    let a = list[0]*7
+    let p = list[1]&13
+    if a > p {
+        print("Axel")
+    } else if a == p {
+        print("lika")
+    } else {
+        print("Petra")
+    }
+}
+
+func solution6() {
+    let a = Int(readLine()!)!
+    let b = Int(readLine()!)!
+    let s = (a+b)%13
+    print(s)
+}
+
+func solution5() {
+    let list = readLine()!.split(separator: " ").map{ Int($0)! }.sorted()
+    if list[0] == list[1] || list[1] == list[2] || list[2] == list[0]+list[1] {
+        print("S")
+    } else {
+        print("N")
+    }
+}
 
 func solution4() {
     let m2:Double = 1234//Double(readLine()!)!
@@ -82,8 +116,6 @@ func solution2() {
     let b = list[0]+list[1]
     print(b-a)
 }
-
-solution2()
 
 func solution1() {
     let list = readLine()!.split(separator: " ").map{ Int($0)! }
