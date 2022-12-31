@@ -27,10 +27,11 @@ func solution29() {}
 import Foundation
 
 func solution28() {
-    let list = readLine()!.split(separator: " ").map{ Int($0)! }
+//    let list = readLine()!.split(separator: " ").map{ Double($0)! }
+    let list = "10 2".split(separator: " ").map{ Double($0)! }
     let all = list[0]*1000
     let a = list[1]*1000
-    var max = 0
+    var max:Double = 0
     let first = a + a/2 + a/4
     let second = a*2 + a + a/2
     let third = a*4 + a*2 + a
@@ -38,10 +39,12 @@ func solution28() {
         max = third
     } else if second <= all {
         max = second
-    } else {
+    } else if third <= all {
         max = first
+    } else {
+        max = 0
     }
-    print(max)
+    print(Int(max))
 }
 
 func solution27() {
