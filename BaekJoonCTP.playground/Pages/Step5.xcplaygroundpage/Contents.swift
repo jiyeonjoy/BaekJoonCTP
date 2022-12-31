@@ -26,8 +26,8 @@ import Foundation
 func solution31() {
     let first = readLine()!.split(separator: " ").map{ Int($0)! }
     let second = readLine()!.split(separator: " ").map{ Int($0)! }
-    let a = first[0] + second[0]
-    let b = first[1] + second[1]
+    let a = first[0] + second[1]
+    let b = first[1] + second[0]
     if a > b {
         print("Persepolis")
     } else if a == b {
