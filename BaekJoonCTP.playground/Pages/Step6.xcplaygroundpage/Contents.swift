@@ -1,5 +1,5 @@
-let list = readLine()!.split(separator: " ").map{ Int($0)! }
-Int(readLine()!)!
+//let list = readLine()!.split(separator: " ").map{ Int($0)! }
+//Int(readLine()!)!
 
 func solution50() {}
 func solution49() {}
@@ -46,10 +46,52 @@ func solution9() {}
 func solution8() {}
 func solution7() {}
 func solution6() {}
-func solution5() {}
-func solution4() {}
-func solution3() {}
-func solution2() {}
-func solution1() {}
 
 import Foundation
+
+func solution5() {}
+
+func solution4() {
+    let m2:Double = 1234//Double(readLine()!)!
+    let r = sqrt(m2/3.14159265359)
+    let v = 2*r*3.14159265359
+}
+
+func solution3() {
+    let n = Int(readLine()!)!
+    let p = Int(readLine()!)!
+    var minp = p
+    if n >= 5 {
+        minp = min(minp, p-500)
+    }
+    if n >= 10 {
+        minp = min(minp, p*9/10)
+    }
+    if n >= 15 {
+        minp = min(minp, p-2000)
+    }
+    if n >= 20 {
+        minp = min(minp, p*3/4)
+    }
+    print(minp)
+}
+
+func solution2() {
+    let list = readLine()!.split(separator: " ").map{ Double($0)! }
+    let a = sqrt(pow(list[0], 2)+pow(list[1], 2))
+    let b = list[0]+list[1]
+    print(b-a)
+}
+
+solution2()
+
+func solution1() {
+    let list = readLine()!.split(separator: " ").map{ Int($0)! }
+    if list[0] > list[1] {
+        print(list[0] + list[1])
+    } else if list[0] == list[1] {
+        print(0)
+    } else {
+        print(list[1]-list[0])
+    }
+}
