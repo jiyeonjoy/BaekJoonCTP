@@ -13,9 +13,16 @@ func solution42() {}
 func solution41() {}
 func solution40() {}
 func solution39() {}
-func solution38() {}
 
 import Foundation
+
+func solution38() {
+    let list = readLine()!.split(separator: " ").map{ Int($0)! }.sorted()
+    var sum = 0
+    sum += list[2]-list[0]
+    sum += list[2]-list[1]
+    print(sum)
+}
 
 func solution37() {
     let list = readLine()!.split(separator: " ")
