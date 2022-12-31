@@ -1,11 +1,49 @@
-//let list = readLine()!.split(separator: " ").map{ Int($0)! }
-//Int(readLine()!)!
-
-func solution50() {}
-func solution49() {}
-func solution48() {}
-
 import Foundation
+
+func solution50() {
+    
+}
+
+func solution49() {
+    let a = Int(readLine()!)!
+    let x = Int(readLine()!)!
+    let b = Int(readLine()!)!
+    let y = Int(readLine()!)!
+    let t = Int(readLine()!)!
+
+    let ap = (t > 30 ? (t-30)*x : 0)*21 + a
+    let bp = (t > 45 ? (t-45)*y : 0)*21 + b
+
+    print("\(ap) \(bp)")
+}
+
+func solution48() {
+    let r:Double = 8//sqrt(64/(2*3.14159265359))
+    r*2*3.14159265359
+
+    var list:[Int] = []
+
+    while true {
+        guard let s = readLine() else { break }
+        let n = Int(s)!
+        if !list.contains(n) {
+            list.append(n)
+        }
+    }
+    var str = ""
+    list.sort()
+    for i in list {
+        if str == "" {
+            str += "\(i)"
+        } else {
+            str += "\n\(i)"
+        }
+    }
+    print(str)
+
+    let list1 = readLine()!.split(separator: " ").map{ Int($0)! }
+    Int(readLine()!)!
+}
 
 func solution47() {
     func isPrime(num: Int) -> Bool {
