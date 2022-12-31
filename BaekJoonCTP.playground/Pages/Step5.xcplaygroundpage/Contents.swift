@@ -24,9 +24,21 @@ func solution31() {}
 func solution30() {}
 func solution29() {}
 func solution28() {}
-func solution27() {}
 
 import Foundation
+
+func solution27() {
+    let start = readLine()!.split(separator: " ").map{ Int($0) ?? 0 }
+    let end = readLine()!.split(separator: " ").map{ Int($0) ?? 0 }
+    var a = 0
+    var minusM = end[4] < start[4]
+    a += minusM ? end[4] + 60 - start[4] : end[4] - start[4]
+    var minusH = end[2] - (minusM ? 1 : 0) < start[2]
+    a += (minusH ? end[2] - (minusM ? 1 : 0) + 60 - start[2] : end[2] - (minusM ? 1 : 0) - start[2])*60
+    var plus24 = end[0] - (minusH ? 1 : 0) < start[0]
+    a += (plus24 ? end[0] - (minusH ? 1 : 0) + 24 - start[0] : end[0] - (minusH ? 1 : 0) - start[0])*3600
+    print(a)
+}
 
 func solution26() {
 //    let sl = readLine()!.split(separator: " ").map{ Double($0)! }
@@ -41,8 +53,6 @@ func solution26() {
         print("Whole pizza")
     }
 }
-
-solution26()
 
 func solution25() {
     let a = Int(readLine()!)!
