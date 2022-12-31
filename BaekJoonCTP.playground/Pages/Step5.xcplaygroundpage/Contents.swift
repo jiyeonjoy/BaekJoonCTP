@@ -33,12 +33,49 @@ func solution22() {}
 func solution21() {}
 func solution20() {}
 func solution19() {}
-func solution18() {}
-func solution17() {}
-func solution16() {}
-func solution15() {}
 
 import Foundation
+
+func solution18() {
+    let list = readLine()!.split(separator: " ").map{ Int($0)! }.sorted()
+    if list[1] == 0 {
+        print("Not a moose")
+    } else if list[0] == list[1] {
+        print("Even \(list[0]*2)")
+    } else {
+        print("Odd \(list[1]*2)")
+    }
+}
+
+func solution17() {
+    let a = Int(readLine()!)!
+    let b = Int(readLine()!)!
+    let str = String(repeating: "*", count: b)
+    for _ in 1...a {
+        print(str)
+    }
+}
+
+func solution16() {
+    let count = Int(readLine()!)!
+    for _ in 1...count {
+        let list = readLine()!.split(separator: " ").map{ Int($0)! }
+        print(list.min()!)
+    }
+}
+
+func solution15() {
+    let j = readLine()!
+    let count = Int(readLine()!)!
+    var a = 0
+    for _ in 1...count {
+        let str = readLine()!
+        if j == str {
+            a += 1
+        }
+    }
+    print(a)
+}
 
 func solution14() {
     let list = readLine()!.split(separator: " ").map{ Int($0)! }
