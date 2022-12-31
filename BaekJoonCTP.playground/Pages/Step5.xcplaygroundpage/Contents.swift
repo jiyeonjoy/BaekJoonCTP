@@ -14,9 +14,21 @@ func solution41() {}
 func solution40() {}
 func solution39() {}
 func solution38() {}
-func solution37() {}
 
 import Foundation
+
+func solution37() {
+    let list = readLine()!.split(separator: " ")
+    if list[0] == list[1] && list[1] == list[2] {
+        print("*")
+    } else if list[0] == list[1] {
+        print("C")
+    } else if list[1] == list[2] {
+        print("A")
+    } else {
+        print("B")
+    }
+}
 
 func solution36() {
     let a = Int(readLine()!)!
