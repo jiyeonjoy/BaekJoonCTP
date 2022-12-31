@@ -10,9 +10,18 @@ func solution45() {}
 func solution44() {}
 func solution43() {}
 func solution42() {}
-func solution41() {}
 
 import Foundation
+
+func solution41() {
+    let n = Int(readLine()!)!
+    let k = Int(readLine()!)! + 60
+    if n > k {
+        print(k*1500+(n-k)*3000)
+    } else {
+        print(n*1500)
+    }
+}
 
 func solution40() {
     let list = readLine()!.split(separator: " ").map{ Int($0)! }
