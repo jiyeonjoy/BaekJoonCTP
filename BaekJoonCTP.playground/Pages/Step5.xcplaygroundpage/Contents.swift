@@ -19,9 +19,20 @@ func solution36() {}
 func solution35() {}
 func solution34() {}
 func solution33() {}
-func solution32() {}
 
 import Foundation
+
+func solution32() {
+    while true {
+        let num = Double(readLine()!)!
+        if num < 0 {
+            break
+        }
+        let moon = num*0.167
+        
+        print("Objects weighing \(String(format: "%.2f", num)) on Earth will weigh \(String(format: "%.2f", moon)) on the moon.")
+    }
+}
 
 func solution31() {
     let first = readLine()!.split(separator: " ").map{ Int($0)! }
@@ -31,7 +42,13 @@ func solution31() {
     if a > b {
         print("Persepolis")
     } else if a == b {
-        print("Penalty")
+        if second[1] > first[1] {
+            print("Persepolis")
+        } else if second[1] == first[1] {
+            print("Penalty")
+        } else {
+            print("Esteghlal")
+        }
     } else {
         print("Esteghlal")
     }
