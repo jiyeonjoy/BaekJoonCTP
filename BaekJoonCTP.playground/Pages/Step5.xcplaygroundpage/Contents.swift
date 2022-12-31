@@ -40,11 +40,32 @@ func solution15() {}
 func solution14() {}
 func solution13() {}
 func solution12() {}
-func solution11() {}
-func solution10() {}
-func solution9() {}
 
 import Foundation
+
+func solution11() {}
+
+func solution10() {
+    let list = readLine()!.split(separator: " ").map{ Int($0)! }
+    var oneCount = 0
+    for i in list {
+        if i == 1 {
+            oneCount += 1
+        }
+    }
+    if oneCount > 1 {
+        print(1)
+    } else {
+        print(2)
+    }
+}
+
+func solution9() {
+    let list = readLine()!.split(separator: " ").map{ Int($0)! }
+    let one = readLine()!.split(separator: " ").map{ Int($0)! }
+    let index:Int = list.firstIndex(of: one[0]) ?? -1
+    print(index+1)
+}
 
 func solution8() {
     let num:Double = 64//Int64(readLine()!)!
