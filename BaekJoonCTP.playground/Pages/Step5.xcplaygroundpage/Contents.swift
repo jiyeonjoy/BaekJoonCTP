@@ -11,9 +11,17 @@ func solution44() {}
 func solution43() {}
 func solution42() {}
 func solution41() {}
-func solution40() {}
 
 import Foundation
+
+func solution40() {
+    let list = readLine()!.split(separator: " ").map{ Int($0)! }
+    if list[0]%2 == 0 || list[1]%2 == 0{
+        print(0)
+    } else {
+        print(min(list[0],list[1]))
+    }
+}
 
 func solution39() {
     let a = Int(readLine()!)!
