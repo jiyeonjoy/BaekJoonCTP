@@ -28,10 +28,23 @@ func solution27() {}
 func solution26() {}
 func solution25() {}
 func solution24() {}
-func solution23() {}
-func solution22() {}
 
 import Foundation
+
+func solution23() {}
+
+func solution22() {
+    let count = 2//Int(readLine()!)!
+    var a = 0
+    for _ in 1...count {
+//        let d = readLine()!.split(separator: "D-").map{ Int($0)! }
+        let d:[Int] = "D-90".split(separator: "D-").map{ Int($0)! }
+        if d[0] <= 90 {
+            a += 1
+        }
+    }
+    print(a)
+}
 
 func solution21() {
     let list = readLine()!.split(separator: " ").map{ Int($0)! }
