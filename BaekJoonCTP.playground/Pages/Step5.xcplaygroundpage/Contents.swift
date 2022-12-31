@@ -32,9 +32,20 @@ func solution23() {}
 func solution22() {}
 func solution21() {}
 func solution20() {}
-func solution19() {}
 
 import Foundation
+
+func solution19() {
+    let list = readLine()!.split(separator: " ").map{ Int($0)! }
+    let n = list[0]
+    let a = list[1]
+    let b = list[2]
+    let c = list[3]
+    let d = list[4]
+    let aP = ((n+a-1)/a)*b
+    let cP = ((n+c-1)/c)*d
+    print(min(aP,cP))
+}
 
 func solution18() {
     let list = readLine()!.split(separator: " ").map{ Int($0)! }.sorted()
