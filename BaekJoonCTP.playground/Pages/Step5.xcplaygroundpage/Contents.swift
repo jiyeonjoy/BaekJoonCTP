@@ -25,10 +25,18 @@ func solution30() {}
 func solution29() {}
 func solution28() {}
 func solution27() {}
-func solution26() {}
-func solution25() {}
 
 import Foundation
+
+func solution26() {}
+
+func solution25() {
+    let a = Int(readLine()!)!
+    let p = 5*a-400
+    let s = p < 100 ? 1 : p == 100 ? 0 : -1
+    print(p)
+    print(s)
+}
 
 func solution24() {
     let list = readLine()!.split(separator: " ").map{ Int($0)! }
