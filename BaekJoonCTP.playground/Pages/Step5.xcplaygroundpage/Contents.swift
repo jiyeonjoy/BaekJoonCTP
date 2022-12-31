@@ -30,10 +30,36 @@ func solution25() {}
 func solution24() {}
 func solution23() {}
 func solution22() {}
-func solution21() {}
-func solution20() {}
 
 import Foundation
+
+func solution21() {
+    let list = readLine()!.split(separator: " ").map{ Int($0)! }
+    if list[1] <= list[0] && list[2] >= list[0] {
+        print(list[0])
+    } else if list[2] < list[0] {
+        print(list[2])
+    } else {
+        print(list[1])
+    }
+}
+
+func solution20() {
+    let count = Int(readLine()!)!
+    var a = 1000
+    var isGet = false
+    for _ in 1...count {
+        let list = readLine()!.split(separator: " ").map{ Int($0)! }
+        if list[1] >= list[0] {
+            isGet = true
+            a = min(a, list[1])
+        }
+    }
+    if !isGet {
+        a = -1
+    }
+    print(a)
+}
 
 func solution19() {
     let list = readLine()!.split(separator: " ").map{ Int($0)! }
