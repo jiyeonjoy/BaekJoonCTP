@@ -12,7 +12,7 @@ import Foundation
 
 func solution44() {
     let list = readLine()!.split(separator: " ").map{ Int($0)! }
-    if list[0]*list[2]%list[1]*list[3]*2 == 0 {
+    if (list[0]*list[2])%(list[1]*list[3]*2) == 0 {
         print(1)
     } else {
         print(0)
