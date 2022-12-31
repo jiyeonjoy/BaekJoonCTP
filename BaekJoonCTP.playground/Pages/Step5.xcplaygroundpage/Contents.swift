@@ -27,11 +27,23 @@ func solution28() {}
 func solution27() {}
 func solution26() {}
 func solution25() {}
-func solution24() {}
 
 import Foundation
 
-func solution23() {}
+func solution24() {
+    let list = readLine()!.split(separator: " ").map{ Int($0)! }
+    let n = list[0]
+    let h = list[1]
+    let v = list[2]
+    let maxW = max(n-h, h)
+    let maxH = max(n-v, v)
+    print(maxW*maxH*4)
+}
+
+func solution23() {
+    let list = readLine()!.split(separator: " ").map{ Int($0)! }.sorted()
+    print(list[1])
+}
 
 func solution22() {
     let count = 2//Int(readLine()!)!
