@@ -8,10 +8,26 @@ func solution47() {}
 func solution46() {}
 func solution45() {}
 func solution44() {}
-func solution43() {}
-func solution42() {}
 
 import Foundation
+
+func solution43() {
+    let l1 = readLine()!.split(separator: " ").map{ Int($0)! }.reduce(1, *)
+    let l2 = readLine()!.split(separator: " ").map{ Int($0)! }.reduce(1, *)
+    let l3 = readLine()!.split(separator: " ").map{ Int($0)! }.reduce(1, *)
+    print((l1+l2)*l3)
+}
+
+func solution42() {
+    let count = Int(readLine()!)!
+    print("int a;")
+    var n1 = "a"
+    for i in 1...count {
+        let n2 = i == 1 ? "ptr" : "ptr\(i)"
+        print("int \(String(repeating: "*", count: i))\(n2) = &\(n1);")
+        n1 = n2
+    }
+}
 
 func solution41() {
     let n = Int(readLine()!)!
