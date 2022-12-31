@@ -1,7 +1,16 @@
 import Foundation
 
 func solution50() {
-    
+    let n = 4//Int(readLine()!)!
+    if n == 0 || n == 1 {
+        print(1)
+    } else {
+        var v = 1
+        for i in 2...n {
+            v = (v*i)%10
+        }
+        print(v)
+    }
 }
 
 func solution49() {
