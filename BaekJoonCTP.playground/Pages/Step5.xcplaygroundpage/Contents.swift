@@ -6,9 +6,20 @@ func solution49() {}
 func solution48() {}
 func solution47() {}
 func solution46() {}
-func solution45() {}
 
 import Foundation
+
+func solution45() {
+    while true {
+        let n = Int(readLine()!)!
+        if n == 0 {
+            break
+        }
+        for i in 1...n {
+            print(String(repeating: "*", count: i))
+        }
+    }
+}
 
 func solution44() {
     let list = readLine()!.split(separator: " ").map{ Int($0)! }
