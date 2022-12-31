@@ -28,7 +28,21 @@ func solution27() {}
 
 import Foundation
 
-func solution26() {}
+func solution26() {
+//    let sl = readLine()!.split(separator: " ").map{ Double($0)! }
+//    let al = readLine()!.split(separator: " ").map{ Double($0)! }
+    let sl = "841 108".split(separator: " ").map{ Double($0)! }
+    let al = "8 606".split(separator: " ").map{ Double($0)! }
+    let slp = sl[0]/sl[1]
+    let alp = (al[0]*al[0]*3.14159265359)/al[1]
+    if slp > alp {
+        print("Slice of pizza")
+    } else {
+        print("Whole pizza")
+    }
+}
+
+solution26()
 
 func solution25() {
     let a = Int(readLine()!)!
