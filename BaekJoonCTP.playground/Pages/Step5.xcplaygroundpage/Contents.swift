@@ -21,9 +21,21 @@ func solution34() {}
 func solution33() {}
 func solution32() {}
 func solution31() {}
-func solution30() {}
 
 import Foundation
+
+func solution30() {
+    let count = Int(readLine()!)!
+    print("Gnomes:")
+    for _ in 1...count {
+        let list = readLine()!.split(separator: " ").map{ Int($0)! }
+        if (list[0] < list[1] && list[1] < list[2]) || (list[0] > list[1] && list[1] > list[2]) {
+            print("Ordered")
+        } else {
+            print("Unordered")
+        }
+    }
+}
 
 func solution29() {
     let list = readLine()!.split(separator: " ").map{ Int($0)! }
