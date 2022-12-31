@@ -4,10 +4,41 @@
 func solution50() {}
 func solution49() {}
 func solution48() {}
-func solution47() {}
-func solution46() {}
 
 import Foundation
+
+func solution47() {
+    func isPrime(num: Int) -> Bool {
+        if(num<4) {
+            return num == 1 ? false : true
+        }
+        for i in 2...Int(sqrt(Double(num))) {
+            if(num % i == 0) { return false }
+        }
+        return true
+    }
+
+    let list = readLine()!.split(separator: " ").map{ Int($0)! }
+    for i in list[0]...list[1] {
+        if isPrime(num: i) {
+            print(i)
+        }
+    }
+}
+
+func solution46() {
+    let list = readLine()!.split(separator: " ").map{ Int($0)! }
+    let n1 = list[0]
+    let n2 = list[1]
+    let a = 100-n1
+    let b = 100-n2
+    let c = 100-(a+b)
+    let d = a*b
+    let e = d/100
+    let f = d%100
+    print("\(a) \(b) \(c) \(d) \(e) \(f)")
+    print("\(c+e) \(f)")
+}
 
 func solution45() {
     while true {
