@@ -20,9 +20,22 @@ func solution35() {}
 func solution34() {}
 func solution33() {}
 func solution32() {}
-func solution31() {}
 
 import Foundation
+
+func solution31() {
+    let first = readLine()!.split(separator: " ").map{ Int($0)! }
+    let second = readLine()!.split(separator: " ").map{ Int($0)! }
+    let a = first[0] + second[0]
+    let b = first[1] + second[1]
+    if a > b {
+        print("Persepolis")
+    } else if a == b {
+        print("Penalty")
+    } else {
+        print("Esteghlal")
+    }
+}
 
 func solution30() {
     let count = Int(readLine()!)!
