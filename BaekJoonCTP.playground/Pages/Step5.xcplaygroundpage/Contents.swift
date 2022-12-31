@@ -37,13 +37,45 @@ func solution18() {}
 func solution17() {}
 func solution16() {}
 func solution15() {}
-func solution14() {}
-func solution13() {}
-func solution12() {}
 
 import Foundation
 
-func solution11() {}
+func solution14() {
+    let list = readLine()!.split(separator: " ").map{ Int($0)! }
+    let a = min(list[0]/2, list[1])
+    print(a)
+}
+
+func solution13() {
+    let list = readLine()!.split(separator: " ").map{ Int($0)! }.sorted()
+    let sum = list[1] + list[2]
+    print(sum)
+}
+
+func solution12() {
+    let list = readLine()!.split(separator: " ").map{ Double($0)! }.sorted()
+    if list[0] == list[2] {
+        print(2)
+    } else if pow(list[0], 2) + pow(list[1], 2) == pow(list[2], 2) {
+        print(1)
+    } else {
+        print(0)
+    }
+}
+
+func solution11() {
+//    let list = readLine()!.split(separator: " ").map{ Int($0)! }
+    let list = "180 202 10".split(separator: " ").map{ Int($0)! }
+    let k = list[0]
+    let w = list[1]
+    let m = list[2]
+    if k >= w {
+        print(0)
+    } else {
+        let a = (w-k+m-1)/m
+        print(a)
+    }
+}
 
 func solution10() {
     let list = readLine()!.split(separator: " ").map{ Int($0)! }
