@@ -16,9 +16,14 @@ func solution39() {}
 func solution38() {}
 func solution37() {}
 func solution36() {}
-func solution35() {}
 
 import Foundation
+
+func solution35() {
+    let num = 10.00//Double(readLine()!)!
+    let a = 100000*3.785411784/(num*1609.344)
+    print(a)
+}
 
 func solution34() {
     let dic:[Int:String] = [1995: "ITMO",
