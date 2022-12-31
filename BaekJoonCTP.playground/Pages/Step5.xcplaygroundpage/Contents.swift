@@ -15,9 +15,16 @@ func solution40() {}
 func solution39() {}
 func solution38() {}
 func solution37() {}
-func solution36() {}
 
 import Foundation
+
+func solution36() {
+    let a = Int(readLine()!)!
+    let b = Int(readLine()!)!
+    let c = Int(readLine()!)!
+    let minV = min(a*4+b*2, a*2+c*2, b*2+c*4)
+    print(minV)
+}
 
 func solution35() {
     let num = 10.00//Double(readLine()!)!
