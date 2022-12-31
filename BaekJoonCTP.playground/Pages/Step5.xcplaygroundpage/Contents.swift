@@ -12,9 +12,20 @@ func solution43() {}
 func solution42() {}
 func solution41() {}
 func solution40() {}
-func solution39() {}
 
 import Foundation
+
+func solution39() {
+    let a = Int(readLine()!)!
+    let b = Int(readLine()!)!
+    if a <= 50 && b <= 10 {
+        print("White")
+    } else if b > 30 {
+        print("Red")
+    } else {
+        print("Yellow")
+    }
+}
 
 func solution38() {
     let list = readLine()!.split(separator: " ").map{ Int($0)! }.sorted()
