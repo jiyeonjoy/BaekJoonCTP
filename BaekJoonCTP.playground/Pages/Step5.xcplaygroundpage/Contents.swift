@@ -22,16 +22,21 @@ func solution33() {}
 func solution32() {}
 func solution31() {}
 func solution30() {}
-func solution29() {}
 
 import Foundation
 
+func solution29() {
+    let list = readLine()!.split(separator: " ").map{ Int($0)! }
+    let a = list[0]-list[2] > 1 && list[1]-list[3] > 1 ? 1 : 0
+    print(a)
+}
+
 func solution28() {
-//    let list = readLine()!.split(separator: " ").map{ Double($0)! }
-    let list = "10 2".split(separator: " ").map{ Double($0)! }
+//    let list = readLine()!.split(separator: " ").map{ Int($0)! }
+    let list = "10 2".split(separator: " ").map{ Int($0)! }
     let all = list[0]*1000
     let a = list[1]*1000
-    var max:Double = 0
+    var max = 0
     let first = a + a/2 + a/4
     let second = a*2 + a + a/2
     let third = a*4 + a*2 + a
@@ -39,12 +44,12 @@ func solution28() {
         max = third
     } else if second <= all {
         max = second
-    } else if third <= all {
+    } else if first <= all {
         max = first
     } else {
         max = 0
     }
-    print(Int(max))
+    print(max)
 }
 
 func solution27() {
