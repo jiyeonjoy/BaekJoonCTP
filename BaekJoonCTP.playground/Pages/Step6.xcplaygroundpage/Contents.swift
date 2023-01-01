@@ -32,7 +32,22 @@ func solution23() {}
 
 import Foundation
 
-func solution22() {}
+func solution22() {
+    let n = Int(readLine()!)!
+    if n == 1 {
+        print("*")
+    } else {
+        for i in 1...n {
+            let s = String(repeating: "*", count: i)
+            print("\(s)")
+        }
+        for i in 2...n {
+            let s = String(repeating: "*", count: n-i+1)
+            print("\(s)")
+        }
+        
+    }
+}
 
 func solution21() {
     let n = Int(readLine()!)!
