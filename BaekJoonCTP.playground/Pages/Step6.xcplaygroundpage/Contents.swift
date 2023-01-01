@@ -32,17 +32,20 @@ func solution24() {}
 import Foundation
 
 func solution23() {
-    let a = readLine()!.split(separator: " ").filter{ $0 == "0" }.count
-    if a == 0 {
-        print("E")
-    } else if a == 1 {
-        print("A")
-    } else if a == 2 {
-        print("B")
-    } else if a == 3 {
-        print("C")
-    } else {
-        print("D")
+    while true {
+        guard let line = readLine() else { break }
+        let a = line.split(separator: " ").filter{ $0 == "0" }.count
+        if a == 0 {
+            print("E")
+        } else if a == 1 {
+            print("A")
+        } else if a == 2 {
+            print("B")
+        } else if a == 3 {
+            print("C")
+        } else {
+            print("D")
+        }
     }
 }
 
