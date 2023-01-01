@@ -20,7 +20,27 @@ func solution35() {}
 
 import Foundation
 
-func solution34() {}
+func solution34() {
+    let n = Int(readLine()!)!
+    if n == 1 {
+        print("*")
+    } else {
+        for i in 1...n {
+            let b = i > n-1 ? "" : String(repeating: " ", count: n-1-i)
+            if i == n {
+                let s = String(repeating: "*", count: (i-1)*2+1)
+                print("\(s)")
+            } else if i == 1 {
+                let s = String(repeating: " *", count: 1)
+                print("\(b)\(s)")
+            } else {
+                let s = String(repeating: " *", count: 1)
+                let b2 = i == 1 ? "" : String(repeating: " ", count: (i-2)*2+1)
+                print("\(b)\(s)\(b2)*")
+            }
+        }
+    }
+}
 
 func solution33() {
     var sum = Int(readLine()!)!
