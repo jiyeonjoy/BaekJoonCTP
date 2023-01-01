@@ -17,14 +17,80 @@ func solution38() {}
 func solution37() {}
 func solution36() {}
 func solution35() {}
-func solution34() {}
-func solution33() {}
-func solution32() {}
-func solution31() {}
-func solution30() {}
-func solution29() {}
 
 import Foundation
+
+func solution34() {}
+
+func solution33() {
+    var sum = Int(readLine()!)!
+    for _ in 1...9 {
+        sum -= Int(readLine()!)!
+    }
+    print(sum)
+}
+
+func solution32() {
+    var i = 0
+    var maxi = 0
+    var maxv = 0
+    while true {
+        guard let line = readLine() else { break }
+        let sum = line.split(separator: " ").map{ Int($0)! }.reduce(0, +)
+        i += 1
+        if sum > maxv {
+            maxv = sum
+            maxi = i
+        }
+    }
+    print("\(maxi) \(maxv)")
+}
+
+func solution31() {
+    let list = readLine()!.split(separator: " ").map{ Int($0)! }
+    let l = (1...list[0]).filter {
+        list[0]%$0 == 0
+    }
+    if list[1] > l.count {
+        print("0")
+    } else {
+        print(l[list[1]-1])
+    }
+}
+
+func solution30() {
+    let n = Int(readLine()!)!
+    var c = 0
+    for i in 1...n {
+        let v = readLine()!
+        if v == "1" {
+            c += 1
+        }
+    }
+    if c < n-c {
+        print("Junhee is not cute!")
+    } else {
+        print("Junhee is cute!")
+    }
+}
+
+func solution29() {
+    let n = Int(readLine()!)!
+    if n == 1 {
+        print("*")
+    } else {
+        for i in 1...n {
+            let b = i > n-1 ? "" : String(repeating: " ", count: n-1-i)
+            if i == n {
+                let s = "*"+String(repeating: " *", count: i-1)
+                print("\(b)\(s)")
+            } else {
+                let s = String(repeating: " *", count: i)
+                print("\(b)\(s)")
+            }
+        }
+    }
+}
 
 func solution28() {
     var list:[Int] = []
