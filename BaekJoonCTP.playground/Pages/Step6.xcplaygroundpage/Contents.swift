@@ -23,9 +23,31 @@ func solution32() {}
 func solution31() {}
 func solution30() {}
 func solution29() {}
-func solution28() {}
 
 import Foundation
+
+func solution28() {
+    var list:[Int] = []
+    var minv = 0
+    while true {
+        guard let line = readLine() else { break }
+        let n = Int(line)!
+        if n%2 == 1 {
+            list.append(n)
+            if minv == 0 {
+                minv = n
+            } else {
+                minv = min(minv, n)
+            }
+        }
+    }
+    if minv == 0 {
+        print(-1)
+    } else {
+        print(list.reduce(0, +))
+        print(minv)
+    }
+}
 
 func solution27() {
     let n = Int(readLine()!)!
