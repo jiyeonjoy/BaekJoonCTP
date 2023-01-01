@@ -35,13 +35,40 @@ func solution20() {}
 func solution19() {}
 func solution18() {}
 func solution17() {}
-func solution16() {}
-func solution15() {}
-func solution14() {}
 
 import Foundation
 
-func solution13() {}
+func solution16() {}
+
+func solution15() {
+    let n = Int(readLine()!)!
+    for i in 1...n {
+        let b = i == n ? "" : String(repeating: " ", count: n-i)
+        let s = String(repeating: "*", count: 1+2*(i-1))
+        print("\(b)\(s)\(b)")
+    }
+}
+
+func solution14() {
+    while true {
+        guard let str = readLine() else { break }
+        print(str)
+    }
+}
+
+func solution13() {
+    while true {
+        let list = readLine()!.split(separator: " ").map{ Double($0)! }.sorted()
+        if list[0] == 0 {
+            break
+        }
+        if pow(list[0], 2) + pow(list[1], 2) == pow(list[2], 2) {
+            print("right")
+        } else {
+            print("wrong")
+        }
+    }
+}
 
 func solution12() {
     let str = "OneTwoThreeFourFiveSixSevenEightNineTen"//readLine()!
