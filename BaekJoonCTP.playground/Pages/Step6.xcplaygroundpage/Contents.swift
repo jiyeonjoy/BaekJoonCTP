@@ -38,13 +38,59 @@ func solution17() {}
 func solution16() {}
 func solution15() {}
 func solution14() {}
-func solution13() {}
-func solution12() {}
-func solution11() {}
-func solution10() {}
-func solution9() {}
 
 import Foundation
+
+func solution13() {}
+
+func solution12() {
+    let str = "OneTwoThreeFourFiveSixSevenEightNineTen"//readLine()!
+    let c = (str.count+9)/10
+    for i in 1...c {
+        let start:Int = (i-1)*10
+        let end:Int = min(i*10-1, str.count-1)
+        print(String(Array(str)[start...end]))
+    }
+}
+
+func solution11() {
+    //let list = "1 1 5 5"readLine()!.split(separator: " ").map{ Int($0)! }
+    let list = "1 1 5 5".split(separator: " ").map{ Int($0)! }
+    let v = min(list[2]-list[0], list[3]-list[1], list[1]-0, list[0]-0)
+    print(v)
+}
+func solution10() {
+    let t = 1//Int(readLine()!)!
+    for _ in 1...t {
+    //    let list = readLine()!.split(separator: " ").map{ Int($0)! }
+        let list = "30 50 72".split(separator: " ").map{ Int($0)! }
+        var n = list[2]
+        for i in 1...list[1] {
+            for j in 1...list[0] {
+                n -= 1
+                if n == 0 {
+                    if i > 9 {
+                        print("\(j)\(i)")
+                    } else {
+                        print("\(j)0\(i)")
+                    }
+                }
+            }
+        }
+    }
+}
+
+func solution9() {
+    let k = Double(readLine()!)!
+    let c = 25 + k*0.01
+    if c < 100 {
+        print(100)
+    } else if c > 2000 {
+        print(2000)
+    } else {
+        print(c)
+    }
+}
 
 func solution8() {
     let list = readLine()!.split(separator: " ").map{ Int($0)! }
