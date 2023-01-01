@@ -13,12 +13,54 @@ func solution42() {}
 func solution41() {}
 func solution40() {}
 func solution39() {}
-func solution38() {}
-func solution37() {}
-func solution36() {}
-func solution35() {}
 
 import Foundation
+
+func solution38() {
+    var maxp = 0
+    var cp = 0
+    while true {
+        guard let line = readLine() else { break }
+        let list = line.split(separator: " ").map{ Int($0)! }
+        cp -= list[0]
+        cp += list[1]
+        maxp = max(maxp, cp)
+    }
+    print(maxp)
+}
+
+func solution37() {
+    let list = readLine()!.split(separator: " ").map{ Int($0)! }
+    let n = list[0]
+    let m = list[1]
+    var k = list[2]
+    
+    var maxtc = min(n/2, m)
+    k -= n-(maxtc*2)
+    k -= m-maxtc
+    if k < 1 {
+        print(maxtc)
+    } else {
+        print(maxtc-(k+2)/3)
+    }
+}
+
+func solution36() {
+    let n = Int(readLine()!)!
+    var sum = 0
+    for _ in 1...n {
+        let num = Int(readLine()!)!
+        sum += num-1
+    }
+    print(sum)
+}
+
+func solution35() {
+    let list = readLine()!.split(separator: " ")
+    let a = Int(list[0] + list[1])!
+    let b = Int(list[2] + list[3])!
+    print(a+b)
+}
 
 func solution34() {
     let n = Int(readLine()!)!
