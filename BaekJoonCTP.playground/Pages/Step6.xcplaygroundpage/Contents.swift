@@ -34,18 +34,44 @@ func solution21() {}
 func solution20() {}
 func solution19() {}
 func solution18() {}
-func solution17() {}
 
 import Foundation
 
-func solution16() {}
+func solution17() {
+    let n = Int(readLine()!)!
+    if n == 1 {
+        print("*")
+    } else {
+        for i in 1...n {
+            let b = i == 1 ? "" : String(repeating: " ", count: i-1)
+            let s = String(repeating: "*", count: 1+2*(n-i))
+            print("\(b)\(s)")
+        }
+        for i in 2...n {
+            let b = i == n ? "" : String(repeating: " ", count: n-i)
+            let s = String(repeating: "*", count: 1+2*(i-1))
+            print("\(b)\(s)")
+        }
+    }
+}
+
+func solution16() {
+    let a = readLine()!.split(separator: " ").map{ Int($0)! }
+    let b = readLine()!.split(separator: " ").map{ Int($0)! }
+    let c = readLine()!.split(separator: " ").map{ Int($0)! }
+    let xl = [a[0], b[0], c[0]].sorted()
+    let yl = [a[1], b[1], c[1]].sorted()
+    let x = xl[0] == xl[1] ? xl[2] : xl[0]
+    let y = yl[0] == yl[1] ? yl[2] : yl[0]
+    print("\(x) \(y)")
+}
 
 func solution15() {
     let n = Int(readLine()!)!
     for i in 1...n {
         let b = i == n ? "" : String(repeating: " ", count: n-i)
         let s = String(repeating: "*", count: 1+2*(i-1))
-        print("\(b)\(s)\(b)")
+        print("\(b)\(s)")
     }
 }
 
