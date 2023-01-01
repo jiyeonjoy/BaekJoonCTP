@@ -27,9 +27,25 @@ func solution28() {}
 func solution27() {}
 func solution26() {}
 func solution25() {}
-func solution24() {}
 
 import Foundation
+
+func solution24() {
+    while true {
+        let line = readLine()!
+        if line == "0 0" {
+            break
+        }
+        let list = line.split(separator: " ").map{ Int($0)! }
+        if list[1]%list[0] == 0 {
+            print("factor")
+        } else if list[0]%list[1] == 0 {
+            print("multiple")
+        } else {
+            print("neither")
+        }
+    }
+}
 
 func solution23() {
     while true {
