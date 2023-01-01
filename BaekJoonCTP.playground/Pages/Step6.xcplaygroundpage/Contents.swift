@@ -24,11 +24,44 @@ func solution31() {}
 func solution30() {}
 func solution29() {}
 func solution28() {}
-func solution27() {}
-func solution26() {}
-func solution25() {}
 
 import Foundation
+
+func solution27() {
+    let n = Int(readLine()!)!
+    if n == 1 {
+        print("*")
+    } else {
+        for i in 1...n {
+            let b = i == n ? "" : String(repeating: " ", count: n-i)
+            let s = String(repeating: "*", count: i)
+            print("\(b)\(s)")
+        }
+        for i in 2...n {
+            let b = String(repeating: " ", count: i-1)
+            let s = String(repeating: "*", count: n-i+1)
+            print("\(b)\(s)")
+        }
+    }
+}
+
+func solution26() {
+    let list = readLine()!.split(separator: " ").map{ Int($0)! }
+    let sum = list[0]*(list[1]-1)
+    print(sum+1)
+}
+
+func solution25() {
+    var maxv = 0
+    var c = 0
+    while true {
+        guard let line = readLine() else { break }
+        let list = line.split(separator: " ").map{ Int($0)! }
+        c = c + list[1] - list[0]
+        maxv = max(c, maxv)
+    }
+    print(maxv)
+}
 
 func solution24() {
     while true {
