@@ -29,11 +29,38 @@ func solution26() {}
 func solution25() {}
 func solution24() {}
 func solution23() {}
-func solution22() {}
-func solution21() {}
-func solution20() {}
 
 import Foundation
+
+func solution22() {}
+
+func solution21() {
+    let n = Int(readLine()!)!
+    if n == 1 {
+        print("*")
+    } else {
+        for i in 1...n {
+            let b = i == n ? "" : String(repeating: " ", count: n-i)
+            let s = String(repeating: "*", count: 1+2*(i-1))
+            print("\(b)\(s)")
+        }
+        for i in 2...n {
+            let b = i == 1 ? "" : String(repeating: " ", count: i-1)
+            let s = String(repeating: "*", count: 1+2*(n-i))
+            print("\(b)\(s)")
+        }
+        
+    }
+}
+
+func solution20() {
+    let n = Int(readLine()!)!
+    for i in 1...n {
+        let b = i == 1 ? "" : String(repeating: " ", count: i-1)
+        let s = String(repeating: "*", count: 1+2*(n-i))
+        print("\(b)\(s)")
+    }
+}
 
 func solution19() {
     let n = Int(readLine()!)!
