@@ -32,10 +32,35 @@ func solution23() {}
 func solution22() {}
 func solution21() {}
 func solution20() {}
-func solution19() {}
-func solution18() {}
 
 import Foundation
+
+func solution19() {
+    let n = Int(readLine()!)!
+    if n == 1 {
+        print("**")
+    } else {
+        for i in 1...n-1 {
+            let b = String(repeating: " ", count: (n-i)*2)
+            let s = String(repeating: "*", count: i)
+            print("\(s)\(b)\(s)")
+        }
+        print(String(repeating: "*", count: 2*n))
+        for i in 1...n-1 {
+            let b = String(repeating: " ", count: i*2)
+            let s = String(repeating: "*", count: n-i)
+            print("\(s)\(b)\(s)")
+        }
+    }
+}
+
+func solution18() {
+    let r = Double(readLine()!)!
+    let a = String(format: "%.6f", r*r*3.14159265359)
+    print(a)
+    let b = String(format: "%.6f", r*r*2)
+    print(b)
+}
 
 func solution17() {
     let n = Int(readLine()!)!
