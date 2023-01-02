@@ -1,3 +1,5 @@
+import Foundation
+
 final class FileIO {
     private var buffer:[UInt8]
     private var index: Int
