@@ -9,5 +9,6 @@
         <page name='Step6'/>
         <page name='Step7'/>
         <page name='Step99'/>
+        <page name='FileIO'/>
     </pages>
 </playground>

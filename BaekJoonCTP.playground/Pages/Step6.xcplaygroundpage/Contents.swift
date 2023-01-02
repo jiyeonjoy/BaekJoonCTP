@@ -1,5 +1,3 @@
-//let list = readLine()!.split(separator: " ").map{ Int($0)! }
-//Int(readLine()!)!
 
 func solution50() {}
 func solution49() {}
@@ -15,6 +13,35 @@ func solution40() {}
 func solution39() {}
 
 import Foundation
+
+let t = Int(readLine()!)!
+var a = 0
+var b = 0
+for i in 1...t {
+    let list = readLine()!.split(separator: " ").map{ Int($0)! }
+    if list[0] > list[1] {
+        a += 1
+    } else if list[0] < list[1] {
+        b += 1
+    }
+}
+print("\(a) \(b)")
+
+
+
+
+
+//
+let t = Int(readLine()!)!
+for i in 1...t {
+    let list = readLine()!.split(separator: " ").map{ Int($0)! }
+}
+
+
+
+//
+//readLine()!.split(separator: " ").map{ Int($0)! }
+//Int(readLine()!)!
 
 func solution38() {
     var maxp = 0
