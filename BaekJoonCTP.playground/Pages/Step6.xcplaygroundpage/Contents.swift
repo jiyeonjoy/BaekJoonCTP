@@ -10,38 +10,81 @@ func solution43() {}
 func solution42() {}
 func solution41() {}
 func solution40() {}
-func solution39() {}
 
 import Foundation
 
-let t = Int(readLine()!)!
-var a = 0
-var b = 0
-for i in 1...t {
-    let list = readLine()!.split(separator: " ").map{ Int($0)! }
-    if list[0] > list[1] {
-        a += 1
-    } else if list[0] < list[1] {
-        b += 1
+func solution39() {
+    for _ in 1...3 {
+        let n = Int(readLine()!)!
+        var saveList:[Int64] = []
+        var isP = true
+        for _ in 1...n {
+            var num = Int64(readLine()!)!
+            if num > 0 {
+                if saveList.isEmpty {
+                    saveList.append(num)
+                    isP = true
+                } else {
+                    if isP {
+                        saveList.append(num)
+                    } else {
+                        while true {
+                            var a = saveList.last!
+                            saveList.removeLast()
+                            if -a < num {
+                                num += a
+                                if saveList.isEmpty {
+                                    saveList.append(num)
+                                    isP = true
+                                    break
+                                }
+                            } else if -a > num {
+                                saveList.append(a+num)
+                                break
+                            } else {
+                                break
+                            }
+                        }
+                    }
+                }
+            } else if num < 0 {
+                if saveList.isEmpty {
+                    saveList.append(num)
+                    isP = false
+                } else {
+                    if !isP {
+                        saveList.append(num)
+                    } else {
+                        while true {
+                            var a = saveList.last!
+                            saveList.removeLast()
+                            if a < -num {
+                                num += a
+                                if saveList.isEmpty {
+                                    saveList.append(num)
+                                    isP = false
+                                    break
+                                }
+                            } else if a > -num {
+                                saveList.append(a+num)
+                                break
+                            } else {
+                                break
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        if saveList.isEmpty {
+            print("0")
+        } else if isP {
+            print("+")
+        } else {
+            print("-")
+        }
     }
 }
-print("\(a) \(b)")
-
-
-
-
-
-//
-let t = Int(readLine()!)!
-for i in 1...t {
-    let list = readLine()!.split(separator: " ").map{ Int($0)! }
-}
-
-
-
-//
-//readLine()!.split(separator: " ").map{ Int($0)! }
-//Int(readLine()!)!
 
 func solution38() {
     var maxp = 0
@@ -61,7 +104,7 @@ func solution37() {
     let n = list[0]
     let m = list[1]
     var k = list[2]
-    
+
     var maxtc = min(n/2, m)
     k -= n-(maxtc*2)
     k -= m-maxtc
