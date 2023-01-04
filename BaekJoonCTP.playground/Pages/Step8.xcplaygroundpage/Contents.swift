@@ -31,15 +31,108 @@ func solution21() {}
 func solution20() {}
 func solution19() {}
 func solution18() {}
-func solution17() {}
-func solution16() {}
-func solution15() {}
-func solution14() {}
-func solution13() {}
-func solution12() {}
-func solution11() {}
 
 import Foundation
+
+func solution17() {
+    while true {
+        let n = Int(readLine()!)!
+        if n == 0 {
+            break
+        }
+        var sum = 0
+        for i in 1...n {
+            sum += (n+1-i)*((n+1-i))
+        }
+        print(sum)
+    }
+}
+
+func solution16() {
+    let t = Int(readLine()!)!
+    for _ in 1...t {
+        let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        if list[0] < list[1] {
+            print("NO BRAINS")
+        } else {
+            print("MMM BRAINS")
+        }
+    }
+}
+
+func solution15() {
+    let t = Int(readLine()!)!
+    for _ in 1...t {
+        let list =  readLine()!.split(separator: " ").map{ Int(String($0))! }
+        print((list[0]+list[1]-1)/list[1])
+    }
+}
+
+func solution14() {
+    let c = readLine()!.split(separator: " ").filter{ Int(String($0))! > 0 }.count
+    print(c)
+}
+
+func solution13() {
+    let t = Int(readLine()!)!
+    let a = [1,2,3,3,4,10]
+    let b = [1,2,2,2,3,5,10]
+    for i in 1...t {
+        var al = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        var asum = 0
+        for j in 0..<al.count {
+            asum += a[j]*al[j]
+        }
+        var bl = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        var bsum = 0
+        for j in 0..<bl.count {
+            bsum += b[j]*bl[j]
+        }
+        if asum > bsum {
+            print("Battle \(i): Good triumphs over Evil")
+        } else if asum == bsum {
+            print("Battle \(i): No victor on this battle field")
+        } else {
+            print("Battle \(i): Evil eradicates all trace of Good")
+        }
+    }
+}
+
+func solution12() {
+    let t = Int(readLine()!)!
+    for _ in 1...t {
+        let n = Int(readLine()!)!
+        var w = 0
+        var sum = 1
+        for i in 1...n {
+            sum += i+1
+            w += sum*i
+        }
+        print(w)
+    }
+}
+
+// 17618번번 - 신기한 수 - 부분성공
+func solution11() {
+    let n = 10000000//Int(readLine()!)!
+    if n < 10 {
+        print(n)
+    } else {
+        var c = 9
+        for i in 10...n {
+            var sum = 0
+            var j = i
+            while j != 0 {
+                sum += j%10
+                j /= 10
+            }
+            if i%sum == 0 {
+                c += 1
+            }
+        }
+        print(c)
+    }
+}
 
 // 15780번 - 멀티탭 충분하니?
 func solution10() {
