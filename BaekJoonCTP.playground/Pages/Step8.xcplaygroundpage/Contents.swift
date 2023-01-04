@@ -49,8 +49,22 @@ func solution4() {}
 
 import Foundation
 
+// 9517번 - 아이 러브 크로아티아
 func solution3() {
-    
+    var k = Int(readLine()!)!
+    let n = Int(readLine()!)!
+    var ac = 210
+    for _ in 1...n {
+        let list = readLine()!.split(separator: " ")
+        ac -= Int(list[0])!
+        if ac <= 0 {
+            print(k)
+            break
+        }
+        if list[1] == "T" {
+            k = k == 8 ? 1 : k+1
+        }
+    }
 }
 
 // 2863번 - 이게 분수?
