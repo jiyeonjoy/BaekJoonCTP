@@ -59,7 +59,7 @@ func solution5() {
                 }
             }
         }
-        for s in list.sorted{ $0[0] < $1[0] } {
+        for s in list.sorted(by: { $0[0] < $1[0] }) {
             var str = "(\(s[0]),\(s[1]),\(s[2]))"
             print("Cube = \(a), Triple = \(str)")
         }
