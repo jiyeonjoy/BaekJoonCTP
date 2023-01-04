@@ -43,10 +43,28 @@ func solution9() {}
 func solution8() {}
 func solution7() {}
 func solution6() {}
-func solution5() {}
-
 
 import Foundation
+
+// 4690번 - 완전 세제곱
+func solution5() {
+    for a in 5...100 {
+        var list:[[Int]] = []
+        for d in 4..<a {
+            for c in 3..<d {
+                for b in 2..<c {
+                    if pow(Double(a), 3) == pow(Double(b), 3)+pow(Double(c), 3)+pow(Double(d), 3) {
+                        list.append([b,c,d])
+                    }
+                }
+            }
+        }
+        for s in list.sorted{ $0[0] < $1[0] } {
+            var str = "(\(s[0]),\(s[1]),\(s[2]))"
+            print("Cube = \(a), Triple = \(str)")
+        }
+    }
+}
 
 // 15667번 - 2018 연세대학교 프로그래밍 경진대회
 func solution4() {
