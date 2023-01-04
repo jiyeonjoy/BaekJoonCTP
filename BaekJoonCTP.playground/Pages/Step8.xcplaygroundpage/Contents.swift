@@ -45,10 +45,26 @@ func solution7() {}
 func solution6() {}
 func solution5() {}
 func solution4() {}
-func solution3() {}
-func solution2() {}
+
 
 import Foundation
+
+func solution3() {
+    
+}
+
+// 2863번 - 이게 분수?
+func solution2() {
+    let list1 = readLine()!.split(separator: " ").map{ Double(String($0))! }
+    let list2 = readLine()!.split(separator: " ").map{ Double(String($0))! }
+    let a = list1[0]
+    let b = list1[1]
+    let c = list2[0]
+    let d = list2[1]
+    let l = [a/c+b/d, c/d+a/b, d/b+c/a, b/a+d/c]
+    let i = l.firstIndex(of: l.max()!)!
+    print(i)
+}
 
 func mod(_ s:String, _ p:Int) -> Int {
     var ret = 0
