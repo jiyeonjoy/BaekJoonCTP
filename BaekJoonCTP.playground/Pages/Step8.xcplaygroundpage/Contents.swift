@@ -42,7 +42,28 @@ func solution10() {}
 
 import Foundation
 
-func solution9() {}
+// 2991번 - 사나운 개
+func solution9() {
+    let list1 = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let list2 = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    for i in list2 {
+        var c = 0
+        var f = i%(list1[0]+list1[1])
+        if f == 0 || f > list1[0] {
+          
+        } else {
+            c += 1
+        }
+        var s = i%(list1[2]+list1[3])
+        if s == 0 || s > list1[2] {
+            
+        } else {
+            c += 1
+        }
+        print(c)
+    }
+}
+
 
 // 15921번 - 수찬은 마린보이야!!
 func solution8() {
