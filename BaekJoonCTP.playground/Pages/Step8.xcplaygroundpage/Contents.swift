@@ -39,10 +39,23 @@ func solution13() {}
 func solution12() {}
 func solution11() {}
 func solution10() {}
-func solution9() {}
-func solution8() {}
 
 import Foundation
+
+func solution9() {}
+
+// 15921번 - 수찬은 마린보이야!!
+func solution8() {
+    let n = Int(readLine()!)!
+    if n == 0 {
+        print("divide by zero")
+    } else {
+        let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        let a = Double(list.reduce(0, +))/Double(n)
+        let b = list.map{ Double($0)/Double(n) }.reduce(0, +)
+        print(String(format: "%.2f", Double(a)/Double(b)))
+    }
+}
 
 // 6131번 - 완전 제곱수
 func solution7() {
