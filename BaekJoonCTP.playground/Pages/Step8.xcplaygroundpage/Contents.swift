@@ -38,9 +38,19 @@ func solution14() {}
 func solution13() {}
 func solution12() {}
 func solution11() {}
-func solution10() {}
 
 import Foundation
+
+// 15780번 - 멀티탭 충분하니?
+func solution10() {
+    let n = readLine()!.split(separator: " ").map{ Int(String($0))! }.first!
+    let sum = readLine()!.split(separator: " ").map{ (Int(String($0))!+1)/2 }.reduce(0,+)
+    if sum >= n {
+        print("YES")
+    } else {
+        print("NO")
+    }
+}
 
 // 2991번 - 사나운 개
 func solution9() {
