@@ -44,10 +44,20 @@ func solution8() {}
 func solution7() {}
 func solution6() {}
 func solution5() {}
-func solution4() {}
 
 
 import Foundation
+
+// 15667번 - 2018 연세대학교 프로그래밍 경진대회
+func solution4() {
+    let n = Int(readLine()!)!
+    for k in 1...n {
+        if n == k*k+k+1 {
+            print(k)
+            break
+        }
+    }
+}
 
 // 9517번 - 아이 러브 크로아티아
 func solution3() {
