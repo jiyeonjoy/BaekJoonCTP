@@ -3,10 +3,53 @@ func solution50() {}
 func solution49() {}
 func solution48() {}
 func solution47() {}
-func solution46() {}
-func solution45() {}
 
 import Foundation
+
+func solution46() {
+    var c = Int(readLine()!)!
+    var i = 1
+    if c == 1 {
+        print(1)
+    } else {
+        while true {
+            var a = c
+            if a%2==0 {
+                a /= 2
+            } else {
+                a = a*3+1
+            }
+            i += 1
+            if a == 1 {
+                print(i)
+                break
+            } else {
+                c = a
+            }
+        }
+    }
+}
+
+func solution45() {
+    var a = Int(readLine()!)!
+    while true {
+        let c = readLine()!
+        if c == "=" {
+            break
+        }
+        let num = Int(readLine()!)!
+        if c == "-" {
+            a -= num
+        } else if c == "+" {
+            a += num
+        } else if c == "*" {
+            a *= num
+        } else if c == "/" {
+            a /= num
+        }
+    }
+    print(a)
+}
 
 func solution44() {
     let t = Int(readLine()!)!
