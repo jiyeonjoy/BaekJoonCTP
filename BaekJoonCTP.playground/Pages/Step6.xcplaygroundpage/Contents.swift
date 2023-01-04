@@ -1,10 +1,43 @@
-
-func solution50() {}
-func solution49() {}
-func solution48() {}
-func solution47() {}
-
 import Foundation
+
+func solution50() {
+    let t = Int(readLine()!)!
+    for _ in 1...t {
+        let c = Int(readLine()!)!
+        var l = 0
+        while l+l*l <= c {
+            l += 1
+        }
+        print(l-1)
+    }
+}
+
+func solution49() {
+    let n = Int(readLine()!)!
+    for _ in 1...n {
+        let sum = readLine()!.split(separator: " ").map{ Int(String($0))! }.reduce(0, +)
+        print(sum)
+    }
+}
+
+func solution48() {
+    readLine()
+    let list1 = readLine()!.split(separator: " ").map{ Int64(String($0))! }
+    let list2 = readLine()!.split(separator: " ").map{ Int64(String($0))! }
+    print(list1.max()!+list2.max()!)
+}
+
+func solution47() {
+    let n = Int(readLine()!)!
+    for _ in 1...n {
+        let list = Array(readLine()!)
+        if list[(list.count-1)/2] == list[(list.count)/2] {
+            print("Do-it")
+        } else {
+            print("Do-it-Not")
+        }
+    }
+}
 
 func solution46() {
     var c = Int(readLine()!)!
