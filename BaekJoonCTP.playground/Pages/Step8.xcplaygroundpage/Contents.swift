@@ -41,10 +41,22 @@ func solution11() {}
 func solution10() {}
 func solution9() {}
 func solution8() {}
-func solution7() {}
-
 
 import Foundation
+
+// 6131번 - 완전 제곱수
+func solution7() {
+    let n = Int(readLine()!)!
+    var c = 0
+    for a in 1...500 {
+        for b in 1..<a {
+            if a*a-n == b*b {
+                c += 1
+            }
+        }
+    }
+    print(c)
+}
 
 // 5612번 - 터널의 입구와 출구
 func solution6() {
