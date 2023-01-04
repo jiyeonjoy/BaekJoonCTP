@@ -42,9 +42,28 @@ func solution10() {}
 func solution9() {}
 func solution8() {}
 func solution7() {}
-func solution6() {}
+
 
 import Foundation
+
+// 5612번 - 터널의 입구와 출구
+func solution6() {
+    let n = Int(readLine()!)!
+    var m = Int(readLine()!)!
+    var maxm = m
+    for _ in 1...n {
+        let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        m = m + list[0] - list[1]
+        if maxm < m {
+            maxm = m
+        }
+        if m < 0 {
+            maxm = 0
+            break
+        }
+    }
+    print(maxm)
+}
 
 // 4690번 - 완전 세제곱
 func solution5() {
