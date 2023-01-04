@@ -1,17 +1,180 @@
-
-func solution50() {}
-func solution49() {}
-func solution48() {}
-func solution47() {}
-func solution46() {}
-func solution45() {}
-func solution44() {}
-func solution43() {}
-func solution42() {}
-func solution41() {}
-func solution40() {}
-
 import Foundation
+
+func solution50() {
+    let t = Int(readLine()!)!
+    for _ in 1...t {
+        let c = Int(readLine()!)!
+        var l = 0
+        while l+l*l <= c {
+            l += 1
+        }
+        print(l-1)
+    }
+}
+
+func solution49() {
+    let n = Int(readLine()!)!
+    for _ in 1...n {
+        let sum = readLine()!.split(separator: " ").map{ Int(String($0))! }.reduce(0, +)
+        print(sum)
+    }
+}
+
+func solution48() {
+    readLine()
+    let list1 = readLine()!.split(separator: " ").map{ Int64(String($0))! }
+    let list2 = readLine()!.split(separator: " ").map{ Int64(String($0))! }
+    print(list1.max()!+list2.max()!)
+}
+
+func solution47() {
+    let n = Int(readLine()!)!
+    for _ in 1...n {
+        let list = Array(readLine()!)
+        if list[(list.count-1)/2] == list[(list.count)/2] {
+            print("Do-it")
+        } else {
+            print("Do-it-Not")
+        }
+    }
+}
+
+func solution46() {
+    var c = Int(readLine()!)!
+    var i = 1
+    if c == 1 {
+        print(1)
+    } else {
+        while true {
+            var a = c
+            if a%2==0 {
+                a /= 2
+            } else {
+                a = a*3+1
+            }
+            i += 1
+            if a == 1 {
+                print(i)
+                break
+            } else {
+                c = a
+            }
+        }
+    }
+}
+
+func solution45() {
+    var a = Int(readLine()!)!
+    while true {
+        let c = readLine()!
+        if c == "=" {
+            break
+        }
+        let num = Int(readLine()!)!
+        if c == "-" {
+            a -= num
+        } else if c == "+" {
+            a += num
+        } else if c == "*" {
+            a *= num
+        } else if c == "/" {
+            a /= num
+        }
+    }
+    print(a)
+}
+
+func solution44() {
+    let t = Int(readLine()!)!
+    for _ in 1...t {
+        var list = readLine()!.split(separator: " ").map{ Double(String($0))! }
+        var sum = 0
+        let n = list[0]
+        let m = list[1]
+        if n < 3 {
+            print("0")
+        } else {
+            for b in 2..<Int(n) {
+                for a in 1..<b {
+                    if (pow(Double(a), 2)+pow(Double(b), 2)+m)/Double(a*b) == Double(Int((pow(Double(a), 2)+pow(Double(b), 2)+m)/Double(a*b))) {
+                        sum += 1
+                    }
+                }
+            }
+            print(sum)
+        }
+    }
+}
+
+func solution43() {
+    while true {
+        var list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        if list[0] == 0 && list[1] == 0 {
+            break
+        }
+        let a = list[0]/list[1]
+        let b = list[0]%list[1]
+        let c = list[1]
+        print("\(a) \(b) / \(c)")
+    }
+}
+
+func solution42() {
+    while true {
+        var n = readLine()!
+        if n == "0" { break }
+        var sum = 0
+        while true {
+            if n.count == 1 {
+                sum = Int(n)!
+                break
+            } else {
+                sum = 0
+                n.map{ sum += Int(String($0))! }
+                n = String(sum)
+            }
+        }
+        print(sum)
+    }
+}
+
+func solution41() {
+    let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let a = list[0]
+    let b = list[1]
+    let c = list[2]
+    if a+b == c {
+        print("\(a)+\(b)=\(c)")
+    } else if a-b == c {
+        print("\(a)-\(b)=\(c)")
+    } else if a*b == c {
+        print("\(a)*\(b)=\(c)")
+    } else if a/b == c {
+        print("\(a)/\(b)=\(c)")
+    } else if a==b+c {
+        print("\(a)=\(b)+\(c)")
+    }  else if a==b-c {
+        print("\(a)=\(b)-\(c)")
+    }  else if a==b/c {
+        print("\(a)=\(b)/\(c)")
+    }  else if a==b*c {
+        print("\(a)=\(b)*\(c)")
+    }
+}
+
+func solution40() {
+    while true {
+        let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        if list[0]==0 && list[1]==0 && list[2]==0 {
+            break
+        }
+        if list[1]-list[0] == list[2]-list[1] {
+            print("AP \(list[2]+list[2]-list[1])")
+        } else {
+            print("GP \(list[2]*(list[2]/list[1]))")
+        }
+    }
+}
 
 func solution39() {
     for _ in 1...3 {
