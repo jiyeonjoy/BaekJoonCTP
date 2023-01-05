@@ -27,12 +27,143 @@ func solution25() {}
 func solution24() {}
 func solution23() {}
 func solution22() {}
-func solution21() {}
-func solution20() {}
-func solution19() {}
-func solution18() {}
 
 import Foundation
+
+// 27101
+func solution21() {
+    let n = Int(readLine()!)!
+    var list:[[Int]] = []
+    var isDone = false
+    for i in 0..<n {
+        list.append(readLine()!.split(separator: " ").map{ Int(String($0))! })
+        if list[i][i] != 0 {
+            print(1)
+            isDone = true
+            break
+        }
+    }
+    if !isDone {
+        for i in 0..<n {
+            for j in 0..<n {
+                if i != j && list[i][j] <= 0 {
+                    print(2)
+                    isDone = true
+                    break
+                }
+            }
+            if isDone {
+                break
+            }
+        }
+    }
+    if !isDone {
+        for i in 0..<n {
+            for j in 0..<n {
+                if i != j && list[i][j] != list[j][i] {
+                    print(3)
+                    isDone = true
+                    break
+                }
+            }
+            if isDone {
+                break
+            }
+        }
+    }
+    if !isDone {
+        for i in 0..<n {
+            for j in 0..<n {
+                for k in 0..<n {
+                    if list[i][j] + list[j][k] < list[i][k] {
+                        print(4)
+                        isDone = true
+                        break
+                    }
+                }
+                
+                if isDone {
+                    break
+                }
+            }
+            if isDone {
+                break
+            }
+        }
+    }
+    if !isDone {
+        print(0)
+    }
+}
+
+func solution20() {
+    let n = Int(readLine()!)!
+    var sum = n
+    for i in 1...n/2 {
+        if n%i == 0 {
+            sum += i
+        }
+    }
+    print(sum)
+}
+
+struct DoublePriorityQueue {
+    private var _elements = [Int]()
+    
+    mutating func insert(_ number: Int) {
+        _elements.append(number)
+    }
+    
+    mutating func deleteMaximum() {
+        guard !_elements.isEmpty else { return }
+        let max = _elements.max()!
+        let index = _elements.firstIndex { $0 == max }
+        _elements.remove(at: index!)
+    }
+    
+    mutating func deleteMinimum() {
+        guard !_elements.isEmpty else { return }
+        let min = _elements.min()!
+        let index = _elements.firstIndex { $0 == min }
+        _elements.remove(at: index!)
+    }
+    
+    var elements: [Int] {
+        if _elements.isEmpty {
+            return [0, 0]
+        } else {
+            let maximum = _elements.max()!
+            let minimum = _elements.min()!
+            return [maximum, minimum]
+        }
+    }
+}
+
+func solution19() {
+    let t = 1//Int(readLine()!)!
+    var str = ""
+    for i in 1...t {
+        readLine()
+        var q = DoublePriorityQueue()
+        readLine()!.split(separator: " ").forEach{ q.insert(Int(String($0))!) }
+        let list = q.elements
+        if i < t {
+            str += "\(list[1]) \(list[0])\n"
+        } else {
+            str += "\(list[1]) \(list[0])"
+        }
+    }
+    print(str)
+}
+
+func solution18() {
+    let t = Int(readLine()!)!
+    for _ in 1...t {
+        let n = Int(readLine()!)!
+        let list = readLine()!.split(separator: " ").map{ Int(String($0))! }.sorted()
+        print("\(list[0]) \(list[n-1])")
+    }
+}
 
 func solution17() {
     while true {
