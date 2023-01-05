@@ -1,10 +1,70 @@
-func solution50() {}
-func solution49() {}
-func solution48() {}
-func solution47() {}
-func solution46() {}
-
 import Foundation
+
+func solution50() {
+    let n = Int(readLine()!)!
+    for _ in 1...n {
+        let list = readLine()!.split(separator: " ").map{ String($0) }
+        let dic = Dictionary(grouping: list) { Array($0).first! }.sorted{ $0.value.count > $1.value.count }
+        print(dic.first?.value.count ?? 0)
+    }
+}
+
+func solution49() {
+    let n = Int(readLine()!)!
+    for _ in 1...n {
+        let s = Array(readLine()!)
+        print(String(s))
+        if s.count > 2 {
+            for i in 1...s.count-2 {
+                print("\(s[i])\(String(repeating: " ", count: s.count-2))\(s[s.count-1-i])")
+            }
+        }
+        if s.count > 1 {
+            print(String(s.reversed()))
+        }
+    }
+}
+
+func solution48() {
+    let n = Int(readLine()!)!
+    var c = 0
+    for i in 1...n {
+        if i*i >= n {
+            c = i
+            break
+        }
+    }
+    print(String(repeating: "x", count: c+2))
+    for _ in 1...c {
+        print("x\(String(repeating: ".", count: c))x")
+    }
+    print(String(repeating: "x", count: c+2))
+}
+
+func solution47() {
+    let n = Int(readLine()!)!
+    for _ in 1...n {
+        let list = readLine()!.split(separator: " ").map{ Double(String($0))! }
+        let p = list[0]
+        let q = list[1]
+        let f = (p*q)/(p+q)
+        print("f = \(String(format: "%.1f", f))")
+    }
+}
+
+func solution46() {
+    var list:[Int] = []
+    for _ in 1...4 {
+        list.append(Int(readLine()!)!)
+    }
+    let b = Int(readLine()!)!
+    list.sort()
+    if (list[0] == list[3]) || (list[0] + b == list[3] && list[1] == list[3]) {
+        print(1)
+    } else {
+        print(0)
+    }
+}
 
 // 6889
 func solution45() {
