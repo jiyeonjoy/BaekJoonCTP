@@ -42,10 +42,39 @@ func solution10() {}
 func solution9() {}
 func solution8() {}
 func solution7() {}
-func solution6() {}
-func solution5() {}
+func solution6() {
+    
+}
 
 import Foundation
+
+// 5692
+func solution5() {
+    func factorial(_ n: Int) -> Int {
+      var n = n
+      var result = 1
+      while n > 1 {
+        result *= n
+        n -= 1
+      }
+      return result
+    }
+
+    while true {
+        let n = readLine()!
+        if n == "0" {
+            break
+        }
+        let list = Array(n.reversed())
+        var v = 0
+        for i in 0..<list.count {
+            if Int(String(list[i]))! > 0 {
+                v += Int(String(list[i]))!*factorial(i+1)
+            }
+        }
+        print(v)
+    }
+}
 
 // 9501
 func solution4() {
@@ -54,7 +83,7 @@ func solution4() {
         let list = readLine()!.split(separator: " ").map{ Int($0)! }
         var c = 0
         let d = list[1]
-        for i in 1...list[0] {
+        for _ in 1...list[0] {
             let l = readLine()!.split(separator: " ").map{ Double($0)! }
             let v = (Double(d)/l[0])*l[2]
             if l[1] >= v {
