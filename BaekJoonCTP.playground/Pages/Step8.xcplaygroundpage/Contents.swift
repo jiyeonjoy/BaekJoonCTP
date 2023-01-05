@@ -8,16 +8,34 @@ func solution44() {}
 func solution43() {}
 func solution42() {}
 func solution41() {}
-func solution40() {}
-
 
 import Foundation
+
+// 26752
+func solution40() {
+    let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    var h = list[0]
+    var m = list[1]
+    let s = list[2]+1
+    var isAddOne = s >= 60
+    var strS = isAddOne ? "00" : s < 10 ? "0\(s)" : "\(s)"
+    if isAddOne {
+        m += 1
+    }
+    isAddOne = m >= 60
+    var strM = isAddOne ? "00" : m < 10 ? "0\(m)" : "\(m)"
+    if isAddOne {
+        h += 1
+    }
+    var strH = h == 24 ? "00" : h < 10 ? "0\(h)" : "\(h)"
+    print("\(strH):\(strM):\(strS)")
+}
 
 // 26583
 func solution39() {
     while true {
         guard let line = readLine() else { break }
-        let list = Array(line)
+        let list = line.split(separator: " ").map{ Int(String($0))! }
         var str = ""
         for i in 0..<list.count {
             var a = (i > 0 ? list[i-1] : 1)*(list[i])*(i < list.count-1 ? list[i+1] : 1)
