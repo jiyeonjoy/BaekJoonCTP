@@ -9,9 +9,27 @@ func solution43() {}
 func solution42() {}
 func solution41() {}
 func solution40() {}
-func solution39() {}
+
 
 import Foundation
+
+// 26583
+func solution39() {
+    while true {
+        guard let line = readLine() else { break }
+        let list = Array(line)
+        var str = ""
+        for i in 0..<list.count {
+            var a = (i > 0 ? list[i-1] : 1)*(list[i])*(i < list.count-1 ? list[i+1] : 1)
+            if i == list.count-1 {
+                str += "\(a)"
+            } else {
+                str += "\(a) "
+            }
+        }
+        print(str)
+    }
+}
 
 // 26502
 func solution38() {
