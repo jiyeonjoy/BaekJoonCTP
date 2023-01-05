@@ -5,9 +5,48 @@ func solution47() {}
 func solution46() {}
 func solution45() {}
 func solution44() {}
-func solution43() {}
 
 import Foundation
+
+// 5292
+func solution43() {
+    let n = Int(readLine()!.trimmingCharacters(in: .whitespacesAndNewlines))!
+    var str = ""
+    for i in 1...n {
+        if i%15 == 0 {
+            if str == "" {
+                print("DeadMan")
+            } else {
+                print("\(str) DeadMan")
+            }
+            str = ""
+        } else if i%3 == 0 {
+            if str == "" {
+                print("Dead")
+            } else {
+                print("\(str) Dead")
+            }
+            str = ""
+        } else if i%5 == 0 {
+            if str == "" {
+                print("Man")
+            } else {
+                print("\(str) Man")
+            }
+            str = ""
+        } else if str == "" {
+            str = "\(i)"
+            if i == n {
+                print(str)
+            }
+        } else {
+            str += " \(i)"
+            if i == n {
+                print(str)
+            }
+        }
+    }
+}
 
 // 26849
 func solution42() {
