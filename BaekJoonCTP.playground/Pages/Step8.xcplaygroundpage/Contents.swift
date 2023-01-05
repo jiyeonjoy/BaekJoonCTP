@@ -13,8 +13,30 @@ func solution39() {}
 func solution38() {}
 func solution37() {}
 func solution36() {}
-func solution35() {}
+
 import Foundation
+
+// 26392
+func solution35() {
+    let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let n = list[0]
+    let r = list[1]
+    let s = list[2]
+    for _ in 1...n {
+        var l:[Int] = []
+        for i in 1...r {
+            let c = readLine()!
+            if c.contains("#") {
+                l.append(r-i+1)
+            }
+        }
+        if l.count < 2 {
+            print(0)
+        } else {
+            print(l[0]-l[l.count-1])
+        }
+    }
+}
 
 func solution33() {
     let n = Int(readLine()!)!
