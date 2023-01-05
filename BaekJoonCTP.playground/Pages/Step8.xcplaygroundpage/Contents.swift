@@ -24,11 +24,56 @@ func solution28() {}
 func solution27() {}
 func solution26() {}
 func solution25() {}
-func solution24() {}
-func solution23() {}
-func solution22() {}
 
 import Foundation
+
+// 26714
+func solution24() {
+    let n = Int(readLine()!)!
+    let str = Array(readLine()!)
+    let c = n/10
+    var a = 0
+    for i in 0..<10 {
+        if !str[i*c..<i*c+c].contains("N") {
+            a += 1
+        }
+    }
+    print(a)
+}
+
+// 24198
+func solution23() {
+    var n = Int(readLine()!)!
+    var a = 0
+    var b = 0
+    var isB = true
+    while n > 0 {
+        if isB {
+            b += (n+1)/2
+            isB = false
+        } else {
+            a += (n+1)/2
+            isB = true
+        }
+        
+        n -= (n+1)/2
+    }
+    print("\(a) \(b)")
+}
+
+// 27130
+func solution22() {
+    let a = 123//Int(readLine()!)!
+    let b = 456//Int(readLine()!)!
+    print(a)
+    print(b)
+    var c = b
+    while c > 0 {
+        print((c%10)*a)
+        c /= 10
+    }
+    print(a*b)
+}
 
 // 27101
 func solution21() {
