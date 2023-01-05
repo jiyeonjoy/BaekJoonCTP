@@ -21,10 +21,36 @@ func solution31() {}
 func solution30() {}
 func solution29() {}
 func solution28() {}
-func solution27() {}
-func solution26() {}
 
 import Foundation
+
+// 26941
+func solution27() {
+    var n = Int(readLine()!)!
+    var c = 0
+    while n >= 0 {
+        c += 1
+        let w = (1+2*(c-1))
+        n -= w*w
+        print(n)
+    }
+    print(c-1)
+}
+
+// 26940
+func solution26() {
+    readLine()
+    let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    var a = 0
+    var c = 0
+    for i in list {
+        if a > 0 && i > a {
+            c += 1
+        }
+        a = i
+    }
+    print(c)
+}
 
 // 26906
 func solution25() {
