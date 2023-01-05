@@ -4,9 +4,24 @@ func solution48() {}
 func solution47() {}
 func solution46() {}
 func solution45() {}
-func solution44() {}
 
 import Foundation
+
+// 6830
+func solution44() {
+    var minv = 200
+    var a = ""
+    while true {
+        guard let line = readLine() else { break }
+        let list = line.split(separator: " ")
+        let degree = Int(list[1])!
+        if degree < minv {
+            minv = degree
+            a = String(list[0])
+        }
+    }
+    print(a)
+}
 
 // 5292
 func solution43() {
