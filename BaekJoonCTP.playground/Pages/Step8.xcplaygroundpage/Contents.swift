@@ -19,9 +19,22 @@ func solution33() {}
 func solution32() {}
 func solution31() {}
 func solution30() {}
-func solution29() {}
 
 import Foundation
+
+// 26548
+func solution29() {
+    let t = Int(readLine()!)!
+    for _ in 1...t {
+        let list = readLine()!.split(separator: " ").map{ Double(String($0))! }
+        let a = list[0]
+        let b = list[1]
+        let c = list[2]
+        var x1 = (-b+sqrt(b*b-4*a*c))/(2*a)
+        var x2 = (-b-sqrt(b*b-4*a*c))/(2*a)
+        print("\(String(format: "%.3f", x1)) \(String(format: "%.3f", x2))")
+    }
+}
 
 // 6903
 func solution28() {
