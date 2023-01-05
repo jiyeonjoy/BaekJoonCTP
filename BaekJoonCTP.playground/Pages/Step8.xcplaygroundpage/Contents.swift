@@ -17,7 +17,7 @@ import Foundation
 func solution38() {
     let n = 1//Int(readLine()!)!
     let dic:[Character:Character] = [
-        "y":"a"
+        "y":"a",
         "a":"e",
         "e":"i",
         "i":"o",
