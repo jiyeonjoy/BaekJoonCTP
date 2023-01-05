@@ -45,12 +45,30 @@ func solution7() {}
 func solution6() {}
 func solution5() {}
 func solution4() {}
-func solution3() {}
 
 import Foundation
 
-let list = readLine()!.split(separator: ":").map{ Int($0)! }
+let list1 = readLine()!.split(separator: " ").map{ Int($0)! }
 Int(readLine()!)!
+
+// 5618
+func solution3() {
+    let n = Int(readLine()!)!
+    let list = readLine()!.split(separator: " ").map{ Int($0)! }.sorted()
+    if n == 2 {
+        for i in 1...list[0] {
+            if list[0]%i == 0 && list[1]%i == 0 {
+                print(i)
+            }
+        }
+    } else {
+        for i in 1...list[0] {
+            if list[0]%i == 0 && list[1]%i == 0 && list[2]%i == 0 {
+                print(i)
+            }
+        }
+    }
+}
 
 func solution2() {
     let n = Int(readLine()!)!
