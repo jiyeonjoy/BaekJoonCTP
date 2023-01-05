@@ -23,9 +23,24 @@ func solution29() {}
 func solution28() {}
 func solution27() {}
 func solution26() {}
-func solution25() {}
 
 import Foundation
+
+// 26906
+func solution25() {
+    let t = Int(readLine()!)!
+    var dic:[String:String] = [:]
+    for _ in 1...t {
+        let list = readLine()!.split(separator: " ").map{ String($0) }
+        dic[list[1]] = list[0]
+    }
+    var str = Array(readLine()!)
+    var a = ""
+    for i in 0..<str.count/4 {
+        a += dic[String(str[i*4..<i*4+4])] ?? "?"
+    }
+    print(a)
+}
 
 // 26714
 func solution24() {
