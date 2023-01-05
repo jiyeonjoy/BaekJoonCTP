@@ -11,10 +11,34 @@ func solution41() {}
 func solution40() {}
 func solution39() {}
 func solution38() {}
-func solution37() {}
-func solution36() {}
 
 import Foundation
+
+// 5343
+func solution37() {
+    let n = Int(readLine()!)!
+    for _ in 1...n {
+        var c = 0
+        let line = Array(readLine()!)
+        for i in 1...line.count/8 {
+            let oneCount = line[(i-1)*8...i*8-2].filter{ $0==Character("1") }.count
+            if Int(String(line[i*8-1]))! != oneCount%2 {
+                c += 1
+            }
+        }
+        print(c)
+    }
+}
+
+// 26741
+func solution36() {
+    let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let h = list[0]
+    let l = list[1]
+    let chicken = (h*4-l)/2
+    let cow = h-chicken
+    print("\(chicken) \(cow)")
+}
 
 // 26392
 func solution35() {
