@@ -14,13 +14,76 @@ func solution38() {}
 func solution37() {}
 func solution36() {}
 func solution35() {}
-func solution34() {}
-func solution33() {}
-func solution32() {}
-func solution31() {}
-func solution30() {}
-
 import Foundation
+
+func solution33() {
+    let n = Int(readLine()!)!
+    for _ in 1...n {
+        let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        let y = list[0]
+        let m = list[1]
+        let d = list[2]
+        if y < 1989 {
+            print("Yes")
+        } else if y > 1989 {
+            print("No")
+        } else {
+            if m < 2 {
+                print("Yes")
+            } else if m > 2 {
+                print("No")
+            } else {
+                if d < 28 {
+                    print("Yes")
+                } else {
+                    print("No")
+                }
+            }
+        }
+    }
+}
+
+func solution32() {
+    let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    for n in list {
+        print("*\(String(repeating: " ", count: 1+2*(n-2)))*")
+        if n > 2 {
+            for i in 1..<n-1 {
+                print("\(String(repeating: " ", count: i))*\(String(repeating: " ", count:1+2*(n-i-2)))*")
+            }
+        }
+        print("\(String(repeating: " ", count: n-1))*")
+    }
+}
+
+func solution31() {
+    let n = Int(readLine()!)!
+    for _ in 1...n {
+        let list1 = readLine()!.split(separator: " ").map{ Double(String($0))! }.sorted()
+        let list2 = readLine()!.split(separator: " ").map{ Double(String($0))! }.sorted()
+        var isc1 =  pow(list1[1], 2)+pow(list1[0], 2) == pow(list1[2], 2)
+        var isc2 =  pow(list2[1], 2)+pow(list2[0], 2) == pow(list2[2], 2)
+        if list1 == list2 && isc1 && isc2 {
+            print("YES")
+        } else {
+            print("NO")
+        }
+    }
+}
+
+func solution30() {
+    let n = Int(readLine()!)!
+    for _ in 1...n {
+        let list = readLine()!.split(separator: " ").map{ Double(String($0))! }
+        let a = list[0]
+        let b = list[1]
+        if abs(abs(a/b) - 1.61803399) < 1.61803399*0.01 {
+            print("golden")
+        } else {
+            print("not")
+        }
+    }
+}
 
 // 26548
 func solution29() {
@@ -32,7 +95,7 @@ func solution29() {
         let c = list[2]
         var x1 = (-b+sqrt(b*b-4*a*c))/(2*a)
         var x2 = (-b-sqrt(b*b-4*a*c))/(2*a)
-        print("\(String(format: "%.3f", x1)) \(String(format: "%.3f", x2))")
+        print("\(String(format: "%.3f", x1)), \(String(format: "%.3f", x2))")
     }
 }
 
