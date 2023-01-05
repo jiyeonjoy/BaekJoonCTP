@@ -3,9 +3,27 @@ func solution49() {}
 func solution48() {}
 func solution47() {}
 func solution46() {}
-func solution45() {}
 
 import Foundation
+
+// 6889
+func solution45() {
+    let n = Int(readLine()!)!
+    let m = Int(readLine()!)!
+    var nl:[String] = []
+    var ml:[String] = []
+    for _ in 1...n {
+        nl.append(readLine()!)
+    }
+    for _ in 1...m {
+        ml.append(readLine()!)
+    }
+    for i in 0..<n {
+        for j in 0..<m {
+            print("\(nl[i]) as \(ml[j])")
+        }
+    }
+}
 
 // 6830
 func solution44() {
