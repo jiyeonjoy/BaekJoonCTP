@@ -6,9 +6,19 @@ func solution46() {}
 func solution45() {}
 func solution44() {}
 func solution43() {}
-func solution42() {}
 
 import Foundation
+
+// 26849
+func solution42() {
+    let n = Int(readLine()!)!
+    var al:[Double] = []
+    for _ in 1...n {
+        let list = readLine()!.split(separator: " ").map{ Double(String($0))! }
+        al.append(list[0]/list[1])
+    }
+    print("\(al.min()!) \(al.max()!) \(al.reduce(0,+))")
+}
 
 // 5340
 func solution41() {
