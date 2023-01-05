@@ -7,9 +7,20 @@ func solution45() {}
 func solution44() {}
 func solution43() {}
 func solution42() {}
-func solution41() {}
 
 import Foundation
+
+// 5340
+func solution41() {
+    let a = readLine()!.trimmingCharacters(in: .whitespacesAndNewlines).count
+    let b = readLine()!.trimmingCharacters(in: .whitespacesAndNewlines).count
+    let c = readLine()!.trimmingCharacters(in: .whitespacesAndNewlines).count
+    let d = readLine()!.trimmingCharacters(in: .whitespacesAndNewlines).count
+    let e = readLine()!.trimmingCharacters(in: .whitespacesAndNewlines).count
+    let f = readLine()!.trimmingCharacters(in: .whitespacesAndNewlines).count
+    print("Latitude \(a):\(b):\(c)")
+    print("Longitude \(d):\(e):\(f)")
+}
 
 // 26752
 func solution40() {
