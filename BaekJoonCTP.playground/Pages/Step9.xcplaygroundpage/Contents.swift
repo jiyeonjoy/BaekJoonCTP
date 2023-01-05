@@ -44,12 +44,26 @@ func solution8() {}
 func solution7() {}
 func solution6() {}
 func solution5() {}
-func solution4() {}
 
 import Foundation
 
-let list1 = readLine()!.split(separator: " ").map{ Int($0)! }
-Int(readLine()!)!
+// 9501
+func solution4() {
+    let t = Int(readLine()!)!
+    for _ in 1...t {
+        let list = readLine()!.split(separator: " ").map{ Int($0)! }
+        var c = 0
+        let d = list[1]
+        for i in 1...list[0] {
+            let l = readLine()!.split(separator: " ").map{ Double($0)! }
+            let v = (Double(d)/l[0])*l[2]
+            if l[1] >= v {
+                c += 1
+            }
+        }
+        print(c)
+    }
+}
 
 // 5618
 func solution3() {
