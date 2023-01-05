@@ -20,9 +20,28 @@ func solution32() {}
 func solution31() {}
 func solution30() {}
 func solution29() {}
-func solution28() {}
 
 import Foundation
+
+// 6903
+func solution28() {
+    let a = Int(readLine()!)!
+    let b = Int(readLine()!)!
+    let c = Int(readLine()!)!
+    var s1 = "*\(b > 0 ? String(repeating: " ", count: b) : "")*\(b > 0 ? String(repeating: " ", count: b) : "")*"
+    if a > 0 {
+        for _ in 1...a {
+            print(s1)
+        }
+    }
+    print(String(repeating: "*", count: 3+2*b))
+    if c != 0 {
+        var s2 = "\(String(repeating: " ", count: b+1))*"
+        for _ in 1...c {
+            print(s2)
+        }
+    }
+}
 
 // 26941
 func solution27() {
