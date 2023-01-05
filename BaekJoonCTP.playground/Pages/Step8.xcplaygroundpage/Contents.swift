@@ -10,9 +10,33 @@ func solution42() {}
 func solution41() {}
 func solution40() {}
 func solution39() {}
-func solution38() {}
 
 import Foundation
+
+// 26502
+func solution38() {
+    let n = 1//Int(readLine()!)!
+    let dic:[Character:Character] = [
+        "y":"a"
+        "a":"e",
+        "e":"i",
+        "i":"o",
+        "o":"u",
+        "u":"y",
+        "Y":"A",
+        "A":"E",
+        "E":"I",
+        "I":"O",
+        "O":"U",
+        "U":"Y",
+    ]
+    for _ in 1...n {
+        let str = String(readLine()!.map {
+            dic[$0] ?? $0
+        })
+        print(str)
+    }
+}
 
 // 5343
 func solution37() {
