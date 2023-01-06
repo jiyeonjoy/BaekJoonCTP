@@ -36,10 +36,28 @@ func solution16() {}
 func solution15() {}
 func solution14() {}
 func solution13() {}
-func solution12() {}
-func solution11() {}
 
 import Foundation
+
+func solution12() {
+    readLine()
+    let list = readLine()!.split(separator: " ").map{ Int(String($0))! }.sorted(by: >)
+    print(list[0])
+}
+
+func solution11() {
+    let t = Int(readLine()!)!
+    for _ in 1...t {
+        let n = Int(readLine()!)!
+        var sum = 0
+        for i in 1...n {
+            if i%2 == 1 {
+                sum += i
+            }
+        }
+        print(sum)
+    }
+}
 
 func solution10() {
     let al = readLine()!.split(separator: " ").map{ Int(String($0))! }
