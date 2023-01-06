@@ -35,9 +35,24 @@ func solution17() {}
 func solution16() {}
 func solution15() {}
 func solution14() {}
-func solution13() {}
 
 import Foundation
+
+func solution13() {
+    let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let n = list[0]
+    var x = list[1]
+    let k = list[2]
+    for _ in 1...k {
+        let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        if list[0] == x {
+            x = list[1]
+        } else if list[1] == x {
+            x = list[0]
+        }
+    }
+    print(x)
+}
 
 func solution12() {
     readLine()
