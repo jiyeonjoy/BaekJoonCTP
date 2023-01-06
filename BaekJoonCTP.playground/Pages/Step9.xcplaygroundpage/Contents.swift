@@ -33,9 +33,20 @@ func solution19() {}
 func solution18() {}
 func solution17() {}
 func solution16() {}
-func solution15() {}
 
 import Foundation
+
+func solution15() {
+    while true {
+        let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        if list[0] == 0 && list[1] == 0 {
+            break
+        }
+        let a = list[0]
+        let b = list[1]
+        print(a-b+a)
+    }
+}
 
 func solution14() {
     let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
