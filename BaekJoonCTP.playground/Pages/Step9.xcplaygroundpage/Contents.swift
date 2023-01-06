@@ -31,10 +31,35 @@ func solution21() {}
 func solution20() {}
 func solution19() {}
 func solution18() {}
-func solution17() {}
-func solution16() {}
 
 import Foundation
+
+func solution17() {
+    let dic:[Character:Character] = [
+        "E":"I",
+        "I":"E",
+        "S":"N",
+        "N":"S",
+        "T":"F",
+        "F":"T",
+        "J":"P",
+        "P":"J"
+    ]
+    let m = String(readLine()!.map{
+        dic[$0]!
+    })
+    print(m)
+}
+
+func solution16() {
+    while true {
+        let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        if list[0] == 0 && list[1] == 0 && list[2] == 0 && list[3] == 0 {
+            break
+        }
+        print("\(list[3]-list[0]) \(list[2]-list[1])")
+    }
+}
 
 func solution15() {
     while true {
