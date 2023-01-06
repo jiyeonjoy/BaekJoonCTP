@@ -38,11 +38,45 @@ func solution14() {}
 func solution13() {}
 func solution12() {}
 func solution11() {}
-func solution10() {}
-func solution9() {}
-func solution8() {}
 
 import Foundation
+
+func solution10() {
+    let al = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let bl = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let a = (al[1]+bl[0]-1)/bl[0]
+    let b = (bl[1]+al[0]-1)/al[0]
+    if a == b {
+        print("DRAW")
+    } else if a > b {
+        print("PLAYER A")
+    } else {
+        print("PLAYER B")
+    }
+}
+
+func solution9() {
+    let n = Int(readLine()!)!
+    if n%2 == 1 {
+        print(0)
+    } else if (n/2)%2 == 1 {
+        print(1)
+    } else {
+        print(2)
+    }
+}
+
+func solution8() {
+    let n = Int(readLine()!)!
+    let list = readLine()!.split(separator: " ").map{ Int($0)! }
+    readLine()!.split(separator: " ").forEach{ i in
+        if list.contains(Int(String(i))!) {
+            print(1)
+        } else {
+            print(0)
+        }
+    }
+}
 
 // 10989
 func solution7() {
@@ -315,6 +349,7 @@ func solution2() {
 }
 
 func solution1() {
+    let list = readLine()!.split(separator: " ").map{ Int($0)! }.sorted()
     let h = list[0]
     let m = list[1]
     let aS = m == 0 ? "00" : 60-m < 10 ? "0\(60-m)" : "\(60-m)"
