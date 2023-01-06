@@ -34,9 +34,36 @@ func solution18() {}
 func solution17() {}
 func solution16() {}
 func solution15() {}
-func solution14() {}
 
 import Foundation
+
+func solution14() {
+    let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    var isDone = false
+    if list[0] > 0 {
+        for _ in 1...list[0] {
+            let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+            if list[0] != list[1] {
+                print("Wrong Answer")
+                isDone = true
+                break
+            }
+        }
+    }
+    if !isDone && list[1] > 0 {
+        for _ in 1...list[1] {
+            let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+            if list[0] != list[1] {
+                print("Why Wrong!!!")
+                isDone = true
+                break
+            }
+        }
+    }
+    if !isDone {
+        print("Accepted")
+    }
+}
 
 func solution13() {
     let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
