@@ -36,12 +36,66 @@ func solution16() {}
 func solution15() {}
 func solution14() {}
 func solution13() {}
-func solution12() {}
-func solution11() {}
-func solution10() {}
-func solution9() {}
 
 import Foundation
+
+func solution12() {}
+
+func solution11() {
+    let t = Int(readLine()!)!
+    var a = 0
+    var maxa = 0
+    var minb = 50
+    var minc = 179
+    for i in 1...t {
+        let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        if list[0] > maxa {
+            maxa = list[0]
+            minb = list[1]
+            minc = list[2]
+            a = i
+        } else if list[0] == maxa {
+            if minb > list[1] {
+                minb = list[1]
+                minc = list[2]
+                a = i
+            } else if minb == list[1] {
+                if minc > list[2] {
+                    minc = list[2]
+                    a = i
+                }
+            }
+        }
+    }
+    print(a)
+}
+
+func solution10() {
+    let t = Int(readLine()!)!
+    for _ in 1...t {
+        let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        let a = list[0]
+        let b = list[1]
+        var sum = 0
+        for i in 1...a/b {
+            sum += 1+(i-1)*2
+        }
+        print(sum)
+    }
+}
+
+func solution9() {
+    let n = Int(readLine()!)!
+    for _ in 1...n {
+        print(String(repeating: "@", count: n*5))
+    }
+    for _ in 1...n*3 {
+        print("\(String(repeating: "@", count: n))\(String(repeating: " ", count: 3*n))\(String(repeating: "@", count: n))")
+    }
+    for _ in 1...n {
+        print(String(repeating: "@", count: n*5))
+    }
+}
 
 func solution8() {
     let list1 = readLine()!.split(separator: " ").map{ Int(String($0))! }
