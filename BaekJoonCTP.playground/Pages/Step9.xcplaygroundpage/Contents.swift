@@ -6,10 +6,47 @@ func solution46() {}
 func solution45() {}
 func solution44() {}
 func solution43() {}
-func solution42() {}
-func solution41() {}
 
 import Foundation
+
+func solution42() {
+    let k = Double(readLine()!)!
+    let list = readLine()!.split(separator: " ").map{ Double(String($0))! }
+    let a = list[0]
+    let b = list[1]
+    let c = (a-b)/2
+    let v = pow(k, 2)-pow(c,2)
+    print(v)
+}
+
+func solution41() {
+    while true {
+        let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        if list[0] == 0 && list[1] == 0 && list[2] == 0 && list[3] == 0 {
+            break
+        }
+        var a = list[0]
+        var b = list[1]
+        var c = list[2]
+        var d = list[3]
+        var v = 0
+        while true {
+            if a == b && b == c && c == d {
+                break
+            }
+            v += 1
+            let aa = a-b > 0 ? a-b : b-a
+            let bb = b-c > 0 ? b-c : c-b
+            let cc = c-d > 0 ? c-d : d-c
+            let dd = d-a > 0 ? d-a : a-d
+            a = aa
+            b = bb
+            c = cc
+            d = dd
+        }
+        print(v)
+    }
+}
 
 func solution40() {
     let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
