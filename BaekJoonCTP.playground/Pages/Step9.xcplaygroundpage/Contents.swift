@@ -9,15 +9,111 @@ func solution43() {}
 func solution42() {}
 func solution41() {}
 func solution40() {}
-func solution39() {}
-func solution38() {}
-func solution37() {}
-func solution36() {}
-func solution35() {}
-func solution34() {}
-func solution33() {}
 
 import Foundation
+
+func solution39() {
+    var i = 0
+    while true {
+        guard let line = readLine() else { break }
+        i += 1
+    }
+    print(i)
+}
+
+func solution38() {
+    let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    var sum = 0
+    var n = list[0]
+    let m = list[1]
+    while n > 0 {
+        sum += n
+        n /= m
+    }
+    print(sum)
+}
+
+func solution37() {
+    let t = Int(readLine()!)!
+    for _ in 1...t {
+        let list = readLine()!.split(separator: " ")
+        var grade = ""
+        let p = Int(String(list[1]))!
+        if p >= 97 {
+            grade = "A+"
+        } else if p >= 90 {
+            grade = "A"
+        } else if p >= 87 {
+            grade = "B+"
+        } else if p >= 80 {
+            grade = "B"
+        } else if p >= 77 {
+            grade = "C+"
+        } else if p >= 70 {
+            grade = "C"
+        } else if p >= 67 {
+            grade = "D+"
+        } else if p >= 60 {
+            grade = "D"
+        } else {
+            grade = "F"
+        }
+        print("\(String(list[0])) \(grade)")
+    }
+}
+
+func solution36() {
+    let list1 = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let list2 = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    var a = Array((list1[0]..<list1[1]))
+    for i in list2[0]..<list2[1] {
+        if !a.contains(i) {
+            a.append(i)
+        }
+    }
+    print(a.count)
+}
+
+func solution35() {
+    let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    if list[0] > 100 || list[1] > 100 || list[2] > 200 || list[3] > 200 || list[4] > 300 || list[5] > 300 || list[6] > 400 || list[7] > 400 || list[8] > 500 {
+        print("hacker")
+    } else if list.reduce(0, +) >= 100 {
+        print("draw")
+    } else {
+        print("none")
+    }
+}
+
+func solution34() {
+    let n = Int(readLine()!)!
+    let e = readLine()!.filter{ $0 == "e" }.count
+    let two = n-e
+    if e == two {
+        print("yee")
+    } else if e > two {
+        print("e")
+    } else {
+        print(2)
+    }
+}
+
+func solution33() {
+    var n = Int(readLine()!)!
+    if n < 10 {
+        print(0)
+    } else {
+        var i = 1
+        while true {
+            n = Array(String(n)).map{ Int(String($0))! }.reduce(1, *)
+            if n < 10 {
+                print(i)
+                break
+            }
+            i += 1
+        }
+    }
+}
 
 func solution32() {
     let t = Int(readLine()!)!
