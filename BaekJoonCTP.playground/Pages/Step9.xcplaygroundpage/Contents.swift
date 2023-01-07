@@ -25,11 +25,51 @@ func solution27() {}
 func solution26() {}
 func solution25() {}
 func solution24() {}
-func solution23() {}
-func solution22() {}
-func solution21() {}
 
 import Foundation
+
+func solution23() {
+    let n = Int(readLine()!)!
+    for _ in 1...n {
+        let list = readLine()!.split(separator: " ")
+        if list[1] == "kg" {
+            var v = Double(list[0])!*2.2046
+            print("\(String(format: "%.4f", v)) lb")
+        } else if list[1] == "lb" {
+            var v = Double(list[0])!*0.4536
+            print("\(String(format: "%.4f", v)) kg")
+        } else if list[1] == "l" {
+            var v = Double(list[0])!*0.2642
+            print("\(String(format: "%.4f", v)) g")
+        } else if list[1] == "g" {
+            var v = Double(list[0])!*3.7854
+            print("\(String(format: "%.4f", v)) l")
+        }
+    }
+}
+
+func solution22() {
+    while true {
+        let str = readLine()!
+        if str == "***" { break }
+        print(String(str.reversed()))
+    }
+}
+
+func solution21() {
+    let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    for i in 0..<list[0] {
+        var str = ""
+        for j in 1...list[1] {
+            if j == list[1] {
+                str += "\(i*list[1]+j)"
+            } else {
+                str += "\(i*list[1]+j) "
+            }
+        }
+        print(str)
+    }
+}
 
 func solution20() {
     let str = Array(readLine()!)
