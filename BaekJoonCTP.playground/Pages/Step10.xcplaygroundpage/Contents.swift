@@ -9,8 +9,41 @@ func solution45() {}
 func solution44() {}
 func solution43() {}
 func solution42() {}
-func solution41() {}
-func solution40() {}
+
+func solution41() {
+    while true {
+        let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        if list[3] == 0 && list[2] == 0 && list[1] == 0 && list[0] == 0 {
+            break
+        }
+        var a = list[0]
+        var b = list[1]
+        var c = list[2]
+        var d = list[3]
+        if a == 0 {
+            a = d/(b*c)
+        } else if b == 0 {
+            b = d/(a*c)
+        } else if c == 0 {
+            c = d/(a*b)
+        } else {
+            d = a*b*c
+        }
+        print("\(a) \(b) \(c) \(d)")
+    }
+}
+
+func solution40() {
+    let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let s = list[0]
+    let e = list[1]
+    let n = list[2]
+    var a = 0
+    for i in s...e {
+        a += String(i).filter{ Int(String($0))! == n }.count
+    }
+    print(a)
+}
 
 func solution39() {
     let n = Int(readLine()!)!
