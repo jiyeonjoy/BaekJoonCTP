@@ -40,12 +40,68 @@ func solution12() {}
 func solution11() {}
 func solution10() {}
 func solution9() {}
-func solution8() {}
-func solution7() {}
-func solution6() {}
-func solution5() {}
 
 import Foundation
+
+func solution8() {
+    let list1 = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let list2 = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let m = list1[1]
+    var v = 1
+    for i in list2 {
+        v *= (i%m)
+        v = v%m
+    }
+    print(v%m)
+}
+
+func solution7() {
+    let t = Int(readLine()!)!
+    for _ in 1...t {
+        let list = readLine()!.split(separator: " ").map{ Double(String($0))! }
+        var sum = 0
+        sum += Int(9.23076*pow((26.7-list[0]), 1.835))
+        sum += Int(1.84523*pow((list[1]-75), 1.348))
+        sum += Int(56.0211*pow((list[2]-1.5), 1.05))
+        sum += Int(4.99087*pow((42.5-list[3]), 1.81))
+        sum += Int(0.188807*pow((list[4]-210), 1.41))
+        sum += Int(15.9803*pow((list[5]-3.8), 1.04))
+        sum += Int(0.11193*pow((254-list[6]), 1.88))
+        print(sum)
+    }
+}
+
+func solution6() {
+    let n = Int(readLine()!)!
+    for _ in 1...n {
+        print(String(repeating: "@", count: n*5))
+    }
+    for _ in 1...3*n {
+        print(String(repeating: "@", count: n))
+    }
+    for _ in 1...n {
+        print(String(repeating: "@", count: n*5))
+    }
+}
+
+func solution5() {
+    var i = 0
+    while true {
+        let list = readLine()!.split(separator: " ").map{ Double(String($0))! }
+        if list[1] == 0 {
+            break
+        }
+        i += 1
+        let a = list[0] // 지름
+        let b = list[1] // 회전 수
+        let c = list[2] // 초
+        
+        let v1 = a*3.14159265359*b/(5280*12)
+        let v2 = v1/(c/3600)
+        
+        print("Trip #\(i): \(String(format: "%.2f", v1)) \(String(format: "%.2f", v2))")
+    }
+}
 
 func solution4() {
     let t = Int(readLine()!)!
