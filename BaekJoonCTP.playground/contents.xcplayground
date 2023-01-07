@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <playground version='6.0' target-platform='ios' buildActiveScheme='true' importAppTypes='true'>
     <pages>
+        <page name='FileIO'/>
+        <page name='Step0'/>
         <page name='Step1'/>
         <page name='Step2'/>
         <page name='Step3'/>
@@ -10,7 +12,6 @@
         <page name='Step7'/>
         <page name='Step8'/>
         <page name='Step9'/>
-        <page name='Step99'/>
-        <page name='FileIO'/>
+        <page name='Step10'/>
     </pages>
 </playground>
