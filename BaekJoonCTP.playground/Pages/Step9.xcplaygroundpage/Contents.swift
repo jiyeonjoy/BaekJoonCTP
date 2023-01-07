@@ -21,10 +21,45 @@ func solution31() {}
 func solution30() {}
 func solution29() {}
 func solution28() {}
-func solution27() {}
-func solution26() {}
 
 import Foundation
+
+func solution27() {
+    let t = Int(readLine()!)!
+    for _ in 1...t {
+        let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        if list[0] < 11 {
+            print(-1)
+        } else if list[0] == 11 {
+            if list[1] < 4 {
+                print(-1)
+            } else {
+                print(11*list[1]+4)
+            }
+        } else {
+            print(11*list[1]+4)
+        }
+    }
+}
+
+func solution26() {
+    let n = Int(readLine()!)!
+    if n < 6 {
+        print(0)
+    } else {
+        var c = 0
+        for i in 1...(n-1)/2 {
+            for j in 1...n-(2*i) {
+                if n-(2*i)-j-j >= 2 {
+                    c += 1
+                } else {
+                    break
+                }
+            }
+        }
+        print(c)
+    }
+}
 
 func solution25() {
     let k = Int(readLine()!)!
