@@ -11,7 +11,17 @@ func solution43() {}
 func solution42() {}
 func solution41() {}
 func solution40() {}
-func solution39() {}
+
+func solution39() {
+    let n = Int(readLine()!)!
+    for _ in 1...n {
+        let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        let i = list[0]
+        let d = list[1]
+        var v = d*(d+1)/2+d
+        print("\(i) \(v)")
+    }
+}
 
 func solution38() {
     while true {
