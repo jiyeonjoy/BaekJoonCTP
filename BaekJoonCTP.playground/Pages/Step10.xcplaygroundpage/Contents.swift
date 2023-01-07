@@ -44,10 +44,46 @@ func solution8() {}
 func solution7() {}
 func solution6() {}
 func solution5() {}
-func solution4() {}
-func solution3() {}
 
 import Foundation
+
+func solution4() {
+    let t = Int(readLine()!)!
+    for i in 1...t {
+        let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        let s = list[0]
+        let e = list[1]
+        var sum = 0
+        if s != e {
+            if s < 0 {
+                if e <= 0 {
+                    sum = -(abs(s)*(abs(s)+1)/2 - (abs(e)-1)*abs(e)/2)
+                } else {
+                    sum = -(abs(s)*(abs(s)+1)/2)+e*(e+1)/2
+                }
+            } else {
+                sum = e*(e+1)/2-(s-1)*s/2
+            }
+        } else {
+            sum = s
+        }
+        print("Scenario #\(i):")
+        print(sum)
+        if i < t {
+            print("")
+        }
+    }
+}
+
+func solution3() {
+    let t = Int(readLine()!)!
+    var sum = 0
+    for _ in 1...t {
+        let str = Array(readLine()!)
+        sum += Int(pow(Double(String(str[0...str.count-2]))!, Double(String(str[str.count-1]))!))
+    }
+    print(sum)
+}
 
 func solution2() {
     let t = Int(readLine()!)!
