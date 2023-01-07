@@ -20,9 +20,22 @@ func solution32() {}
 func solution31() {}
 func solution30() {}
 func solution29() {}
-func solution28() {}
 
 import Foundation
+
+func solution28() {
+    let t = Int(readLine()!)!
+    for _ in 1...t {
+        let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        let a = list[0]
+        let b = list[1]
+        var sum = 0
+        for i in 1...a/b {
+            sum += 1+(i-1)*2
+        }
+        print(sum)
+    }
+}
 
 func solution27() {
     let t = Int(readLine()!)!
