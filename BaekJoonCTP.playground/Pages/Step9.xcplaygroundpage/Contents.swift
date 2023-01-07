@@ -22,13 +22,13 @@ func solution40() {
         if r+b <= l {
             print((r+b)*2)
         } else {
-            print(l+((b-l+r)/2)*2)
+            print(l*2+((b-l+r)/2)*2)
         }
     } else {
         if l+b <= r {
             print((l+b)*2)
         } else {
-            print(r+((b-r+l)/2)*2)
+            print(r*2+((b-r+l)/2)*2)
         }
     }
 }
