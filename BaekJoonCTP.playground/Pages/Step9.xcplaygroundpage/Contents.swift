@@ -29,10 +29,50 @@ func solution23() {}
 func solution22() {}
 func solution21() {}
 func solution20() {}
-func solution19() {}
-func solution18() {}
 
 import Foundation
+
+func solution19() {
+    var i = 0
+    while true {
+        i += 1
+        let list = readLine()!.split(separator: " ").map{ Double(String($0))! }
+        if list[0] == 0 && list[1] == 0 && list[2] == 0 { break }
+        if i > 1 {print("")}
+        if list[0] == -1 {
+            if list[1] >= list[2] {
+                print("Triangle #\(i)\nImpossible.")
+            } else {
+                let v = sqrt(pow(list[2], 2) - pow(list[1], 2))
+                print("Triangle #\(i)\na = \(String(format: "%.3f", v))")
+            }
+        } else if list[1] == -1 {
+            if list[0] >= list[2] {
+                print("Triangle #\(i)\nImpossible.")
+            } else {
+                let v = sqrt(pow(list[2], 2) - pow(list[0], 2))
+                print("Triangle #\(i)\nb = \(String(format: "%.3f", v))")
+            }
+        } else if list[2] == -1 {
+            let v = sqrt(pow(list[0], 2) + pow(list[1], 2))
+            print("Triangle #\(i)\nc = \(String(format: "%.3f", v))")
+        }
+        break
+    }
+}
+
+func solution18() {
+    while true {
+        let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        if list.count == 1 && list[0] == 0 { break }
+        var sum = 1
+        for i in 1...list.count/2 {
+            sum = list[1+(i-1)*2]*sum - list[2+(i-1)*2]
+        }
+        print(sum)
+        break
+    }
+}
 
 func solution17() {
     let dic:[Character:Character] = [
