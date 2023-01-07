@@ -1,11 +1,95 @@
-func solution50() {}
-func solution49() {}
-func solution48() {}
-func solution47() {}
-func solution46() {}
-func solution45() {}
-
 import Foundation
+
+func solution50() {
+    let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let a = list.filter{ $0%2 == 1 }
+    if a.count > 0 {
+        print(a.reduce(1,*))
+    } else {
+        print(list.reduce(1, *))
+    }
+}
+
+func solution49() {
+    let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let a = min(list[0], list[1])
+    let b = max(list[0], list[1])
+    let c = min(list[2], list[3])
+    let d = max(list[2], list[3])
+
+    let v = min(b-a, abs(d-b)+abs(a-c))
+    print(v)
+}
+
+func solution48() {
+    let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    var arr = [Int](repeating: 0, count: list[0])
+    for _ in 1...list[1] {
+        let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        arr[l[0]-1] += 1
+        arr[l[1]-1] += 1
+    }
+    var str = ""
+    for i in 0..<arr.count {
+        if i == arr.count-1 {
+            str += "\(arr[i])"
+        } else {
+            str += "\(arr[i])\n"
+        }
+    }
+    print(str)
+}
+
+func solution47() {
+    while true {
+        let list = readLine()!.split(separator: " ").map{ String($0) }
+        if list[0] == "0" && list[2] == "0" { break }
+        if list[1] == "W" {
+            let v = Int(list[0])!-Int(list[2])!
+            if v < -200 {
+                print("Not allowed")
+            } else {
+                print(v)
+            }
+        } else {
+            let v = Int(list[0])!+Int(list[2])!
+            print(v)
+        }
+    }
+}
+
+func solution46() {
+    let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    var v = list[0]*(list[0]+1)/2
+    var sum = list[0]*(list[0]+1)/2
+    for i in list[0]+1...list[1] {
+        sum += i
+        v *= sum
+        if v > 14579 {
+            v = v%14579
+        }
+    }
+    print(v)
+}
+
+func solution45() {
+    let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let a = list[0]
+    let b = list[1]
+    let c = list[2]
+    var maxv = 0
+    let n = Int(readLine()!)!
+    for _ in 1...n {
+        let list1 = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        let list2 = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        let list3 = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        let v = a*(list1[0]+list2[0]+list3[0])+b*(list1[1]+list2[1]+list3[1])+c*(list1[2]+list2[2]+list3[2])
+        if v > maxv {
+            maxv = v
+        }
+    }
+    print(maxv)
+}
 
 func solution44() {
     while true {
