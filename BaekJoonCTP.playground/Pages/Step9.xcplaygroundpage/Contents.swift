@@ -28,9 +28,35 @@ func solution24() {}
 func solution23() {}
 func solution22() {}
 func solution21() {}
-func solution20() {}
 
 import Foundation
+
+func solution20() {
+    let str = Array(readLine()!)
+    var s = 1
+    var b = 4
+    let dic:[Character:[Int]] = [
+        "A":[1,2],
+        "B":[1,3],
+        "C":[1,4],
+        "D":[2,3],
+        "E":[2,4],
+        "F":[3,4]
+    ]
+    for c in str {
+        if dic[c]![0] == s {
+            s = dic[c]![1]
+        } else if  dic[c]![1] == s {
+            s = dic[c]![0]
+        }
+        if dic[c]![0] == b {
+            b = dic[c]![1]
+        } else if  dic[c]![1] == b {
+            b = dic[c]![0]
+        }
+    }
+    print("\(s)\n\(b)")
+}
 
 func solution19() {
     var i = 0
