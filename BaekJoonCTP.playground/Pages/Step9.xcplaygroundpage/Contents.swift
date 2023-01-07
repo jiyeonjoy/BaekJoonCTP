@@ -4,10 +4,43 @@ func solution48() {}
 func solution47() {}
 func solution46() {}
 func solution45() {}
-func solution44() {}
-func solution43() {}
 
 import Foundation
+
+func solution44() {
+    while true {
+        let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        if list[0] == 0 && list[1] == 0 {
+            break
+        }
+        let b = list[0]
+        let n = list[1]
+        var a = 0
+        var minv = Double(b)
+        for i in 1...b {
+            let v = pow(Double(i), Double(n))
+            if minv > abs(v-Double(b)) {
+                minv = abs(v-Double(b))
+                a = i
+            }
+            if v > Double(b) {
+                break
+            }
+        }
+        print(a)
+    }
+}
+
+func solution43() {
+    let list1 = readLine()!.split(separator: " ").map{ Double(String($0))! }
+    let list2 = readLine()!.split(separator: " ").map{ Double(String($0))! }
+    let a = sqrt(pow(list1[0]-list2[0], 2)+pow(list1[1]-list2[1], 2))
+    if list1[2] + list2[2] > a {
+        print("YES")
+    } else {
+        print("NO")
+    }
+}
 
 func solution42() {
     let k = Double(readLine()!)!
