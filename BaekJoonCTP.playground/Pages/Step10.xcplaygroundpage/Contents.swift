@@ -27,11 +27,61 @@ func solution25() {}
 func solution24() {}
 func solution23() {}
 func solution22() {}
-func solution21() {}
-func solution20() {}
-func solution19() {}
 
 import Foundation
+
+func solution21() {
+    let t = Int(readLine()!)!
+    for _ in 1...t {
+        let list = readLine()!.split(separator: " ").map{ Double(String($0))! }
+        let h = list[0]/100
+        let w = list[1]
+        let bmi = w/(h*h)
+        if h >= 2.04 {
+            print(4)
+        } else if h < 1.401 {
+            print(6)
+        } else if h < 1.46 {
+            print(5)
+        } else if h < 1.59 || (h < 1.61 && (bmi < 16 || bmi >= 35)) || (bmi < 16 || bmi >= 35) {
+            print(4)
+        } else if h < 1.61 || (bmi < 18.5 || bmi >= 30) {
+            print(3)
+        } else if bmi >= 20 && bmi < 25 {
+            print(1)
+        } else {
+            print(2)
+        }
+    }
+}
+
+func solution20() {
+    let n = Int(readLine()!)!
+    let s = readLine()!.filter{ $0 == "s" }.count
+    let b = n-s
+    if s == b {
+        print("bigdata? security!")
+    } else if s > b {
+        print("security!")
+    } else {
+        print("bigdata?")
+    }
+}
+
+func solution19() {
+    let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let k = list[0]
+    let n = list[1]
+    if n == 1 {
+        print(-1)
+    } else {
+        if k*n%(n-1) == 0 {
+            print(k*n/(n-1))
+        } else {
+            print(k*n/(n-1)+1)
+        }
+    }
+}
 
 func solution18() {
     let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
