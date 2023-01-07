@@ -16,9 +16,19 @@ func solution36() {}
 func solution35() {}
 func solution34() {}
 func solution33() {}
-func solution32() {}
 
 import Foundation
+
+func solution32() {
+    let n = Int(readLine()!)!
+    var sum = n
+    for i in 1...n/2 {
+        if n%i == 0 {
+            sum += i
+        }
+    }
+    print(sum)
+}
 
 func solution31() {
     let n = Int(readLine()!)!
