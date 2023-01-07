@@ -12,7 +12,19 @@ func solution42() {}
 func solution41() {}
 func solution40() {}
 func solution39() {}
-func solution38() {}
+
+func solution38() {
+    while true {
+        let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        if list[0] == 0 && list[1] == 0 {
+            break
+        }
+        let a = list[0]*30+list[1]*40
+        let b = list[0]*35+list[1]*30
+        let c = list[0]*40+list[1]*20
+        print(min(a,b,c))
+    }
+}
 
 func solution37() {
     let t = Int(readLine()!)!
