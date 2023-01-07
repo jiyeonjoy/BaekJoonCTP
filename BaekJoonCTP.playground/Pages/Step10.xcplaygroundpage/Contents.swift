@@ -1,6 +1,3 @@
-let list = readLine()!.split(separator: " ").map{ Int($0)! }
-Int(readLine()!)!
-
 func solution50() {}
 func solution49() {}
 func solution48() {}
@@ -49,7 +46,39 @@ func solution6() {}
 func solution5() {}
 func solution4() {}
 func solution3() {}
-func solution2() {}
-func solution1() {}
 
 import Foundation
+
+func solution2() {
+    let t = Int(readLine()!)!
+    for i in 1...t {
+        print("Data Set \(i):")
+        var h = Int(readLine()!)!
+        var list = Array(readLine()!)
+        for c in list {
+            if c == "c" {
+                h += 1
+            } else {
+                h -= 1
+            }
+        }
+        print(h)
+        if i < t {
+            print("")
+        }
+    }
+}
+
+func solution1() {
+    let list = readLine()!.split(separator: " ").map{ Int($0)! }
+    let a = list[0]
+    let d = list[1]
+    let k = list[2]
+
+    let v = k-a
+    if v%d != 0 || v/d <= -1 {
+        print("X")
+    } else {
+        print(v/d+1)
+    }
+}
