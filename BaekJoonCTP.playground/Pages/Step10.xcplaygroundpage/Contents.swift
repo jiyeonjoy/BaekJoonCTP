@@ -21,9 +21,27 @@ func solution31() {}
 func solution30() {}
 func solution29() {}
 func solution28() {}
-func solution27() {}
 
 import Foundation
+
+func solution27() {
+    let t = Int(readLine()!)!
+    for _ in 1...t {
+        let list = readLine()!.split(separator: " ").map{ Double(String($0))! }
+        var a = 0
+        let d = list[1]
+        for _ in 1...Int(list[0]) {
+            let l = readLine()!.split(separator: " ").map{ Double(String($0))! }
+            let v = l[0]
+            let f = l[1]
+            let c = l[2]
+            if (d/v)*c <= f {
+                a += 1
+            }
+        }
+        print(a)
+    }
+}
 
 func solution26() {
     while true {
