@@ -8,9 +8,30 @@ func solution44() {}
 func solution43() {}
 func solution42() {}
 func solution41() {}
-func solution40() {}
 
 import Foundation
+
+func solution40() {
+    let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let l = list[0]
+    let r = list[1]
+    let b = list[2]
+    if l == r {
+        print(l+r+(b/2)*2)
+    } else if l > r {
+        if r+b <= l {
+            print((r+b)*2)
+        } else {
+            print(l+((b-l+r)/2)*2)
+        }
+    } else {
+        if l+b <= r {
+            print((l+b)*2)
+        } else {
+            print(r+((b-r+l)/2)*2)
+        }
+    }
+}
 
 func solution39() {
     var i = 0
