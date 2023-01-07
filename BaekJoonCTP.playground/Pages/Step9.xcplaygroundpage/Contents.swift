@@ -28,14 +28,8 @@ func solution27() {
     let t = Int(readLine()!)!
     for _ in 1...t {
         let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
-        if list[0] < 11 {
+        if list[0] < 12 || list[1] < 4 {
             print(-1)
-        } else if list[0] == 11 {
-            if list[1] < 4 {
-                print(-1)
-            } else {
-                print(11*list[1]+4)
-            }
         } else {
             print(11*list[1]+4)
         }
