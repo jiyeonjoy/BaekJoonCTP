@@ -16,12 +16,47 @@ func solution36() {}
 func solution35() {}
 func solution34() {}
 func solution33() {}
-func solution32() {}
-func solution31() {}
-func solution30() {}
-func solution29() {}
 
 import Foundation
+
+func solution32() {
+    let t = Int(readLine()!)!
+    for _ in 1...t {
+        let list = readLine()!.split(separator: " ")
+        print(String(repeating: String(list[1]), count: Int(String(list[0]))!))
+    }
+}
+
+func solution31() {
+    let n = Int(readLine()!)!
+    let str = Array(readLine()!)
+    print(String(str[n-1-4...n-1]))
+}
+
+func solution30() {
+    let t = Int(readLine()!)!
+    for i in 1...t {
+        let list = readLine()!.split(separator: " ").map{ Double(String($0))! }
+        let v = (list[1]/(list[2]+list[3]))*list[4]
+        print("\(i) \(v)")
+    }
+}
+
+func solution29() {
+    let t = Int(readLine()!)!
+    for i in 1...t {
+        let list = readLine()!.split(separator: " ").map{ Int(String($0))! }.sorted()
+        if list[2] >= list[0]+list[1] {
+            print("Case #\(i): invalid!")
+        } else if list[0] == list[2] {
+            print("Case #\(i): equilateral")
+        } else if list[0] == list[1] || list[1] == list[2] {
+            print("Case #\(i): isosceles")
+        } else {
+            print("Case #\(i): scalene")
+        }
+    }
+}
 
 func solution28() {
     let t = Int(readLine()!)!
