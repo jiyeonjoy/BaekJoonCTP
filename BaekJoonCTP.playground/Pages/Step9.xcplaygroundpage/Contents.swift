@@ -23,10 +23,35 @@ func solution29() {}
 func solution28() {}
 func solution27() {}
 func solution26() {}
-func solution25() {}
-func solution24() {}
 
 import Foundation
+
+func solution25() {
+    let k = Int(readLine()!)!
+    for _ in 1...k {
+        let count = String(Int(readLine()!)!, radix: 2).filter({ $0 == "1" }).count
+        if count == 1 {
+            print(1)
+        } else {
+            print(0)
+        }
+    }
+}
+
+func solution24() {
+    let k = Int(readLine()!)!
+    for _ in 1...k {
+        let n = Int(readLine()!)!
+        var sum = 0
+        for _ in 1...n {
+            let list = readLine()!.split(separator: " ").map{ Int(String($0))! }.sorted(by: >)
+            if list[0] > 0 {
+                sum += list[0]
+            }
+        }
+        print(sum)
+    }
+}
 
 func solution23() {
     let n = Int(readLine()!)!
