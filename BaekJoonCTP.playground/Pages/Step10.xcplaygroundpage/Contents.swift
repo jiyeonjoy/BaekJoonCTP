@@ -17,11 +17,39 @@ func solution35() {}
 func solution34() {}
 func solution33() {}
 func solution32() {}
-func solution31() {}
-func solution30() {}
-func solution29() {}
 
 import Foundation
+
+func solution31() {
+    let n = Int(readLine()!)!
+    var list:[String] = []
+    for _ in 1...n {
+        list.append(readLine()!)
+    }
+    var c = 0
+    for i in 0..<n {
+        let str = readLine()!
+        if list[i] == str {
+            c += 1
+        }
+    }
+    print(c)
+}
+
+func solution30() {
+    let n = Int(readLine()!)!
+    for _ in 1...n {
+        let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        var a = list[2]+list[5]+abs(list[0]-list[3])+abs(list[1]-list[4])
+        print(a)
+    }
+}
+
+func solution29() {
+    let n = Int(readLine()!)!
+    print(n*n*n)
+    print(3)
+}
 
 func solution28() {
     let alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".map{ String($0) }
