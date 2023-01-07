@@ -7,8 +7,43 @@ func solution47() {}
 func solution46() {}
 func solution45() {}
 func solution44() {}
-func solution43() {}
-func solution42() {}
+
+func solution43() {
+    let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    print(list[0]-list[1]-list[2])
+    var arr = Array((1...list[0]))
+    let list1 = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let list2 = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    for i in list1 {
+        let index = arr.firstIndex(of: i)!
+        arr.remove(at: index)
+    }
+    for i in list2 {
+        let index = arr.firstIndex(of: i)!
+        arr.remove(at: index)
+    }
+    var str = ""
+    for i in arr {
+        if str == "" {
+            str += "\(i)"
+        } else {
+            str += " \(i)"
+        }
+    }
+    print(str)
+}
+
+func solution42() {
+    let n = Int(readLine()!)!
+    var list:[String] = []
+    for _ in 1...n {
+        let str = readLine()!
+        if !list.contains(str) {
+            list.append(str)
+        }
+    }
+    print(list.count)
+}
 
 func solution41() {
     while true {
