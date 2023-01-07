@@ -15,9 +15,27 @@ func solution37() {}
 func solution36() {}
 func solution35() {}
 func solution34() {}
-func solution33() {}
 
 import Foundation
+
+func solution33() {
+    readLine()
+    let list = Array(readLine()!)
+    var a = 0
+    var coffee = 0
+    for c in list {
+        if c == "1" {
+            a += 1
+            coffee = 2
+        } else {
+            if coffee > 0 {
+                coffee -= 1
+                a += 1
+            }
+        }
+    }
+    print(a)
+}
 
 func solution32() {
     let n = Int(readLine()!)!
