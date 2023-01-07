@@ -33,25 +33,34 @@ func solution19() {}
 func solution18() {}
 func solution17() {}
 func solution16() {}
-func solution15() {}
-
-
-//let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
-//var h = list[0]
-//var m = list[1]
-//var s = list[2]
-//for _ in 1...4 {
-//    let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
-//    if l[0] == 1 {
-//
-//    } else if l[1] == 2 {
-//
-//    } else {
-//
-//    }
-//}
 
 import Foundation
+
+func solution15() {
+    let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let n = Int(readLine()!)!
+    var v = list[0]*60*60+list[1]*60+list[2]
+    for _ in 1...n {
+        let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        if l[0] == 1 {
+            v += l[1]%86400
+            v = v%86400
+        } else if l[0] == 2 {
+            v -= l[1]%86400
+            if v < 0 {
+                v += 86400
+            }
+        } else {
+            if v < 0 {
+                v += 86400
+            }
+            let h = v/3600
+            let m = (v%3600)/60
+            let s = (v%3600)%60
+            print("\(h) \(m) \(s)")
+        }
+    }
+}
 
 func solution14() {
     let n = Int(readLine()!)!
