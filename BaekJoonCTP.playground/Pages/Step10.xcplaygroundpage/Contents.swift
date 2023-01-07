@@ -34,12 +34,73 @@ func solution18() {}
 func solution17() {}
 func solution16() {}
 func solution15() {}
-func solution14() {}
-func solution13() {}
+
+
+//let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+//var h = list[0]
+//var m = list[1]
+//var s = list[2]
+//for _ in 1...4 {
+//    let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+//    if l[0] == 1 {
+//
+//    } else if l[1] == 2 {
+//
+//    } else {
+//
+//    }
+//}
 
 import Foundation
 
-func solution12() {}
+func solution14() {
+    let n = Int(readLine()!)!
+    let s = Int(readLine()!)!
+    if n >= 6 {
+        print("Love is open door")
+    } else {
+        for i in 2...n {
+            if i%2 == 0 {
+                if s == 0 {
+                    print(1)
+                } else {
+                    print(0)
+                }
+            } else {
+                if s == 0 {
+                    print(0)
+                } else {
+                    print(1)
+                }
+            }
+        }
+    }
+}
+
+func solution13() {
+    let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    var m = 5000
+    for i in list {
+        if i == 1 {
+            m -= 500
+        } else if i == 2 {
+            m -= 800
+        } else {
+            m -= 1000
+        }
+    }
+    print(m)
+}
+
+func solution12() {
+    let n = Int(readLine()!)!
+    if n < 4 {
+        print(0)
+    } else {
+        let v = (n-1)*(n-2)*(n-3)/6
+        print(v)
+    }
+}
 
 func solution11() {
     let t = Int(readLine()!)!
