@@ -20,9 +20,21 @@ func solution32() {}
 func solution31() {}
 func solution30() {}
 func solution29() {}
-func solution28() {}
 
 import Foundation
+
+func solution28() {
+    let alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".map{ String($0) }
+    let str = readLine()!
+    let i = alphabet.firstIndex(of: str)!
+    var v = 84
+    if i < 8 {
+        v += 8-i
+    } else if i > 8 {
+        v += i-8
+    }
+    print(v)
+}
 
 func solution27() {
     let t = Int(readLine()!)!
