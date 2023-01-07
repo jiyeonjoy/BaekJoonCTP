@@ -22,13 +22,74 @@ func solution30() {}
 func solution29() {}
 func solution28() {}
 func solution27() {}
-func solution26() {}
-func solution25() {}
-func solution24() {}
-func solution23() {}
-func solution22() {}
 
 import Foundation
+
+func solution26() {
+    while true {
+        let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        if list[0] == 0 && list[1] == 0 {
+            break
+        }
+        let list1 = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        var sum = 0
+        for p in list1 {
+            sum += min(p, list[1]/list[0])
+        }
+        print(sum)
+    }
+}
+
+func solution25() {
+    let n = Int(readLine()!)!
+    var sum:Double = 0
+    for _ in 1...n {
+        let list = readLine()!.split(separator: " ").map{ Double(String($0))! }
+        sum += list[0]*list[1]
+    }
+    print(sum)
+}
+
+func solution24() {
+    let alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".map{ String($0) }
+    let n = Int(readLine()!)!
+    for i in 1...n {
+        let list1 = readLine()!.split(separator: " ")
+        let index = alphabet.firstIndex(of: String(list1[1]))!
+        for j in 1...Int(list1[0])! {
+            print(String(repeating: alphabet[(index+j-1)%alphabet.count], count: j))
+        }
+        if i < n {
+            print("")
+        }
+    }
+}
+
+func solution23() {
+    let n = Int(readLine()!)!
+    print(n*n)
+    print(2)
+}
+
+func solution22() {
+    let list1 = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let list2 = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    var isDone = false
+    var s = list1[1]
+    while true {
+        for i in 1...list1[0] {
+            if list2[i-1] < s {
+                isDone = true
+                print(i)
+                break
+            }
+            s += 1
+        }
+        if isDone {
+            break
+        }
+    }
+}
 
 func solution21() {
     let t = Int(readLine()!)!
