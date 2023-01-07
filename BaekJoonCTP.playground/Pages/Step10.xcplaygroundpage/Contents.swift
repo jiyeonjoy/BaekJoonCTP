@@ -1,3 +1,5 @@
+import Foundation
+
 func solution50() {}
 func solution49() {}
 func solution48() {}
@@ -11,12 +13,61 @@ func solution41() {}
 func solution40() {}
 func solution39() {}
 func solution38() {}
-func solution37() {}
-func solution36() {}
-func solution35() {}
-func solution34() {}
 
-import Foundation
+func solution37() {
+    let t = Int(readLine()!)!
+    for _ in 1...t {
+        let list = readLine()!.split(separator: " ").map{ Double(String($0))! }
+        let p = list[0]
+        let c = list[1]
+        let o = (100*p)/(100+c)
+        print(o)
+    }
+}
+
+func solution36() {
+    let n = Int(readLine()!)!
+    var arr = [Int](repeating: 0, count: n)
+    for i in 1...n {
+        let a = Int(readLine()!)!
+        arr[a-1] = i
+    }
+    for s in arr {
+        print(s)
+    }
+}
+
+func solution35() {
+    let n = Int(readLine()!)!
+    var a = 0
+    var b = 0
+    var c = 0
+    for _ in 1...n {
+        let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        a += list[0]
+        b += list[1]
+        c += list[2]
+        if a < 30 || b < 30 || c < 30 {
+            print("NO")
+        } else {
+            let minv = min(a,b,c)
+            print(minv)
+            a -= minv
+            b -= minv
+            c -= minv
+        }
+    }
+}
+
+func solution34() {
+    readLine()
+    let list = Array(readLine()!)
+    for i in 1...list.count-1 {
+        if list[i] == "J" {
+            print(list[i-1])
+        }
+    }
+}
 
 func solution33() {
     readLine()
