@@ -30,11 +30,116 @@ func solution22() {}
 func solution21() {}
 func solution20() {}
 func solution19() {}
-func solution18() {}
-func solution17() {}
-func solution16() {}
 
 import Foundation
+
+func solution18() {
+    let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let sum = (-2)*list[0]
+    let gob = list[1]
+    if gob > 0 {
+        if sum > 0 {
+            for i in 1...gob {
+                if gob%i == 0 {
+                    if gob/i+i == sum {
+                        if gob/i > i {
+                            print("\(i) \(gob/i)")
+                            break
+                        } else {
+                            if i == gob/i {
+                                print(i)
+                                break
+                            }
+                            print("\(gob/i) \(i)")
+                            break
+                        }
+                    }
+                }
+            }
+        } else {
+            for i in 1...gob {
+                if gob%i == 0 {
+                    if gob/i+i == -sum {
+                        if gob/i < i {
+                            print("\(-i) \(-gob/i)")
+                            break
+                        } else {
+                            if i == gob/i {
+                                print(-i)
+                                break
+                            }
+                            print("\(-gob/i) \(-i)")
+                            break
+                        }
+                    }
+                }
+            }
+        }
+    } else if gob == 0 {
+        if sum > 0 {
+            print("0 \(sum)")
+        } else if sum == 0 {
+            print(0)
+        } else {
+            print("\(sum) 0")
+        }
+    } else {
+        if sum > 0 {
+            for i in 1...(-gob) {
+                if gob%i == 0 {
+                    if gob/i+i == sum {
+                        print("\(-i) \(-gob/i)")
+                        break
+                    }
+                }
+            }
+        } else if sum == 0 {
+            for i in 1...(-gob) {
+                if gob%i == 0 {
+                    print("\(i)")
+                    break
+                }
+            }
+        } else {
+            for i in 1...(-gob) {
+                if gob%i == 0 {
+                    if gob/i+i == sum {
+                        print("\(gob/i) \(i)")
+                        break
+                    }
+                }
+            }
+        }
+    }
+}
+
+func solution17() {
+    let n = Int(readLine()!)!
+    let arr = Array(readLine()!)
+    var str = ""
+    for i in 1...arr.count {
+        if i%n == 1 {
+            str += String(arr[i-1])
+        }
+    }
+    print(str)
+}
+
+func solution16() {
+    let sl:[Double] = readLine()!.split(separator: " ").map{ Double(String($0))! }
+    let nl:[Double] = readLine()!.split(separator: " ").map{ Double(String($0))! }
+    let ul:[Double] = readLine()!.split(separator: " ").map{ Double(String($0))! }
+    let s = sl[1]*10/(sl[0] >= 500 ? sl[0]*10-500 : sl[0]*10)
+    let n = nl[1]*10/(nl[0] >= 500 ? nl[0]*10-500 : nl[0]*10)
+    let u = ul[1]*10/(ul[0] >= 500 ? ul[0]*10-500 : ul[0]*10)
+    if s > n && s > u {
+        print("S")
+    } else if n > u {
+        print("N")
+    } else {
+        print("U")
+    }
+}
 
 func solution15() {
     let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
