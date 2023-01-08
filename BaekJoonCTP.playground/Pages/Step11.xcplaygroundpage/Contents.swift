@@ -24,7 +24,32 @@ func solution30() {}
 func solution29() {}
 func solution28() {}
 func solution27() {}
-func solution26() {}
+
+// 9095
+func solution26() {
+    func factorial(_ n: Int) -> Int {
+      var n = n
+      var result = 1
+      while n > 1 {
+        result *= n
+        n -= 1
+      }
+      return result
+    }
+
+    let t = Int(readLine()!)!
+    for _ in 1...t {
+        let n = Int(readLine()!)!
+        var sum = 0
+        for i in 0...n/3 {
+            for j in 0...(n-i*3)/2 {
+                let k = n-i*3-j*2
+                sum += factorial(i+j+k)/(factorial(i)*factorial(j)*factorial(k))
+            }
+        }
+        print(sum)
+    }
+}
 
 // 11399
 func solution25() {
