@@ -27,12 +27,112 @@ func solution27() {}
 func solution26() {}
 func solution25() {}
 func solution24() {}
-func solution23() {}
-func solution22() {}
-func solution21() {}
-func solution20() {}
-func solution19() {}
-func solution18() {}
+
+// 1193
+func solution23() {
+    let n = Int(readLine()!)!
+    var a = 0
+    var c = 1
+    var isDone = false
+    while true {
+        for i in 1...c {
+            a += 1
+            if a == n {
+                if c%2 == 0 {
+                    print("\(i)/\(c-i+1)")
+                } else {
+                    print("\(c-i+1)/\(i)")
+                }
+                isDone = true
+                break
+            }
+        }
+        if isDone {
+            break
+        }
+        c += 1
+    }
+}
+
+func solution22() {
+    let n = Int(readLine()!)!
+    let list = readLine()!.split(separator: " ").map{ Int($0)! }
+    let list1 = readLine()!.split(separator: " ").map{ Int($0)! }
+    let c = list1[0]
+    let b = list1[1]
+    var sum = 0
+    for i in list {
+        if i-c > 0 {
+            sum += (i-c+b-1)/b+1
+        } else {
+            sum += 1
+        }
+    }
+    print(sum)
+}
+
+func solution21() {
+    let n = Int(readLine()!)!
+    var m = 1000-n
+    var sum = 0
+    if m >= 500 {
+        sum += m/500
+        m = m%500
+    }
+    if m >= 100 {
+        sum += m/100
+        m = m%100
+    }
+    if m >= 50 {
+        sum += m/50
+        m = m%50
+    }
+    if m >= 10 {
+        sum += m/10
+        m = m%10
+    }
+    if m >= 5 {
+        sum += m/5
+        m = m%5
+    }
+    if m >= 1 {
+        sum += m
+    }
+    print(sum)
+}
+
+func solution20() {
+    let t = Int(readLine()!)!
+    for _ in 1...t {
+        let list = readLine()!.split(separator: ",").map{ Int($0)! }
+        print(list[0]+list[1])
+    }
+}
+
+func solution19() {
+    let n = Int(readLine()!)!
+    if n == 1 {
+        print(1)
+    } else {
+        var list = [0, 1]
+        for i in 2...n {
+            let v = list[i-2]+list[i-1]
+            list.append(v)
+        }
+        print(list.last!)
+    }
+}
+
+func solution18() {
+    let line = readLine()!
+    if line == "1 2 3 4 5 6 7 8" {
+        print("ascending")
+    } else if line == "8 7 6 5 4 3 2 1" {
+        print("descending")
+    } else {
+        print("mixed")
+    }
+}
 
 func solution17() {
     let n = Int(readLine()!)!
