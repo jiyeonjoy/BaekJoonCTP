@@ -12,7 +12,19 @@ func solution42() {}
 func solution41() {}
 func solution40() {}
 func solution39() {}
-func solution38() {}
+
+// 1259
+func solution38() {
+    while true {
+        let str = readLine()!
+        if str == "0" { break }
+        if str == String(str.reversed()) {
+            print("yes")
+        } else {
+            print("no")
+        }
+    }
+}
 
 // 1018
 func solution37() {
