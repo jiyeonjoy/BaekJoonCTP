@@ -37,9 +37,57 @@ func solution17() {}
 func solution16() {}
 func solution15() {}
 func solution14() {}
-func solution13() {}
-func solution12() {}
-func solution11() {}
+
+func solution13() {
+    let n = Int(readLine()!)!
+    var sum = 0
+    var cs = 0
+    if n <= 2 {
+        print(0)
+        print(3)
+    } else {
+        for i in 1...n-2 {
+            cs += i
+            sum += cs
+        }
+        print(sum)
+        print(3)
+    }
+}
+
+func solution12() {
+    let n = Int(readLine()!)!
+    let c = readLine()!.split(separator: " ").map{ Int($0)! }.filter{ $0%2==0 }.count
+    if n/2 == c {
+        print(1)
+    } else {
+        print(0)
+    }
+}
+
+func solution11() {
+    let list = readLine()!.split(separator: " ").map{ Int($0)! }
+    var a = list[0]
+    var b = list[1]
+    var isB = true
+    while true {
+        if isB {
+            isB = false
+            b += a
+            if b >= 5 {
+                print("yt")
+                break
+            }
+        } else {
+            isB = true
+            a += b
+            if a >= 5 {
+                print("yj")
+                break
+            }
+        }
+    }
+}
 
 func solution10() {
     let n = Int(readLine()!)!
