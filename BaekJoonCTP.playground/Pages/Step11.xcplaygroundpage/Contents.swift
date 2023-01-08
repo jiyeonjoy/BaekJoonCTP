@@ -10,7 +10,69 @@ func solution44() {}
 func solution43() {}
 func solution42() {}
 func solution41() {}
-func solution40() {}
+
+class Deque<T: Equatable> {
+    var enqueue: [T]
+    var dequeue: [T] = []
+    var count: Int {
+        return enqueue.count + dequeue.count
+    }
+    var isEmpty: Bool {
+        return enqueue.isEmpty && dequeue.isEmpty
+    }
+    var first: T? {
+        if dequeue.isEmpty {
+            return enqueue.first
+        }
+        return dequeue.last
+    }
+    init(_ queue: [T]) {
+        enqueue = queue
+    }
+    func pushFirst(_ n: T) {
+        dequeue.append(n)
+    }
+    func pushLast(_ n: T) {
+        enqueue.append(n)
+    }
+    func popFirst() -> T? {
+        if dequeue.isEmpty {
+            dequeue = enqueue.reversed()
+            enqueue.removeAll()
+        }
+        return dequeue.popLast()
+        
+    }
+    func popLast() -> T? {
+        var returnValue: T?
+        if enqueue.isEmpty {
+            dequeue.reverse()
+            returnValue = dequeue.popLast()
+            dequeue.reverse()
+        } else {
+            returnValue = enqueue.popLast()
+        }
+        return returnValue
+    }
+    func contains(_ n: T) -> Bool {
+        return enqueue.contains(n) || dequeue.contains(n)
+    }
+    func removeAll() {
+        enqueue.removeAll()
+        dequeue.removeAll()
+    }
+}
+
+// 2164
+func solution401() {
+    var deque: Deque<Int> = Deque(Array(1...Int(readLine()!)!))
+    while deque.count > 1 {
+        deque.popFirst()
+        let a = deque.popFirst()!
+        deque.pushLast(a)
+    }
+    print(deque.popFirst()!)
+}
 
 // 1920
 func solution39() {
