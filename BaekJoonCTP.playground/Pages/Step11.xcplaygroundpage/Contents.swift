@@ -19,7 +19,20 @@ func solution35() {}
 func solution34() {}
 func solution33() {}
 func solution32() {}
-func solution31() {}
+
+// 11653
+func solution31() {
+    var n = Int(readLine()!)!
+    var c = 2
+    while n > 1 {
+        if n%c == 0 {
+            print(c)
+            n /= c
+        } else {
+            c += 1
+        }
+    }
+}
 
 // 2581
 func solution30() {
