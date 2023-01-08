@@ -16,7 +16,31 @@ func solution38() {}
 func solution37() {}
 func solution36() {}
 func solution35() {}
-func solution34() {}
+
+// 2563
+func solution34() {
+    let t = Int(readLine()!)!
+    var dic:[Int:[Int]] = [:]
+    for _ in 1...t {
+        let list = readLine()!.split(separator: " ").map{ Int($0)! }
+        let x = list[0]
+        let y = list[1]
+        for i in x+1...x+10 {
+            var l = dic[i] ?? []
+            for j in y+1...y+10 {
+                if !l.contains(j) {
+                    l.append(j)
+                }
+            }
+            dic[i] = l
+        }
+    }
+    var sum = 0
+    dic.values.map {
+        sum += $0.count
+    }
+    print(sum)
+}
 
 // 9020
 func solution33() {
