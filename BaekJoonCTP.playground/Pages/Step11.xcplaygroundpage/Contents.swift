@@ -35,7 +35,41 @@ func solution19() {}
 func solution18() {}
 func solution17() {}
 func solution16() {}
-func solution15() {}
+
+func solution15() {
+    func isPrime(num: Int) -> Bool {
+        if(num<4) {
+            return num == 1 ? false : true
+        }
+        for i in 2...Int(sqrt(Double(num))) {
+            if(num % i == 0) { return false }
+        }
+        return true
+    }
+
+    let n = Int(readLine()!)!
+    print(n)
+    var str = ""
+    for i in 1...n {
+        var v = 0
+        if i < n {
+            v = i
+        } else {
+            for j in i...1000 {
+                if isPrime(num: j) {
+                    v = j
+                    break
+                }
+            }
+        }
+        if str == "" {
+            str += "\(v)"
+        } else {
+            str += " \(v)"
+        }
+    }
+    print(str)
+}
 
 func solution14() {
     let list = readLine()!.split(separator: " ").map{ Int($0)! }
