@@ -5,7 +5,30 @@ func solution49() {}
 func solution48() {}
 func solution47() {}
 
-func solution46() {}
+func solution46() {
+    let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let n = list[0]
+    let m = list[1]
+    let k = list[2]
+    if k == 3 || n == 1 {
+        print(m)
+    } else if k > 3 {
+        if (m+(k-3)%n)%n != 0 {
+            print((m+(k-3)%n)%n)
+        } else {
+            print(n)
+        }
+    } else {
+        let v = m-(3-k)
+        if v == 0 {
+            print(n)
+        } else if v > 0 {
+            print(v)
+        } else {
+          print(n+v%n)
+        }
+    }
+}
 
 func solution45() {
     let t = Int(readLine()!)!
