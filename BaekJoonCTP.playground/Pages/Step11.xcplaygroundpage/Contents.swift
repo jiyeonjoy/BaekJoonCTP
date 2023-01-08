@@ -22,7 +22,25 @@ func solution32() {}
 func solution31() {}
 func solution30() {}
 func solution29() {}
-func solution28() {}
+
+// 1149
+func solution28() {
+    let n = Int(readLine()!)!
+    var a = 0
+    var b = 0
+    var c = 0
+    for _ in 1...n {
+        let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+            let aa = a
+            let bb = b
+            let cc = c
+            a = min(bb,cc)+list[0]
+            b = min(aa,cc)+list[1]
+            c = min(aa,bb)+list[2]
+        
+    }
+    print(min(a,b,c))
+}
 
 // 11053
 func solution27() {
