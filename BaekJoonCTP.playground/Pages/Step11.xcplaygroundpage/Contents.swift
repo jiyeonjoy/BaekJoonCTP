@@ -21,7 +21,29 @@ func solution33() {}
 func solution32() {}
 func solution31() {}
 func solution30() {}
-func solution29() {}
+
+// 2775
+func solution29() {
+    let t = Int(readLine()!)!
+    for _ in 1...t {
+        let k = Int(readLine()!)!
+        let n = Int(readLine()!)!
+        var list:[Int] = Array(1...n)
+        if k > 1 {
+            for _ in 2...k {
+                var l:[Int] = []
+                var sum = 0
+                for i in 0..<n {
+                    sum += list[i]
+                    l.append(sum)
+                }
+                list = l
+            }
+        }
+        let sum = list.reduce(0,+)
+        print(sum)
+    }
+}
 
 // 1149
 func solution28() {
