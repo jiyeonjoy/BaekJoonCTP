@@ -4,8 +4,21 @@ func solution50() {}
 func solution49() {}
 func solution48() {}
 func solution47() {}
+
 func solution46() {}
-func solution45() {}
+
+func solution45() {
+    let t = Int(readLine()!)!
+    for i in 1...t {
+        let n = Int(readLine()!)!
+        readLine()
+        print("Material Management \(i)")
+        for _ in 1...n {
+            readLine()
+        }
+        print("Classification ---- End!")
+    }
+}
 
 func solution44() {
     let n = Int(readLine()!)!
