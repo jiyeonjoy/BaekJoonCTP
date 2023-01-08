@@ -2,9 +2,35 @@ import Foundation
 
 func solution50() {}
 func solution49() {}
-func solution48() {}
 
-
+func solution48() {
+    readLine()!
+    let arr = Array(readLine()!)
+    var a = 0
+    var strA = ""
+    for i in 0...arr.count-1 {
+        if a >= arr.count-i {
+            break
+        }
+        var t = 0
+        var s = 0
+        var str = ""
+        for j in i...arr.count-1 {
+            if arr[j] == "t" {
+                t += 1
+                str += "t"
+            } else {
+                s += 1
+                str += "s"
+            }
+        }
+        if s == t && a < s+t {
+            a = s+t
+            strA = str
+        }
+    }
+    print(strA)
+}
 
 func solution47() {
     let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
