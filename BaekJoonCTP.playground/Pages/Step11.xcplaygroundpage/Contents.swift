@@ -15,7 +15,18 @@ func solution39() {}
 func solution38() {}
 func solution37() {}
 func solution36() {}
-func solution35() {}
+
+// 2587
+func solution35() {
+    var list:[Int] = []
+    for _ in 1...5 {
+        list.append(Int(readLine()!)!)
+    }
+    list.sort()
+    let p = list.reduce(0,+)/5
+    print(p)
+    print(list[2])
+}
 
 // 2563
 func solution34() {
