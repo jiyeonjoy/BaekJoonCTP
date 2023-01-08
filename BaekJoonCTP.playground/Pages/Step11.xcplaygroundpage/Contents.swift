@@ -17,7 +17,33 @@ func solution37() {}
 func solution36() {}
 func solution35() {}
 func solution34() {}
-func solution33() {}
+
+// 9020
+func solution33() {
+    func isPrime(num: Int) -> Bool {
+        if(num<4) {
+            return num == 1 ? false : true
+        }
+        for i in 2...Int(sqrt(Double(num))) {
+            if(num % i == 0) { return false }
+        }
+        return true
+    }
+
+    let t = Int(readLine()!)!
+    for _ in 1...t {
+        let n = Int(readLine()!)!
+        var minc = n
+        for i in 2...n/2 {
+            if isPrime(num: i) && isPrime(num: n-i) {
+                if n-i-i < minc {
+                    minc = n-i-i
+                }
+            }
+        }
+        print("\(n/2-(minc)/2) \(n/2+(minc)/2)")
+    }
+}
 
 // 4948
 func solution32() {
