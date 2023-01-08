@@ -18,7 +18,31 @@ func solution36() {}
 func solution35() {}
 func solution34() {}
 func solution33() {}
-func solution32() {}
+
+// 4948
+func solution32() {
+    func isPrime(num: Int) -> Bool {
+        if(num<4) {
+            return num == 1 ? false : true
+        }
+        for i in 2...Int(sqrt(Double(num))) {
+            if(num % i == 0) { return false }
+        }
+        return true
+    }
+
+    while true {
+        let n = Int(readLine()!)!
+        if n == 0 { break }
+        var c = 0
+        for i in n+1...2*n {
+            if isPrime(num: i) {
+                c += 1
+            }
+        }
+        print(c)
+    }
+}
 
 // 11653
 func solution31() {
