@@ -25,7 +25,19 @@ func solution29() {}
 func solution28() {}
 func solution27() {}
 func solution26() {}
-func solution25() {}
+
+// 11399
+func solution25() {
+    readLine()
+    let list = readLine()!.split(separator: " ").map{ Int($0)! }.sorted()
+    var sum = 0
+    var c = 0
+    for i in list {
+        c += i
+        sum += c
+    }
+    print(sum)
+}
 
 // 1181
 func solution24() {
