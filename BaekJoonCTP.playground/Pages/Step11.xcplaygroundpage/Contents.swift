@@ -49,7 +49,34 @@ func solution5() {}
 func solution4() {}
 func solution3() {}
 
-func solution2() {}
+func solution2() {
+    let t = Int(readLine()!)!
+    for _ in 1...t {
+        let list = readLine()!.split(separator: " ").map{ Int($0)! }
+        var y = list[0]
+        var m = list[1]
+        var d = 0
+        if m == 1 {
+            y -= 1
+            m = 12
+            d = 31
+        } else {
+            m -= 1
+            if m == 1 || m == 3 || m == 5 || m == 7 || m == 8 || m == 10 {
+                d = 31
+            } else if m == 2 {
+                if y%400 == 0 || (y%4 == 0 && y%100 != 0) {
+                    d = 29
+                } else {
+                    d = 28
+                }
+            } else {
+                d = 30
+            }
+        }
+        print("\(y) \(m) \(d)")
+    }
+}
 
 func solution1() {
     let n = Int(readLine()!)!
