@@ -9,7 +9,26 @@ func solution45() {}
 func solution44() {}
 func solution43() {}
 func solution42() {}
-func solution41() {}
+
+// 2609
+func solution41() {
+    // 최대공약수
+    func gcd(_ a: Int, _ b: Int) -> Int{
+        if (b == 0) { return a }
+        return gcd(b, a % b)
+    }
+
+    // 최소공배수
+    func lcm(_ a: Int, _ b: Int) -> Int {
+        return a * b / gcd(a, b)
+    }
+
+    let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let a = list[0]
+    let b = list[1]
+    print(gcd(a,b))
+    print(lcm(a,b))
+}
 
 class Deque<T: Equatable> {
     var enqueue: [T]
