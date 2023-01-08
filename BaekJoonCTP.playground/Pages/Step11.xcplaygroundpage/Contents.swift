@@ -7,7 +7,24 @@ func solution47() {}
 func solution46() {}
 func solution45() {}
 func solution44() {}
-func solution43() {}
+
+// 10816
+func solution43() {
+    readLine()
+    let list1 = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let dic = Dictionary(grouping: list1) { $0 }
+    readLine()
+    let list2 = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    var str = ""
+    for i in list2 {
+        if str == "" {
+            str += "\(dic[i]?.count ?? 0)"
+        } else {
+            str += " \(dic[i]?.count ?? 0)"
+        }
+    }
+    print(str)
+}
 
 // 10814
 func solution42() {
