@@ -1,4 +1,4 @@
-let list = readLine()!.split(separator: " ").map{ Int($0)! }
+let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
 Int(readLine()!)!
 
 func solution50() {}

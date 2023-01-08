@@ -23,7 +23,22 @@ func solution31() {}
 func solution30() {}
 func solution29() {}
 func solution28() {}
-func solution27() {}
+
+// 11053
+func solution27() {
+    let n = Int(readLine()!)!
+    let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    var dic:[Int:Int] = [:]
+    for i in list {
+        let dicF = dic.filter{ $0.key < i }
+        if dicF.isEmpty {
+            dic[i] = 1
+        } else {
+            dic[i] = dicF.values.max()!+1
+        }
+    }
+    print(dic.values.max()!)
+}
 
 // 9095
 func solution26() {
