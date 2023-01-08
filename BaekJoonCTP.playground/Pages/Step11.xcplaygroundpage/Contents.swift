@@ -2,7 +2,23 @@ import Foundation
 
 func solution50() {}
 func solution49() {}
-func solution48() {}
+
+// 11866
+func solution48() {
+    let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let n = list[0]
+    let k = list[1]
+    var arr = Array(1...n)
+    var a = "<"
+    var i = 1
+    while arr.count > 1 {
+        i = (i+k-1)%arr.count == 0 ? arr.count : (i+k-1)%arr.count
+        a += "\(arr[i-1]), "
+        arr.remove(at: i-1)
+    }
+    a += "\(arr[0])>"
+    print(a)
+}
 
 // 11650
 func solution47() {
