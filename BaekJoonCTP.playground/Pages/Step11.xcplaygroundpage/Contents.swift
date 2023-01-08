@@ -11,7 +11,22 @@ func solution43() {}
 func solution42() {}
 func solution41() {}
 func solution40() {}
-func solution39() {}
+
+// 1920
+func solution39() {
+    readLine()
+    let list1 = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let dic = Dictionary(grouping: list1) { $0 }
+    readLine()
+    let list2 = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    for i in list2 {
+        if dic[i] != nil {
+            print(1)
+        } else {
+            print(0)
+        }
+    }
+}
 
 // 1259
 func solution38() {
