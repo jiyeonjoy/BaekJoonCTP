@@ -4,7 +4,25 @@ func solution50() {}
 func solution49() {}
 func solution48() {}
 func solution47() {}
-func solution46() {}
+
+// 11050
+func solution46() {
+    let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let n = list[0]
+    let k = list[1]
+    if k == 0 {
+        print(1)
+    } else {
+        var a = 1
+        for i in 0..<k {
+            a *= n-i
+        }
+        for i in 1...k {
+            a /= i
+        }
+        print(a)
+    }
+}
 
 class Deque<T: Equatable> {
     var enqueue: [T]
