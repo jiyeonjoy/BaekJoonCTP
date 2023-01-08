@@ -33,7 +33,19 @@ func solution21() {}
 func solution20() {}
 func solution19() {}
 func solution18() {}
-func solution17() {}
+
+func solution17() {
+    let n = Int(readLine()!)!
+    var c = 0
+    for i in 1...n {
+        var v = i + String(i).map{ Int(String($0))! }.reduce(0,+)
+        if v == n {
+            c = i
+            break
+        }
+    }
+    print(c)
+}
 
 func solution16() {
     let list1 = readLine()!.split(separator: ":").map{ Int($0)! }
