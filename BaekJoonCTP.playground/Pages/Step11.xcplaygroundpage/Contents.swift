@@ -3,7 +3,26 @@ import Foundation
 func solution50() {}
 func solution49() {}
 func solution48() {}
-func solution47() {}
+
+// 11650
+func solution47() {
+    let n = Int(readLine()!)!
+    var xyl: [(Int, Int)] = []
+    for _ in 1...n {
+        let list = readLine()!.split(separator: " ")
+        xyl.append((Int(list[0])!, Int(list[1])!))
+    }
+    xyl.sort { (a, b) in
+        if a.0 == b.0 {
+            return a.1 < b.1
+        } else {
+            return a.0 < b.0
+        }
+    }
+    for i in xyl {
+        print(i.0, i.1)
+    }
+}
 
 // 11050
 func solution46() {
