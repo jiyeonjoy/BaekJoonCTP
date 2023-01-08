@@ -26,7 +26,35 @@ func solution28() {}
 func solution27() {}
 func solution26() {}
 func solution25() {}
-func solution24() {}
+
+// 1181
+func solution24() {
+    let n = Int(readLine()!)!
+    var list:[String] = []
+    for _ in 1...n {
+        list.append(readLine()!)
+    }
+    var str = ""
+    var set:Set<String> = Set<String>()
+    set.formUnion(list)
+    let l = set.sorted() {
+        if $0.count < $1.count {
+            return true
+        } else if $0.count == $1.count {
+            return $0 < $1
+        } else {
+            return false
+        }
+    }
+    for s in l {
+        if str == "" {
+            str += s
+        } else {
+            str += "\n\(s)"
+        }
+    }
+    print(str)
+}
 
 // 1193
 func solution23() {
