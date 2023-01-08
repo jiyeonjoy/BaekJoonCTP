@@ -6,7 +6,31 @@ func solution48() {}
 func solution47() {}
 func solution46() {}
 func solution45() {}
-func solution44() {}
+
+func solution44() {
+    let n = Int(readLine()!)!
+    var minx = 40
+    var maxx = 0
+    var miny = 40
+    var maxy = 0
+    for _ in 1...n {
+        let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        if list[0] < minx {
+            minx = list[0]
+        }
+        if list[0] > maxx {
+            maxx = list[0]
+        }
+        if list[1] < miny {
+            miny = list[1]
+        }
+        if list[1] > maxy {
+            maxy = list[1]
+        }
+    }
+    let v = (maxx-minx)*2+(maxy-miny)*2
+    print(v)
+}
 
 func solution43() {
     let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
