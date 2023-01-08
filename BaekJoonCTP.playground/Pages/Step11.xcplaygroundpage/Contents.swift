@@ -47,7 +47,24 @@ func solution7() {}
 func solution6() {}
 func solution5() {}
 func solution4() {}
-func solution3() {}
+
+func solution3() {
+    while true {
+        let list = readLine()!.split(separator: " ").map{ Double($0)! }
+        if list[0] == 0 && list[1] == 0 && list[2] == 0 {
+            break
+        }
+        let m = list[0]
+        let a = list[1]
+        let b = list[2]
+        let v = Int(round((m/a-m/b)*60*60))
+        
+        let ha = v/3600
+        let ma = (v%3600)/60 > 9 ? "\((v%3600)/60)" : "0\((v%3600)/60)"
+        let sa = (v%3600)%60 > 9 ? "\((v%3600)%60)" : "0\((v%3600)%60)"
+        print("\(ha):\(ma):\(sa)")
+    }
+}
 
 func solution2() {
     let t = Int(readLine()!)!
