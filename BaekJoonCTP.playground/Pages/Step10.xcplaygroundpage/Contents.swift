@@ -3,7 +3,33 @@ import Foundation
 func solution50() {}
 func solution49() {}
 func solution48() {}
-func solution47() {}
+
+
+
+func solution47() {
+    let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let m = list[0]
+    let seed = list[1]
+    let x = list[2]
+    let y = list[3]
+    var a = 0
+    var c = 0
+    var isDone = false
+    for i in 0..<m {
+        for j in 0..<m {
+            if (i*seed+j)%m == x && (i*x+j)%m == y {
+                isDone = true
+                a = i
+                c = j
+                break
+            }
+        }
+        if isDone {
+            break
+        }
+    }
+    print("\(a) \(c)")
+}
 
 func solution46() {
     let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
