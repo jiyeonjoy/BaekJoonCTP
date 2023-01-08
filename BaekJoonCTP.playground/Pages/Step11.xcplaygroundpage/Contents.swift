@@ -20,7 +20,37 @@ func solution34() {}
 func solution33() {}
 func solution32() {}
 func solution31() {}
-func solution30() {}
+
+// 2581
+func solution30() {
+    func isPrime(num: Int) -> Bool {
+        if(num<4) {
+            return num == 1 ? false : true
+        }
+        for i in 2...Int(sqrt(Double(num))) {
+            if(num % i == 0) { return false }
+        }
+        return true
+    }
+    let s = Int(readLine()!)!
+    let e = Int(readLine()!)!
+    var a = -1
+    var sum = 0
+    for i in s...e {
+        if isPrime(num: i) {
+            if a == -1 {
+                a = i
+            }
+            sum += i
+        }
+    }
+    if sum == 0 {
+        print(-1)
+    } else {
+        print(sum)
+        print(a)
+    }
+}
 
 // 2775
 func solution29() {
