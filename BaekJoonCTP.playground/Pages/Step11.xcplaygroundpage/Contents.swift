@@ -8,7 +8,25 @@ func solution46() {}
 func solution45() {}
 func solution44() {}
 func solution43() {}
-func solution42() {}
+
+// 10814
+func solution42() {
+    let n = Int(readLine()!)!
+    var dic:[Int:[String]] = [:]
+    for _ in 1...n {
+        let str = readLine()!
+        let list = str.split(separator: " ")
+        let n = Int(String(list[0]))!
+        var l = dic[n] ?? []
+        l.append(str)
+        dic[n] = l
+    }
+    for k in dic.keys.sorted() {
+        for s in dic[k]! {
+            print(s)
+        }
+    }
+}
 
 // 2609
 func solution41() {
