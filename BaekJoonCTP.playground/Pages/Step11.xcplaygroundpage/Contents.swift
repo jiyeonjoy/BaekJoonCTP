@@ -14,7 +14,14 @@ func solution40() {}
 func solution39() {}
 func solution38() {}
 func solution37() {}
-func solution36() {}
+
+// 25305
+func solution36() {
+    let list = readLine()!.split(separator: " ").map{ Int($0)! }
+    let k = list[1]
+    let l = readLine()!.split(separator: " ").map{ Int($0)! }.sorted(by: >)
+    print(l[k-1])
+}
 
 // 2587
 func solution35() {
