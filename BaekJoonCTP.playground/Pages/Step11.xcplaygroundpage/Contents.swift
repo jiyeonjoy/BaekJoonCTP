@@ -40,8 +40,45 @@ func solution14() {}
 func solution13() {}
 func solution12() {}
 func solution11() {}
-func solution10() {}
-func solution9() {}
+
+func solution10() {
+    let n = Int(readLine()!)!
+    if n >= 229 {
+        print(4)
+    } else if n >= 218 {
+        print(3)
+    } else if n >= 206 {
+        print(2)
+    } else {
+        print(1)
+    }
+}
+
+func solution9() {
+    let list = readLine()!.split(separator: " ").map{ Int($0)! }
+    let n = list[0]
+    let t = list[1]
+    var v = 0
+    var isAdd = true
+    for _ in 1...t {
+        if isAdd {
+            if v == n*2 {
+                isAdd = false
+                v -= 1
+            } else {
+                v += 1
+            }
+        } else {
+            if v == 1 {
+                isAdd = true
+                v += 1
+            } else {
+                v -= 1
+            }
+        }
+    }
+    print(v)
+}
 
 func solution8() {
     let n = Int(readLine()!)!
