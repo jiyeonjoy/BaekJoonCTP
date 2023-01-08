@@ -42,8 +42,41 @@ func solution12() {}
 func solution11() {}
 func solution10() {}
 func solution9() {}
-func solution8() {}
-func solution7() {}
+
+func solution8() {
+    let n = Int(readLine()!)!
+    for _ in 1...n {
+        let m = Int(readLine()!)!
+        var list:[[Int]] = []
+        for _ in 1...m {
+            let l = readLine()!.split(separator: " ").map{ Int($0)! }
+            list.append(l)
+        }
+        let l = readLine()!.split(separator: " ").map{ Int($0)! }
+        let kv = l[0]
+        let dv = l[1]
+        let av = l[2]
+        
+        var sum = 0
+        for l in list {
+            let a = l[0]*kv-l[1]*dv+l[2]*av
+            if a > 0 {
+                sum += a
+            }
+        }
+        print(sum)
+    }
+}
+
+func solution7() {
+    let n = Int(readLine()!)!
+    let list = readLine()!.split(separator: " ").map{ Double($0)! }
+    var cv:Double = 0
+    for i in list {
+        cv = (1-(1-cv/100)*(1-i/100))*100
+        print(cv)
+    }
+}
 
 func solution6() {
     let n = Int(readLine()!)!
