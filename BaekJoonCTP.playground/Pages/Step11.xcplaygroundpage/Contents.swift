@@ -5,7 +5,96 @@ func solution49() {}
 func solution48() {}
 func solution47() {}
 func solution46() {}
-func solution45() {}
+
+class Deque<T: Equatable> {
+    var enqueue: [T]
+    var dequeue: [T] = []
+    var count: Int {
+        return enqueue.count + dequeue.count
+    }
+    var isEmpty: Bool {
+        return enqueue.isEmpty && dequeue.isEmpty
+    }
+    var first: T? {
+        if dequeue.isEmpty {
+            return enqueue.first
+        }
+        return dequeue.last
+    }
+    init(_ queue: [T]) {
+        enqueue = queue
+    }
+    func pushFirst(_ n: T) {
+        dequeue.append(n)
+    }
+    func pushLast(_ n: T) {
+        enqueue.append(n)
+    }
+    func popFirst() -> T? {
+        if dequeue.isEmpty {
+            dequeue = enqueue.reversed()
+            enqueue.removeAll()
+        }
+        return dequeue.popLast()
+        
+    }
+    func popLast() -> T? {
+        var returnValue: T?
+        if enqueue.isEmpty {
+            dequeue.reverse()
+            returnValue = dequeue.popLast()
+            dequeue.reverse()
+        } else {
+            returnValue = enqueue.popLast()
+        }
+        return returnValue
+    }
+    func contains(_ n: T) -> Bool {
+        return enqueue.contains(n) || dequeue.contains(n)
+    }
+    func removeAll() {
+        enqueue.removeAll()
+        dequeue.removeAll()
+    }
+}
+
+// 10866
+func solution45() {
+    let n = Int(readLine()!)!
+    var deque: Deque<Int> = Deque([])
+    for _ in 1...n {
+        let str = readLine()!
+        if str.contains("push_front") {
+            let l = str.split(separator: " ")
+            let n = Int(String(l[1]))!
+            deque.pushFirst(n)
+        } else if str.contains("push_back") {
+            let l = str.split(separator: " ")
+            let n = Int(String(l[1]))!
+            deque.pushLast(n)
+        } else if str == "pop_front" {
+            let n = deque.popFirst() ?? -1
+            print(n)
+        } else if str == "pop_back" {
+            let n = deque.popLast() ?? -1
+            print(n)
+        } else if str == "size" {
+            print(deque.count)
+        } else if str == "empty" {
+            print(deque.isEmpty ? 1 : 0)
+        } else if str == "front" {
+            print(deque.first ?? -1)
+        } else {
+            if deque.isEmpty {
+                print(-1)
+            } else {
+                let n = deque.popLast() ?? -1
+                deque.pushLast(n)
+                print(n)
+            }
+        }
+    }
+}
 
 public struct Queue<T> {
   fileprivate var array = [T]()
@@ -122,58 +211,6 @@ func solution41() {
     let b = list[1]
     print(gcd(a,b))
     print(lcm(a,b))
-}
-
-class Deque<T: Equatable> {
-    var enqueue: [T]
-    var dequeue: [T] = []
-    var count: Int {
-        return enqueue.count + dequeue.count
-    }
-    var isEmpty: Bool {
-        return enqueue.isEmpty && dequeue.isEmpty
-    }
-    var first: T? {
-        if dequeue.isEmpty {
-            return enqueue.first
-        }
-        return dequeue.last
-    }
-    init(_ queue: [T]) {
-        enqueue = queue
-    }
-    func pushFirst(_ n: T) {
-        dequeue.append(n)
-    }
-    func pushLast(_ n: T) {
-        enqueue.append(n)
-    }
-    func popFirst() -> T? {
-        if dequeue.isEmpty {
-            dequeue = enqueue.reversed()
-            enqueue.removeAll()
-        }
-        return dequeue.popLast()
-        
-    }
-    func popLast() -> T? {
-        var returnValue: T?
-        if enqueue.isEmpty {
-            dequeue.reverse()
-            returnValue = dequeue.popLast()
-            dequeue.reverse()
-        } else {
-            returnValue = enqueue.popLast()
-        }
-        return returnValue
-    }
-    func contains(_ n: T) -> Bool {
-        return enqueue.contains(n) || dequeue.contains(n)
-    }
-    func removeAll() {
-        enqueue.removeAll()
-        dequeue.removeAll()
-    }
 }
 
 // 2164
