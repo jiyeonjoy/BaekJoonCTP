@@ -44,9 +44,50 @@ func solution10() {}
 func solution9() {}
 func solution8() {}
 func solution7() {}
-func solution6() {}
-func solution5() {}
-func solution4() {}
+
+func solution6() {
+    let n = Int(readLine()!)!
+    if n == 1 {
+        readLine()
+        print(0)
+    } else {
+        var minx = 10000
+        var maxx = -10000
+        var miny = 10000
+        var maxy = -10000
+        for _ in 1...n {
+            let list = readLine()!.split(separator: " ").map{ Int($0)! }
+            if list[0] > maxx {
+                maxx = list[0]
+            }
+            if list[0] < minx {
+                minx = list[0]
+            }
+            if list[1] > maxy {
+                maxy = list[1]
+            }
+            if list[1] < miny {
+                miny = list[1]
+            }
+        }
+        let v = (maxx-minx)*(maxy-miny)
+        print(v)
+    }
+}
+
+func solution5() {
+    let n = Int(readLine()!)!
+    let a = n*(n-1)/2
+    print(a)
+    print(2)
+}
+
+func solution4() {
+    readLine()
+    let list = readLine()!.split(separator: " ").map{ Int($0)! }
+    let v = list.reduce(0, +)-list.max()!
+    print(v)
+}
 
 func solution3() {
     while true {
