@@ -6,7 +6,66 @@ func solution48() {}
 func solution47() {}
 func solution46() {}
 func solution45() {}
-func solution44() {}
+
+public struct Queue<T> {
+  fileprivate var array = [T]()
+  
+  public var isEmpty: Bool {
+    return array.isEmpty
+  }
+  
+  public var count: Int {
+    return array.count
+  }
+  
+  public mutating func enquque(_ element: T) {
+    array.append(element)
+  }
+  
+  public mutating func dequeue() -> T? {
+    if isEmpty {
+      return nil
+    } else {
+      return array.removeFirst()
+    }
+  }
+  
+  public var front: T? {
+    return array.first
+  }
+}
+
+// 10845
+func solution44() {
+    let n = Int(readLine()!)!
+    var queue = Queue<Int>()
+    var last = -1
+
+    for _ in 1...n {
+        let str = readLine()!
+        if str.contains("push") {
+            let l = str.split(separator: " ")
+            let n = Int(String(l[1]))!
+            queue.enquque(n)
+            last = n
+        } else if str == "pop" {
+            let n = queue.dequeue() ?? -1
+            print(n)
+        } else if str == "size" {
+            print(queue.count)
+        } else if str == "empty" {
+            print(queue.isEmpty ? 1 : 0)
+        } else if str == "front" {
+            print(queue.front ?? -1)
+        } else {
+            if queue.isEmpty {
+                print(-1)
+            } else {
+                print(last)
+            }
+        }
+    }
+}
 
 // 10816
 func solution43() {
