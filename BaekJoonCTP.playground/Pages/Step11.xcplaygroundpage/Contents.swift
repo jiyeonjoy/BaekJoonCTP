@@ -34,7 +34,30 @@ func solution20() {}
 func solution19() {}
 func solution18() {}
 func solution17() {}
-func solution16() {}
+
+func solution16() {
+    let list1 = readLine()!.split(separator: ":").map{ Int($0)! }
+    let list2 = readLine()!.split(separator: ":").map{ Int($0)! }
+    let h1 = list1[0]
+    let m1 = list1[1]
+    let s1 = list1[2]
+    let h2 = list2[0]
+    let m2 = list2[1]
+    let s2 = list2[2]
+
+    let minusM = s2-s1 < 0
+    let ns = s2-s1+(minusM ? 60 : 0)
+    let minusH = m2-m1-(minusM ? 1 : 0) < 0
+    let nm = m2-m1-(minusM ? 1 : 0)+(minusH ? 60 : 0)
+    let plusDay = h2-h1-(minusH ? 1 : 0) < 0
+    let nh = h2-h1-(minusH ? 1 : 0)+(plusDay ? 24 : 0)
+    
+    if nh == 0 && nm == 0 && ns == 0 {
+        print("24:00:00")
+    } else {
+        print("\(nh > 9 ? "\(nh)" : "0\(nh)"):\(nm > 9 ? "\(nm)" : "0\(nm)"):\(ns > 9 ? "\(ns)" : "0\(ns)")")
+    }
+}
 
 func solution15() {
     func isPrime(num: Int) -> Bool {
