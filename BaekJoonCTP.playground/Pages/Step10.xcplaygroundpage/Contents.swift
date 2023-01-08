@@ -1,7 +1,31 @@
 import Foundation
 
-func solution50() {}
-func solution49() {}
+func solution50() {
+    let n = Int(readLine()!)!
+    let arr = Array(readLine()!)
+    var sum = 0
+    for i in 0..<arr.count/2 {
+        if arr[i] != arr[arr.count-1-i] {
+            sum += 1
+        }
+    }
+    print(sum)
+}
+
+// 4706
+func solution49() {
+    while true {
+        let list = readLine()!.split(separator: " ").map{ Double(String($0))! }
+        if list[0] == 0 && list[1] == 0 {
+            break
+        }
+        let a = list[0]
+        let b = list[1]
+        let v = sqrt((1-pow(b/a,2)))
+        print(String(format: "%.3f", v))
+        break
+    }
+}
 
 func solution48() {
     readLine()!
