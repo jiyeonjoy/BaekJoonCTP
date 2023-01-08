@@ -36,7 +36,33 @@ func solution18() {}
 func solution17() {}
 func solution16() {}
 func solution15() {}
-func solution14() {}
+
+func solution14() {
+    let list = readLine()!.split(separator: " ").map{ Int($0)! }
+    let n = list[0]
+    let m = list[1]
+    let nl = readLine()!.split(separator: " ").map{ Int($0)! }
+    var al = [Int](repeating: 0, count: n+m)
+    for i in 0...nl.count-1 {
+        al[i] = nl[i]
+    }
+    for j in 1...n {
+        let ml =  readLine()!.split(separator: " ").map{ Int($0)! }
+        al[j-1] -= ml.reduce(0, +)
+        for k in 0..<n+m {
+            al[k] += ml[k]
+        }
+    }
+    var str = ""
+    for l in 0...al.count-1 {
+        if str == "" {
+            str += "\(al[l])"
+        } else {
+            str += " \(al[l])"
+        }
+    }
+    print(str)
+}
 
 func solution13() {
     let n = Int(readLine()!)!
