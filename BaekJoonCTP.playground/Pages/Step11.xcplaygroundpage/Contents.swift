@@ -1,5 +1,59 @@
 import Foundation
 
+func combinations<T>(source: [T], takenBy : Int) -> [[T]] {
+    if(source.count == takenBy) {
+        return [source]
+    }
+
+    if(source.isEmpty) {
+        return []
+    }
+
+    if(takenBy == 0) {
+        return []
+    }
+
+    if(takenBy == 1) {
+        return source.map { [$0] }
+    }
+
+    var result : [[T]] = []
+
+    let rest = Array(source.suffix(from: 1))
+    let subCombos = combinations(source: rest, takenBy: takenBy - 1)
+    result += subCombos.map { [source[0]] + $0 }
+    result += combinations(source: rest, takenBy: takenBy)
+    return result
+}
+
+func allCombos<T>(elements: Array<T>) -> [[T]] {
+    var answer: [[T]] = []
+    for i in 1...elements.count {
+        answer.append(contentsOf: combinations(source: elements, takenBy: i))
+    }
+    return answer
+}
+
+// 24606
+func solution50() {
+    let p = Array(readLine()!)
+    let s = Array(readLine()!)
+    var l = allCombos(elements: [0,1,2,3])
+    l.append([])
+    print(l)
+    var list:[String] = []
+    for i in l {
+        var str = ""
+        for j in 0...3 {
+            str += i.contains(j) ? String(p[j]) : String(s[j])
+        }
+        if !list.contains(str) {
+            list.append(str)
+        }
+    }
+    print(list.count)
+}
+
 // 15279
 func solution49() {
     let t = Int(readLine()!)!
