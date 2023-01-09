@@ -1,7 +1,18 @@
 import Foundation
 
-func solution50() {}
-func solution49() {}
+// 15279
+func solution49() {
+    let t = Int(readLine()!)!
+    for _ in 1...t {
+        let list = readLine()!.split(separator: " ").map{ Double(String($0))! }
+        let b = list[0]
+        let p = list[1]
+        let abpm = String(format: "%.4f", 60*(b-1)/p)
+        let bpm =  String(format: "%.4f", 60*b/p)
+        let cbpm =  String(format: "%.4f", 60*(b+1)/p)
+        print("\(abpm) \(bpm) \(cbpm)")
+    }
+}
 
 // 11866
 func solution48() {
