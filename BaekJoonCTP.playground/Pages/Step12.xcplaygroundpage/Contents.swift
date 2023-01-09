@@ -22,6 +22,39 @@
 //print(v)
 import Foundation
 
+// 1874
+func s1874() {
+    let k = Int(readLine()!)!
+    var list:[Int] = []
+    var c = 1
+    var str = ""
+    for _ in 1...k {
+        let n = Int(readLine()!)!
+        if !list.contains(n) {
+            while !list.contains(n) {
+                list.append(c)
+                c += 1
+                if str == "" {
+                    str += "+"
+                } else {
+                    str += "\n+"
+                }
+            }
+            list.removeLast()
+            str += "\n-"
+        } else {
+            if list.last! == n {
+                list.removeLast()
+                str += "\n-"
+            } else {
+                str = "NO"
+                break
+            }
+        }
+    }
+    print(str)
+}
+
 // 1654
 func s1654() {
     let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
