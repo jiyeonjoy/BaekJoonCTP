@@ -4,6 +4,7 @@
         <page name='FileIO'/>
         <page name='Queue'/>
         <page name='Deque'/>
+        <page name='Combinations'/>
         <page name='Step0'/>
         <page name='Step1'/>
         <page name='Step2'/>
