@@ -22,6 +22,31 @@
 //print(v)
 import Foundation
 
+func getPow(_ i:Int) -> Int {
+    if i == 0 {
+        return 1
+    }
+    var v = 1
+    for _ in 1...i {
+        v *= 31
+        v = v%1234567891
+    }
+    return v
+}
+
+func s15829() {
+    let l = Array("0abcdefghijklmnopqrstuvwxyz")
+    readLine()
+    let str = Array(readLine()!)
+    var sum = 0
+    for i in 0...str.count-1 {
+        let n = l.firstIndex(of: str[i])!
+        sum += n*Int(getPow(i))%1234567891
+    }
+    sum = sum%1234567891
+    print(sum)
+}
+
 func s25933() {
     let n = Int(readLine()!)!
     for i in 1...n {
