@@ -22,6 +22,37 @@
 //print(v)
 import Foundation
 
+func s25933() {
+    let n = Int(readLine()!)!
+    for i in 1...n {
+        let str = readLine()!
+        let list = str.split(separator: " ").map{ Int(String($0))! }
+        let ag = list[0]
+        let aa = list[1]
+        let ad = list[2]
+        
+        let rg = list[3]
+        let ra = list[4]
+        let rd = list[5]
+        
+        let isWinCount = ag+aa+ad > rg+ra+rd
+        let isWinColor = ag > rg || (ag == rg && aa > ra) || (ag == rg && aa == ra && ad > rd)
+        print(str)
+        if isWinCount && isWinColor {
+            print("both")
+        } else if isWinCount {
+            print("count")
+        } else if isWinColor {
+            print("color")
+        } else {
+            print("none")
+        }
+        if i < n {
+            print("")
+        }
+    }
+}
+
 // 1874
 func s1874() {
     let k = Int(readLine()!)!
