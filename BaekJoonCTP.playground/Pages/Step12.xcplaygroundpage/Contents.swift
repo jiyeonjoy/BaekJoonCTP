@@ -1,5 +1,27 @@
 import Foundation
 
+func s7568() {
+    let t = Int(readLine()!)!
+    var arr: [(Int, Int)] = []
+
+    for _ in 1...t {
+        let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        arr.append((list[0], list[1]))
+    }
+    var str = ""
+    for i in 0...arr.count {
+        let c = arr.filter{
+            $0.0 > arr[i].0 && $0.1 > arr[i].1
+        }.count
+        if str == "" {
+            str += "\(c+1)"
+        } else {
+            str += " \(c+1)"
+        }
+    }
+    print(str)
+}
+
 struct Stack<T> {
     private var stack: [T] = []
     
