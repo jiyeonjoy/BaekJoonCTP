@@ -1,5 +1,28 @@
 import Foundation
 
+func s2805() {
+    let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let m = list[1]
+    var s = 0
+    var e = 1000000001
+    let tl = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    while e - s > 1 {
+        let medium = (e+s)/2
+        var sum = 0
+        for t in tl {
+            if t > medium {
+                sum += t-medium
+            }
+        }
+        if sum >= m {
+            s = medium
+        } else {
+            e = medium
+        }
+    }
+    print(s)
+}
+
 class Deque<T: Equatable> {
     var enqueue: [T]
     var dequeue: [T] = []
