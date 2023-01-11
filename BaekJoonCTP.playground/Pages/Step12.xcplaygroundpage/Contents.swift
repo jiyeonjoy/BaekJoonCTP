@@ -1,5 +1,27 @@
 import Foundation
 
+func s1676() {
+    let n = Int(readLine()!)!
+    if n == 0 {
+        print(0)
+    } else {
+        var tc = 0
+        var fc = 0
+        for i in 1...n {
+            var a = i
+            while a%2 == 0 {
+                a /= 2
+                tc += 1
+            }
+            while a%5 == 0 {
+                a /= 5
+                fc += 1
+            }
+        }
+        print(min(tc,fc))
+    }
+}
+
 func s7568() {
     let t = Int(readLine()!)!
     var arr: [(Int, Int)] = []
