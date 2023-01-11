@@ -1,5 +1,37 @@
 import Foundation
 
+func s18111() {
+    let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let n = l[0]
+    let b = l[2]
+    var list:[Int] = []
+    for _ in 1...n {
+        list += readLine()!.split(separator: " ").map{ Int(String($0))! }
+    }
+    var minsum = -1
+    var h = 0
+    for i in list.min()!...list.max()! {
+        var sum = 0
+        var bc = 0
+        for j in 0...list.count-1 {
+            if i < list[j] {
+                sum += (list[j]-i)*2
+                bc += list[j]-i
+            } else if i > list[j] {
+                sum += i-list[j]
+                bc -= i-list[j]
+            }
+        }
+        if bc+b >= 0 && (minsum == -1 || minsum >= sum){
+            minsum = sum
+            h = i
+        } else if bc+b < 0 {
+            break
+        }
+    }
+    print("\(minsum) \(h)")
+}
+
 func s2108() {
     let n = Int(readLine()!)!
     var list:[Int] = []
