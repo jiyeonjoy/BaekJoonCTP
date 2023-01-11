@@ -1,5 +1,53 @@
 import Foundation
 
+struct Stack<T> {
+    private var stack: [T] = []
+    
+    public var count: Int {
+        return stack.count
+    }
+    
+    public var isEmpty: Bool {
+        return stack.isEmpty
+    }
+    
+    public mutating func push(_ element: T) {
+        stack.append(element)
+    }
+    
+    public mutating func pop() -> T? {
+        return isEmpty ? nil : stack.popLast()!
+    }
+    
+}
+
+func s4949() {
+    while true {
+        let str = readLine()!
+        if str == "." { break }
+        var myStack: Stack = Stack<Character>()
+        var isYes = true
+        let arr = Array(str)
+        for i in 0...arr.count-1 {
+            if arr[i] == "(" || arr[i] == "[" {
+                myStack.push(arr[i])
+            } else if arr[i] == ")" || arr[i] == "]" {
+                let c = myStack.pop() ?? " "
+                let d:Character = arr[i] == ")" ? "(" : "["
+                if c != d {
+                    isYes = false
+                    break
+                }
+            }
+        }
+        if isYes && myStack.isEmpty {
+            print("yes")
+        } else {
+            print("no")
+        }
+    }
+}
+
 func s2805() {
     let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
     let m = list[1]
