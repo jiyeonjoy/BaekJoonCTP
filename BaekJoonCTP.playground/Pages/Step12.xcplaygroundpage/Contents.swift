@@ -1,5 +1,29 @@
 import Foundation
 
+func s2108() {
+    let n = Int(readLine()!)!
+    var list:[Int] = []
+    for _ in 1...n {
+        list.append(Int(readLine()!)!)
+    }
+    list.sort()
+    let a = Int(round(Double(list.reduce(0,+))/Double(list.count)))
+    let b = list[list.count/2]
+    let dic = Dictionary(grouping: list) { $0 }.sorted{
+        if $0.value.count == $1.value.count {
+            return $0.key < $1.key
+        } else {
+            return $0.value.count > $1.value.count
+        }
+    }
+    let c = dic.count > 1 && dic[0].value.count == dic[1].value.count ? dic[1].key : dic[0].key
+    let d = list.max()! - list.min()!
+    print(a)
+    print(b)
+    print(c)
+    print(d)
+}
+
 func s1436() {
     let n = Int(readLine()!)!
     var v = 666
