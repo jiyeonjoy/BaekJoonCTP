@@ -9,7 +9,7 @@ func s7568() {
         arr.append((list[0], list[1]))
     }
     var str = ""
-    for i in 0...arr.count {
+    for i in 0...arr.count-1 {
         let c = arr.filter{
             $0.0 > arr[i].0 && $0.1 > arr[i].1
         }.count
