@@ -1,5 +1,19 @@
 import Foundation
 
+func s10773() {
+    let t = Int(readLine()!)!
+    var l:[Int] = []
+    for _ in 1...t {
+        let n = Int(readLine()!)!
+        if n != 0 {
+            l.append(n)
+        } else {
+            l.removeLast()
+        }
+    }
+    print(l.reduce(0,+))
+}
+
 func s18111() {
     let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
     let n = l[0]
