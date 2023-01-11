@@ -1,5 +1,91 @@
 import Foundation
 
+class Deque<T: Equatable> {
+    var enqueue: [T]
+    var dequeue: [T] = []
+    var count: Int {
+        return enqueue.count + dequeue.count
+    }
+    var isEmpty: Bool {
+        return enqueue.isEmpty && dequeue.isEmpty
+    }
+    var first: T? {
+        if dequeue.isEmpty {
+            return enqueue.first
+        }
+        return dequeue.last
+    }
+    init(_ queue: [T]) {
+        enqueue = queue
+    }
+    func pushFirst(_ n: T) {
+        dequeue.append(n)
+    }
+    func pushLast(_ n: T) {
+        enqueue.append(n)
+    }
+    func popFirst() -> T? {
+        if dequeue.isEmpty {
+            dequeue = enqueue.reversed()
+            enqueue.removeAll()
+        }
+        return dequeue.popLast()
+        
+    }
+    func popLast() -> T? {
+        var returnValue: T?
+        if enqueue.isEmpty {
+            dequeue.reverse()
+            returnValue = dequeue.popLast()
+            dequeue.reverse()
+        } else {
+            returnValue = enqueue.popLast()
+        }
+        return returnValue
+    }
+    func contains(_ n: T) -> Bool {
+        return enqueue.contains(n) || dequeue.contains(n)
+    }
+    func removeAll() {
+        enqueue.removeAll()
+        dequeue.removeAll()
+    }
+}
+
+func s1966() {
+    let t = Int(readLine()!)!
+    for _ in 1...t {
+        let i = readLine()!.split(separator: " ").map{ Int(String($0))! }[1]
+        var list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        var deque: Deque<Int> = Deque(list)
+        list.sort(by: >)
+        var maxi = 0
+        var ci = i
+        var a = 0
+        while true {
+            let n = deque.popFirst()!
+            if n == list[maxi] {
+                a += 1
+                maxi += 1
+                if ci == 0 {
+                    break
+                } else {
+                    ci -= 1
+                }
+            } else {
+                deque.pushLast(n)
+                if ci == 0 {
+                    ci = deque.count-1
+                } else {
+                    ci -= 1
+                }
+            }
+        }
+        print(a)
+    }
+
+}
+
 func s10773() {
     let t = Int(readLine()!)!
     var l:[Int] = []
