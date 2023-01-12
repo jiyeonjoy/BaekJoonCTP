@@ -1,5 +1,20 @@
 import Foundation
 
+func s1003() {
+    let t = Int(readLine()!)!
+    var list: [[Int]] = [[1,0], [0,1]]
+    for _ in 1...t {
+        let n = Int(readLine()!)!
+        if n > list.count-1 {
+            for i in list.count...n {
+                let l = [list[i-1][0]+list[i-2][0], list[i-1][1]+list[i-2][1]]
+                list.append(l)
+            }
+        }
+        print("\(list[n][0]) \(list[n][1])")
+    }
+}
+
 func s1676() {
     let n = Int(readLine()!)!
     if n == 0 {
