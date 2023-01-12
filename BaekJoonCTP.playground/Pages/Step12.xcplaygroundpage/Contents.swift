@@ -1,5 +1,17 @@
 import Foundation
 
+func s1541() {
+    let ml = readLine()!.split(separator: "-").map{ String($0) }
+    var sum = ml[0].split(separator: "+").map{ Int(String($0))! }.reduce(0,+)
+    if ml.count > 1 {
+        for i in 1..<ml.count {
+            let pl = ml[i].split(separator: "+").map{ Int(String($0))! }.reduce(0, +)
+            sum -= pl
+        }
+    }
+    print(sum)
+}
+
 func s1620() {
     let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
     let n = list[0]
