@@ -1,5 +1,26 @@
 import Foundation
 
+func s17618() {
+    let n = Int(readLine()!)!
+    if n <= 10 {
+        print(n)
+    } else {
+        var c = 10
+        for i in 11...n {
+            var sum = 0
+            var a = i
+            while a > 0 {
+                sum += a%10
+                a /= 10
+            }
+            if i%sum == 0 {
+                c += 1
+            }
+        }
+        print(c)
+    }
+}
+
 func s1541() {
     let ml = readLine()!.split(separator: "-").map{ String($0) }
     var sum = ml[0].split(separator: "+").map{ Int(String($0))! }.reduce(0,+)
