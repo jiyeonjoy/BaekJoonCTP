@@ -1,5 +1,21 @@
 import Foundation
 
+func s19796() {
+    let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    var v:[Int] = Array.init(repeating: 0, count: list[0]+1)
+    for _ in 1...list[1] {
+        let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        for j in l[0]...l[1] {
+            v[j] = 1
+        }
+    }
+    if v.filter({ $0 == 0 }).count == 1 {
+        print("YES")
+    } else {
+        print("NO")
+    }
+}
+
 func s17618() {
     let n = Int(readLine()!)!
     if n <= 10 {
