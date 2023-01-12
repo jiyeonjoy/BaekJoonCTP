@@ -1,5 +1,27 @@
 import Foundation
 
+func s1620() {
+    let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let n = list[0]
+    let k = list[1]
+    var dic:[String:Int] = [:]
+    var dic2:[Int:String] = [:]
+    for i in 1...n {
+        let s = readLine()!
+        dic[s] = i
+        dic2[i] = s
+    }
+    for _ in 1...k {
+        let s = readLine()!
+        let n = Int(s) ?? -1
+        if n > -1 {
+            print(dic2[n]!)
+        } else {
+            print(dic[s]!)
+        }
+    }
+}
+
 func s1003() {
     let t = Int(readLine()!)!
     var list: [[Int]] = [[1,0], [0,1]]
