@@ -1,5 +1,27 @@
 import Foundation
 
+func s18870() {
+    readLine()
+    let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let s = Set(list).sorted()
+    var dic:[Int:Int] = [:]
+    for i in 0...s.count-1 {
+        if dic[s[i]] == nil {
+            dic[s[i]] = i
+        }
+    }
+    var str = ""
+    list.map {
+        n in
+        if str == "" {
+            str += "\(dic[n]!)"
+        } else {
+            str += " \(dic[n]!)"
+        }
+    }
+    print(str)
+}
+
 func s19796() {
     let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
     var v:[Int] = Array.init(repeating: 0, count: list[0]+1)
