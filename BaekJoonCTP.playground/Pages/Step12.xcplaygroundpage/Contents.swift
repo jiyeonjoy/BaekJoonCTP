@@ -1,5 +1,51 @@
 import Foundation
 
+func s5525() {
+    let n = Int(readLine()!)!
+    var strc = n*2+1
+    let m = Int(readLine()!)!
+    let s = Array(readLine()!)
+    var v = 0
+    var i = 0
+    var isI = true
+    var c = 0
+    while true {
+        if isI {
+            if s[i] == "I" {
+                c += 1
+                isI = false
+            } else {
+                if c >= strc {
+                    let a = ((c+1)/2)-n
+                    v += a
+                }
+                c = 0
+            }
+        } else {
+            if s[i] == "O" {
+                c += 1
+                isI = true
+            } else {
+                if c >= strc {
+                    let a = ((c+1)/2)-n
+                    v += a
+                }
+                c = 1
+                isI = false
+            }
+        }
+        i += 1
+        if i >= s.count {
+            break
+        }
+    }
+    if c >= strc {
+        let a = ((c+1)/2)-n
+        v += a
+    }
+    print(v)
+}
+
 func s18870() {
     readLine()
     let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
