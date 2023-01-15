@@ -1,5 +1,23 @@
 import Foundation
 
+func s14425() {
+    let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let n = l[0]
+    let m = l[1]
+    var dic:[String:Bool] = [:]
+    for _ in 1...n {
+        dic[readLine()!] = true
+    }
+    var c = 0
+    for _ in 1...m {
+        let isE = dic[readLine()!] ?? false
+        if isE {
+            c += 1
+        }
+    }
+    print(c)
+}
+
 func s11729() {
     func hanoi(_ n:Int, _ start:Int, _ middle:Int, _ end:Int) {
         if(n == 1) {
