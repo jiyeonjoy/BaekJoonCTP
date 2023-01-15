@@ -1,5 +1,23 @@
 import Foundation
 
+func s1476() {
+    let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let e = list[0]
+    let s = list[1]%28
+    let m = list[2]%19
+    var i = 1
+    var v = 0
+    while true {
+        i = v*15+e
+        if i%28 == s && i%19 == m {
+            break
+        } else {
+            v += 1
+        }
+    }
+    print(i)
+}
+
 func s10815() {
     readLine()
     var dic:[Int:Bool] = [:]
