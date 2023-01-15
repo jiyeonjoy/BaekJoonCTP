@@ -1,5 +1,35 @@
 import Foundation
 
+func s2477() {
+    let n = Int(readLine()!)!
+    var dic:[Int:[Int]] = [:]
+    var list:[[Int]] = []
+    for _ in 1...6 {
+        let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        list.append(l)
+        var a = dic[l[0]] ?? []
+        a.append(l[1])
+        dic[l[0]] = a
+    }
+    var a = dic[1]?.count == 1 ? 1 : 2
+    var b = dic[3]?.count == 1 ? 3 : 4
+    var all = dic[a]![0] * dic[b]![0]
+    list += list
+    var lll:[Int] = []
+    var i = 0
+    while lll.count < 4 {
+        if list[i][0] == a || list[i][0] == b {
+            lll.removeAll()
+        } else {
+            lll.append(list[i][1])
+        }
+        i += 1
+    }
+    var sub = lll[1]*lll[2]
+
+    print((all-sub)*n)
+}
+
 func s1269() {
     let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
     let ac = l[0]
