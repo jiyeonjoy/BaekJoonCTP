@@ -1,5 +1,49 @@
 import Foundation
 
+func s1002() {
+    let t = Int(readLine()!)!
+    for _ in 1...t {
+        let l = readLine()!.split(separator: " ").map{ Double(String($0))! }
+        let x1 = l[0]
+        let y1 = l[1]
+        let r1 = l[2]
+        let x2 = l[3]
+        let y2 = l[4]
+        let r2 = l[5]
+        var v = 0
+        if x1 == x2 && y1 == y2 {
+            if r1 == r2 {
+                v = -1
+            } else {
+                v = 0
+            }
+        } else {
+            let d = sqrt(pow(Double(x1-x2), 2)+pow(Double(y1-y2), 2))
+            if r1+r2 > d {
+                if r1 > r2 {
+                    if d+r2 == r1 {
+                        v = 1
+                    } else if d+r2 > r1 {
+                        v = 2
+                    }
+                } else if r1 < r2 {
+                    if d+r1 == r2 {
+                        v = 1
+                    } else if d+r1 > r2 {
+                        v = 2
+                    }
+                } else {
+                    v = 2
+                }
+              
+            } else if r1+r2 == d {
+                v = 1
+            }
+        }
+        print(v)
+    }
+}
+
 func s2477() {
     let n = Int(readLine()!)!
     var dic:[Int:[Int]] = [:]
