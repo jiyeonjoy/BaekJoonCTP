@@ -1,5 +1,22 @@
 import Foundation
 
+func s11729() {
+    func hanoi(_ n:Int, _ start:Int, _ middle:Int, _ end:Int) {
+        if(n == 1) {
+            print("\(start) \(end)")
+            return
+        }
+        hanoi(n-1, start, end, middle)
+        hanoi(1, start, middle, end)
+        hanoi(n-1, middle, start, end)
+    }
+
+    let n = Int(readLine()!)!
+    let cnt = pow(2, n)-1
+    print(cnt)
+    hanoi(n, 1, 2, 3)
+}
+
 func s2447() {
     func getLine(_ i:Int, _ n:Int, _ s:String) -> String {
         var s = s
