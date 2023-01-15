@@ -1,5 +1,21 @@
 import Foundation
 
+func s3036() {
+    func gcd(_ a: Int, _ b: Int) -> Int{
+        if (b == 0) { return a }
+        return gcd(b, a % b)
+    }
+
+    readLine()
+    let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let a = l[0]
+    for i in 1...l.count-1 {
+        let b = l[i]
+        let g = gcd(a, b)
+        print("\(a/g)/\(b/g)")
+    }
+}
+
 func s2981() {
     func gcd(_ a: Int, _ b: Int) -> Int{
         if (b == 0) { return a }
