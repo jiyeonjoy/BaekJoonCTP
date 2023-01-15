@@ -1,5 +1,55 @@
 import Foundation
 
+func s24060() {
+    func mergeSort(_ a:[Int]) -> [Int] {
+        if a.count == 1 {
+            return a
+        }
+        let mid = (a.count+1)/2
+        let left = mergeSort(Array(a[0...mid-1]))
+        let right = mergeSort(Array(a[mid...a.count-1]))
+        
+        var sortList:[Int] = []
+        var l = 0
+        var r = 0
+        while l < left.count && r < right.count {
+            if left[l] < right[r] {
+                sortList.append(left[l])
+                ans.append(left[l])
+                l += 1
+            } else {
+                sortList.append(right[r])
+                ans.append(right[r])
+                r += 1
+            }
+        }
+        while l < left.count {
+            sortList.append(left[l])
+            ans.append(left[l])
+            l += 1
+        }
+        while r < right.count {
+            sortList.append(right[r])
+            ans.append(right[r])
+            r += 1
+        }
+        
+        return sortList
+    }
+
+    let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let a = l[0]
+    let k = l[1]
+    let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    var ans:[Int] = []
+    mergeSort(list)
+    if ans.count >= k {
+        print(ans[k-1])
+    } else {
+        print(-1)
+    }
+}
+
 func s1475() {
     let arr = Array(readLine()!)
     let dic = Dictionary(grouping: arr){ $0 }
