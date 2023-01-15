@@ -1,5 +1,21 @@
 import Foundation
 
+func s1453() {
+    readLine()
+    let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    var dic:[Int:Bool] = [:]
+    var v = 0
+    for i in list {
+        let s = dic[i] ?? false
+        if s {
+            v += 1
+        } else {
+            dic[i] = true
+        }
+    }
+    print(v)
+}
+
 func s5598() {
     let arr = Array("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
     let str = Array(readLine()!)
