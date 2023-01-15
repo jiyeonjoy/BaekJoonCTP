@@ -1,5 +1,29 @@
 import Foundation
 
+func s2447() {
+    func getLine(_ i:Int, _ n:Int, _ s:String) -> String {
+        var s = s
+        if (n == 3 && (i%n == 0 || i%n == 1)) || (n > 3 && (n/3 >= i%n || n*2/3 < i%n)) {
+            s = String(repeating: s, count: 3)
+        } else {
+            s = String(repeating: s, count: 1)+String(repeating: " ", count: s.count)+String(repeating: s, count: 1)
+        }
+
+        return s
+    }
+
+    let n = Int(readLine()!)!
+    for i in 1...n {
+        var v = 1
+        var line = "*"
+        while v != n {
+            v *= 3
+            line = getLine(i, v, line)
+        }
+        print(line)
+    }
+}
+
 func s24060() {
     func mergeSort(_ a:[Int]) -> [Int] {
         if a.count == 1 {
