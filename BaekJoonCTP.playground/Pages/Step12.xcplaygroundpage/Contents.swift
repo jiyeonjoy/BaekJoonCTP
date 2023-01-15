@@ -1,5 +1,16 @@
 import Foundation
 
+func s5598() {
+    let arr = Array("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
+    let str = Array(readLine()!)
+    var v = ""
+    for c in str {
+        let i = (arr.firstIndex(of: c)!+arr.count-3)%arr.count
+        v += String(arr[i])
+    }
+    print(v)
+}
+
 func s5525() {
     let n = Int(readLine()!)!
     var strc = n*2+1
