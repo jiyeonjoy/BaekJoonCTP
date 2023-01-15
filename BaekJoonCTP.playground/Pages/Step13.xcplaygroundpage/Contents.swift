@@ -1,48 +1,47 @@
 import Foundation
 
-struct Stack<T> {
-    private var stack: [T] = []
-
-    public var count: Int {
-        return stack.count
+func s2981() {
+    func gcd(_ a: Int, _ b: Int) -> Int{
+        if (b == 0) { return a }
+        return gcd(b, a % b)
     }
 
-    public var isEmpty: Bool {
-        return stack.isEmpty
+    let n = Int(readLine()!)!
+    var l:[Int] = []
+    var minv = 1000000000
+    for _ in 1...n {
+        let num = Int(readLine()!)!
+        l.append(num)
+        if num < minv {
+            minv = num
+        }
     }
 
-    public mutating func push(_ element: T) {
-        stack.append(element)
+    var str = ""
+    var v = l[0]-minv
+    for n in l {
+        if n > minv {
+            v = gcd(v, n-minv)
+        }
     }
 
-    public mutating func pop() -> T? {
-        return isEmpty ? nil : stack.popLast()!
-    }
-
-}
-
-//let t = Int(readLine()!)!
-var stack: Stack = Stack<Int>()
-let lll = [5,
-           4,
-           3,
-           2,
-           1]
-for i in 1...lll.count {
-    let n = lll[i-1]//Int(readLine()!)!
-    if stack.isEmpty {
-        stack.push(n)
-    } else {
-        while !stack.isEmpty {
-            let a = stack.pop()!
-            if a > n {
-                stack.push(a)
-                break
-            } else if a == n {
-                break
+    if v > 3 {
+        for i in 2...v/2 {
+            if v%i == 0 {
+                if str == "" {
+                    str += "\(i)"
+                } else {
+                    str += " \(i)"
+                }
             }
         }
-        stack.push(n)
     }
+
+    if str == "" {
+        str += "\(v)"
+    } else {
+        str += " \(v)"
+    }
+
+    print(str)
 }
-print(stack.count)
