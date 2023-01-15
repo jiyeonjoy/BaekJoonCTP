@@ -1,5 +1,31 @@
 import Foundation
 
+func s1475() {
+    let arr = Array(readLine()!)
+    let dic = Dictionary(grouping: arr){ $0 }
+    let sorted = dic.sorted{ $0.value.count > $1.value.count }
+    if sorted[0].key == "6" || sorted[0].key == "9" {
+        let v = (dic["6"]?.count ?? 0) + (dic["9"]?.count ?? 0)
+        let v1 = (v+1)/2
+        if sorted.count > 1 {
+            if sorted[1].key != "6" && sorted[1].key != "9" {
+                let v2 = sorted[1].value.count
+                if v2 > v1 {
+                    print(v2)
+                } else {
+                    print(v1)
+                }
+            } else {
+                print(v1)
+            }
+        } else {
+            print(v1)
+        }
+    } else {
+        print(sorted[0].value.count)
+    }
+}
+
 func s1476() {
     let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
     let e = list[0]
