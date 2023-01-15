@@ -1,5 +1,23 @@
 import Foundation
 
+func s1269() {
+    let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let ac = l[0]
+    let bc = l[1]
+    var dic:[Int:Bool] = [:]
+    readLine()!.split(separator: " ").map{
+        dic[Int(String($0))!] = true
+    }
+    var ab = 0
+    readLine()!.split(separator: " ").map{
+        let isE = dic[Int(String($0))!] ?? false
+        if isE {
+            ab += 1
+        }
+    }
+    print((ac-ab)+(bc-ab))
+}
+
 func s1764() {
     let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
     let n = l[0]
