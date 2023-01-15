@@ -1,5 +1,25 @@
 import Foundation
 
+func s1010() {
+    let t = Int(readLine()!)!
+    for _ in 1...t {
+        let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        let n = list[0]
+        let m = list[1]
+        var v = 1
+        var arr = Array(1...n)
+        for i in 0...n-1 {
+            if arr.contains(m-i) {
+                arr.remove(at: arr.firstIndex(of: m-i)!)
+            } else {
+                v *= m-i
+            }
+        }
+        let p = arr.reduce(1, *)
+        print(v/p)
+    }
+}
+
 func s1373() {
     let arr = Array(readLine()!)
     var str = ""
