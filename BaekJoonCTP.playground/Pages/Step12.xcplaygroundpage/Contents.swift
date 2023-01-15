@@ -1,5 +1,30 @@
 import Foundation
 
+func s1004() {
+    let t = Int(readLine()!)!
+    for _ in 1...t {
+        let l = readLine()!.split(separator: " ").map{ Double(String($0))! }
+        let x1 = l[0]
+        let y1 = l[1]
+        let x2 = l[2]
+        let y2 = l[3]
+        let n = Int(readLine()!)!
+        var c = 0
+        for _ in 1...n {
+            let l = readLine()!.split(separator: " ").map{ Double(String($0))! }
+            let x = l[0]
+            let y = l[1]
+            let r = l[2]
+            let d1 = sqrt(pow(Double(x1-x), 2)+pow(Double(y1-y), 2))
+            let d2 = sqrt(pow(Double(x2-x), 2)+pow(Double(y2-y), 2))
+            if (d1 <= r && d2 > r) || (d1 > r && d2 <= r) {
+                c += 1
+            }
+        }
+        print(c)
+    }
+}
+
 func s1002() {
     let t = Int(readLine()!)!
     for _ in 1...t {
