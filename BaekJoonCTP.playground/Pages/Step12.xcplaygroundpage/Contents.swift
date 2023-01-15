@@ -1,5 +1,24 @@
 import Foundation
 
+func s11655() {
+    let arr = Array("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
+    let arr2 = Array("abcdefghijklmnopqrstuvwxyz")
+    let str = Array(readLine()!)
+    var v = ""
+    for c in str {
+        if c.asciiValue! >= 97 {
+            let i = (arr2.firstIndex(of: c)!+arr2.count+13)%arr2.count
+            v += String(arr2[i])
+        } else if c.asciiValue! >= 65 {
+            let i = (arr.firstIndex(of: c)!+arr.count+13)%arr.count
+            v += String(arr[i])
+        } else {
+            v += String(c)
+        }
+    }
+    print(v)
+}
+
 func s1453() {
     readLine()
     let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
