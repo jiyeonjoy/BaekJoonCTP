@@ -1,5 +1,32 @@
 import Foundation
 
+func s10815() {
+    readLine()
+    var dic:[Int:Bool] = [:]
+    readLine()!.split(separator: " ").map{
+        dic[Int(String($0))!] = true
+    }
+    readLine()
+    var str = ""
+    readLine()!.split(separator: " ").map{
+        let isT = dic[Int(String($0))!] ?? false
+        if isT {
+            if str == "" {
+                str += "1"
+            } else {
+                str += " 1"
+            }
+        } else {
+            if str == "" {
+                str += "0"
+            } else {
+                str += " 0"
+            }
+        }
+    }
+    print(str)
+}
+
 func s1010() {
     let t = Int(readLine()!)!
     for _ in 1...t {
