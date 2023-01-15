@@ -1,5 +1,29 @@
 import Foundation
 
+func s1764() {
+    let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let n = l[0]
+    let m = l[1]
+    var dic:[String:Bool] = [:]
+    for _ in 1...n {
+        dic[readLine()!] = true
+    }
+    var c = 0
+    var sl:[String] = []
+    for _ in 1...m {
+        let s = readLine()!
+        let isE = dic[s] ?? false
+        if isE {
+            c += 1
+            sl.append(s)
+        }
+    }
+    print(c)
+    for s in sl.sorted() {
+        print(s)
+    }
+}
+
 func s14425() {
     let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
     let n = l[0]
