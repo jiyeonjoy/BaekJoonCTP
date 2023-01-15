@@ -1,5 +1,22 @@
 import Foundation
 
+func s1373() {
+    let arr = Array(readLine()!)
+    var str = ""
+    for i in 0..<(arr.count+2)/3 {
+        var s = ""
+        let n = arr.count%3 == 0 ? 3 : arr.count%3
+        if i == 0 {
+            s = String(arr[0..<n])
+        } else {
+            s = String(arr[(i-1)*3+n..<i*3+n])
+        }
+        let num = Int(s, radix: 2)!
+        str += String(num, radix: 8)
+    }
+    print(str)
+}
+
 func s11655() {
     let arr = Array("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
     let arr2 = Array("abcdefghijklmnopqrstuvwxyz")
