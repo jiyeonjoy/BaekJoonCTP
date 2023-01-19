@@ -28,6 +28,48 @@ public struct Queue<T> {
   }
 }
 
+func s2606() {
+    let n = Int(readLine()!)!
+    let m = Int(readLine()!)!
+    var list:[[Int]] = []
+    for _ in 1...m {
+        let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        list.append(l)
+    }
+    var visited:[Bool] = Array.init(repeating: false, count: n)
+    var graph:[[Int]] = Array.init(repeating: [], count: n)
+    for l in list {
+        var ll = graph[l[0]-1]
+        ll.append(l[1]-1)
+        graph[l[0]-1] = ll
+
+        var lll = graph[l[1]-1]
+        lll.append(l[0]-1)
+        graph[l[1]-1] = lll
+    }
+
+    var queue = Queue<Int>()
+
+    func bfs(start: Int) {
+      queue.enquque(start)
+      visited[start] = true
+        
+      while !queue.isEmpty {
+        guard let elem = queue.dequeue() else { return }
+        
+        for i in graph[elem] {
+          if !visited[i] {
+            queue.enquque(i)
+              visited[i] = true
+          }
+        }
+      }
+    }
+
+    bfs(start: 0)
+    print(visited.filter{ $0 }.count-1)
+}
+
 func s2178() {
     let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
     let n = l[0]
