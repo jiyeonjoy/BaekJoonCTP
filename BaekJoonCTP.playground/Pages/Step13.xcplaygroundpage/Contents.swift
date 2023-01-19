@@ -28,6 +28,56 @@ public struct Queue<T> {
   }
 }
 
+func s2667() {
+    let n = Int(readLine()!)!
+    var list:[[Int]] = []
+    var visited:[[Bool]] = []
+
+    for _ in 1...n {
+        let l = Array(readLine()!).map{ Int(String($0))! }
+        list.append(l)
+        visited.append(Array.init(repeating: false, count: n))
+    }
+    let dir = [[0,1],[0,-1],[1,0],[-1,0]]
+
+    var queue = Queue<[Int]>()
+
+    func bfs(i:Int, j:Int, c:Int) -> Int {
+        var c = c
+        visited[i][j] = true
+        queue.enquque([i,j])
+        let num = list[i][j]
+        while !queue.isEmpty {
+            let q = queue.dequeue()!
+            for l in dir {
+                let x = q[0]+l[0]
+                let y = q[1]+l[1]
+                let num = list[q[0]][q[1]]
+                if x >= 0 && x < n && y >= 0 && y < n && !visited[x][y] && list[x][y] == 1 {
+                    c += 1
+                    queue.enquque([x,y])
+                    list[x][y] = num+1
+                }
+            }
+        }
+        return c
+    }
+
+    var result:[Int] = []
+    for i in 0..<n {
+        for j in 0..<n {
+            if list[i][j] == 1 && !visited[i][j] {
+                var c = bfs(i: i, j: j, c: 1)
+                result.append(c)
+            }
+        }
+    }
+    print(result.count)
+    result.sorted().map {
+        print($0)
+    }
+}
+
 func s2606() {
     let n = Int(readLine()!)!
     let m = Int(readLine()!)!
