@@ -28,6 +28,46 @@ public struct Queue<T> {
   }
 }
 
+func s2178() {
+    let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let n = l[0]
+    let m = l[1]
+
+    var list:[[Int]] = []
+    var visited:[[Bool]] = []
+
+    for _ in 1...n {
+        let l = Array(readLine()!).map{ Int(String($0))! }
+        list.append(l)
+        visited.append(Array.init(repeating: false, count: m))
+    }
+
+    let dir = [[0,1],[0,-1],[1,0],[-1,0]]
+
+    var queue = Queue<[Int]>()
+
+    func bfs(i:Int, j:Int) {
+        visited[i][j] = true
+        queue.enquque([i,j])
+        let num = list[i][j]
+        while !queue.isEmpty {
+            let q = queue.dequeue()!
+            for l in dir {
+                let x = q[0]+l[0]
+                let y = q[1]+l[1]
+                let num = list[q[0]][q[1]]
+                if x >= 0 && x < n && y >= 0 && y < m && !visited[x][y] && list[x][y] == 1 {
+                    queue.enquque([x,y])
+                    list[x][y] = num+1
+                }
+            }
+        }
+    }
+
+    bfs(i:0, j:0)
+    print(list[n-1][m-1])
+}
+
 func s1260() {
     let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
 
