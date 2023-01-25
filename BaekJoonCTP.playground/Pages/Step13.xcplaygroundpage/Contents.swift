@@ -1,5 +1,15 @@
 import Foundation
 
+func s24366() {
+    let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let n = list[0]
+    let k = list[1]
+    let a = k-1
+    let b = n-k
+    let c = b%a
+    print(a-c)
+}
+
 func s24569() {
     let n = Int(readLine()!)!
     var c = 0
