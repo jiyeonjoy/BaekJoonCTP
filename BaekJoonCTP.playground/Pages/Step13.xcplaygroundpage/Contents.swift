@@ -1,5 +1,31 @@
 import Foundation
 
+func s26198() {
+    let t = Int(readLine()!)!
+    for _ in 1...t {
+        let str = readLine()!
+        var sum = 0
+        str.map{
+            if $0 == "I" {
+                sum += 1
+            } else if $0 == "V" {
+                sum += 5
+            } else if $0 == "X" {
+                sum += 10
+            } else if $0 == "L" {
+                sum += 50
+            } else if $0 == "C" {
+                sum += 100
+            } else if $0 == "D" {
+                sum += 500
+            } else if $0 == "M" {
+                sum += 1000
+            }
+        }
+        print(sum)
+    }
+}
+
 func s26314() {
     let t = Int(readLine()!)!
     for _ in 1...t {
