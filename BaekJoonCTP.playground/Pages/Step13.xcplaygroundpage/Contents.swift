@@ -1,5 +1,19 @@
 import Foundation
 
+func s4459() {
+    let t = Int(readLine()!)!
+    var dic:[Int:String] = [:]
+    for i in 1...t {
+        dic[i] = readLine()!
+    }
+    let n = Int(readLine()!)!
+    for _ in 1...n {
+        let a = Int(readLine()!)!
+        let str:String = dic[a] ?? "No such rule"
+        print("Rule \(a): \(str)")
+    }
+}
+
 func s11161() {
     let t = Int(readLine()!)!
     for _ in 1...t {
