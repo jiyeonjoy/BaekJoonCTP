@@ -1,5 +1,30 @@
 import Foundation
 
+func s24807() {
+    let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let b = list[0]
+    let d = list[1]
+    let c = list[2]
+    let l = list[3]
+
+    var isImp = true
+    for i in 0...l/b {
+        for j in 0...l/d {
+            for k in 0...l/c {
+                if i*b+j*d+k*c == l {
+                    print("\(i) \(j) \(k)")
+                    isImp = false
+                } else if i*b+j*d+k*c > l {
+                    break
+                }
+            }
+        }
+    }
+    if isImp {
+        print("impossible")
+    }
+}
+
 func s24830() {
     let t = Int(readLine()!)!
     var e = 1
