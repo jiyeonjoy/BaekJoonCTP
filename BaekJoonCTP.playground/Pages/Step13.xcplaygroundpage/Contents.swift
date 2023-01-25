@@ -1,5 +1,30 @@
 import Foundation
 
+func s24803() {
+    let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let g = list[0]
+    let s = list[1]
+    let c = list[2]
+
+    var v = g*3+s*2+c
+    var r = ""
+    if v >= 8 {
+        r += "Province or "
+    } else if v >= 5 {
+        r += "Duchy or "
+    } else if v >= 2 {
+        r += "Estate or "
+    }
+    if v >= 6 {
+        r += "Gold"
+    } else if v >= 3 {
+        r += "Silver"
+    } else {
+        r += "Copper"
+    }
+    print(r)
+}
+
 func s24807() {
     let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
     let b = list[0]
