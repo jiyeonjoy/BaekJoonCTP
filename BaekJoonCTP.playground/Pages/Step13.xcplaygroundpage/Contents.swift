@@ -1,5 +1,27 @@
 import Foundation
 
+func s24349() {
+    let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    var n = list[0]-1
+    let a = list[1]
+    let b = list[2]
+    let c = list[3]
+    var v = 0
+    let v1 = min(a,b)
+    let v2 = min(a,b,c)
+    var isF = true
+    while n > 0 {
+        if isF {
+            isF = false
+            v += v1
+        } else {
+            v += v2
+        }
+        n -= 1
+    }
+    print("\(v/100) \(v%100)")
+}
+
 func s24366() {
     let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
     let n = list[0]
