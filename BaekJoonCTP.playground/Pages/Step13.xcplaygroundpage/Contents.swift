@@ -1,5 +1,24 @@
 import Foundation
 
+func s8574() {
+    let l = readLine()!.split(separator: " ").map{ Double(String($0))! }
+    let n = l[0]
+    let k = l[1]
+    let x = l[2]
+    let y = l[3]
+    var c = 0
+    for _ in 1...Int(n) {
+        let l = readLine()!.split(separator: " ").map{ Double(String($0))! }
+        let x1 = l[0]
+        let y1 = l[1]
+        let v = sqrt(pow(abs(x-x1), 2)+pow(abs(y-y1), 2))
+        if v > k {
+            c += 1
+        }
+    }
+    print(c)
+}
+
 func s4459() {
     let t = Int(readLine()!)!
     var dic:[Int:String] = [:]
