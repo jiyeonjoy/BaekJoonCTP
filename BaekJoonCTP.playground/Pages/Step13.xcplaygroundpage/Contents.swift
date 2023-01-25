@@ -1,5 +1,26 @@
 import Foundation
 
+func s11161() {
+    let t = Int(readLine()!)!
+    for _ in 1...t {
+        let m = Int(readLine()!)!
+        var c = 0
+        var s = 0
+        for _ in 1...m {
+            let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+            let a = l[0]
+            let b = l[1]
+            if a+s < b {
+                c += b-(a+s)
+                s = 0
+            } else {
+                s += a-b
+            }
+        }
+        print(c)
+    }
+}
+
 func s10902() {
     let n = Int(readLine()!)!
     var list:[[Int]] = []
