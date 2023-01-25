@@ -1,5 +1,28 @@
 import Foundation
 
+func s25786() {
+    var a = Int(readLine()!)!
+    var b = Int(readLine()!)!
+    var v = ""
+    if a == 0 && b == 0 {
+        v = "0"
+    } else {
+        while a > 0 || b > 0 {
+            let c = a%10
+            let d = b%10
+            if (c >= 7 && d >= 7) || (c <= 2 && d <= 2) {
+                v = "0"+v
+            } else {
+                v = "9"+v
+            }
+            a /= 10
+            b /= 10
+        }
+    }
+    print(v)
+
+}
+
 func s25813() {
     let str = Array(readLine()!)
     let u:Int = str.firstIndex(of: "U")!
