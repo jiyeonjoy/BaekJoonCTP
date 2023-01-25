@@ -1,5 +1,23 @@
 import Foundation
 
+func s25813() {
+    let str = Array(readLine()!)
+    let u:Int = str.firstIndex(of: "U")!
+    let f:Int = str.lastIndex(of: "F")!
+    var v = ""
+    if u > 0 {
+        v += String(repeating: "-", count: u)
+    }
+    v += "U"
+    v += String(repeating: "C", count: f-u-1)
+    v += "F"
+    if f < str.count-1 {
+        v += String(repeating: "-", count: str.count-1-f)
+    }
+
+    print(v)
+}
+
 func s25985() {
     let list = readLine()!.split(separator: " ").map{ Double(String($0))! }
     let x = list[0]
