@@ -1,5 +1,27 @@
 import Foundation
 
+func s24867() {
+    let k = Int(readLine()!)!
+    let list1 = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let a = list1[0]
+    let x = list1[1]
+    let list2 = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let b = list2[0]
+    let y = list2[1]
+
+    if k <= a && k <= b {
+        print(0)
+    } else if k > a && k <= b {
+        print((k-a)*x)
+    } else if k > b && k <= a {
+        print((k-b)*y)
+    } else {
+        var v1 = (k-a)*x + max(0, (k-a-b)*y)
+        var v2 = (k-b)*y + max(0, (k-a-b)*x)
+        print(max(v1, v2))
+    }
+}
+
 func s25084() {
     let t = Int(readLine()!)!
     for i in 1...t {
