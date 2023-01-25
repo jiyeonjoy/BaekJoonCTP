@@ -1,5 +1,23 @@
 import Foundation
 
+func s25084() {
+    let t = Int(readLine()!)!
+    for i in 1...t {
+        let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        var r = list[0]
+        let a = list[1]
+        let b = list[2]
+        var sum:Double = 3.14159265359*pow(Double(r), 2)
+        while r > 0 {
+            r *= a
+            sum += 3.14159265359*pow(Double(r), 2)
+            r /= b
+            sum += 3.14159265359*pow(Double(r), 2)
+        }
+        print("Case #\(i): \(String(format: "%.6f", sum))")
+    }
+}
+
 func s25278() {
     let t = Int(readLine()!)!
     var te = -30
