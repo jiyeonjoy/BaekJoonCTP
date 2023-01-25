@@ -1,5 +1,20 @@
 import Foundation
 
+func s26314() {
+    let t = Int(readLine()!)!
+    for _ in 1...t {
+        let name = readLine()!
+        print(name)
+        let a = name.count
+        let b = name.filter{ "aeiou".contains($0) }.count
+        if a-b < b {
+            print(1)
+        } else {
+            print(0)
+        }
+    }
+}
+
 func s26432() {
     let t = Int(readLine()!)!
     for i in 1...t {
