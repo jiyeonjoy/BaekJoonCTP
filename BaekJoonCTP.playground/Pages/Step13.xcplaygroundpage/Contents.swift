@@ -1,5 +1,27 @@
 import Foundation
 
+func s4388() {
+    while true {
+        let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        var a = list[0]
+        var b = list[1]
+        if a == 0 && b == 0 { break }
+        var onePlus = false
+        var c = 0
+        while (a > 0 && b > 0) || onePlus {
+            if a%10+b%10+(onePlus ? 1 : 0) > 9 {
+                onePlus = true
+                c += 1
+            } else {
+                onePlus = false
+            }
+            a /= 10
+            b /= 10
+        }
+        print(c)
+    }
+}
+
 func s24333() {
     let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
     let l1 = list[0]
