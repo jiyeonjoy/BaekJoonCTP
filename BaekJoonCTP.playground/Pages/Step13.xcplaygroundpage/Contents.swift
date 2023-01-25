@@ -1,5 +1,28 @@
 import Foundation
 
+func s24830() {
+    let t = Int(readLine()!)!
+    var e = 1
+    for _ in 1...t {
+        let list = readLine()!.split(separator: " ").map{ String($0) }
+        let y = list[1]
+        let a = Int(list[0])!
+        let b = Int(list[2])!
+        var v = 0
+        if y == "+" {
+            v = a+b-e
+        } else if y == "-" {
+            v = (a-b)*e
+        } else if y == "*" {
+            v = Int(pow(Double(a*b), 2))
+        } else {
+            v = a%2==0 ? a/2 : (a+1)/2
+        }
+        print(v)
+        e = v
+    }
+}
+
 func s24867() {
     let k = Int(readLine()!)!
     let list1 = readLine()!.split(separator: " ").map{ Int(String($0))! }
