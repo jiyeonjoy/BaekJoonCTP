@@ -1,5 +1,16 @@
 import Foundation
 
+func s24603() {
+    let list = readLine()!.split(separator: " ").map{ Double(String($0))! }
+    let n = list[0]
+    let x = list[1]
+    let y = list[2]
+    for _ in 1...Int(n) {
+        let a = Double(readLine()!)!
+        print(Int(a/x*y))
+    }
+}
+
 func s24803() {
     let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
     let g = list[0]
