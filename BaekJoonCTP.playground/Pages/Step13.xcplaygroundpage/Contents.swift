@@ -1,5 +1,28 @@
 import Foundation
 
+func s25278() {
+    let t = Int(readLine()!)!
+    var te = -30
+    var ox = 0
+    var oc = 0
+    for _ in 1...t {
+        let list = readLine()!.split(separator: " ").map{ String($0) }
+        let n = Int(list[1])!
+        if list[0] == "temperature" {
+            te += n
+        } else if list[0] == "oxygen" {
+            ox += n
+        } else {
+            oc += n
+        }
+    }
+    if oc >= 9 && ox >= 14 && te >= 8 {
+        print("liveable")
+    } else {
+        print("not liveable")
+    }
+}
+
 func s25786() {
     var a = Int(readLine()!)!
     var b = Int(readLine()!)!
