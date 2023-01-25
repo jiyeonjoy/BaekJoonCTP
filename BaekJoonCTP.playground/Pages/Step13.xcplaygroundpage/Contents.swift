@@ -1,5 +1,14 @@
 import Foundation
 
+func s25985() {
+    let list = readLine()!.split(separator: " ").map{ Double(String($0))! }
+    let x = list[0]
+    let y = list[1]
+    let a = 100-x
+    let b = 100-y
+    print((b*x)/(a*y))
+}
+
 func s26198() {
     let t = Int(readLine()!)!
     for _ in 1...t {
