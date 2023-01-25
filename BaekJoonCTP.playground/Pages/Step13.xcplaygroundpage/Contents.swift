@@ -1,5 +1,27 @@
 import Foundation
 
+func s24333() {
+    let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let l1 = list[0]
+    let r1 = list[1]
+    let l2 = list[2]
+    let r2 = list[3]
+    let k = list[4]
+    var c = 0
+    for i in l1...r1 {
+        if i >= l2 {
+            if i > r2 {
+                break
+            } else {
+                if i != k {
+                    c += 1
+                }
+            }
+        }
+    }
+    print(c)
+}
+
 func s24349() {
     let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
     var n = list[0]-1
