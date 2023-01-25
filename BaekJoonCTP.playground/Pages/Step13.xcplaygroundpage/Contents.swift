@@ -1,5 +1,23 @@
 import Foundation
 
+func s24569() {
+    let n = Int(readLine()!)!
+    var c = 0
+    for _ in 1...n {
+        let a = Int(readLine()!)!
+        let b = Int(readLine()!)!
+        let v = a*5-b*3
+        if v > 40 {
+            c += 1
+        }
+    }
+    if c == n {
+        print("\(c)+")
+    } else {
+        print(c)
+    }
+}
+
 func s24603() {
     let list = readLine()!.split(separator: " ").map{ Double(String($0))! }
     let n = list[0]
