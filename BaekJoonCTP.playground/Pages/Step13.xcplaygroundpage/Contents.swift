@@ -1,5 +1,31 @@
 import Foundation
 
+func s10902() {
+    let n = Int(readLine()!)!
+    var list:[[Int]] = []
+    var v1 = -1
+    var v2 = -1
+    var f = -1
+    for i in 1...n {
+        let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        list.append(l)
+        if l[1] == 1 && v1 == -1 && v2 == -1 {
+            v1 = l[0]
+            f = i
+        } else if l[1] == 4 && v2 == -1  {
+            v2 = l[0]
+            f = i
+        }
+    }
+    var p = 0
+    if v2 > -1 {
+        p += v2+(f-1)*20
+    } else if v1 > -1 {
+        p += v1+(f-1)*20
+    }
+    print(p)
+}
+
 func s4388() {
     while true {
         let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
