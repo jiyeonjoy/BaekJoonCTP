@@ -1,5 +1,24 @@
 import Foundation
 
+func s9443() {
+    var dic:[Character:Bool] = [:]
+    let t = Int(readLine()!)!
+    for _ in 1...t {
+        let s = readLine()!
+        dic[s.first!] = true
+    }
+    var c = 0
+    let l = Array("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
+    for i in 0...l.count-1 {
+        if dic[l[i]] ?? false {
+            c += 1
+        } else {
+            break
+        }
+    }
+    print(c)
+}
+
 func s9907() {
     let l = readLine()!.map{ Int(String($0))! }
     let v = l[0]*2+l[1]*7+l[2]*6+l[3]*5+l[4]*4+l[5]*3+l[6]*2
