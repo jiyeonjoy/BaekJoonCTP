@@ -1,5 +1,22 @@
 import Foundation
 
+func s18813() {
+    let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let n = l[0]
+    var m = l[1]
+    var c = 0
+    let alpahbet = Array("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
+    for _ in 1...n {
+        let s = readLine()!
+        let set = Set(s)
+        let filter = s.filter{ alpahbet[0..<m].contains($0) }
+        if set.count == s.count && filter.count == s.count {
+            c += 1
+        }
+    }
+    print(c)
+}
+
 func s23925() {
     let t = Int(readLine()!)!
     for i in 1...t {
