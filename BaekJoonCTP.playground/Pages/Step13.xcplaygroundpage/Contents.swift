@@ -1,5 +1,16 @@
 import Foundation
 
+func s24312() {
+    let l = readLine()!.split(separator: " ").map{ Int(String($0))! }.sorted()
+    let a = l[0]+l[3]
+    let b = l[1]+l[2]
+    let c = l[0]+l[1]+l[2]
+    let v1 = abs(a-b)
+    let v2 = abs(c-l[3])
+
+    print(min(v1,v2))
+}
+
 func s20374() {
     var sum:Double = 0
     while true {
