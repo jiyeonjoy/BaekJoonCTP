@@ -1,5 +1,23 @@
 import Foundation
 
+func s21614() {
+    var save = ""
+    while true {
+        let n = Int(readLine()!)!
+        if n == 99999 { break }
+        let v = n/10000 + (n%10000)/1000
+        if v%2 == 1 {
+            print("left \(n%1000)")
+            save = "left"
+        } else if v > 0 && v%2 == 0 {
+            print("right \(n%1000)")
+            save = "right"
+        } else {
+            print("\(save) \(n%1000)")
+        }
+    }
+}
+
 func s6812() {
     let n = Int(readLine()!)!
     print("\(n) in Ottawa")
