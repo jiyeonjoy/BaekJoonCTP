@@ -1,5 +1,20 @@
 import Foundation
 
+func s11295() {
+    var i = 0
+    while true {
+        let l = Double(readLine()!.trimmingCharacters(in: .whitespacesAndNewlines))!
+        if l == 0 { break }
+        i += 1
+        print("User \(i)")
+        let n = Int(readLine()!.trimmingCharacters(in: .whitespacesAndNewlines))!
+        for _ in 1...n {
+            let a = Double(readLine()!)!
+            print(String(format: "%.5f", (l/100000)*a))
+        }
+    }
+}
+
 func s9443() {
     var dic:[Character:Bool] = [:]
     let t = Int(readLine()!)!
