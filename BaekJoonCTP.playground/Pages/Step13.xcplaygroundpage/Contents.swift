@@ -1,5 +1,15 @@
 import Foundation
 
+func s20374() {
+    var sum:Double = 0
+    while true {
+        guard let line = readLine() else { break }
+        let n = Double(line)!
+        sum += round(n*100)
+    }
+    print(String(format: "%.2f", sum/100))
+}
+
 func s17042() {
     var c = readLine()!
     var t = Int(readLine()!)!
