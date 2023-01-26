@@ -1,5 +1,29 @@
 import Foundation
 
+func s6812() {
+    let n = Int(readLine()!)!
+    print("\(n) in Ottawa")
+    let a = n-300 >= 0 ? n-300 : n-300+2400
+    print("\(a) in Victoria")
+    let b = n-200 >= 0 ? n-200 : n-200+2400
+    print("\(b) in Edmonton")
+    let c = n-100 >= 0 ? n-100 : n-100+2400
+    print("\(c) in Winnipeg")
+    print("\(n) in Toronto")
+    let d = n+100 < 2400 ? n+100 : n+100-2400
+    print("\(d) in Halifax")
+    var e = 0
+    if n%100+30 > 59 {
+        e = 30-60+n+200
+        if e >= 2400 {
+            e -= 2400
+        }
+    } else {
+        e = n+130 < 2400 ? n+130 : n+130-2400
+    }
+    print("\(e) in St. John's")
+}
+
 func s8574() {
     let l = readLine()!.split(separator: " ").map{ Double(String($0))! }
     let n = l[0]
