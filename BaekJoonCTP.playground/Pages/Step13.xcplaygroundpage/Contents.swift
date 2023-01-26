@@ -1,5 +1,18 @@
 import Foundation
 
+func s12351() {
+    let t = Int(readLine()!)!
+    for i in 1...t {
+        readLine()
+        var l = readLine()!.split(separator: " ").map{ Double(String($0))! }
+        for j in 1...l.count-2 {
+            let p = (l[j-1]+l[j+1])/2
+            l[j] = min(l[j],p)
+        }
+        print("Case #\(i): \(l[l.count-2])")
+    }
+}
+
 func s11295() {
     var i = 0
     while true {
