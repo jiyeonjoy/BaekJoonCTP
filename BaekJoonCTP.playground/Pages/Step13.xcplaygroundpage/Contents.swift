@@ -1,5 +1,17 @@
 import Foundation
 
+func s15001() {
+    let n = Int(readLine()!)!
+    var sum = 0
+    var s = Int(readLine()!)!
+    for _ in 1..<n {
+        let x = Int(readLine()!)!
+        sum += (x-s)*(x-s)
+        s = x
+    }
+    print(sum)
+}
+
 func s4850() {
     while true {
         guard let line = readLine() else { break }
