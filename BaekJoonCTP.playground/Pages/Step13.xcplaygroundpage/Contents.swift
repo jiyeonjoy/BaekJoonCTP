@@ -1,5 +1,18 @@
 import Foundation
 
+func s4850() {
+    while true {
+        guard let line = readLine() else { break }
+        let l = line.split(separator: " ").map{ Int(String($0))! }
+        let n = l[0]
+        let w = l[1]
+        let d = l[2]
+        let v = l[3]
+        let a = ((n-1)*n/2*w-v)/d == 0 ? n : ((n-1)*n/2*w-v)/d
+        print(a)
+    }
+}
+
 func s21614() {
     var save = ""
     while true {
