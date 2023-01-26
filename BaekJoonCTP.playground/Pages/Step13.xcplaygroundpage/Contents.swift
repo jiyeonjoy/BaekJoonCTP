@@ -1,5 +1,12 @@
 import Foundation
 
+func s9907() {
+    let l = readLine()!.map{ Int(String($0))! }
+    let v = l[0]*2+l[1]*7+l[2]*6+l[3]*5+l[4]*4+l[5]*3+l[6]*2
+    let d = ["J","A","B","C","D","E","F","G","H","I","Z"]
+    print(d[v%11])
+}
+
 func s15001() {
     let n = Int(readLine()!)!
     var sum = 0
