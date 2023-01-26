@@ -1,5 +1,20 @@
 import Foundation
 
+func s26884() {
+    let t = Int(readLine()!)!
+    var dic:[String:Bool] = [:]
+    for _ in 1...t {
+        let str = readLine()!
+        if dic[str] == nil {
+            dic[str] = true
+        } else {
+            dic[str] = false
+        }
+    }
+    let c = dic.filter{ !$0.value }.count
+    print(c)
+}
+
 func s21573() {
     let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
     let r = l[0]
