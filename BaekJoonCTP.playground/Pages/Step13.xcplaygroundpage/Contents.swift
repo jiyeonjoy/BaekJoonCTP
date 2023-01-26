@@ -1,5 +1,21 @@
 import Foundation
 
+func s17042() {
+    var c = readLine()!
+    var t = Int(readLine()!)!
+    var set = Set<String>()
+    set.insert(c)
+    for _ in 1...t {
+        let l = readLine()!.split(separator: " ").map{ String($0) }
+        if l[1] == c {
+            c = l[0]
+            set.insert(l[0])
+        }
+    }
+    print(c)
+    print(set.count)
+}
+
 func s5753() {
     while true {
         let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
