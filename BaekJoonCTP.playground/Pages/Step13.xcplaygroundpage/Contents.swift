@@ -1,5 +1,24 @@
 import Foundation
 
+func s20017() {
+    let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let n = l[0]
+    let m = l[1]
+    let a = l[2]
+    var c = 0
+    let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    if list.count > 1 {
+        for i in m...list.count-1 {
+            let p = list[i]
+            let q = list[i-m]
+            if p > 2*q {
+                c += a
+            }
+        }
+    }
+    print(c)
+}
+
 func s26884() {
     let t = Int(readLine()!)!
     var dic:[String:Bool] = [:]
