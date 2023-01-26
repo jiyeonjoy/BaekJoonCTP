@@ -1,5 +1,21 @@
 import Foundation
 
+func s21573() {
+    let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let r = l[0]
+    let c = l[1]
+    let s = readLine()!
+    if s == "heat" {
+        print(max(r,c))
+    } else if s == "freeze" {
+        print(min(r,c))
+    } else if s == "auto" {
+        print(c)
+    } else {
+        print(r)
+    }
+}
+
 func s24312() {
     let l = readLine()!.split(separator: " ").map{ Int(String($0))! }.sorted()
     let a = l[0]+l[3]
