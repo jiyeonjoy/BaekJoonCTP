@@ -1,5 +1,14 @@
 import Foundation
 
+func s23925() {
+    let t = Int(readLine()!)!
+    for i in 1...t {
+        var l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        let v = min(l[0]+l[1], l[1]-l[2]+l[0]-l[2]+l[1])
+        print("Case #\(i): \(v)")
+    }
+}
+
 func s12351() {
     let t = Int(readLine()!)!
     for i in 1...t {
