@@ -1,5 +1,35 @@
 import Foundation
 
+func s5753() {
+    while true {
+        let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        let x = l[0]
+        let y = l[1]
+        if x == 0 && y == 0 { break }
+        var dic:[Int:Bool] = [:]
+        for _ in 1...y {
+            let ll = readLine()!.split(separator: " ").map{ Int(String($0))! }
+            for i in 0...ll.count-1 {
+                if ll[i] == 1 {
+                    if dic[i] == nil {
+                        dic[i] = true
+                    }
+                } else {
+                    if dic[i] ?? true {
+                        dic[i] = false
+                    }
+                }
+            }
+        }
+        let c = dic.filter{ $0.value }.count
+        if c > 0 {
+            print("yes")
+        } else {
+            print("no")
+        }
+    }
+}
+
 func s18813() {
     let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
     let n = l[0]
