@@ -1,5 +1,22 @@
 import Foundation
 
+func s11176() {
+    let t = Int(readLine()!)!
+    for _ in 1...t {
+        let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        let e = l[0]
+        let n = l[1]
+        var c = 0
+        for _ in 1...n {
+            let a = Int(readLine()!)!
+            if a > e {
+                c += 1
+            }
+        }
+        print(c)
+    }
+}
+
 func s24310() {
     let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
     let a = min(l[1],l[0])
