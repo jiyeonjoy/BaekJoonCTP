@@ -1,5 +1,25 @@
 import Foundation
 
+func s3554() {
+    let n = Int(readLine()!)!
+    var list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let m = Int(readLine()!)!
+    for _ in 1...m {
+        let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        if l[0] == 1 {
+            for i in l[1]...l[2] {
+                list[i-1] = list[i-1]*list[i-1]%2010
+            }
+        } else {
+            var s = 0
+            for i in l[1]...l[2] {
+                s += list[i-1]
+            }
+            print(s)
+        }
+    }
+}
+
 func s11258() {
     let l1 = readLine()!.split(separator: " ").map{ Int(String($0))! }
     let l2 = readLine()!.split(separator: " ").map{ Int(String($0))! }
