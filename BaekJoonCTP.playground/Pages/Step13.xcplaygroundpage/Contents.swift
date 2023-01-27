@@ -1,5 +1,29 @@
 import Foundation
 
+func s24310() {
+    let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let a = min(l[1],l[0])
+    let b = max(l[1],l[0])
+    let c = min(l[2],l[3])
+    let d = max(l[2],l[3])
+    var v = -1
+    if a < c {
+        if b >= c {
+            v = max(b,d)-a+1
+        }
+    } else if a == c {
+        v = max(b,d)-a+1
+    } else {
+        if d >= a {
+            v = max(b,d)-c+1
+        }
+    }
+    if v == -1 {
+        v = b-a+d-c+2
+    }
+    print(v)
+}
+
 func s23663() {
     let t = Int(readLine()!)!
     for _ in 1...t {
