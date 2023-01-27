@@ -1,5 +1,16 @@
 import Foundation
 
+func s20473() {
+    let n = Int(readLine()!)!
+    if (n%3)%2==0 {
+        print("\((n%3)/2) \(n/3)")
+    } else {
+        let a = n/3-1
+        let b = n - a*3
+        print("\(b/2) \(n/3-1)")
+    }
+}
+
 func s11176() {
     let t = Int(readLine()!)!
     for _ in 1...t {
