@@ -1,5 +1,28 @@
 import Foundation
 
+func s22061() {
+    let t = Int(readLine()!)!
+    for _ in 1...t {
+        let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        let a = l[0]
+        let b = l[1]
+        let c = l[2]
+        if c%2 == 0 {
+            if c/2 <= b || c-2*b <= a {
+                print("YES")
+            } else {
+                print("NO")
+            }
+        } else {
+            if (c/2 <= b && a >= 1) || (c/2 > b && c-2*b <= a) {
+                print("YES")
+            } else {
+                print("NO")
+            }
+        }
+    }
+}
+
 func s20473() {
     let n = Int(readLine()!)!
     if (n%3)%2==0 {
