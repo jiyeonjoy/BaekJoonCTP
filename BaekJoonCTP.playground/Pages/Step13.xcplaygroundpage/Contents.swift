@@ -1,5 +1,32 @@
 import Foundation
 
+func s10312() {
+    let n = Int(readLine()!)!
+    for _ in 1...n {
+        var k = Int(readLine()!)!
+        var dic:[Int:Int] = [:]
+        while k > 0 {
+            var v = k
+            var t = 1
+            while v >= t {
+                t *= 3
+            }
+            t /= 3
+            dic[Int(round(log(Double(t))/log(3)))] = k/t
+            k = k%t
+        }
+        var str = ""
+        var sorted = dic.sorted{ $0.key > $1.key }
+        let key = sorted.first!.key
+        for i in 0...key {
+            let v = dic[key-i] ?? 0
+            str.write("\(v) ")
+        }
+        str.removeLast()
+        print(str)
+    }
+}
+
 func s3554() {
     let n = Int(readLine()!)!
     var list = readLine()!.split(separator: " ").map{ Int(String($0))! }
