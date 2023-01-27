@@ -1,5 +1,19 @@
 import Foundation
 
+func s22093() {
+    let t = Int(readLine()!)!
+    for _ in 1...t {
+        let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        let n = l[0]
+        let a = l[1]
+        let b = l[2]
+        
+        let maxv = min(n-b,a)
+        let minv = max(0, n-(n-a)-b)
+        print("\(minv) \(maxv)")
+    }
+}
+
 func s22061() {
     let t = Int(readLine()!)!
     for _ in 1...t {
