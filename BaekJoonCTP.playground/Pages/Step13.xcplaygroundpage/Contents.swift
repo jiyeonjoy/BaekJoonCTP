@@ -1,5 +1,23 @@
 import Foundation
 
+func s22421() {
+    while true {
+        let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        let d = l[0]
+        let e = l[1]
+        if d == 0 && e == 0 { break }
+        var minc:Double = 100
+        for x in 0...d {
+            let y = d-x
+            let c = abs(sqrt(pow(Double(x), 2)+pow(Double(y), 2))-Double(e))
+            if minc > c {
+                minc = c
+            }
+        }
+        print(minc)
+    }
+}
+
 func s20017() {
     let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
     let n = l[0]
