@@ -1,5 +1,21 @@
 import Foundation
 
+func s23663() {
+    let t = Int(readLine()!)!
+    for _ in 1...t {
+        let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        let n = l[0]
+        let m = l[1]
+        readLine()
+        readLine()
+        if n <= m {
+            print("Yes")
+        } else {
+            print("No")
+        }
+    }
+}
+
 func s12571() {
     let t = Int(readLine()!)!
     for i in 1...t {
