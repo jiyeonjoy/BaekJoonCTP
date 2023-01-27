@@ -1,5 +1,31 @@
 import Foundation
 
+func s12571() {
+    let t = Int(readLine()!)!
+    for i in 1...t {
+        let n = Int(readLine()!)!
+        var v = 0
+        if n == 1 {
+            readLine()
+            v = 0
+        } else {
+            let l1 = readLine()!.split(separator: " ").map{ Int(String($0))! }
+            let l2 = readLine()!.split(separator: " ").map{ Int(String($0))! }
+            let a = l1[0]
+            let b = l1[1]
+            let c = l2[0]
+            let d = l2[1]
+            
+            if (a>c && b>d) || (a<c && b<d) {
+                v = 0
+            } else {
+                v = 1
+            }
+        }
+        print("Case #\(i): \(v)")
+    }
+}
+
 func s22421() {
     while true {
         let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
