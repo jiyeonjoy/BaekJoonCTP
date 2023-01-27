@@ -1,5 +1,38 @@
 import Foundation
 
+func s11258() {
+    let l1 = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let l2 = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let l3 = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let l4 = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let l5 = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let l6 = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    while true {
+        let s = Int(readLine()!)!
+        if s == -1 { break }
+        var v = 0
+        if s == l1[0] {
+            v += l1[1]
+        }
+        if s/1000 == l2[0] {
+            v += l2[1]
+        }
+        if s/1000 == l3[0] {
+            v += l3[1]
+        }
+        if s%1000 == l4[0] {
+            v += l4[1]
+        }
+        if s%1000 == l5[0] {
+            v += l5[1]
+        }
+        if s%100 == l6[0] {
+            v += l6[1]
+        }
+        print(v)
+    }
+}
+
 func s22093() {
     let t = Int(readLine()!)!
     for _ in 1...t {
