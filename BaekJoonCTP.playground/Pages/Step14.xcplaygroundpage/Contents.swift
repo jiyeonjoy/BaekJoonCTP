@@ -1,5 +1,30 @@
 import Foundation
 
+func s1931() {
+    let n = Int(readLine()!)!
+    var list:[[Int]] = []
+    for _ in 1...n {
+        var l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        list.append(l)
+    }
+    var c = 0
+    var e = 0
+    list.sorted {
+        if $0[1] == $1[1] {
+            return $0[0] < $1[1]
+        } else {
+            return $0[1] < $1[1]
+        }
+    }.map {
+        if $0[0] >= e {
+            e = $0[1]
+            c += 1
+        }
+    }
+
+    print(c)
+}
+
 func s1012() {
     let t = Int(readLine()!)!
     for _ in 1...t {
