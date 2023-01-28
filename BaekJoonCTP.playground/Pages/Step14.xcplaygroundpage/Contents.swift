@@ -1,5 +1,34 @@
 import Foundation
 
+func s9506() {
+    while true {
+        let n = Int(readLine()!)!
+        if n == -1 { break }
+        var l:[Int] = []
+        var s = 0
+        for i in 1...n/2 {
+            if n%i == 0 {
+                l.append(i)
+                s += i
+            }
+        }
+        if s == n {
+            var str = "\(n) = "
+            for i in 0...l.count-1 {
+                if i == l.count-1 {
+                    str.write("\(l[i])")
+                } else {
+                    str.write("\(l[i]) + ")
+                }
+            }
+            print(str)
+
+        } else {
+            print("\(n) is NOT perfect.")
+        }
+    }
+}
+
 func s10448() {
     let t = Int(readLine()!)!
     var l:[Int] = [1]
