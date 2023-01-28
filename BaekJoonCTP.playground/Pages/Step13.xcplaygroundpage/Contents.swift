@@ -1,5 +1,24 @@
 import Foundation
 
+func s2669() {
+    var set = Set<String>()
+    for _ in 1...4 {
+        var list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        let a = list[0]
+        let b = list[1]
+        let c = list[2]
+        let d = list[3]
+        if a < c && b < d {
+            for i in a+1...c {
+                for j in b+1...d {
+                    set.insert("\(i) \(j)")
+                }
+            }
+        }
+    }
+    print(set.count)
+}
+
 func s2605() {
     let n = Int(readLine()!)!
     var list:[Int] = Array.init(repeating: -1, count: n)
