@@ -1,5 +1,41 @@
 import Foundation
 
+func s10448() {
+    let t = Int(readLine()!)!
+    var l:[Int] = [1]
+    for _ in 1...t {
+        let n = Int(readLine()!)!
+        var isP = false
+        for i in 0...n {
+            for j in 0...i {
+                for k in 0...j {
+                    if i == l.count {
+                        l.append(l[l.count-1]+i+1)
+                    }
+                    if l[i]+l[j]+l[k] == n {
+                        isP = true
+                        break
+                    } else if l[i]+l[j]+l[k] > n {
+                        break
+                    }
+                }
+                if isP {
+                    break
+                }
+            }
+            if isP {
+                break
+            }
+        }
+        
+        if isP {
+            print(1)
+        } else {
+            print(0)
+        }
+    }
+}
+
 func s1931() {
     let n = Int(readLine()!)!
     var list:[[Int]] = []
