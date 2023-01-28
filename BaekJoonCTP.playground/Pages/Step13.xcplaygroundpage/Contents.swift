@@ -1,5 +1,26 @@
 import Foundation
 
+func s2605() {
+    let n = Int(readLine()!)!
+    var list:[Int] = Array.init(repeating: -1, count: n)
+    let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    for i in 0...l.count-1 {
+        let a = i-l[i]
+        if a < i {
+            for j in a..<i {
+                list[a+i-j] = list[a+i-1-j]
+            }
+        }
+        list[a] = i+1
+    }
+    var str = ""
+    list.map {
+        str += "\($0) "
+    }
+    str.removeLast()
+    print(str)
+}
+
 func s10312() {
     let n = Int(readLine()!)!
     for _ in 1...n {
