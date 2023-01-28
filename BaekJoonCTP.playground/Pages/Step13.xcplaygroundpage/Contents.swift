@@ -1,5 +1,25 @@
 import Foundation
 
+func s11047() {
+    var list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let n = list[0]
+    var k = list[1]
+    var cl:[Int] = []
+    for _ in 1...n {
+        let c = Int(readLine()!)!
+        cl.append(c)
+    }
+    var s = 0
+    for i in 0...cl.count-1 {
+        let c = cl[cl.count-1-i]
+        if k >= c {
+            s += k/c
+            k = k%c
+        }
+    }
+    print(s)
+}
+
 func s2669() {
     var set = Set<String>()
     for _ in 1...4 {
