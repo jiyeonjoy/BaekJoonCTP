@@ -2,7 +2,7 @@ let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
 Int(readLine()!)!
 
 let k:Double = 5//Double(readLine()!)!
-var list:[Int] = [1,3,8,2,-2]
+//var list:[Int] = [1,3,8,2,-2]
 var dic:[Int:Int] = [:]
 for n in list {
     let c = dic[n] ?? 0
@@ -15,7 +15,7 @@ for n in list {
 //    let c = dic[n] ?? 0
 //    dic[n] = c+1
 //}
-list.sort()
+//list.sort()
 print(Int(round(Double(list.reduce(0,+))/k)))
 print(list[Int(k)/2])
 
