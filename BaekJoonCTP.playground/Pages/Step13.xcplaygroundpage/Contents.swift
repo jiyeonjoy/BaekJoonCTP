@@ -1,5 +1,16 @@
 import Foundation
 
+func s11726() {
+    let n = Int(readLine()!)!
+    var list = Array.init(repeating: 1, count: n+1)
+    if n > 1 {
+        for i in 2...n {
+            list[i] = (list[i-1]+list[i-2])%10007
+        }
+    }
+    print(list[n])
+}
+
 func s11047() {
     var list = readLine()!.split(separator: " ").map{ Int(String($0))! }
     let n = list[0]
