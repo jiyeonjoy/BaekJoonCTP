@@ -1,5 +1,27 @@
 import Foundation
 
+func s2579() {
+    let n = Int(readLine()!)!
+    var l:[Int] = []
+    for _ in 1...n {
+        let c = Int(readLine()!)!
+        l.append(c)
+    }
+    var list = Array.init(repeating: (0,0), count: n)
+    for i in 0...n-1 {
+        var a = l[i]
+        var b = l[i]
+        if i-2 >= 0 {
+            a += max(list[i-2].0,list[i-2].1)
+        }
+        if i-1 >= 0 {
+            b += list[i-1].0
+        }
+        list[i] = (a,b)
+    }
+    print(max(list[n-1].0, list[n-1].1))
+}
+
 func s11726() {
     let n = Int(readLine()!)!
     var list = Array.init(repeating: 1, count: n+1)
