@@ -1,5 +1,14 @@
 import Foundation
 
+func s24416() {
+    let n = Int(readLine()!)!
+    var l = [1,1]
+    for i in 2...n-1 {
+        l.append(l[i-1]+l[i-2])
+    }
+    print("\(l[n-1]) \(n-2)")
+}
+
 func s9506() {
     while true {
         let n = Int(readLine()!)!
