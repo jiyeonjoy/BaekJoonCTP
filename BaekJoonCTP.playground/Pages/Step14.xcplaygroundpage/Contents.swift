@@ -1,5 +1,29 @@
 import Foundation
 
+func s1919() {
+    var arr1 = Array(readLine()!)
+    var arr2 = Array(readLine()!)
+
+    var dic1:[Character:Int] = [:]
+    var dic2:[Character:Int] = [:]
+    let alphabet = Array("abcdefghijklmnopqrstuvwxyz")
+    arr1.map {
+        let n = dic1[$0] ?? 0
+        dic1[$0] = n+1
+    }
+    arr2.map {
+        let n = dic2[$0] ?? 0
+        dic2[$0] = n+1
+    }
+    var c = 0
+    alphabet.map {
+        let c1 = dic1[$0] ?? 0
+        let c2 = dic2[$0] ?? 0
+        c += abs(c1-c2)
+    }
+    print(c)
+}
+
 func s10804() {
     var dic:[Int:Int] = [:]
     for i in 1...20 {
