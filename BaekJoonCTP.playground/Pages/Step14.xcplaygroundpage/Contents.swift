@@ -1,5 +1,21 @@
 import Foundation
 
+func s1568() {
+    var n = Int(readLine()!)!
+    var c = 0
+    while n > 0 {
+        var s = 0
+        var i = 1
+        while s <= n {
+            s += i
+            i += 1
+        }
+        c += i-2
+        n -= s-i+1
+    }
+    print(c)
+}
+
 func s2355() {
     var l = readLine()!.split(separator: " ").map{ Int(String($0))! }.sorted()
     let a = l[0]
