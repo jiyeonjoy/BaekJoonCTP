@@ -1,5 +1,31 @@
 import Foundation
 
+func s10804() {
+    var dic:[Int:Int] = [:]
+    for i in 1...20 {
+        dic[i] = i
+    }
+    for _ in 1...10 {
+        var l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        let s = l[0]
+        let e = l[1]
+        var list:[Int] = []
+        for i in s...e {
+            list.append(dic[i]!)
+        }
+        list.reverse()
+        for i in s...e {
+            dic[i] = list[i-s]
+        }
+    }
+    var str = ""
+    for i in 1...20 {
+        str += "\(dic[i]!) "
+    }
+    str.removeLast()
+    print(str)
+}
+
 func s24416() {
     let n = Int(readLine()!)!
     var l = [1,1]
