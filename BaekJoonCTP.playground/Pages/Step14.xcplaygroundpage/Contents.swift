@@ -1,5 +1,20 @@
 import Foundation
 
+func s10093() {
+    var l = readLine()!.split(separator: " ").map{ Int(String($0))! }.sorted()
+    if l[1] - l[0] < 2 {
+        print(0)
+    } else {
+        print(l[1]-l[0]-1)
+        var str = ""
+        for i in l[0]+1..<l[1] {
+            str += "\(i) "
+        }
+        str.removeLast()
+        print(str)
+    }
+}
+
 func s1964() {
     let n = Int(readLine()!)!
     let s = 5+((n-1)*4%45678)+(((n-1)*n/2)*3%45678)
