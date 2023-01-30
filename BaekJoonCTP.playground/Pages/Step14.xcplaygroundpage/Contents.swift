@@ -1,5 +1,25 @@
 import Foundation
 
+func s5576() {
+    var a:[Int] = []
+    var b:[Int] = []
+    for _ in 1...10 {
+        a.append(Int(readLine()!)!)
+    }
+    for _ in 1...10 {
+        b.append(Int(readLine()!)!)
+    }
+    a.sort(by: >)
+    b.sort(by: >)
+    var asum = 0
+    var bsum = 0
+    for i in 0...2 {
+        asum += a[i]
+        bsum += b[i]
+    }
+    print("\(asum) \(bsum)")
+}
+
 func s1225() {
     var l = readLine()!.split(separator: " ")
     let a = l[0].map { Int(String($0))! }.reduce(0, +)
