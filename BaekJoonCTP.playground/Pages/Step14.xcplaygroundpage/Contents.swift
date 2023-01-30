@@ -1,5 +1,10 @@
 import Foundation
 
+func s10821() {
+    var l = readLine()!.split(separator: ",")
+    print(l.count)
+}
+
 func s5576() {
     var a:[Int] = []
     var b:[Int] = []
