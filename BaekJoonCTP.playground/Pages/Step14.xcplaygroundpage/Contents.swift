@@ -1,5 +1,24 @@
 import Foundation
 
+func s2355() {
+    var l = readLine()!.split(separator: " ").map{ Int(String($0))! }.sorted()
+    let a = l[0]
+    let b = l[1]
+    if a*b < 0 {
+        let c = (-a)*(-a+1)/2
+        let d = b*(b+1)/2
+        print(-c+d)
+    } else if a > 0 {
+        let c = (a)*(a-1)/2
+        let d = b*(b+1)/2
+        print(d-c)
+    } else {
+        let c = (-a)*(-a+1)/2
+        let d = -b*(-b-1)/2
+        print(d-c)
+    }
+}
+
 func s10093() {
     var l = readLine()!.split(separator: " ").map{ Int(String($0))! }.sorted()
     if l[1] - l[0] < 2 {
