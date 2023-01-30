@@ -1,5 +1,12 @@
 import Foundation
 
+func s1225() {
+    var l = readLine()!.split(separator: " ")
+    let a = l[0].map { Int(String($0))! }.reduce(0, +)
+    let b = l[1].map { Int(String($0))! }.reduce(0, +)
+    print(a*b)
+}
+
 func s1919() {
     var arr1 = Array(readLine()!)
     var arr2 = Array(readLine()!)
