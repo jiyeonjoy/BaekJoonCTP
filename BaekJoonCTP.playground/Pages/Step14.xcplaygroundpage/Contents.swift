@@ -1,5 +1,11 @@
 import Foundation
 
+func s1964() {
+    let n = Int(readLine()!)!
+    let s = 5+((n-1)*4%45678)+(((n-1)*n/2)*3%45678)
+    print(s%45678)
+}
+
 func s2947() {
     var l = readLine()!.split(separator: " ").map{ Int(String($0))! }
     while !(l[0]==1 && l[1]==2 && l[2]==3 && l[3]==4 && l[4]==5) {
