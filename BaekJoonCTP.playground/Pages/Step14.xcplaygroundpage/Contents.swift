@@ -1,5 +1,19 @@
 import Foundation
 
+func s2947() {
+    var l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    while !(l[0]==1 && l[1]==2 && l[2]==3 && l[3]==4 && l[4]==5) {
+        for i in 0...3 {
+            if l[i] > l[i+1] {
+                let n = l[i]
+                l[i] = l[i+1]
+                l[i+1] = n
+                print("\(l[0]) \(l[1]) \(l[2]) \(l[3]) \(l[4])")
+            }
+        }
+    }
+}
+
 func s10821() {
     var l = readLine()!.split(separator: ",")
     print(l.count)
