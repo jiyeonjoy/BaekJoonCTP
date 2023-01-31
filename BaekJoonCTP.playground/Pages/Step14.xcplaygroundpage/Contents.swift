@@ -1,5 +1,11 @@
 import Foundation
 
+func s1834() {
+    let n = Int(readLine()!)!
+    var s = (n+1)*n*(n-1)/2
+    print(s)
+}
+
 func s11098() {
     let t = Int(readLine()!)!
     for _ in 1...t {
