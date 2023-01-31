@@ -1,5 +1,19 @@
 import Foundation
 
+func s11098() {
+    let t = Int(readLine()!)!
+    for _ in 1...t {
+        let n = Int(readLine()!)!
+        var dic:[Int:String] = [:]
+        for _ in 1...n {
+            var l = readLine()!.split(separator: " ")
+            dic[Int(String(l[0]))!] = String(l[1])
+        }
+        let sorted = dic.sorted{ $0.key > $1.key }
+        print(sorted[0].value)
+    }
+}
+
 func s1568() {
     var n = Int(readLine()!)!
     var c = 0
