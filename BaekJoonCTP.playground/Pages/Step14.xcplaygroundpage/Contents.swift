@@ -1,5 +1,32 @@
 import Foundation
 
+func s1592() {
+    let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let n = list[0]
+    let m = list[1]
+    let l = list[2]
+    var dic:[Int:Int] = [:]
+    for i in 1...n {
+        dic[i] = 0
+    }
+    var c = 1
+    var s = 0
+    while true {
+        let a = dic[c] ?? 0
+        dic[c] = a+1
+        if dic[c] == m {
+            break
+        }
+        if (a+1)%2 == 1 {
+            c = (c+l)%n == 0 ? n : (c+l)%n
+        } else {
+            c = c-l > 0 ? c-l : c-l+n
+        }
+        s += 1
+    }
+    print(s)
+}
+
 func s10829() {
     let n = Int(readLine()!)!
     let a = String(n, radix: 2)
