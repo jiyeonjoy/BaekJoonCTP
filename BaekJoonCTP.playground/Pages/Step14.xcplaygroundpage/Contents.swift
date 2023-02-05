@@ -1,5 +1,19 @@
 import Foundation
 
+func s10539() {
+    readLine()
+    let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    var str = ""
+    var s = 0
+    for i in 0...l.count-1 {
+        let n = l[i]*(i+1)-s
+        s += n
+        str += "\(n) "
+    }
+    str.removeLast()
+    print(str)
+}
+
 func s1526() {
     let n = Int(readLine()!)!
     for i in 0...n {
