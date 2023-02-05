@@ -1,5 +1,20 @@
 import Foundation
 
+func s8320() {
+    let n = Int(readLine()!)!
+    var c = 0
+    for i in 1...n {
+        for j in 1...i {
+            if i*j <= n {
+                c += 1
+            } else {
+                break
+            }
+        }
+    }
+    print(c)
+}
+
 func s11816() {
     let arr = Array(readLine()!)
     if arr.count > 1 && arr[0] == "0" {
