@@ -1,5 +1,17 @@
 import Foundation
 
+func s5032() {
+    let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    var s = l[0] + l[1]
+    let c = l[2]
+    var a = 0
+    while s >= c {
+        a += s/c
+        s = s%c + s/c
+    }
+    print(a)
+}
+
 func s11170() {
     let t = Int(readLine()!)!
     for _ in 1...t {
