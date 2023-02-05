@@ -1,5 +1,26 @@
 import Foundation
 
+func s10801() {
+    let al = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let bl = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    var ac = 0
+    var bc = 0
+    for i in 0...9 {
+        if al[i] > bl[i] {
+            ac += 1
+        } else if al[i] < bl[i] {
+            bc += 1
+        }
+    }
+    if ac > bc {
+        print("A")
+    } else if ac < bc {
+        print("B")
+    } else {
+        print("D")
+    }
+}
+
 func s5218() {
     let t = Int(readLine()!)!
     let alphabet:[Character:Int] = [
