@@ -1,5 +1,16 @@
 import Foundation
 
+func s2774() {
+    let t = Int(readLine()!)!
+    for _ in 1...t {
+        let n = readLine()!
+        let c = (0...9).filter{
+            n.contains("\($0)")
+        }.count
+        print(c)
+    }
+}
+
 func s11944() {
     let l = readLine()!.split(separator: " ").map{ String($0) }
     let n = l[0]
