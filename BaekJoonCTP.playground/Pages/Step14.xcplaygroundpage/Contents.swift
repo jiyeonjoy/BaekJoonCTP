@@ -1,5 +1,27 @@
 import Foundation
 
+func s2495() {
+    while true {
+        guard let line = readLine() else { break }
+        let arr = Array(line)
+        var c:Character = "A"
+        var maxCount = 1
+        var count = 1
+        for i in 0...arr.count-1 {
+            if arr[i] == c {
+                count += 1
+                if maxCount < count {
+                    maxCount = count
+                }
+            } else {
+                count = 1
+                c = arr[i]
+            }
+        }
+        print(maxCount)
+    }
+}
+
 func s10539() {
     readLine()
     let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
