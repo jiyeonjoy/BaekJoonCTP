@@ -1,5 +1,35 @@
 import Foundation
 
+func s2979() {
+    let pl = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let t1 = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let t2 = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let t3 = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let st = min(t1[0], t2[0], t3[0])
+    let et = max(t1[1], t2[1], t3[1])
+    var sp = 0
+    for s in st+1...et {
+        var m = 0
+        if s > t1[0] && s <= t1[1] {
+            m += 1
+        }
+        if s > t2[0] && s <= t2[1] {
+            m += 1
+        }
+        if s > t3[0] && s <= t3[1] {
+            m += 1
+        }
+        if m == 1 {
+            sp += pl[0]
+        } else if m == 2 {
+            sp += pl[1]*2
+        } else if m == 3 {
+            sp += pl[2]*3
+        }
+    }
+    print(sp)
+}
+
 func s2511() {
     let al = readLine()!.split(separator: " ").map{ Int(String($0))! }
     let bl = readLine()!.split(separator: " ").map{ Int(String($0))! }
