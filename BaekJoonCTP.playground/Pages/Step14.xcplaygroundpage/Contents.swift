@@ -1,5 +1,19 @@
 import Foundation
 
+func s6996() {
+    let t = Int(readLine()!)!
+    for _ in 1...t {
+        let l = readLine()!.split(separator: " ").map{ String($0) }
+        let a = Array(l[0]).sorted()
+        let b = Array(l[1]).sorted()
+        if a == b {
+            print("\(l[0]) & \(l[1]) are anagrams.")
+        } else {
+            print("\(l[0]) & \(l[1]) are NOT anagrams.")
+        }
+    }
+}
+
 func s1668() {
     let n = Int(readLine()!)!
     var l:[Int] = []
