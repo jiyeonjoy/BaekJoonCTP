@@ -1,5 +1,29 @@
 import Foundation
 
+func s14697() {
+    var list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let a = list[0]
+    let b = list[1]
+    let c = list[2]
+    let n = list[3]
+    var isP = false
+    for i in 0...n/a {
+        for j in 0...(n-a*i)/b {
+            if (n-a*i-j*b)%c == 0 {
+                isP = true
+            }
+        }
+        if isP {
+            break
+        }
+    }
+    if isP {
+        print(1)
+    } else {
+        print(0)
+    }
+}
+
 func s1408() {
     var l1 = readLine()!.split(separator: ":").map{ Int(String($0))! }
     var l2 = readLine()!.split(separator: ":").map{ Int(String($0))! }
