@@ -1,5 +1,22 @@
 import Foundation
 
+func s18406() {
+    var l = readLine()!.map{ Int(String($0))! }
+    var s1 = 0
+    var s2 = 0
+    for i in 0..<l.count/2 {
+        s1 += l[i]
+    }
+    for i in l.count/2...l.count-1 {
+        s2 += l[i]
+    }
+    if s1 == s2 {
+        print("LUCKY")
+    } else {
+        print("READY")
+    }
+}
+
 func s1834() {
     let n = Int(readLine()!)!
     var s = (n+1)*n*(n-1)/2
