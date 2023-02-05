@@ -1,5 +1,16 @@
 import Foundation
 
+func s1526() {
+    let n = Int(readLine()!)!
+    for i in 0...n {
+        let s = String(n-i)
+        if s.filter({ $0 != "4" && $0 != "7" }).count == 0 {
+            print(s)
+            break
+        }
+    }
+}
+
 func s14696() {
     let t = Int(readLine()!)!
     for _ in 1...t {
