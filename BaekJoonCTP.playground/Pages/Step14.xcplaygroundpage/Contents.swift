@@ -1,5 +1,25 @@
 import Foundation
 
+func s14659() {
+    readLine()
+    let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    var maxC = 0
+    var c = 0
+    var m = 0
+    for i in 0...l.count-1 {
+        if l[i] > m {
+            m = l[i]
+            c = 0
+        } else {
+            c += 1
+            if maxC < c {
+                maxC = c
+            }
+        }
+    }
+    print(maxC)
+}
+
 func s5032() {
     let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
     var s = l[0] + l[1]
