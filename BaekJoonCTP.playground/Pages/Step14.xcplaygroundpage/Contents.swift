@@ -1,5 +1,28 @@
 import Foundation
 
+func s1408() {
+    var l1 = readLine()!.split(separator: ":").map{ Int(String($0))! }
+    var l2 = readLine()!.split(separator: ":").map{ Int(String($0))! }
+
+    let ch = l1[0]
+    let cm = l1[1]
+    let cs = l1[2]
+
+    let sh = l2[0]
+    let sm = l2[1]
+    let ss = l2[2]
+
+    let minusM = ss < cs
+    let rs = minusM ? ss+60-cs : ss-cs
+    let minusH = sm-(minusM ? 1 : 0) < cm
+    let rm = sm-(minusM ? 1 : 0)-cm+(minusH ? 60 : 0)
+    var rh = sh-(minusH ? 1 : 0)-ch
+    if rh < 0 {
+        rh += 24
+    }
+    print("\(rh < 10 ? "0\(rh)" : "\(rh)"):\(rm < 10 ? "0\(rm)" : "\(rm)"):\(rs < 10 ? "0\(rs)" : "\(rs)")")
+}
+
 func s18406() {
     var l = readLine()!.map{ Int(String($0))! }
     var s1 = 0
