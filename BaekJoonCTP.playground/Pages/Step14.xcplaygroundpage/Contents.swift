@@ -1,5 +1,18 @@
 import Foundation
 
+func s9076() {
+    let t = Int(readLine()!)!
+    for _ in 1...t {
+        let l = readLine()!.split(separator: " ").map{ Int(String($0))! }.sorted(by: <)
+        if l[3]-l[1] >= 4 {
+            print("KIN")
+        } else {
+            let s = l[1]+l[2]+l[3]
+            print(s)
+        }
+    }
+}
+
 func s1371() {
     var alphabet:[Character:Int] = [
         "a":0,
