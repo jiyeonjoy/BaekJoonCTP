@@ -1,5 +1,16 @@
 import Foundation
 
+func s1350() {
+    readLine()
+    let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let n = Int(readLine()!)!
+    var s = 0
+    l.forEach{
+        s += ($0+n-1)/n
+    }
+    print(s*n)
+}
+
 func s27294() {
     let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
     let t = l[0]
