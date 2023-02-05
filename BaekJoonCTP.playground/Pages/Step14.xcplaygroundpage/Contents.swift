@@ -1,5 +1,48 @@
 import Foundation
 
+func s6679() {
+    for i in 2992...9999 {
+        let s1 = String(i)
+        let s2 = String(i, radix: 12)
+        let s3 = String(i, radix: 16)
+        var a1 = 0
+        var a2 = 0
+        var a3 = 0
+        s1.forEach{
+            a1 += Int(String($0))!
+        }
+        s2.forEach{
+            if $0 == "a" {
+                a2 += 10
+            } else if $0 == "b" {
+                a2 += 11
+            } else {
+                a2 += Int(String($0))!
+            }
+        }
+        s3.forEach{
+            if $0 == "a" {
+                a3 += 10
+            } else if $0 == "b" {
+                a3 += 11
+            } else if $0 == "c" {
+                a3 += 12
+            } else if $0 == "d" {
+                a3 += 13
+            } else if $0 == "e" {
+                a3 += 14
+            } else if $0 == "f" {
+                a3 += 15
+            } else {
+                a3 += Int(String($0))!
+            }
+        }
+        if a1 == a2 && a2 == a3 {
+            print(i)
+        }
+    }
+}
+
 func s23037() {
     let arr = Array(readLine()!)
     var s:Double = 0
