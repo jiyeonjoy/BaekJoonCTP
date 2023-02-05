@@ -1,5 +1,23 @@
 import Foundation
 
+func s5054() {
+    let t = Int(readLine()!)!
+    for _ in 1...t {
+        readLine()
+        let sorted = readLine()!.split(separator: " ").map{ Int(String($0))! }.sorted()
+        var s = sorted[0]
+        var c = 0
+        if sorted.count > 1 {
+            c = sorted[sorted.count-1]-sorted[0]
+            for i in 1...sorted.count-1 {
+                c += sorted[i]-s
+                s = sorted[i]
+            }
+        }
+        print(c)
+    }
+}
+
 func s2804() {
     let l = readLine()!.split(separator: " ").map{ Array(String($0)) }
     let a = l[0]
