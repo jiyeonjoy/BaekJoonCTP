@@ -1,5 +1,20 @@
 import Foundation
 
+func s2702() {
+    func gcd(_ a: Int, _ b: Int) -> Int{
+        if (b == 0) { return a }
+        return gcd(b, a % b)
+    }
+
+    let t = Int(readLine()!)!
+    for _ in 1...t {
+        let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        let a = gcd(l[0], l[1])
+        let b = l[0]*l[1]/a
+        print("\(b) \(a)")
+    }
+}
+
 func s10822() {
     let s = readLine()!.split(separator: ",").map{ Int(String($0))! }.reduce(0,+)
     print(s)
