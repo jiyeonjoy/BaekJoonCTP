@@ -1,5 +1,29 @@
 import Foundation
 
+func s1668() {
+    let n = Int(readLine()!)!
+    var l:[Int] = []
+    for _ in 1...n {
+        l.append(Int(readLine()!)!)
+    }
+    var lc = 0
+    var rc = 0
+    var lm = 0
+    var rm = 0
+    for i in 0...n-1 {
+        if l[i] > lm {
+            lm = l[i]
+            lc += 1
+        }
+        if l[n-i-1] > rm {
+            rm = l[n-i-1]
+            rc += 1
+        }
+    }
+    print(lc)
+    print(rc)
+}
+
 func s8320() {
     let n = Int(readLine()!)!
     var c = 0
