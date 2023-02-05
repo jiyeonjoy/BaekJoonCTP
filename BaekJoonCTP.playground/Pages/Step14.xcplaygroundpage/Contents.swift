@@ -1,5 +1,39 @@
 import Foundation
 
+func s1252() {
+    let l = readLine()!.split(separator: " ").map{ Array(String($0.reversed())) }
+    let a = l[0]
+    let b = l[1]
+    let ai = a.lastIndex(of: "1") ?? 0
+    let bi = b.lastIndex(of: "1") ?? 0
+    var c = ""
+    var plusOne = false
+    for i in 0...max(ai, bi) {
+        var s = plusOne ? 1 : 0
+        if i < a.count {
+            if a[i] == "1" {
+                s += 1
+            }
+        }
+        if i < b.count {
+            if b[i] == "1" {
+                s += 1
+            }
+        }
+        if s > 1 {
+            plusOne = true
+            s = s%2
+        } else {
+            plusOne = false
+        }
+        c.write("\(s)")
+    }
+    if plusOne {
+        c.write("1")
+    }
+    print(String(c.reversed()))
+}
+
 func s2526() {
     let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
     let n = l[0]
