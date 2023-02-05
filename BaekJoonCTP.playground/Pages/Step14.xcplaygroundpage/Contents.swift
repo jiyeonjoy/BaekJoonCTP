@@ -1,5 +1,18 @@
 import Foundation
 
+func s11816() {
+    let arr = Array(readLine()!)
+    if arr.count > 1 && arr[0] == "0" {
+        if arr[1] == "x" {
+            print(Int(String(arr[2...arr.count-1]), radix: 16)!)
+        } else {
+            print(Int(String(arr), radix: 8)!)
+        }
+    } else {
+        print(String(arr))
+    }
+}
+
 func s1592() {
     let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
     let n = list[0]
