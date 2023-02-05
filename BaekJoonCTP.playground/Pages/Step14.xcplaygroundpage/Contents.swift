@@ -1,5 +1,32 @@
 import Foundation
 
+func s19532() {
+    let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let a = l[0]
+    let b = l[1]
+    let c = l[2]
+    let d = l[3]
+    let e = l[4]
+    let f = l[5]
+    var isD = false
+    var ax = 0
+    var ay = 0
+    for x in -999...999 {
+        for y in -999...999 {
+            if a*x+b*y == c && d*x+e*y == f {
+                isD = true
+                ax = x
+                ay = y
+                break
+            }
+        }
+        if isD {
+            break
+        }
+    }
+    print("\(ax) \(ay)")
+}
+
 func s10813() {
     let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
     let n = l[0]
