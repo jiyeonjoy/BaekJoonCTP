@@ -1,5 +1,23 @@
 import Foundation
 
+func s2526() {
+    let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let n = l[0]
+    let p = l[1]
+    var list:[Int] = []
+    var c = n
+    while true {
+        c = c*n%p
+        if list.contains(c) {
+            let i = list.firstIndex(of: c) ?? 0
+            print(list.count-i)
+            break
+        } else {
+            list.append(c)
+        }
+    }
+}
+
 func KMP(source:[String], target:[String]) -> Bool {
     let sourceCnt = source.count
     let targetCnt = target.count
