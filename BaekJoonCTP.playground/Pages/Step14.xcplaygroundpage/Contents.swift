@@ -1,5 +1,17 @@
 import Foundation
 
+func s11328() {
+    let t = Int(readLine()!)!
+    for _ in 1...t {
+        let l = readLine()!.split(separator: " ").map{ Array(String($0)).sorted() }
+        if l[0] == l[1] {
+            print("Possible")
+        } else {
+            print("Impossible")
+        }
+    }
+}
+
 func s19532() {
     let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
     let a = l[0]
