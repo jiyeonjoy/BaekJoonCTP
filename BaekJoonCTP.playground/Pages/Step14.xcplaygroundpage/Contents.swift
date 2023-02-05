@@ -1,5 +1,22 @@
 import Foundation
 
+func s11944() {
+    let l = readLine()!.split(separator: " ").map{ String($0) }
+    let n = l[0]
+    var m = min(Int(l[0])!*n.count, Int(l[1])!)
+    var str = ""
+    while m > 0 {
+        if m >= n.count {
+            str.write(n)
+            m -= n.count
+        } else {
+            str.write(String(Array(n)[0...m-1]))
+            m = 0
+        }
+    }
+    print(str)
+}
+
 func s5054() {
     let t = Int(readLine()!)!
     for _ in 1...t {
