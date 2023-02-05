@@ -1,5 +1,62 @@
 import Foundation
 
+func s1371() {
+    var alphabet:[Character:Int] = [
+        "a":0,
+        "b":0,
+        "c":0,
+        "d":0,
+        "e":0,
+        "f":0,
+        "g":0,
+        "h":0,
+        "i":0,
+        "j":0,
+        "k":0,
+        "l":0,
+        "m":0,
+        "n":0,
+        "o":0,
+        "p":0,
+        "q":0,
+        "r":0,
+        "s":0,
+        "t":0,
+        "u":0,
+        "v":0,
+        "w":0,
+        "x":0,
+        "y":0,
+        "z":0,
+    ]
+    while true {
+        guard let line = readLine() else { break }
+        let arr = Array(line)
+        arr.forEach{
+            if alphabet[$0] != nil {
+                alphabet[$0]! += 1
+            }
+        }
+    }
+    let sorted = alphabet.sorted{
+        if $0.value == $1.value {
+            return $0.key < $1.key
+        } else {
+            return $0.value > $1.value
+        }
+    }
+    var maxV = sorted[0].value
+    var str = ""
+    for i in 0...sorted.count-1 {
+        if sorted[i].value == maxV {
+            str.write(String(sorted[i].key))
+        } else {
+            break
+        }
+    }
+    print(str)
+}
+
 func s2702() {
     func gcd(_ a: Int, _ b: Int) -> Int{
         if (b == 0) { return a }
