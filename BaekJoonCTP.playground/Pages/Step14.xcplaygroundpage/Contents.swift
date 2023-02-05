@@ -1,5 +1,26 @@
 import Foundation
 
+func s5586() {
+    let arr = Array(readLine()!)
+    var joi = 0
+    var ioi = 0
+    if arr.count > 2 {
+        for i in 0...arr.count-3 {
+            if arr[i] == "J" {
+                if arr[i+1] == "O" && arr[i+2] == "I" {
+                    joi += 1
+                }
+            } else if arr[i] == "I" {
+                if arr[i+1] == "O" && arr[i+2] == "I" {
+                    ioi += 1
+                }
+            }
+        }
+    }
+    print(joi)
+    print(ioi)
+}
+
 func s9076() {
     let t = Int(readLine()!)!
     for _ in 1...t {
