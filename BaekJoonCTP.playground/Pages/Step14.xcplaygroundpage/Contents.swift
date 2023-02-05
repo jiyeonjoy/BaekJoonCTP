@@ -1,5 +1,18 @@
 import Foundation
 
+func s3062() {
+    let t = Int(readLine()!)!
+    for _ in 1...t {
+        let s = readLine()!
+        let n = Int(s)! + Int(String(s.reversed()))!
+        if String(n) == String(String(n).reversed()) {
+            print("YES")
+        } else {
+            print("NO")
+        }
+    }
+}
+
 func s14467() {
     let t = Int(readLine()!)!
     var c = 0
