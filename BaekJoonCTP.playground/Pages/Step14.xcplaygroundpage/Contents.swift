@@ -1,5 +1,11 @@
 import Foundation
 
+func s10829() {
+    let n = Int(readLine()!)!
+    let a = String(n, radix: 2)
+    print(a)
+}
+
 func s14659() {
     readLine()
     let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
