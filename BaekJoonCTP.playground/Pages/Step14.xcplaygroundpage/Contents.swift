@@ -1,5 +1,39 @@
 import Foundation
 
+func s2511() {
+    let al = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let bl = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    var ac = 0
+    var bc = 0
+    var lastW = ""
+    for i in 0...9 {
+        if al[i] > bl[i] {
+            ac += 3
+            lastW = "a"
+        } else if al[i] < bl[i] {
+            bc += 3
+            lastW = "b"
+        } else {
+            ac += 1
+            bc += 1
+        }
+    }
+    print("\(ac) \(bc)")
+    if ac > bc {
+        print("A")
+    } else if ac < bc {
+        print("B")
+    } else {
+        if lastW == "a" {
+            print("A")
+        } else if lastW == "b" {
+            print("B")
+        } else {
+            print("D")
+        }
+    }
+}
+
 func s10801() {
     let al = readLine()!.split(separator: " ").map{ Int(String($0))! }
     let bl = readLine()!.split(separator: " ").map{ Int(String($0))! }
