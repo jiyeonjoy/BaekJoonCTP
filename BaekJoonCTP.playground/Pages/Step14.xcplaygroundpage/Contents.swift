@@ -1,5 +1,38 @@
 import Foundation
 
+func s14696() {
+    let t = Int(readLine()!)!
+    for _ in 1...t {
+        var al = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        al.removeFirst()
+        al.sort(by: >)
+        var bl = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        bl.removeFirst()
+        bl.sort(by: >)
+        var win = ""
+        for i in 0...min(al.count, bl.count)-1 {
+            if al[i] > bl[i] {
+                win = "A"
+                break
+            } else if al[i] < bl[i] {
+                win = "B"
+                break
+            }
+        }
+        if win == "" {
+            if al.count > bl.count {
+                print("A")
+            } else if al.count < bl.count {
+                print("B")
+            } else {
+                print("D")
+            }
+        } else {
+            print(win)
+        }
+    }
+}
+
 func s5586() {
     let arr = Array(readLine()!)
     var joi = 0
