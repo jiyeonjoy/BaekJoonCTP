@@ -9,6 +9,7 @@
         <page name='Combinations'/>
         <page name='DFS_BFS'/>
         <page name='Step_DFS_BFS'/>
+        <page name='KMP'/>
         <page name='Step0'/>
         <page name='Step1'/>
         <page name='Step2'/>
