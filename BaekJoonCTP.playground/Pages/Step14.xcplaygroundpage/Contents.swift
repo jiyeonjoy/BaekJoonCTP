@@ -1,5 +1,35 @@
 import Foundation
 
+func s2804() {
+    let l = readLine()!.split(separator: " ").map{ Array(String($0)) }
+    let a = l[0]
+    let b = l[1]
+    var ai = 0
+    var bi = 0
+    var isD = false
+    for i in 0...a.count-1 {
+        for j in 0...b.count-1 {
+            if a[i] == b[j] {
+                isD = true
+                ai = i
+                bi = j
+                break
+            }
+        }
+        if isD {
+            break
+        }
+    }
+    for i in 0...b.count-1 {
+        if i == bi {
+            print(String(a))
+        } else {
+            let s = String(repeating: ".", count: ai)+String(b[i])+String(repeating: ".", count: a.count-ai-1)
+            print(s)
+        }
+    }
+}
+
 func s1350() {
     readLine()
     let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
