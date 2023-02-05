@@ -1,5 +1,15 @@
 import Foundation
 
+func s23037() {
+    let arr = Array(readLine()!)
+    var s:Double = 0
+    for i in 0...arr.count-1 {
+        let n = Double(String(arr[i]))!
+        s += pow(n, 5)
+    }
+    print(Int(s))
+}
+
 func s3062() {
     let t = Int(readLine()!)!
     for _ in 1...t {
