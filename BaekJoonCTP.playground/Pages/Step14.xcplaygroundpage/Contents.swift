@@ -1,5 +1,24 @@
 import Foundation
 
+func s14467() {
+    let t = Int(readLine()!)!
+    var c = 0
+    var dic:[Int:Int] = [:]
+    for _ in 1...t {
+        let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        let n = dic[l[0]] ?? -1
+        if n > -1 {
+            if n != l[1] {
+                dic[l[0]] = l[1]
+                c += 1
+            }
+        } else {
+            dic[l[0]] = l[1]
+        }
+    }
+    print(c)
+}
+
 func s11328() {
     let t = Int(readLine()!)!
     for _ in 1...t {
