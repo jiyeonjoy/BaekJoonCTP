@@ -1,5 +1,16 @@
 import Foundation
 
+func s27294() {
+    let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let t = l[0]
+    let s = l[1]
+    if t >= 12 && t <= 16 && s == 0 {
+        print(320)
+    } else {
+        print(280)
+    }
+}
+
 func s6679() {
     for i in 2992...9999 {
         let s1 = String(i)
