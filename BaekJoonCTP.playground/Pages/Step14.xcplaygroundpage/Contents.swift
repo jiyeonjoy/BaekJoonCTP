@@ -1,5 +1,18 @@
 import Foundation
 
+func s11170() {
+    let t = Int(readLine()!)!
+    for _ in 1...t {
+        let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        var s = 0
+        for i in l[0]...l[1] {
+            let c = String(i).filter{ $0 == "0" }.count
+            s += c
+        }
+        print(s)
+    }
+}
+
 func s1252() {
     let l = readLine()!.split(separator: " ").map{ Array(String($0.reversed())) }
     let a = l[0]
