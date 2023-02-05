@@ -1,5 +1,10 @@
 import Foundation
 
+func s10822() {
+    let s = readLine()!.split(separator: ",").map{ Int(String($0))! }.reduce(0,+)
+    print(s)
+}
+
 func s2979() {
     let pl = readLine()!.split(separator: " ").map{ Int(String($0))! }
     let t1 = readLine()!.split(separator: " ").map{ Int(String($0))! }
