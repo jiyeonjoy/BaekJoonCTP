@@ -1,5 +1,27 @@
 import Foundation
 
+func s27325() {
+    let n = Int(readLine()!)!
+    let arr = Array(readLine()!)
+    var s = 0
+    var c = 1
+    arr.forEach{
+        if $0 == "L" {
+            if c > 1 {
+                c -= 1
+            }
+        } else {
+            if c >= 2 {
+                c = 3
+                s += 1
+            } else {
+                c = 2
+            }
+        }
+    }
+    print(s)
+}
+
 func s2153() {
     func isPrime(num: Int) -> Bool {
         if(num<4) {
