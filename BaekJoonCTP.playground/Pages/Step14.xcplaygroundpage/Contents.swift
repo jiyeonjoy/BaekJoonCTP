@@ -1,5 +1,20 @@
 import Foundation
 
+func s27330() {
+    readLine()
+    let l1 = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    readLine()
+    let l2 = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    var s = 0
+    l1.forEach{
+        s += $0
+        if l2.contains(s) {
+            s = 0
+        }
+    }
+    print(s)
+}
+
 func s27325() {
     let n = Int(readLine()!)!
     let arr = Array(readLine()!)
