@@ -1,5 +1,23 @@
 import Foundation
 
+func s27333() {
+    let n = Int(readLine()!)!
+    let arr = Array(readLine()!)
+    var s:Character = "A"
+    var str = ""
+    arr.forEach{
+        if $0 == s {
+            str.removeLast()
+            str.write("\($0.uppercased())\($0.uppercased())")
+            s = "A"
+        } else {
+            str.write("\($0)")
+            s = $0
+        }
+    }
+    print(str)
+}
+
 func s27329() {
     let n = Int(readLine()!)!
     let arr = Array(readLine()!)
