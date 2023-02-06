@@ -1,5 +1,17 @@
 import Foundation
 
+func s27329() {
+    let n = Int(readLine()!)!
+    let arr = Array(readLine()!)
+    let a = arr[0..<n/2]
+    let b = arr[n/2..<n]
+    if a == b {
+        print("Yes")
+    } else {
+        print("No")
+    }
+}
+
 func s27334() {
     readLine()
     let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
