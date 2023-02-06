@@ -1,5 +1,15 @@
 import Foundation
 
+func s27334() {
+    readLine()
+    let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let sorted = l.sorted()
+    l.forEach{
+        let i = sorted.firstIndex(of: $0)!
+        print(i+1)
+    }
+}
+
 func s27330() {
     readLine()
     let l1 = readLine()!.split(separator: " ").map{ Int(String($0))! }
