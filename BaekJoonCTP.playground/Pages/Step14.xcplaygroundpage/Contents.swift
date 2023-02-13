@@ -1,5 +1,20 @@
 import Foundation
 
+func s9933() {
+    let n = Int(readLine()!)!
+    var list:[String] = []
+    for _ in 1...n {
+        list.append(readLine()!)
+    }
+    for i in 0..<n {
+        let str = String(list[i].reversed())
+        if list.contains(str) {
+            print("\(str.count) \(Array(str)[str.count/2])")
+            break
+        }
+    }
+}
+
 func s1173() {
     var l = readLine()!.split(separator: " ").map{ Int(String($0))! }
     var N = l[0]
