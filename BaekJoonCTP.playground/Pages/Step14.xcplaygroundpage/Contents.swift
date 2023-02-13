@@ -1,5 +1,22 @@
 import Foundation
 
+func s10769() {
+    let str = readLine()!.replacingOccurrences(of: " ", with: "")
+    let happy = "d\(str)d".replacingOccurrences(of: ":-)", with: " /").split(separator: " ").count
+    let sad = "d\(str)d".replacingOccurrences(of: ":-(", with: " /").split(separator: " ").count
+    if happy == sad {
+        if happy == 1 {
+            print("none")
+        } else {
+            print("unsure")
+        }
+    } else if happy > sad {
+        print("happy")
+    } else {
+        print("sad")
+    }
+}
+
 func s3985() {
     let L = Int(readLine()!)!
     var list:[Bool] = Array.init(repeating: true, count: L)
