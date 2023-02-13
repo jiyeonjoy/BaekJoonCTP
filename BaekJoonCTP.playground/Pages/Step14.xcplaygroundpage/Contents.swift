@@ -1,5 +1,30 @@
 import Foundation
 
+func s1173() {
+    var l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    var N = l[0]
+    let m = l[1]
+    let M = l[2]
+    let T = l[3]
+    let R = l[4]
+    var c = 0
+    var a = m
+    if m+T > M {
+        c = -1
+    } else {
+        while N > 0 || a > M {
+            c += 1
+            if a+T <= M {
+                a += T
+                N -= 1
+            } else {
+                a = max(m, a-R)
+            }
+        }
+    }
+    print(c)
+}
+
 func s27333() {
     let n = Int(readLine()!)!
     let arr = Array(readLine()!)
