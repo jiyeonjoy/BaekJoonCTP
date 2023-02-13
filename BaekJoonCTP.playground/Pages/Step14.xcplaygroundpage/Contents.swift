@@ -1,5 +1,35 @@
 import Foundation
 
+func s3985() {
+    let L = Int(readLine()!)!
+    var list:[Bool] = Array.init(repeating: true, count: L)
+    let N = Int(readLine()!)!
+    var maxCount = 0
+    var maxI = 0
+    var maxCount2 = 0
+    var maxI2 = 0
+    for i in 1...N {
+        var l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        var c = 0
+        for j in l[0]...l[1] {
+            if list[j-1] {
+                list[j-1] = false
+                c += 1
+            }
+        }
+        if c > maxCount {
+            maxCount = c
+            maxI = i
+        }
+        if l[1]-l[0] > maxCount2 {
+            maxCount2 = l[1]-l[0]
+            maxI2 = i
+        }
+    }
+    print(maxI2)
+    print(maxI)
+}
+
 func s9933() {
     let n = Int(readLine()!)!
     var list:[String] = []
