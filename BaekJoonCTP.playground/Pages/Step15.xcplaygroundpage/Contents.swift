@@ -1,5 +1,30 @@
 import Foundation
 
+func s1233() {
+    var list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let a = list[0]
+    let b = list[1]
+    let c = list[2]
+    var dic:[Int:Int] = [:]
+    for i in 1...a {
+        for j in 1...b {
+            for k in 1...c {
+                let n = dic[i+j+k] ?? 0
+                dic[i+j+k] = n+1
+            }
+        }
+    }
+    let sorted = dic.sorted {
+        if $0.value == $1.value {
+            return $0.key < $1.key
+        } else {
+            return $0.value > $1.value
+        }
+        
+    }
+    print(sorted[0].key)
+}
+
 func s27481() {
     readLine()
     var dic:[Int:Int] = [
