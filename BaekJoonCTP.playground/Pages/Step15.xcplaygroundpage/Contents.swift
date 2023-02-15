@@ -1,5 +1,47 @@
 import Foundation
 
+func s27481() {
+    readLine()
+    var dic:[Int:Int] = [
+        0:0,
+        1:0,
+        2:0,
+        3:0,
+        4:0,
+        5:0,
+        6:0,
+        7:0,
+        8:0,
+        9:0,
+    ]
+    let str = readLine()!
+    str.map {
+        if $0 == "L" {
+            for i in 0...9 {
+                if dic[i] == 0 {
+                    dic[i] = 1
+                    break
+                }
+            }
+        } else if $0 == "R" {
+            for i in 0...9 {
+                if dic[9-i] == 0 {
+                    dic[9-i] = 1
+                    break
+                }
+            }
+        } else {
+            let n = Int(String($0))!
+            dic[n] = 0
+        }
+    }
+    var result = ""
+    for i in 0...9 {
+        result.write("\(dic[i]!)")
+    }
+    print(result)
+}
+
 func s16088() {
     let n = Int(readLine()!)!
     for _ in 1...n {
