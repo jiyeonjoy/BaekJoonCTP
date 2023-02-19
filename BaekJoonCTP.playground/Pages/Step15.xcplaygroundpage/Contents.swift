@@ -1,5 +1,25 @@
 import Foundation
 
+func s9772() {
+    while true {
+        guard let line = readLine() else { break }
+        var list = line.split(separator: " ").map{ Double(String($0))! }
+        let x = list[0]
+        let y = list[1]
+        if x == 0 || y == 0 {
+            print("AXIS")
+        } else if x > 0 && y > 0 {
+            print("Q1")
+        } else if x > 0 {
+            print("Q4")
+        } else if y > 0 {
+            print("Q2")
+        } else {
+            print("Q3")
+        }
+    }
+}
+
 func s1233() {
     var list = readLine()!.split(separator: " ").map{ Int(String($0))! }
     let a = list[0]

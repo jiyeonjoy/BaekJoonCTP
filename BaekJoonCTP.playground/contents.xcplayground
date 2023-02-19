@@ -2,10 +2,14 @@
 <playground version='6.0' target-platform='ios' buildActiveScheme='true' importAppTypes='true'>
     <pages>
         <page name='FileIO'/>
+        <page name='FileIO2'/>
         <page name='Stack'/>
         <page name='Queue'/>
         <page name='Deque'/>
         <page name='Combinations'/>
+        <page name='DFS_BFS'/>
+        <page name='Step_DFS_BFS'/>
+        <page name='KMP'/>
         <page name='Step0'/>
         <page name='Step1'/>
         <page name='Step2'/>
@@ -20,11 +24,6 @@
         <page name='Step11'/>
         <page name='Step12'/>
         <page name='Step13'/>
-        <page name='DFS_BFS'/>
-        <page name='FileIO2'/>
-        <page name='KMP'/>
-        <page name='Step_DFS_BFS'/>
         <page name='Step14'/>
-        <page name='Step15'/>
     </pages>
 </playground>
