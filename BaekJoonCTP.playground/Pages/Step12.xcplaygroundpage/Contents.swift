@@ -1,5 +1,20 @@
 import Foundation
 
+func s27590() {
+    let sl = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let ml = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    var a = sl[1]-sl[0]
+    var b = ml[1]-ml[0]
+    while a != b {
+        if a < b {
+            a += sl[1]
+        } else {
+            b += ml[1]
+        }
+    }
+    print(a)
+}
+
 func s14041() {
     let l = readLine()!.split(separator: ":").map{ Int(String($0))! }
     let h = l[0]
