@@ -1,5 +1,76 @@
 import Foundation
 
+func s14041() {
+    let l = readLine()!.split(separator: ":").map{ Int(String($0))! }
+    let h = l[0]
+    let m = l[1]
+    var dh = 0
+    var dm = 0
+    if h >= 7 && h < 10 {
+        var s = 120
+        if m > 0 {
+            s -= ((10-h-1)*60+(60-m))/2
+        } else {
+            s -= (10-h)*30
+        }
+        dh = 10+(s/60)
+        dm += s%60
+    } else if h >= 15 && h < 19 {
+        var s = 120
+        if m > 0 {
+            s -= ((19-h-1)*60+(60-m))/2
+        } else {
+            s -= (19-h)*30
+        }
+        dh = 19+(s/60)
+        dm += s%60
+    } else {
+        if h+2 >= 7 && h+2 < 10 {
+            if h+2 == 7 && m == 0 {
+                dh = h+2
+                dm = m
+            } else if h == 6 && m == 40 {
+                dh = 10
+                dm = 10
+            } else {
+                var s = 120
+                if m > 0 {
+                    s -= (7-h-1)*60+(60-m)
+                } else {
+                    s -= (7-h)*60
+                }
+                s *= 2
+                dh = 7+(s/60)
+                dm += s%60
+            }
+        } else if h+2 >= 15 && h+2 < 19 {
+            if h+2 == 15 && m == 0 {
+                dh = h+2
+                dm = m
+            } else {
+                var s = 120
+                if m > 0 {
+                    s -= (15-h-1)*60+(60-m)
+                } else {
+                    s -= (15-h)*60
+                }
+                s *= 2
+                dh = 15+(s/60)
+                dm += s%60
+            }
+        } else {
+            dh = h+2
+            dm = m
+        }
+    }
+    if dh >= 24 {
+        dh -= 24
+    }
+    let strH = dh > 9 ? "\(dh)" : "0\(dh)"
+    let strM = dm > 9 ? "\(dm)" : "0\(dm)"
+    print("\(strH):\(strM)")
+}
+
 func s1004() {
     let t = Int(readLine()!)!
     for _ in 1...t {
