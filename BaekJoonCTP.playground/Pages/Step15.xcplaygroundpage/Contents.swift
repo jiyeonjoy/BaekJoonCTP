@@ -1,5 +1,12 @@
 import Foundation
 
+func s1094() {
+    let n = Int(readLine()!)!
+    let str = String(n, radix: 2)
+    let c = str.filter{ $0 == "1" }.count
+    print(c)
+}
+
 func s12605() {
     let n = Int(readLine()!)!
     for i in 1...n {
