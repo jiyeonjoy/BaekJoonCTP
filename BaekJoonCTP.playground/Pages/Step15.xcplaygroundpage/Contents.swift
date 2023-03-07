@@ -1,5 +1,17 @@
 import Foundation
 
+func s12605() {
+    let n = Int(readLine()!)!
+    for i in 1...n {
+        let l = readLine()!.split(separator: " ").map{ String($0) }
+        var str = ""
+        for j in 0..<l.count {
+            str.write(" \(l[l.count-j-1])")
+        }
+        print("Case #\(i):\(str)")
+    }
+}
+
 func s10811() {
     let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
     let N = l[0]
