@@ -1,5 +1,23 @@
 import Foundation
 
+func s1789() {
+    let S = Int(readLine()!)!
+    var i = 1
+    var sum = 0
+    while true {
+        if S == sum {
+            i -= 1
+            break
+        } else if S < sum {
+            i -= 2
+            break
+        }
+        sum += i
+        i += 1
+    }
+    print(i)
+}
+
 func s1094() {
     let n = Int(readLine()!)!
     let str = String(n, radix: 2)
