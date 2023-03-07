@@ -1,5 +1,27 @@
 import Foundation
 
+func s10810() {
+    let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let N = l[0]
+    let M = l[1]
+    var dic:[Int:Int] = [:]
+    for _ in 1...M {
+        let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        let i = l[0]
+        let j = l[1]
+        let k = l[2]
+        for n in i...j {
+            dic[n] = k
+        }
+    }
+    var str = ""
+    for i in 1...N {
+        str.write("\(dic[i] ?? 0) ")
+    }
+    str.removeLast()
+    print(str)
+}
+
 func s9772() {
     while true {
         guard let line = readLine() else { break }
