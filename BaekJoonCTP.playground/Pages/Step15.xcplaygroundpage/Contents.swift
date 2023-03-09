@@ -1,5 +1,28 @@
 import Foundation
 
+func s2822() {
+    var dic:[Int:Int] = [:]
+    for i in 1...8 {
+        let n = Int(readLine()!)!
+        dic[n] = i
+    }
+    var list:[Int] = []
+    let sorted = dic.keys.sorted(by: >)
+    var sum = 0
+    for i in 0...4 {
+        sum += sorted[i]
+        list.append(dic[sorted[i]]!)
+    }
+    print(sum)
+    list.sort()
+    var str = ""
+    for n in list {
+        str += "\(n) "
+    }
+    str.removeLast()
+    print(str)
+}
+
 func s2167() {
     let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
     let N = l[0]
