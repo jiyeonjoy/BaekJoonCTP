@@ -1,5 +1,32 @@
 import Foundation
 
+func s1356() {
+    let str = readLine()!
+    var result = "YES"
+    if str.count == 1 {
+        result = "NO"
+    } else {
+        let arr = Array(str)
+        var ai = 0
+        var bi = arr.count-1
+        var a = Int(String(arr[ai]))!
+        var b = Int(String(arr[bi]))!
+        while ai+1 < bi {
+            if (a <= b && a > 0) || b == 0 {
+                ai += 1
+                a *= Int(String(arr[ai]))!
+            } else {
+                bi -= 1
+                b *= Int(String(arr[bi]))!
+            }
+        }
+        if a != b {
+            result = "NO"
+        }
+    }
+    print(result)
+}
+
 func s17478() {
     let n = Int(readLine()!)!
     print("어느 한 컴퓨터공학과 학생이 유명한 교수님을 찾아가 물었다.")
