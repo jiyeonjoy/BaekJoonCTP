@@ -1,5 +1,14 @@
 import Foundation
 
+func s9655() {
+    let n = Int(readLine()!)!
+    if n%2 == 0 {
+        print("CY")
+    } else {
+        print("SK")
+    }
+}
+
 func s2822() {
     var dic:[Int:Int] = [:]
     for i in 1...8 {
