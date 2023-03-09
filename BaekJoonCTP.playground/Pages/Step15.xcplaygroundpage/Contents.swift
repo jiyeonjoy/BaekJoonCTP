@@ -1,5 +1,27 @@
 import Foundation
 
+func s1551() {
+    let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let k = l[1]
+    var list = readLine()!.split(separator: ",").map{ Int(String($0))! }
+    var rl:[Int] = []
+    if k > 0 {
+        for _ in 1...k {
+            for i in 0...list.count-2 {
+                rl.append(list[i+1]-list[i])
+            }
+            list = rl
+            rl.removeAll()
+        }
+    }
+    var str = ""
+    for n in list {
+        str += "\(n),"
+    }
+    str.removeLast()
+    print(str)
+}
+
 func s2484() {
     let n = Int(readLine()!)!
     var maxP = 0
