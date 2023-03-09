@@ -1,5 +1,29 @@
 import Foundation
 
+func s2167() {
+    let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let N = l[0]
+    var b:[[Int]] = []
+    for _ in 1...N {
+        b.append(readLine()!.split(separator: " ").map{ Int(String($0))! })
+    }
+    let n = Int(readLine()!)!
+    for _ in 1...n {
+        let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        let i = l[0]
+        let j = l[1]
+        let x = l[2]
+        let y = l[3]
+        var sum = 0
+        for m in i...x {
+            for l in j...y {
+                sum += b[m-1][l-1]
+            }
+        }
+        print(sum)
+    }
+}
+
 func s1551() {
     let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
     let k = l[1]
