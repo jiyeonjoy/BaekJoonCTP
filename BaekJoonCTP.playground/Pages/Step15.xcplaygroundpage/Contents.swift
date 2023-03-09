@@ -1,5 +1,56 @@
 import Foundation
 
+func s2484() {
+    let n = Int(readLine()!)!
+    var maxP = 0
+    for _ in 1...n {
+        let list = readLine()!.split(separator: " ").map{ Int(String($0))! }.sorted()
+        if list[0] == list[3] {
+            let p = 50000+list[0]*5000
+            if p > maxP {
+                maxP = p
+            }
+        } else if list[0] == list[2] {
+            let p = 10000+list[0]*1000
+            if p > maxP {
+                maxP = p
+            }
+        } else if list[1] == list[3] {
+            let p = 10000+list[1]*1000
+            if p > maxP {
+                maxP = p
+            }
+        } else if list[0] == list[1] && list[2] == list[3] {
+            let p = 2000+list[0]*500+list[2]*500
+            if p > maxP {
+                maxP = p
+            }
+        } else if list[0] == list[1] {
+            let p = 1000+list[0]*100
+            if p > maxP {
+                maxP = p
+            }
+        } else if list[1] == list[2] {
+            let p = 1000+list[1]*100
+            if p > maxP {
+                maxP = p
+            }
+        } else if list[2] == list[3] {
+            let p = 1000+list[2]*100
+            if p > maxP {
+                maxP = p
+            }
+        } else {
+            let p = list[3]*100
+            if p > maxP {
+                maxP = p
+            }
+        }
+
+    }
+    print(maxP)
+}
+
 func s1356() {
     let str = readLine()!
     var result = "YES"
