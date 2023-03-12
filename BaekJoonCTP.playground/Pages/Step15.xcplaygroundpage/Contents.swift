@@ -1,5 +1,17 @@
 import Foundation
 
+func s9625() {
+    let n = Int(readLine()!)!
+    var a = 1
+    var b = 0
+    for _ in 1...n {
+        let c = a
+        a = b
+        b = c+b
+    }
+    print("\(a) \(b)")
+}
+
 public struct Queue<T> {
   fileprivate var array = [T]()
   
