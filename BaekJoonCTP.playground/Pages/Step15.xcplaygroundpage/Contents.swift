@@ -1,5 +1,17 @@
 import Foundation
 
+func s7785() {
+    let n = Int(readLine()!)!
+    var dic:[String:Bool] = [:]
+    for _ in 1...n {
+        let l = readLine()!.split(separator: " ").map{ String($0) }
+        dic[l[0]] = l[1] == "enter"
+    }
+    for name in dic.filter({ $0.value }).keys.sorted(by: >) {
+        print(name)
+    }
+}
+
 func s1439() {
     let str = readLine()!
     let n = str.split(separator: "0").count
