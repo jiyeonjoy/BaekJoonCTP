@@ -1,5 +1,12 @@
 import Foundation
 
+func s1439() {
+    let str = readLine()!
+    let n = str.split(separator: "0").count
+    let n2 = str.split(separator: "1").count
+    print(min(n,n2))
+}
+
 func s10812() {
     let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
     let N = l[0]
