@@ -1,5 +1,39 @@
 import Foundation
 
+func s10812() {
+    let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let N = l[0]
+    let M = l[1]
+    var dic:[Int:Int] = [:]
+    for i in 1...N {
+        dic[i] = i
+    }
+    for _ in 1...M {
+        let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        let i = l[0]
+        let j = l[1]
+        let k = l[2]
+        var temp:[Int] = []
+        for n in k...j {
+            temp.append(dic[n] ?? 0)
+        }
+        if k > i {
+            for n in i...k-1 {
+                temp.append(dic[n] ?? 0)
+            }
+        }
+        for n in i...j {
+            dic[n] = temp[n-i]
+        }
+    }
+    var str = ""
+    for i in 1...N {
+        str += "\(dic[i] ?? 0) "
+    }
+    str.removeLast()
+    print(str)
+}
+
 func s9655() {
     let n = Int(readLine()!)!
     if n%2 == 0 {
