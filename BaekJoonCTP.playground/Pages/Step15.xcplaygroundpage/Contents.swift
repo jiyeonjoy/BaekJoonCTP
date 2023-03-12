@@ -1,5 +1,33 @@
 import Foundation
 
+func s5635() {
+    let n = Int(readLine()!)!
+    var list:[[String]] = []
+    for _ in 1...n {
+        let l = readLine()!.split(separator: " ").map{ String($0) }
+        list.append(l)
+    }
+    let sorted = list.sorted {
+        let aY = Int($0[3])!
+        let bY = Int($1[3])!
+        if aY == bY {
+            let aM = Int($0[2])!
+            let bM = Int($1[2])!
+            if aM == bM {
+                let aD = Int($0[1])!
+                let bD = Int($1[1])!
+                return aD > bD
+            } else {
+                return aM > bM
+            }
+        } else {
+            return aY > bY
+        }
+    }
+    print(sorted[0][0])
+    print(sorted[sorted.count-1][0])
+}
+
 func s14916() {
     let n = Int(readLine()!)!
     var a = n/5
