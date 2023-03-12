@@ -1,5 +1,19 @@
 import Foundation
 
+func s14916() {
+    let n = Int(readLine()!)!
+    var a = n/5
+    var c = -1
+    while a >= 0 {
+        if (n-a*5)%2 == 0 {
+            c = a+(n-a*5)/2
+            break
+        }
+        a -= 1
+    }
+    print(c)
+}
+
 func s9625() {
     let n = Int(readLine()!)!
     var a = 1
