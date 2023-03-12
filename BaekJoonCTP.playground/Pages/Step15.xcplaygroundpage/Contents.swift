@@ -1,5 +1,54 @@
 import Foundation
 
+public struct Queue<T> {
+  fileprivate var array = [T]()
+  
+  public var isEmpty: Bool {
+    return array.isEmpty
+  }
+  
+  public var count: Int {
+    return array.count
+  }
+  
+  public mutating func enquque(_ element: T) {
+    array.append(element)
+  }
+  
+  public mutating func dequeue() -> T? {
+    if isEmpty {
+      return nil
+    } else {
+      return array.removeFirst()
+    }
+  }
+  
+  public var front: T? {
+    return array.first
+  }
+}
+
+func s2161() {
+    var queue = Queue<Int>()
+    let n = Int(readLine()!)!
+    for i in 1...n {
+        queue.enquque(i)
+    }
+    var result:[Int] = []
+    while queue.count > 1 {
+        result.append(queue.dequeue()!)
+        queue.enquque(queue.dequeue()!)
+    }
+    result.append(queue.dequeue()!)
+
+    var str = ""
+    for n in result {
+        str += "\(n) "
+    }
+    str.removeLast()
+    print(str)
+}
+
 func s7785() {
     let n = Int(readLine()!)!
     var dic:[String:Bool] = [:]
