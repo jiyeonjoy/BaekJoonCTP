@@ -1,5 +1,21 @@
 import Foundation
 
+// 최대공약수
+func gcd(_ a: Int, _ b: Int) -> Int{
+    if (b == 0) { return a }
+    return gcd(b, a % b)
+}
+
+// 최소공배수
+func lcm(_ a: Int, _ b: Int) -> Int {
+    return a * b / gcd(a, b)
+}
+
+func s13241() {
+    let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    print(lcm(l[0], l[1]))
+}
+
 func s2635() {
     let n = Int(readLine()!)!
     var maxC = 0
