@@ -1,5 +1,28 @@
 import Foundation
 
+func s12174() {
+    let t = Int(readLine()!)!
+    for i in 1...t {
+        let n = Int(readLine()!)!
+        let arr = Array(readLine()!)
+        var str = ""
+        for j in 0..<n {
+            var byte = ""
+            for k in 0...7 {
+                if arr[j*8+k] == "I" {
+                    byte += "1"
+                } else {
+                    byte += "0"
+                }
+            }
+            let binaryNumber = Int(byte, radix: 2)!
+            str += String(UnicodeScalar(binaryNumber)!)
+        }
+        
+        print("Case #\(i): \(str)")
+    }
+}
+
 func s1268() {
     let n = Int(readLine()!)!
     var list:[[Int]] = []
