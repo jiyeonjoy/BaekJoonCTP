@@ -1,5 +1,23 @@
 import Foundation
 
+func s2018() {
+    let n = Int(readLine()!)!
+    var c = 1
+    var a = 1
+    while true {
+        var sum = a*(a+1)/2
+        if n-sum <= 0 {
+            break
+        } else {
+            if (n-sum)%(a+1) == 0 {
+                c += 1
+            }
+            a += 1
+        }
+    }
+    print(c)
+}
+
 func s25206() {
     var sum = 0.0
     var c = 0.0
