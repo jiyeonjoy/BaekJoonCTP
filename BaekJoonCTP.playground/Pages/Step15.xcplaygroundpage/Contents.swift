@@ -1,5 +1,34 @@
 import Foundation
 
+func s1268() {
+    let n = Int(readLine()!)!
+    var list:[[Int]] = []
+    for _ in 1...n {
+        let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        list.append(l)
+    }
+    var maxC = 0
+    var num = 1
+    for i in 0..<list.count {
+        var c = 0
+        for j in 0..<list.count {
+            if i != j {
+                for k in 0...4 {
+                    if list[i][k] == list[j][k] {
+                        c += 1
+                        break
+                    }
+                }
+            }
+        }
+        if maxC < c {
+            maxC = c
+            num = i+1
+        }
+    }
+    print(num)
+}
+
 func s5635() {
     let n = Int(readLine()!)!
     var list:[[String]] = []
