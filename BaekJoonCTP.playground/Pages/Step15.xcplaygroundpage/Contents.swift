@@ -1,5 +1,30 @@
 import Foundation
 
+func s2635() {
+    let n = Int(readLine()!)!
+    var maxC = 0
+    var str = ""
+    for i in 1...n {
+        var c = 2
+        var s = "\(n) \(i)"
+        var a = n
+        var b = i
+        while a-b >= 0 {
+            c += 1
+            let d = a-b
+            a = b
+            b = d
+            s += " \(d)"
+        }
+        if maxC < c {
+            maxC = c
+            str = s
+        }
+    }
+    print(maxC)
+    print(str)
+}
+
 func s27855() {
     let l1 = readLine()!.split(separator: " ").map{ Int(String($0))! }
     let l2 = readLine()!.split(separator: " ").map{ Int(String($0))! }
