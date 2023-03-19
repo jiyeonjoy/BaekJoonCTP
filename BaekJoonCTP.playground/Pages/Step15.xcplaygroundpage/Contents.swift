@@ -1,5 +1,32 @@
 import Foundation
 
+func s25206() {
+    var sum = 0.0
+    var c = 0.0
+    let dic = [
+        "A+" : 4.5,
+        "A0" : 4.0,
+        "B+" : 3.5,
+        "B0" : 3.0,
+        "C+" : 2.5,
+        "C0" : 2.0,
+        "D+" : 1.5,
+        "D0" : 1.0,
+        "F"  : 0.0,
+    ]
+    while true {
+        guard let line = readLine() else { break }
+        var list = line.split(separator: " ").map{ String($0) }
+        let p = Double(list[1])!
+        let s = list[2]
+        if s != "P" {
+            c += p
+            sum += (dic[s] ?? 0)*p
+        }
+    }
+    print(sum/c)
+}
+
 // 최대공약수
 func gcd(_ a: Int, _ b: Int) -> Int{
     if (b == 0) { return a }
