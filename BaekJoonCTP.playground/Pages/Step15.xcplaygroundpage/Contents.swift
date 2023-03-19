@@ -1,5 +1,19 @@
 import Foundation
 
+func s27855() {
+    let l1 = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let l2 = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let s1 = l1[0]*3+l1[1]
+    let s2 = l2[0]*3+l2[1]
+    if s1 == s2 {
+        print("NO SCORE")
+    } else if s1 > s2 {
+        print("1 \(s1-s2)")
+    } else {
+        print("2 \(s2-s1)")
+    }
+}
+
 func s27541() {
     readLine()
     let arr = Array(readLine()!)
