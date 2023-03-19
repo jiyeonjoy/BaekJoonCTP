@@ -1,5 +1,17 @@
 import Foundation
 
+func s27541() {
+    readLine()
+    let arr = Array(readLine()!)
+    if arr[arr.count-1] == "G" {
+        let str = String(arr[0...arr.count-2])
+        print(str)
+    } else {
+        let str = String(arr)+"G"
+        print(str)
+    }
+}
+
 func s12174() {
     let t = Int(readLine()!)!
     for i in 1...t {
