@@ -1,9 +1,5 @@
 import Foundation
 
-func s51103143() {
-    print("forget him")
-}
-
 func s2018() {
     let n = Int(readLine()!)!
     var c = 1
