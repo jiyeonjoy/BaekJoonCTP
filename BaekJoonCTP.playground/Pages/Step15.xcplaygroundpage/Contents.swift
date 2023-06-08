@@ -1,5 +1,12 @@
 import Foundation
 
+func s27959() {
+    let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let a = l[0]
+    let b = l[1]
+    print(a*100 >= b ? "Yes" : "No")
+}
+
 func s2018() {
     let n = Int(readLine()!)!
     var c = 1
