@@ -1,5 +1,16 @@
 import Foundation
 
+func s27889() {
+    let s = readLine()!
+    let map = [
+        "NLCS": "North London Collegiate School",
+        "BHA": "Branksome Hall Asia",
+        "KIS": "Korea International School",
+        "SJA": "St. Johnsbury Academy",
+    ]
+    print(map[s] ?? "")
+}
+
 func s27959() {
     let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
     let a = l[0]
