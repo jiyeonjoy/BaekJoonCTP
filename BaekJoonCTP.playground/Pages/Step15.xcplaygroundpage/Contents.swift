@@ -1,5 +1,21 @@
 import Foundation
 
+func s28113() {
+    let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+
+    let N = l[0]
+    let A = l[1]
+    let B = l[2]
+
+    if N > B || A < B {
+        print("Bus")
+    } else if B < A {
+        print("Subway")
+    } else {
+        print("Anything")
+    }
+}
+
 func s27889() {
     let s = readLine()!
     let map = [
