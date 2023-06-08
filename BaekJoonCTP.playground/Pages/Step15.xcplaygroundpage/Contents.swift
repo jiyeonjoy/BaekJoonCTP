@@ -1,5 +1,24 @@
 import Foundation
 
+func s27918() {
+    let N = Int(readLine()!)!
+    var X = 0
+    var Y = 0
+    for _ in 1...N {
+        let s = readLine()!
+        if s == "D" {
+            X += 1
+        } else {
+            Y += 1
+        }
+        if abs(X-Y) > 1 {
+            break
+        }
+    }
+
+    print("\(X):\(Y)")
+}
+
 func s28113() {
     let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
 
