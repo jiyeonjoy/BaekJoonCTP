@@ -1,5 +1,21 @@
 import Foundation
 
+func s27880() {
+    var sum = 0
+    while true {
+        guard let line = readLine() else { break }
+        let l = line.split(separator: " ").map{ String($0) }
+        if l[0] == "Es" {
+            let c = Int(l[1])!
+            sum += c*21
+        } else {
+            let c = Int(l[1])!
+            sum += c*17
+        }
+    }
+    print(sum)
+}
+
 func s27890() {
     let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
     var x = l[0]
