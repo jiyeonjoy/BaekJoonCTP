@@ -1,5 +1,14 @@
 import Foundation
 
+func s28097() {
+    let n = Int(readLine()!)!
+    let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let s = (n-1)*8 + l.reduce(0, +)
+    let day = s/24
+    let time = s%24
+    print("\(day) \(time)")
+}
+
 func s28074() {
     let s = readLine()!
     let mobis = Array("MOBIS")
