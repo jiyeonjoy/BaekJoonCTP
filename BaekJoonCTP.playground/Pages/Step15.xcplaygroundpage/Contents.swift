@@ -1,5 +1,21 @@
 import Foundation
 
+func s27890() {
+    let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    var x = l[0]
+    let n = l[1]
+    if n > 0 {
+        for _ in 1...n {
+            if x%2 == 0 {
+                x = (x/2)^6
+            } else {
+                x = (2*x)^6
+            }
+        }
+    }
+    print(x)
+}
+
 func s28097() {
     let n = Int(readLine()!)!
     let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
