@@ -1,5 +1,18 @@
 import Foundation
 
+func s28074() {
+    let s = readLine()!
+    let mobis = Array("MOBIS")
+    var result = "YES"
+    for i in 0..<mobis.count {
+        if !s.contains(mobis[i]) {
+            result = "NO"
+            break
+        }
+    }
+    print(result)
+}
+
 func s27918() {
     let N = Int(readLine()!)!
     var X = 0
