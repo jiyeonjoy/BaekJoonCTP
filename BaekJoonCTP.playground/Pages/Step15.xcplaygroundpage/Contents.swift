@@ -1,5 +1,20 @@
 import Foundation
 
+func s18691() {
+    let n = Int(readLine()!)!
+    for _ in 1...n {
+        var sum = 0
+        let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        let g = l[0]
+        let c = l[1]
+        let e = l[2]
+        if e > c {
+            sum = (e-c)*(g*2-1)
+        }
+        print(sum)
+    }
+}
+
 func s27880() {
     var sum = 0
     while true {
