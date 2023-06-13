@@ -1,5 +1,34 @@
 import Foundation
 
+func s27960() {
+    let list = [512, 256, 128, 64, 32, 16, 8, 4, 2, 1]
+    let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    var a = l[0]
+    var b = l[1]
+    var c:[Int] = []
+
+    for i in 0..<list.count {
+        if a == 0 { break }
+        if a >= list[i] {
+            c.append(list[i])
+            a -= list[i]
+        }
+    }
+    for i in 0..<list.count {
+        if b == 0 { break }
+        if b >= list[i] {
+            b -= list[i]
+            if c.contains(list[i]) {
+                c.remove(at: c.firstIndex(of: list[i])!)
+            } else {
+                c.append(list[i])
+            }
+        }
+    }
+    let sum = c.reduce(0, +)
+    print(sum)
+}
+
 func s15784() {
     let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
     let N = l[0]
