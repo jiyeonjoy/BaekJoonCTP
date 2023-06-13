@@ -1,5 +1,31 @@
 import Foundation
 
+func s15784() {
+    let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let N = l[0]
+    let a = l[1]
+    let b = l[2]
+    var maxV = 0
+    var eric = 0
+    for i in 1...N {
+        let line = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        if i == a {
+            eric = line[b-1]
+            for j in 0..<N {
+                if maxV < line[j] {
+                    maxV = line[j]
+                }
+            }
+        } else {
+            if maxV < line[b-1] {
+                maxV = line[b-1]
+            }
+        }
+    }
+    var happy = eric >= maxV
+    print(happy ? "HAPPY" : "ANGRY")
+}
+
 func s28224() {
     let n = Int(readLine()!)!
     var sum = 0
