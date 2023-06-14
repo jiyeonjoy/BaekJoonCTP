@@ -1,5 +1,34 @@
 import Foundation
 
+func s16503() {
+    let l = readLine()!.split(separator: " ").map{ String($0) }
+    let k1 = Int(l[0])!
+    let o1 = l[1]
+    let k2 = Int(l[2])!
+    let o2 = l[3]
+    let k3 = Int(l[4])!
+
+    func getV(o: String, n1: Int, n2: Int) -> Int {
+        var r = 0
+        if o == "*" {
+            r = n1*n2
+        } else if o == "/" {
+            r = n1/n2
+        } else if o == "+" {
+            r = n1+n2
+        } else {
+            r = n1-n2
+        }
+        return r
+    }
+
+    var a = getV(o: o2, n1: getV(o: o1, n1: k1, n2: k2), n2: k3)
+    var b = getV(o: o1, n1: k1, n2: getV(o: o2, n1: k2, n2: k3))
+
+    print("\(min(a, b))")
+    print("\(max(a, b))")
+}
+
 func s27960() {
     let list = [512, 256, 128, 64, 32, 16, 8, 4, 2, 1]
     let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
