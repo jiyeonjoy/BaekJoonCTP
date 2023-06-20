@@ -1,5 +1,24 @@
 import Foundation
 
+func s28135() {
+    let n = Int(readLine()!)!
+    var s = 0
+    if n > 50 {
+        for i in 50..<n {
+            var a = i
+            while a >= 50 {
+                if a%100 == 50 {
+                    s += 1
+                    break
+                } else {
+                    a /= 10
+                }
+            }
+        }
+    }
+    print(s+n)
+}
+
 func s28061() {
     let n = Int(readLine()!)!
     let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
