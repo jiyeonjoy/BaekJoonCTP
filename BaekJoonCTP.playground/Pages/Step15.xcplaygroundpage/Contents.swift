@@ -1,5 +1,26 @@
 import Foundation
 
+func s28114() {
+    var yl:[Int] = []
+    var map:[Int:Character] = [:]
+    while true {
+        guard let line = readLine() else { break }
+        let l = line.split(separator: " ").map{ String($0) }
+        yl.append(Int(l[1])!%100)
+        map[Int(l[0])!] = l[2].first!
+    }
+    var first = ""
+    yl.sorted(by: <).map {
+        first += "\($0)"
+    }
+    print(first)
+    var second = ""
+    map.keys.sorted(by: >).map {
+        second += String(map[$0]!)
+    }
+    print(second)
+}
+
 func s28135() {
     let n = Int(readLine()!)!
     var s = 0
