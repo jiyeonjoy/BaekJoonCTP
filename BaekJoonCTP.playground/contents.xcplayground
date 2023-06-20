@@ -10,6 +10,7 @@
         <page name='DFS_BFS'/>
         <page name='Step_DFS_BFS'/>
         <page name='KMP'/>
+        <page name='Buffer'/>
         <page name='Step0'/>
         <page name='Step1'/>
         <page name='Step2'/>
@@ -25,5 +26,6 @@
         <page name='Step12'/>
         <page name='Step13'/>
         <page name='Step14'/>
+        <page name='Step15'/>
     </pages>
 </playground>
