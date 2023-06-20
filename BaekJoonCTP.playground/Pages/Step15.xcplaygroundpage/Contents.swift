@@ -1,5 +1,18 @@
 import Foundation
 
+func s28061() {
+    let n = Int(readLine()!)!
+    let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    var max = 0
+    for i in 0..<n {
+        let a = l[i]-n+i
+        if a > max {
+            max = a
+        }
+    }
+    print(max)
+}
+
 func s27736() {
     let n = Int(readLine()!)!
     let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
