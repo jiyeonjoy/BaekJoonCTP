@@ -1,5 +1,16 @@
 import Foundation
 
+func s28235() {
+    let s = readLine()!
+    let map = [
+        "SONGDO":"HIGHSCHOOL",
+        "CODE":"MASTER",
+        "2023":"0611",
+        "ALGORITHM":"CONTEST",
+    ]
+    print(map[s] ?? "")
+}
+
 final class FileIO {
     private var buffer:[UInt8]
     private var index: Int
