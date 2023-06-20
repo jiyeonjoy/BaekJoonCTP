@@ -1,5 +1,26 @@
 import Foundation
 
+func s27736() {
+    let n = Int(readLine()!)!
+    let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    var a = 0
+    var b = 0
+    for i in 0..<n {
+        if l[i] == 0 {
+            b += 1
+        } else {
+            a += l[i]
+        }
+    }
+    if b >= (n+1)/2 {
+        print("INVALID")
+    } else if a > 0 {
+        print("APPROVED")
+    } else {
+        print("REJECTED")
+    }
+}
+
 func s28235() {
     let s = readLine()!
     let map = [
