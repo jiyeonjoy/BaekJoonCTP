@@ -1,5 +1,37 @@
 import Foundation
 
+func s27983() {
+    let n = Int(readLine()!)!
+    let xl = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let ll = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let cl = readLine()!.split(separator: " ").map{ String($0) }
+
+    var answer = "NO"
+    var a = 0
+    var b = 0
+
+    for i in 0..<n-1 {
+        for j in i+1..<n {
+            if cl[i] != cl[j] {
+                if abs(xl[i]-xl[j]) <= ll[i] + ll[j] {
+                    answer = "YES"
+                    a = i+1
+                    b = j+1
+                    break
+                }
+            }
+        }
+        if answer == "YES" {
+            break
+        }
+    }
+
+    print(answer)
+    if answer == "YES" {
+        print("\(a) \(b)")
+    }
+}
+
 func s27326() {
     readLine()
     let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
