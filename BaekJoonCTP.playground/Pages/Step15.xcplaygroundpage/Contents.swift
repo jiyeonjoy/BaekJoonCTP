@@ -1,5 +1,34 @@
 import Foundation
 
+func s9773() {
+    let n = Int(readLine()!)!
+    for _ in 1...n {
+        let num = Int(readLine()!)!
+        var sum = (num%1000)*10
+        var a = num
+        while a > 0 {
+            sum += a%10
+            a /= 10
+        }
+        
+        if sum > 9999 {
+            sum = sum%10000
+        } else if sum < 1000 {
+            sum += 1000
+        }
+        
+        if sum < 10 {
+            print("000\(sum)")
+        } else if sum < 100 {
+            print("00\(sum)")
+        } else if sum < 1000 {
+            print("0\(sum)")
+        } else {
+            print(sum)
+        }
+    }
+}
+
 func s20336() {
     readLine()
     let l = readLine()!.split(separator: " ").map{ String($0) }
