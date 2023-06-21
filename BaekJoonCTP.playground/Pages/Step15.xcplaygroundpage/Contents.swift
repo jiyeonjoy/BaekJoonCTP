@@ -1,5 +1,19 @@
 import Foundation
 
+func s27326() {
+    readLine()
+    let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    var list: [Int] = []
+    for i in 0..<l.count {
+        if list.contains(l[i]) {
+            list.remove(at: list.firstIndex(of: l[i])!)
+        } else {
+            list.append(l[i])
+        }
+    }
+    print(list[0])
+}
+
 func s9773() {
     let n = Int(readLine()!)!
     for _ in 1...n {
