@@ -1,5 +1,13 @@
 import Foundation
 
+func s20336() {
+    readLine()
+    let l = readLine()!.split(separator: " ").map{ String($0) }
+    for i in 0..<l.count {
+        print(l[i])
+    }
+}
+
 func s28114() {
     var yl:[Int] = []
     var map:[Int:Character] = [:]
