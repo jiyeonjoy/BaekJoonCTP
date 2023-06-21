@@ -1,5 +1,29 @@
 import Foundation
 
+func s9776() {
+    let n = Int(readLine()!)!
+    var max = 0.0
+    for _ in 1...n {
+        let l = readLine()!.split(separator: " ").map{ String($0) }
+        if l[0] == "S" {
+            let r = Double(l[1])!
+            let a = (4/3)*r*r*r*3.14159265359
+            if max < a { max = a }
+        } else if l[1] == "C" {
+            let r = Double(l[1])!
+            let h = Double(l[2])!
+            let a = (1/3)*3.14159265359*r*r*h
+            if max < a { max = a }
+        } else {
+            let r = Double(l[1])!
+            let h = Double(l[2])!
+            let a = 3.14159265359*r*r*h
+            if max < a { max = a }
+        }
+    }
+    print(String(format: "%.3f", max))
+}
+
 func s9771() {
     let word = readLine()!
     var sum = 0
