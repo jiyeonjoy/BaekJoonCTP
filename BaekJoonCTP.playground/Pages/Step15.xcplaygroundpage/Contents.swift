@@ -1,5 +1,15 @@
 import Foundation
 
+func s9771() {
+    let word = readLine()!
+    var sum = 0
+    while true {
+        guard let line = readLine() else { break }
+        sum += " \(line) ".components(separatedBy: word).count-1
+    }
+    print(sum)
+}
+
 func s27983() {
     let n = Int(readLine()!)!
     let xl = readLine()!.split(separator: " ").map{ Int(String($0))! }
