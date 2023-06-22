@@ -1,5 +1,24 @@
 import Foundation
 
+func s5246() {
+    let n = Int(readLine()!)!
+    for _ in 1...n {
+        let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        let a = l[0]
+        if a > 0 {
+            var map:[Int:Int] = [:]
+            for i in 1...a {
+                var b = map[l[i*2]] ?? 0
+                map[l[i*2]] = b+1
+            }
+            let maxC = map.sorted{ $0.value > $1.value }.first?.value ?? 1
+            print(maxC)
+        } else {
+            print(0)
+        }
+    }
+}
+
 func s5365() {
     let n = Int(readLine()!)!
     let l = readLine()!.split(separator: " ").map{ String($0) }
