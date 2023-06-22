@@ -1,5 +1,21 @@
 import Foundation
 
+func s5365() {
+    let n = Int(readLine()!)!
+    let l = readLine()!.split(separator: " ").map{ String($0) }
+    var answer = ""
+    var length = 0
+    for i in 0..<n {
+        if l[i].count > length {
+            answer += String(Array(l[i])[length])
+        } else {
+            answer += " "
+        }
+        length = l[i].count-1
+    }
+    print(answer)
+}
+
 func s9783() {
     let map:[Character:String] = [
         "a":"01",
