@@ -1,5 +1,20 @@
 import Foundation
 
+func s17884() {
+    let n = Int(readLine()!)!
+    let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    var map = [1:1]
+    for i in 1..<n {
+        map[l[i-1]+2] = 1+i
+    }
+    var answer = ""
+    for i in 1...n {
+        answer += "\(map[i] ?? 0) "
+    }
+    answer.removeLast()
+    print(answer)
+}
+
 func s5246() {
     let n = Int(readLine()!)!
     for _ in 1...n {
