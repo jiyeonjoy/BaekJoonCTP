@@ -1,5 +1,55 @@
 import Foundation
 
+func s15179() {
+    let team1 = readLine()!
+    let team2 = readLine()!
+    let n = Int(readLine()!)!
+    let str = Array(readLine()!)
+    var score1 = 0
+    var score2 = 0
+    for i in 0..<n {
+        if i%2 == 0 {
+            if str[i] == "H" {
+                score1 += 1
+            } else if str[i] == "D" {
+                if score1 == 6 {
+                    score1 += 1
+                } else {
+                    score1 += 2
+                }
+            } else if str[i] == "O" {
+                score2 += 1
+            }
+        } else {
+            if str[i] == "H" {
+                score2 += 1
+            } else if str[i] == "D" {
+                if score2 == 6 {
+                    score2 += 1
+                } else {
+                    score2 += 2
+                }
+            } else if str[i] == "O" {
+                score1 += 1
+            }
+        }
+        if score1 == 7 || score2 == 7 { break }
+    }
+    var answer = "\(team1) \(score1) \(team2) \(score2). "
+    if score1 == score2 {
+        answer += "All square."
+    } else if score1 == 7 {
+        answer += "\(team1) has won."
+    } else if score2 == 7 {
+        answer += "\(team2) has won."
+    } else if score1 > score2 {
+        answer += "\(team1) is winning."
+    } else {
+        answer += "\(team2) is winning."
+    }
+    print(answer)
+}
+
 func s8826() {
     let n = Int(readLine()!)!
     for _ in 1...n {
