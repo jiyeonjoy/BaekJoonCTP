@@ -1,5 +1,30 @@
 import Foundation
 
+func s8826() {
+    let n = Int(readLine()!)!
+    for _ in 1...n {
+        readLine()
+        let str = Array(readLine()!)
+        var n = 0
+        var s = 0
+        var w = 0
+        var e = 0
+        for i in 0..<str.count {
+            if str[i] == "N" {
+                n += 1
+            } else if str[i] == "S" {
+                s += 1
+            } else if str[i] == "W" {
+                w += 1
+            } else {
+                e += 1
+            }
+        }
+        let answer = abs(n-s)+abs(w-e)
+        print(answer)
+    }
+}
+
 func s17884() {
     let n = Int(readLine()!)!
     let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
