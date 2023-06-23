@@ -1,5 +1,24 @@
 import Foundation
 
+func s25850() {
+    let n = Int(readLine()!)!
+    var answer = ""
+    var map:[Int:String] = [:]
+    let player = ["A", "B", "C", "D", "E", "F"]
+    for i in 0..<n {
+        let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        for j in 1..<l.count {
+            map[l[j]] = player[i]
+        }
+    }
+    for k in 10...99 {
+        if map[k] != nil {
+            answer += map[k] ?? ""
+        }
+    }
+    print(answer)
+}
+
 func s15179() {
     let team1 = readLine()!
     let team2 = readLine()!
