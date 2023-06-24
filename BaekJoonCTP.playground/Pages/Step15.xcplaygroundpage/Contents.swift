@@ -1,5 +1,21 @@
 import Foundation
 
+func s9924() {
+    let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    var a = l[0]
+    var b = l[1]
+    var answer = 0
+    while true {
+        if a == b { break }
+        let max = max(a,b)
+        let min = min(a,b)
+        a = max-min
+        b = min
+        answer += 1
+    }
+    print(answer)
+}
+
 func s25850() {
     let n = Int(readLine()!)!
     var answer = ""
