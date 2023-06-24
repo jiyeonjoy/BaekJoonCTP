@@ -1,5 +1,16 @@
 import Foundation
 
+func s21507() {
+    let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    var sum = min(l[0], l[1]) + min(l[2], l[3])
+    var answer = 0
+    while true {
+        if sum < answer*answer { break }
+        answer += 1
+    }
+    print(answer-1)
+}
+
 func s9924() {
     let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
     var a = l[0]
