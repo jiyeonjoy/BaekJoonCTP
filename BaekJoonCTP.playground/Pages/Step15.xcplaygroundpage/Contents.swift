@@ -1,5 +1,20 @@
 import Foundation
 
+func s21022() {
+    let n = Int(readLine()!)!
+    let a = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let b = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    var answer = 0
+    for i in 0..<n {
+        if a[i] > b[i] {
+            answer += 3
+        } else if a[i] == b[i] {
+            answer += 1
+        }
+    }
+    print(answer)
+}
+
 func s13670() {
     while true {
         let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
