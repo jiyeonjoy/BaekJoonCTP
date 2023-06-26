@@ -1,5 +1,30 @@
 import Foundation
 
+func s27475() {
+    let n = Int(readLine()!)!
+    for _ in 1...n {
+        let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        let n = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        let m = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        var answer = 0
+        var nIndex = 0
+        var mIndex = 0
+        while true {
+            if nIndex == l[0] || mIndex == l[1] { break }
+            if n[nIndex] == m[mIndex] {
+                answer += 1
+                nIndex += 1
+                mIndex += 1
+            } else if n[nIndex] > m[mIndex] {
+                mIndex += 1
+            } else {
+                nIndex += 1
+            }
+        }
+        print(answer)
+    }
+}
+
 func s21022() {
     let n = Int(readLine()!)!
     let a = readLine()!.split(separator: " ").map{ Int(String($0))! }
