@@ -1,5 +1,26 @@
 import Foundation
 
+func s27627() {
+    let str = Array(readLine()!)
+    var isNo = true
+    for i in 0..<str.count-1 {
+        let a = String(str[0...i])
+        let b = String(str[i+1..<str.count])
+        if isPalindrome(a) && isPalindrome(b) {
+            print("\(a) \(b)")
+            isNo = false
+            break
+        }
+    }
+    if isNo {
+        print("NO")
+    }
+}
+
+func isPalindrome(_ s:String) -> Bool {
+    return s == String(s.reversed())
+}
+
 func s27475() {
     let n = Int(readLine()!)!
     for _ in 1...n {
