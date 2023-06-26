@@ -1,5 +1,23 @@
 import Foundation
 
+func s13670() {
+    while true {
+        let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        let h1 = l[0]
+        let m1 = l[1]
+        let h2 = l[2]
+        let m2 = l[3]
+        if h1 + m1 + h2 + m2 == 0 { break }
+        if h2 < h1 || (h2==h1 && m2 < m1) {
+            let answer = (h2+24-h1)*60+m2-m1
+            print(answer)
+        } else {
+            let answer = (h2-h1)*60+m2-m1
+            print(answer)
+        }
+    }
+}
+
 func s21507() {
     let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
     var sum = min(l[0], l[1]) + min(l[2], l[3])
