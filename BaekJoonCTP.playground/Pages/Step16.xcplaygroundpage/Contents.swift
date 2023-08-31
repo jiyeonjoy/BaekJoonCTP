@@ -1,5 +1,20 @@
 import Foundation
 
+func s28281() {
+    let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let n = l[0]
+    let x = l[1]
+    let a = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    var min = 2000
+    for i in 0..<n-1 {
+        let sum = a[i]+a[i+1]
+        if sum < min {
+            min = sum
+        }
+    }
+    print(min*x)
+}
+
 func s28453() {
     readLine()
     let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
