@@ -1,5 +1,14 @@
 import Foundation
 
+func s28701() {
+    let n = Int(readLine()!)!
+    let s1 = n*(n+1)/2
+    let s2 = s1*s1
+    print(s1)
+    print(s2)
+    print(s2)
+}
+
 func s28431() {
     var arr:[Int] = []
     for _ in 1...5 {

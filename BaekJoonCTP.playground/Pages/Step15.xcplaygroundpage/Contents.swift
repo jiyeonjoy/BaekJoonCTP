@@ -1,5 +1,1193 @@
 import Foundation
 
+var l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+
+let str = """
+            AndroidSVG
+            https://github.com/BigBadaboom/androidsvg
+            Copyright 2013-2018 Cave Rock Software Ltd
+            Apache License 2.0
+
+            coil-svg
+            https://github.com/coil-kt/coil
+            Copyright 2023 Coil Contributors
+            Apache License 2.0
+
+            RecyclerView FastScroll
+            https://github.com/timusus/RecyclerView-FastScroll
+            Copyright (C) 2016 Tim Malseed
+            Apache License 2.0
+
+            OkHttp
+            https://github.com/square/okhttp
+            Copyright 2019 Square, Inc.
+            Apache License 2.0
+
+            ConstraintLayout
+            https://mvnrepository.com/artifact/androidx.constraintlayout/constraintlayout/2.1.4
+            The Android Open Source Project
+            Apache License 2.0
+
+            AppsFlyer OAID
+            https://github.com/AppsFlyerSDK/appsflyer-oaid
+            Copyright (c) 2020 AppsFlyer Ltd.
+            MIT License
+
+            Installreferrer
+            https://mvnrepository.com/artifact/com.android.installreferrer/installreferrer/2.2
+            Android Software Development Kit License
+
+            Media3 ExoPlayer HLS Module
+            https://mvnrepository.com/artifact/androidx.media3/media3-exoplayer-hls/1.1.0
+            The Android Open Source Project
+            Apache License 2.0
+
+            Logging Interceptor
+            https://github.com/square/okhttp
+            Copyright 2019 Square, Inc.
+            Apache License 2.0
+
+            Hilt Android
+            https://github.com/google/dagger
+            Apache License 2.0
+
+            Profileinstaller
+            https://developer.android.com/jetpack/androidx/releases/profileinstaller
+            The Android Open Source Project
+            Apache License 2.0
+
+            Media3 DataSource Module
+            https://mvnrepository.com/artifact/androidx.media3/media3-datasource/1.1.0
+            The Android Open Source Project
+            Apache License 2.0
+
+            Media3 ExoPlayer DASH Module
+            https://mvnrepository.com/artifact/androidx.media3/media3-exoplayer-dash/1.1.0
+            The Android Open Source Project
+            Apache License 2.0
+
+            Android Support ExifInterface
+            https://developer.android.com/jetpack/androidx/releases/exifinterface
+            The Android Open Source Project
+            Apache License 2.0
+
+            Android Support Library Loader
+            https://mvnrepository.com/artifact/androidx.loader/loader/1.0.0
+            The Android Open Source Project
+            Apache License 2.0
+
+            Apache HttpClient
+            https://github.com/apache/httpcomponents-client
+            Copyright (c) 2005 Brian Goetz and Tim Peierls.
+            Apache License
+
+            VersionedParcelable
+            https://mvnrepository.com/artifact/androidx.versionedparcelable/versionedparcelable/1.1.1
+            The Android Open Source Project
+            Apache License 2.0
+
+            Lifecycle ViewModel with SavedState
+            https://developer.android.com/jetpack/androidx/releases/lifecycle
+            The Android Open Source Project
+            Apache License 2.0
+
+            Firebase Encoders JSON
+            https://mvnrepository.com/artifact/com.google.firebase/firebase-encoders-json/18.0.0
+            Apache License 2.0
+
+            Cursoradapter
+            https://developer.android.com/jetpack/androidx/releases/cursoradapter
+            The Android Open Source Project
+            Apache License 2.0
+
+            Camera2
+            https://developer.android.com/jetpack/androidx/releases/camera
+            The Android Open Source Project
+            Apache License 2.0
+
+            Okio
+            https://github.com/square/okio
+            Square, Inc.
+            Apache License 2.0
+
+            Room Kotlin Extensions
+            https://developer.android.com/jetpack/androidx/releases/room
+            The Android Open Source Project
+            Apache License 2.0
+
+            CustomView Poolingcontainer
+            https://developer.android.com/jetpack/androidx/releases/customview
+            The Android Open Source Project
+            Apache License 2.0
+
+            Android Support Library Core UI
+            https://developer.android.com/topic/libraries/support-library/packages
+            The Android Open Source Project
+            Apache License 2.0
+
+            Core Kotlin Extensions
+            https://developer.android.com/jetpack/androidx/releases/core
+            The Android Open Source Project
+            Apache License 2.0
+
+            HttpClient Android Library
+            https://github.com/smarek/httpclient-android
+            Marek Sebera
+            Apache License 2.0
+
+            Jackson Databind
+            https://github.com/FasterXML/jackson
+            Tatu Saloranta
+            Apache License 2.0
+
+            Firebase Measurement Connector
+            https://mvnrepository.com/artifact/com.google.firebase/firebase-measurement-connector/19.0.0
+            Android Software Development Kit License
+
+            Material Components For Android
+            https://github.com/material-components/material-components-android
+            The Android Open Source Project
+            Apache License 2.0
+
+            Navigation Runtime Kotlin Extensions
+            https://developer.android.com/jetpack/androidx/releases/navigation
+            The Android Open Source Project
+            Apache License 2.0
+
+            Apache HttpClient Mime
+            http://hc.apache.org/httpcomponents-client
+            Apache License 2.0
+
+            Firebase Installations
+            https://mvnrepository.com/artifact/com.google.firebase/firebase-installations/17.0.2
+            Apache License 2.0
+
+            Play Services Analytics
+            https://mvnrepository.com/artifact/com.google.android.gms/play-services-analytics/18.0.2
+            Android Software Development Kit License
+
+            Transport Backend CCT
+            https://mvnrepository.com/artifact/com.google.android.datatransport/transport-backend-cct/3.1.7
+            Apache License 2.0
+
+            Android Arch Runtime
+            https://developer.android.com/jetpack/androidx/releases/arch-core
+            The Android Open Source Project
+            Apache License 2.0
+
+            Gson
+            https://mvnrepository.com/artifact/com.google.code.gson/gson/2.8.4
+            Apache License 2.0
+
+            Firebase Components
+            https://mvnrepository.com/artifact/com.google.firebase/firebase-components/17.0.0
+            Apache License 2.0
+
+            FlatBuffers Java API
+            https://github.com/google/flatbuffers
+            Wouter van Oortmerssen
+            Apache License 2.0
+
+            LiveData Kotlin Extensions
+            https://developer.android.com/jetpack/androidx/releases/lifecycle
+            The Android Open Source Project
+            Apache License 2.0
+
+            Paging Runtime Kotlin Extensions
+            https://developer.android.com/jetpack/androidx/releases/paging
+            The Android Open Source Project
+            Apache License 2.0
+
+            Navigation Fragment Kotlin Extensions
+            https://developer.android.com/jetpack/androidx/releases/navigation
+            The Android Open Source Project
+            Apache License 2.0
+
+            Javax Inject
+            https://code.google.com/archive/p/atinject
+            Apache License 2.0
+
+            Android Support Library Print
+            https://developer.android.com/topic/libraries/support-library
+            The Android Open Source Project
+            Apache License 2.0
+
+            Navigation UI Kotlin Extensions
+            https://developer.android.com/jetpack/androidx/releases/navigation
+            The Android Open Source Project
+            Apache License 2.0
+
+            Firebase Abt
+            https://mvnrepository.com/artifact/com.google.firebase/firebase-abt/21.0.2
+            Apache License 2.0
+
+            AndroidX Preference
+            https://developer.android.com/jetpack/androidx/releases/preference
+            The Android Open Source Project
+            Apache License 2.0
+
+            Lifecycles Compiler
+            https://developer.android.com/jetpack/androidx/releases/lifecycle
+            The Android Open Source Project
+            Apache License 2.0
+
+            Parcelize Runtime
+            https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-parcelize-runtime/1.4.32
+            Kotlin Team
+            Apache License 2.0
+
+            AndroidX Ads Identifier
+            https://mvnrepository.com/artifact/androidx.ads/ads-identifier/1.0.0-alpha04
+            The Android Open Source Project
+            Apache License 2.0
+
+            Apache HttpCore
+            http://hc.apache.org/httpcomponents-core/
+            Apache License 2.0
+
+            ViewPager2
+            https://mvnrepository.com/artifact/androidx.viewpager2/viewpager2/1.0.0
+            The Android Open Source Project
+            Apache License 2.0
+
+            Paging Common Kotlin Extensions
+            https://developer.android.com/jetpack/androidx/releases/paging
+            The Android Open Source Project
+            Apache License 2.0
+
+            Firebase Crashlytics
+            https://mvnrepository.com/artifact/com.google.firebase/firebase-crashlytics/18.2.13
+            Apache License 2.0
+
+            AutoValue Annotations
+            https://mvnrepository.com/artifact/com.google.auto.value/auto-value-annotations/1.6.3
+            Apache License 2.0
+
+            Adapter: RxJava 3
+            https://github.com/square/retrofit
+            Square, Inc.
+            Apache License 2.0
+
+            Gfpsdk Core
+            https://github.com/naver/nam-sdk-android
+            Copyright 2022-present NAVER Corp.
+            Proprietary
+
+            Play Services Base
+            https://mvnrepository.com/artifact/com.google.android.gms/play-services-base/18.1.0
+            Android Software Development Kit License
+
+            Billing
+            https://mvnrepository.com/artifact/com.android.billingclient/billing/4.0.0
+            Android Software Development Kit License
+
+            Android Support Library Sliding Pane Layout
+            https://developer.android.com/jetpack/androidx/releases/slidingpanelayout
+            The Android Open Source Project
+            Apache License 2.0
+
+            Kotlin Stdlib Jdk8
+            https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-stdlib-jdk8/1.8.10
+            Kotlin Team
+            Apache License 2.0
+
+            Activity
+            https://developer.android.com/jetpack/androidx/releases/activity
+            The Android Open Source Project
+            Apache License 2.0
+
+            Paging Runtime
+            https://developer.android.com/jetpack/androidx/releases/paging
+            The Android Open Source Project
+            Apache License 2.0
+
+            SQLite
+            https://developer.android.com/jetpack/androidx/releases/sqlite
+            The Android Open Source Project
+            Apache License 2.0
+
+            Android Support Library Async Layout Inflater
+            https://mvnrepository.com/artifact/androidx.asynclayoutinflater/asynclayoutinflater/1.0.0-rc01
+            The Android Open Source Project
+            Apache License 2.0
+
+            Firebase Crashlytics NDK
+            https://mvnrepository.com/artifact/com.google.firebase/firebase-crashlytics-ndk/18.2.13
+            Apache License 2.0
+
+            Apache Commons Codec
+            https://commons.apache.org/proper/commons-codec/
+            Apache License 2.0
+
+            Navigation Common
+            https://developer.android.com/jetpack/androidx/releases/navigation
+            The Android Open Source Project
+            Apache License 2.0
+
+            Glide
+            https://github.com/bumptech/glide
+            Copyright 2014 Google, Inc.
+            Simplified BSD License, Apache License 2.0
+
+            RxJava
+            https://github.com/ReactiveX/RxJava
+            David Karnok
+            Apache License 2.0
+
+            Room RXJava3
+            https://developer.android.com/jetpack/androidx/releases/room
+            The Android Open Source Project
+            Apache License 2.0
+
+            Android Support Library View Pager
+            https://mvnrepository.com/artifact/androidx.viewpager/viewpager/1.0.0
+            The Android Open Source Project
+            Apache License 2.0
+
+            AndroidX Ads Identifier Common
+            https://mvnrepository.com/artifact/androidx.ads/ads-identifier-common/1.0.0-alpha04
+            The Android Open Source Project
+            Apache License 2.0
+
+            Android Support Library Custom View
+            https://mvnrepository.com/artifact/androidx.swiperefreshlayout/swiperefreshlayout/1.0.0
+            The Android Open Source Project
+            Apache License 2.0
+
+            Guava: Google Core Libraries For Java
+            https://github.com/google/guava
+            Kevin Bourrillion
+            Apache License 2.0
+
+            Android Multi Dex Library
+            https://mvnrepository.com/artifact/androidx.multidex/multidex/2.0.1
+            The Android Open Source Project
+            Apache License 2.0
+
+            Play Services Tasks
+            https://mvnrepository.com/artifact/com.google.android.gms/play-services-tasks/18.0.2
+            Android Software Development Kit License
+
+            Android Async HTTP Library
+            https://github.com/android-async-http/android-async-http
+            Marek Sebera
+            Apache License 2.0
+
+            Play Services GCM
+            https://mvnrepository.com/artifact/com.google.android.gms/play-services-gcm/17.0.0
+            Android Software Development Kit License
+
+            Fragment Kotlin Extensions
+            https://developer.android.com/jetpack/androidx/releases/fragment
+            The Android Open Source Project
+            Apache License 2.0
+
+            Play Services Auth
+            https://mvnrepository.com/artifact/com.google.android.gms/play-services-auth/20.3.0
+            Android Software Development Kit License
+
+            Android Support Library Document File
+            https://mvnrepository.com/artifact/androidx.documentfile/documentfile/1.0.0
+            The Android Open Source Project
+            Apache License 2.0
+
+            Play Services Analytics Impl
+            https://mvnrepository.com/artifact/com.google.android.gms/play-services-analytics-impl/18.0.2
+            Android Software Development Kit License
+
+            Media3 ExoPlayer Module
+            https://mvnrepository.com/artifact/androidx.media3/media3-exoplayer/1.1.0
+            The Android Open Source Project
+            Apache License 2.0
+
+            Firebase Common KTX
+            https://mvnrepository.com/artifact/com.google.firebase/firebase-common-ktx/20.1.2
+            Apache License 2.0
+
+            Apache Commons Logging
+            http://commons.apache.org/logging
+            Apache License 2.0
+
+            Android Support Library Custom View
+            https://mvnrepository.com/artifact/androidx.customview/customview/1.1.0
+            The Android Open Source Project
+            Apache License 2.0
+
+            SavedState Kotlin Extensions
+            https://developer.android.com/jetpack/androidx/releases/savedstate
+            The Android Open Source Project
+            Apache License 2.0
+
+            Core
+            https://developer.android.com/jetpack/androidx/releases/core
+            The Android Open Source Project
+            Apache License 2.0
+
+            Dagger
+            https://github.com/google/dagger
+            Apache License 2.0
+
+            Converter: Scalars
+            https://github.com/square/retrofit
+            Square, Inc.
+            Apache License 2.0
+
+            Media3 Database Module
+            https://mvnrepository.com/artifact/androidx.media3/media3-database/1.1.0
+            The Android Open Source Project
+            Apache License 2.0
+
+            AppCompat Resources
+            https://developer.android.com/jetpack/androidx/releases/appcompat
+            The Android Open Source Project
+            Apache License 2.0
+
+            RxAndroid
+            https://github.com/ReactiveX/RxAndroid
+            Copyright 2015 The RxAndroid authors
+            Apache License 2.0
+
+            Coil Base
+            https://github.com/coil-kt/coil
+            Copyright 2023 Coil Contributors
+            Apache License 2.0
+
+            Retrofit
+            https://github.com/square/retrofit
+            Square, Inc.
+            Apache License 2.0
+
+            Firebase Datatransport
+            https://mvnrepository.com/artifact/com.google.firebase/firebase-datatransport/18.1.6
+            Apache License 2.0
+
+            Play Services Measurement Base
+            https://mvnrepository.com/artifact/com.google.android.gms/play-services-measurement-base/21.1.1
+            Android Software Development Kit License
+
+            Firebase Config
+            https://mvnrepository.com/artifact/com.google.firebase/firebase-config/21.1.2
+            Apache License 2.0
+
+            Glide Annotations
+            https://github.com/bumptech/glide
+            Copyright 2014 Google, Inc.
+            Simplified BSD License, Apache License 2.0
+
+            Legacy Support V4
+            https://mvnrepository.com/artifact/androidx.legacy/legacy-support-v4/1.0.0
+            The Android Open Source Project
+            Apache License 2.0
+
+            Lifecycle Process
+            https://developer.android.com/jetpack/androidx/releases/lifecycle
+            The Android Open Source Project
+            Apache License 2.0
+
+            Play Services Measurement
+            https://mvnrepository.com/artifact/com.google.android.gms/play-services-measurement/21.1.1
+            Android Software Development Kit License
+
+            Play Services Measurement SDK
+            https://mvnrepository.com/artifact/com.google.android.gms/play-services-measurement-sdk/21.1.1
+            Android Software Development Kit License
+
+            Guava ListenableFuture Only
+            https://mvnrepository.com/artifact/com.google.guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava
+            Kevin Bourrillion
+            Apache License 2.0
+
+            J2ObjC Annotations
+            https://github.com/google/j2objc
+            Apache License 2.0
+
+            Media3 Extractor Module
+            https://mvnrepository.com/artifact/androidx.media3/media3-extractor/1.1.0
+            The Android Open Source Project
+            Apache License 2.0
+
+            Collections
+            https://developer.android.com/jetpack/androidx/releases/collection
+            The Android Open Source Project
+            Apache License 2.0
+
+            Reactive Streams
+            https://github.com/reactive-streams/reactive-streams-jvm
+            Copyright 2014 Reactive Streams
+            CC0
+
+            WorkManager Runtime
+            https://developer.android.com/jetpack/androidx/releases/work
+            The Android Open Source Project
+            Apache License 2.0
+
+            Google HTTP Client Library For Java
+            https://mvnrepository.com/artifact/com.google.http-client/google-http-client/1.22.0
+            Apache License 2.0
+
+            Android Support RecyclerView
+            https://developer.android.com/jetpack/androidx/releases/recyclerview
+            The Android Open Source Project
+            Apache License 2.0
+
+            Protolite Well Known Types
+            https://mvnrepository.com/artifact/com.google.firebase/protolite-well-known-types/18.0.0
+            Apache License 2.0
+
+            Compose Runtime
+            https://developer.android.com/jetpack/androidx/releases/compose-runtime
+            The Android Open Source Project
+            Apache License 2.0
+
+            Kotlin Stdlib
+            https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-stdlib/1.8.21
+            Kotlin Team
+            Apache License 2.0
+
+            Annotation
+            https://developer.android.com/jetpack/androidx/releases/annotation
+            The Android Open Source Project
+            Apache License 2.0
+
+            Protocol Buffers [Core]
+            https://mvnrepository.com/artifact/com.google.protobuf/protobuf-java/3.23.3
+            BSD-3-Clause
+
+            Camera Lifecycle
+            https://developer.android.com/jetpack/androidx/releases/camera
+            The Android Open Source Project
+            Apache License 2.0
+
+            Play Services TagManager V4 Impl
+            https://mvnrepository.com/artifact/com.google.android.gms/play-services-tagmanager-v4-impl/18.0.2
+            Android Software Development Kit License
+
+            Firebase Appcheck
+            https://mvnrepository.com/artifact/com.google.firebase/firebase-appcheck/16.0.1
+            Apache License 2.0
+
+            Firebase Encoders Proto
+            https://mvnrepository.com/artifact/com.google.firebase/firebase-encoders-proto/16.0.0
+            Apache License 2.0
+
+            Play Services Cloud Messaging
+            https://mvnrepository.com/artifact/com.google.android.gms/play-services-cloud-messaging/17.0.1
+            Apache License 2.0
+
+            ZXing Android Embedded
+            https://github.com/journeyapps/zxing-android-embedded
+            Copyright (C) 2012-2022 ZXing authors, Journey Mobile
+            Apache License 2.0
+
+            SQLite Framework Integration
+            https://developer.android.com/jetpack/androidx/releases/sqlite
+            The Android Open Source Project
+            Apache License 2.0
+
+            Android Support DynamicAnimation
+            https://developer.android.com/jetpack/androidx/releases/dynamicanimation
+            The Android Open Source Project
+            Apache License 2.0
+
+            Firebase Database
+            https://mvnrepository.com/artifact/com.google.firebase/firebase-database/20.0.6
+            Apache License 2.0
+
+            Transport Runtime
+            https://mvnrepository.com/artifact/com.google.android.datatransport/transport-runtime/3.1.7
+            Apache License 2.0
+
+            Android Support Library Coordinator Layout
+            https://mvnrepository.com/artifact/androidx.coordinatorlayout/coordinatorlayout/1.1.0
+            The Android Open Source Project
+            Apache License 2.0
+
+            Shimmer
+            https://github.com/facebookarchive/shimmer-android
+            Copyright (c) Meta Platforms, Inc.
+            BSD 2-Clause License
+
+            Jackson Annotations
+            https://github.com/FasterXML/jackson
+            Tatu Saloranta
+            Apache License 2.0
+
+            Firebase Encoders
+            https://mvnrepository.com/artifact/com.google.firebase/firebase-encoders/17.0.0
+            Apache License 2.0
+
+            Lifecycle Common For Java 8
+            https://developer.android.com/jetpack/androidx/releases/lifecycle
+            The Android Open Source Project
+            Apache License 2.0
+
+            Android Support Library Media Compat
+            https://developer.android.com/jetpack/androidx/releases/media
+            The Android Open Source Project
+            Apache License 2.0
+
+            Android Support CardView V7
+            https://mvnrepository.com/artifact/androidx.cardview/cardview/1.0.0
+            The Android Open Source Project
+            Apache License 2.0
+
+            Navigation Common Kotlin Extensions
+            https://developer.android.com/jetpack/androidx/releases/navigation
+            The Android Open Source Project
+            Apache License 2.0
+
+            Firebase Messaging
+            https://mvnrepository.com/artifact/com.google.firebase/firebase-messaging/23.0.8
+            Apache License 2.0
+
+            Paging Common
+            https://developer.android.com/jetpack/androidx/releases/paging
+            The Android Open Source Project
+            Apache License 2.0
+
+            Emoji2 Views Helper
+            https://developer.android.com/jetpack/androidx/releases/emoji2
+            The Android Open Source Project
+            Apache License 2.0
+
+            Android Preferences KTX
+            https://developer.android.com/jetpack/androidx/releases/preference
+            The Android Open Source Project
+            Apache License 2.0
+
+            Android For Cars App
+            https://developer.android.com/jetpack/androidx/releases/car-app
+            The Android Open Source Project
+            Apache License 2.0
+
+            Lifecycle LiveData
+            https://developer.android.com/jetpack/androidx/releases/lifecycle
+            The Android Open Source Project
+            Apache License 2.0
+
+            Adapter: RxJava 2
+            https://github.com/square/retrofit
+            Square, Inc.
+            Apache License 2.0
+
+            Lifecycle ViewModel
+            https://developer.android.com/jetpack/androidx/releases/lifecycle
+            The Android Open Source Project
+            Apache License 2.0
+
+            Lifecycle Service
+            https://developer.android.com/jetpack/androidx/releases/lifecycle
+            The Android Open Source Project
+            Apache License 2.0
+
+            Lifecycle Runtime
+            https://developer.android.com/jetpack/androidx/releases/lifecycle
+            The Android Open Source Project
+            Apache License 2.0
+
+            LiveData Kotlin Extensions
+            https://developer.android.com/jetpack/androidx/releases/lifecycle
+            The Android Open Source Project
+            Apache License 2.0
+
+            Lifecycle Kotlin Extensions
+            https://developer.android.com/jetpack/androidx/releases/lifecycle
+            The Android Open Source Project
+            Apache License 2.0
+
+            Lifecycle LiveData Core
+            https://developer.android.com/jetpack/androidx/releases/lifecycle
+            The Android Open Source Project
+            Apache License 2.0
+
+            Lifecycle ViewModel Kotlin Extensions
+            https://developer.android.com/jetpack/androidx/releases/lifecycle
+            The Android Open Source Project
+            Apache License 2.0
+
+            Android Support Library Local Broadcast Manager
+            https://mvnrepository.com/artifact/androidx.localbroadcastmanager/localbroadcastmanager/1.0.0
+            The Android Open Source Project
+            Apache License 2.0
+
+            WebKit
+            https://developer.android.com/jetpack/androidx/releases/webkit
+            The Android Open Source Project
+            Apache License 2.0
+
+            Guava InternalFutureFailureAccess and InternalFutures
+            https://mvnrepository.com/artifact/com.google.guava/failureaccess/1.0.1
+            Kevin Bourrillion
+            Apache License 2.0
+
+            Glide Disk LRU Cache Library
+            https://github.com/bumptech/glide
+            Copyright 2014 Google, Inc.
+            Simplified BSD License, Apache License 2.0
+
+            Glide GIF Decoder Library
+            https://github.com/bumptech/glide
+            Copyright 2014 Google, Inc.
+            Simplified BSD License, Apache License 2.0
+
+            Play Services Ads
+            https://mvnrepository.com/artifact/com.google.android.gms/play-services-ads/21.3.0
+            Android Software Development Kit License
+
+            Play Services Auth Blockstore
+            https://mvnrepository.com/artifact/com.google.android.gms/play-services-auth-blockstore/16.1.0
+            Android Software Development Kit License
+
+            Play Services Measurement SDK API
+            https://mvnrepository.com/artifact/com.google.android.gms/play-services-measurement-sdk-api/21.1.1
+            Android Software Development Kit License
+
+            Play Services Auth Base
+            https://mvnrepository.com/artifact/com.google.android.gms/play-services-auth-base/18.0.4
+            Android Software Development Kit License
+
+            Play Services Measurement API
+            https://mvnrepository.com/artifact/com.google.android.gms/play-services-measurement-api/21.1.1
+            Android Software Development Kit License
+
+            Play Services Auth API Phone
+            https://mvnrepository.com/artifact/com.google.android.gms/play-services-auth-api-phone/18.0.1
+            Android Software Development Kit License
+
+            Play Services Stats
+            https://mvnrepository.com/artifact/com.google.android.gms/play-services-stats/17.0.3
+            Android Software Development Kit License
+
+            Play Services Basement
+            https://mvnrepository.com/artifact/com.google.android.gms/play-services-basement/18.1.0
+            Android Software Development Kit License
+
+            Play Services IID
+            https://mvnrepository.com/artifact/com.google.android.gms/play-services-iid/17.0.0
+            Android Software Development Kit License
+
+            Play Services Location
+            https://mvnrepository.com/artifact/com.google.android.gms/play-services-location/20.0.0
+            Android Software Development Kit License
+
+            Play Services Ads
+            https://mvnrepository.com/artifact/com.google.android.gms/play-services-ads/21.3.0
+            Android Software Development Kit License
+
+            Play Services Appset
+            https://mvnrepository.com/artifact/com.google.android.gms/play-services-appset/16.0.1
+            Android Software Development Kit License
+
+            Play Services Measurement Impl
+            https://mvnrepository.com/artifact/com.google.android.gms/play-services-measurement-impl/21.1.1
+            Android Software Development Kit License
+
+            Play Services Ads Lite
+            https://mvnrepository.com/artifact/com.google.android.gms/play-services-ads-lite/21.3.0
+            Android Software Development Kit License
+
+            Play Services Ads Identifier
+            https://mvnrepository.com/artifact/com.google.android.gms/play-services-ads-identifier/18.0.1
+            Android Software Development Kit License
+
+            Converter: Protocol Buffers
+            https://github.com/square/retrofit
+            Square, Inc.
+            Apache License 2.0
+
+            User Messaging Platform
+            https://mvnrepository.com/artifact/com.google.android.ump/user-messaging-platform/2.0.0
+            Android Software Development Kit License
+
+            Android Support AnimatedVectorDrawable
+            https://mvnrepository.com/artifact/androidx.vectordrawable/vectordrawable-animated/1.1.0
+            The Android Open Source Project
+            Apache License 2.0
+
+            Kotlin Stdlib Jdk7
+            https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-stdlib-jdk7/1.8.10
+            Kotlin Team
+            Apache License 2.0
+
+            Kotlin Android Extensions Runtime
+            https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-android-extensions-runtime/1.4.32
+            Kotlin Team
+            Apache License 2.0
+
+            Kotlin Stdlib Common
+            https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-stdlib-common/1.8.21
+            Kotlin Team
+            Apache License 2.0
+
+            Kotlinx Coroutines Android
+            https://github.com/Kotlin/kotlinx.coroutines
+            Copyright 2000-2020 JetBrains s.r.o. and Kotlin Programming Language contributors.
+            Apache License 2.0
+
+            Kotlinx Coroutines Core
+            https://github.com/Kotlin/kotlinx.coroutines
+            Copyright 2000-2020 JetBrains s.r.o. and Kotlin Programming Language contributors.
+            Apache License 2.0
+
+            JetBrains Java Annotations
+            https://github.com/JetBrains/java-annotations
+            Copyright 2000-2016 JetBrains s.r.o.
+            Apache License 2.0
+
+            Navigation Runtime
+            https://developer.android.com/jetpack/androidx/releases/navigation
+            The Android Open Source Project
+            Apache License 2.0
+
+            Navigation Fragment Kotlin Extensions
+            https://developer.android.com/jetpack/androidx/releases/navigation
+            The Android Open Source Project
+            Apache License 2.0
+
+            Navigation UI Kotlin Extensions
+            https://developer.android.com/jetpack/androidx/releases/navigation
+            The Android Open Source Project
+            Apache License 2.0
+
+            Android Support VectorDrawable
+            https://mvnrepository.com/artifact/androidx.vectordrawable/vectordrawable/1.1.0
+            The Android Open Source Project
+            Apache License 2.0
+
+            Mixpanel Android
+            https://github.com/mixpanel/mixpanel-android
+            Copyright 2022 Mixpanel, Inc.
+            Apache License 2.0
+
+            Hilt Core
+            https://github.com/google/dagger
+            Apache License 2.0
+
+            Dagger Lint Rules AAR Distribution
+            https://github.com/google/dagger
+            Apache License 2.0
+
+            Android App Startup Runtime
+            https://developer.android.com/jetpack/androidx/releases/startup
+            The Android Open Source Project
+            Apache License 2.0
+
+            Android Arch Common
+            https://developer.android.com/jetpack/androidx/releases/arch-core
+            The Android Open Source Project
+            Apache License 2.0
+
+            Media3 OkHttp DataSource Module
+            https://mvnrepository.com/artifact/androidx.media3/media3-datasource-okhttp/1.1.0
+            The Android Open Source Project
+            Apache License 2.0
+
+            Media3 Common Module
+            https://mvnrepository.com/artifact/androidx.media3/media3-common/1.1.0
+            The Android Open Source Project
+            Apache License 2.0
+
+            Media3 Decoder Module
+            https://mvnrepository.com/artifact/androidx.media3/media3-decoder/1.1.0
+            The Android Open Source Project
+            Apache License 2.0
+
+            Media3 Container Module
+            https://mvnrepository.com/artifact/androidx.media3/media3-container/1.1.0
+            The Android Open Source Project
+            Apache License 2.0
+
+            Media3 UI Module
+            https://mvnrepository.com/artifact/androidx.media3/media3-ui/1.1.0
+            The Android Open Source Project
+            Apache License 2.0
+
+            WindowManager
+            https://mvnrepository.com/artifact/androidx.window/window/1.0.0
+            The Android Open Source Project
+            Apache License 2.0
+
+            Camera View
+            https://developer.android.com/jetpack/androidx/releases/camera
+            The Android Open Source Project
+            Apache License 2.0
+
+            Camera Extensions
+            https://developer.android.com/jetpack/androidx/releases/camera
+            The Android Open Source Project
+            Apache License 2.0
+
+            Camera Video
+            https://developer.android.com/jetpack/androidx/releases/camera
+            The Android Open Source Project
+            Apache License 2.0
+
+            Coil
+            https://github.com/coil-kt/coil
+            Copyright 2023 Coil Contributors
+            Apache License 2.0
+
+            ViewBinding
+            https://mvnrepository.com/artifact/androidx.databinding/viewbinding/8.1.1
+            Apache License 2.0
+
+            Tracing
+            https://developer.android.com/jetpack/androidx/releases/tracing
+            The Android Open Source Project
+            Apache License 2.0
+
+            ConstraintLayout Core
+            https://mvnrepository.com/artifact/androidx.constraintlayout/constraintlayout-core/1.0.4
+            The Android Open Source Project
+            Apache License 2.0
+
+            Android Resource Inspection Annotations
+            https://developer.android.com/jetpack/androidx/releases/resourceinspection
+            The Android Open Source Project
+            Apache License 2.0
+
+            Picasso
+            https://github.com/square/picasso
+            Copyright 2013 Square, Inc.
+            Apache License 2.0
+
+            Firebase Analytics KTX
+            https://mvnrepository.com/artifact/com.google.firebase/firebase-analytics-ktx/21.1.1
+            Android Software Development Kit License
+
+            Firebase IID Interop
+            https://mvnrepository.com/artifact/com.google.firebase/firebase-iid-interop/17.1.0
+            Android Software Development Kit License
+
+            Firebase Perf
+            https://mvnrepository.com/artifact/com.google.firebase/firebase-perf/20.1.1
+            Apache License 2.0
+
+            Firebase Database Collection
+            https://mvnrepository.com/artifact/com.google.firebase/firebase-database-collection/18.0.1
+            Apache License 2.0
+
+            Firebase Installations
+            https://mvnrepository.com/artifact/com.google.firebase/firebase-installations/17.0.2
+            Apache License 2.0
+
+            Firebase Annotations
+            https://mvnrepository.com/artifact/com.google.firebase/firebase-annotations/16.1.0
+            Apache License 2.0
+
+            Firebase Analytics
+            https://mvnrepository.com/artifact/com.google.firebase/firebase-analytics/21.1.1
+            Android Software Development Kit License
+
+            Firebase Common
+            https://mvnrepository.com/artifact/com.google.firebase/firebase-common/20.1.2
+            Apache License 2.0
+
+            Firebase Auth Interop
+            https://mvnrepository.com/artifact/com.google.firebase/firebase-auth-interop/19.0.2
+            Android Software Development Kit License
+
+            Room Common
+            https://developer.android.com/jetpack/androidx/releases/room
+            The Android Open Source Project
+            Apache License 2.0
+
+            Room Runtime
+            https://developer.android.com/jetpack/androidx/releases/room
+            The Android Open Source Project
+            Apache License 2.0
+
+            Room RXJava2
+            https://developer.android.com/jetpack/androidx/releases/room
+            The Android Open Source Project
+            Apache License 2.0
+
+            FindBugs JSR305
+            https://findbugs.sourceforge.net/
+            Copyright © 2007 Free Software Foundation, Inc.
+            Apache License 2.0
+
+            Consent Library
+            https://mvnrepository.com/artifact/com.google.android.ads.consent/consent-library/1.0.8
+            Android Software Development Kit License
+
+            Emoji2
+            https://developer.android.com/jetpack/androidx/releases/emoji2
+            The Android Open Source Project
+            Apache License 2.0
+
+            Checker Qual
+            https://github.com/typetools/checker-framework
+            Copyright 2004-present by the Checker Framework developers
+            MIT License
+
+            Futures
+            https://developer.android.com/topic/libraries/architecture?hl=ko
+            The Android Open Source Project
+            Apache License 2.0
+
+            lottie
+            https://github.com/airbnb/lottie-android
+            Copyright 2018 Airbnb, Inc.
+            Apache License 2.0
+
+            Collections Kotlin Extensions
+            https://mvnrepository.com/artifact/androidx.collection/collection-ktx/1.1.0
+            The Android Open Source Project
+            Apache License 2.0
+
+            AppCompat
+            https://developer.android.com/jetpack/androidx/releases/appcompat
+            The Android Open Source Project
+            Apache License 2.0
+
+            SplashScreen
+            https://developer.android.com/jetpack/androidx/releases/core
+            The Android Open Source Project
+            Apache License 2.0
+
+            @BugPattern Annotation
+            https://github.com/google/error-prone
+            Apache License 2.0
+
+            Biometric
+            https://developer.android.com/jetpack/androidx/releases/biometric?hl=ko#1.1.0
+            The Android Open Source Project
+            Apache License 2.0
+
+            Saved State
+            https://developer.android.com/jetpack/androidx/releases/savedstate
+            The Android Open Source Project
+            Apache License 2.0
+
+            Android Platform Extensions to The Google HTTP Client Library For Java.
+            https://mvnrepository.com/artifact/com.google.http-client/google-http-client-android/1.22.0
+            Apache License 2.0
+
+            JState
+            https://github.com/UnquietCode/JState
+            Copyright (c) 2013 Benjamin Fagin
+            MIT License
+
+            Android For Cars App Projected Extension
+            https://developer.android.com/jetpack/androidx/releases/car-app
+            The Android Open Source Project
+            Apache License 2.0
+
+            AppsFlyerSDK
+            https://github.com/AppsFlyerSDK/appsflyer-android-sdk
+            AppsFlyer Ltd.
+            Proprietary
+
+            Extension NDA
+            https://github.com/naver/nam-sdk-android
+            Copyright 2022-present NAVER Corp.
+            Proprietary
+
+            Transport API
+            https://mvnrepository.com/artifact/com.google.android.datatransport/transport-api/3.0.0
+            Apache License 2.0
+
+            Experimental Annotation
+            https://developer.android.com/jetpack/androidx/releases/annotation
+            The Android Open Source Project
+            Apache License 2.0
+
+            Android Support Library Drawer Layout
+            https://mvnrepository.com/artifact/androidx.drawerlayout/drawerlayout/1.1.1
+            The Android Open Source Project
+            Apache License 2.0
+
+            Jackson Core
+            https://github.com/FasterXML/jackson-core
+            Tatu Saloranta
+            Apache License 2.0
+
+            Activity Kotlin Extensions
+            https://developer.android.com/jetpack/androidx/releases/activity
+            The Android Open Source Project
+            Apache License 2.0
+
+            Browser
+            https://developer.android.com/jetpack/androidx/releases/browser
+            The Android Open Source Project
+            Apache License 2.0
+
+            Android Target Tooltip
+            https://github.com/sephiroth74/android-target-tooltip
+            Copyright 2018 Alessandro Crugnola
+            Apache License 2.0
+
+            Android Transition Support Library
+            https://developer.android.com/jetpack/androidx/releases/transition
+            The Android Open Source Project
+            Apache License 2.0
+
+            Fragment
+            https://developer.android.com/jetpack/androidx/releases/fragment
+            The Android Open Source Project
+            Apache License 2.0
+
+            Android Support Library Interpolators
+            https://mvnrepository.com/artifact/androidx.interpolator/interpolator/1.0.0
+            The Android Open Source Project
+            Apache License 2.0
+
+            Android Support Library Core Utilities
+            https://mvnrepository.com/artifact/androidx.legacy/legacy-support-core-utils/1.0.0
+            The Android Open Source Project
+            Apache License 2.0
+
+            Camera Core
+            https://developer.android.com/jetpack/androidx/releases/camera
+            The Android Open Source Project
+            Apache License 2.0, BSD License
+            """
+let licenses = str.split(separator: "\n\n").map{ String($0) }.sorted()
+var p = ""
+licenses.forEach{
+    p += $0
+    p += "\n\n"
+}
+print(p)
+
+print("dd","aa")
+print(1...5)
+enum MasterLevel: Int {
+    case beginner
+    case intermediate
+    case professional
+}
+
+let pro = MasterLevel(rawValue: 2)
+let otherLevel = MasterLevel(rawValue: 5) // -> nil
+
+enum Direction: String {
+    case up
+    case down = "ddd"
+}
+
+let up = Direction(rawValue: "up")
+let otherDirection = Direction(rawValue: "left") // -> nil
+
+enum MediaType {
+    case audio(String)
+    case video(String)
+}
+
+var mp3: MediaType = .audio("mp3")
+var h264: MediaType = .video("h264")
+
+
+
+var phone=(os: "iOS", version: 1, isAnd: false)
+phone.os
+phone.version
+phone.isAnd
+
+let list = [1,1,1,1,1]
+var filterList = list.filter{ $0 == 0 }
+
 func s27627() {
     let str = Array(readLine()!)
     var isNo = true
