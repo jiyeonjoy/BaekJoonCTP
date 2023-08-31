@@ -1,5 +1,22 @@
 import Foundation
 
+func s28417() {
+    let n = Int(readLine()!)!
+    var maxV = 0
+    for _ in 1...n {
+        var l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        var sum = max(l[0], l[1])
+        l.removeFirst()
+        l.removeFirst()
+        l.sort(by: >)
+        sum += l[0]+l[1]
+        if sum > maxV {
+            maxV = sum
+        }
+    }
+    print(maxV)
+}
+
 func s28454() {
     let a = readLine()!
     var s = 0
