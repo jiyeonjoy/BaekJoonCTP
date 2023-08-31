@@ -1,5 +1,22 @@
 import Foundation
 
+func s28295() {
+    let list = ["N","E","S","W"]
+    var a = 0
+    while true {
+        guard let line = readLine() else { break }
+        let n = Int(line)!
+        if n == 1 {
+            a = (a+1)%4
+        } else if n == 2 {
+            a = (a+2)%4
+        } else {
+            a = (a+3)%4
+        }
+    }
+    print(list[a])
+}
+
 func s28701() {
     let n = Int(readLine()!)!
     let s1 = n*(n+1)/2
