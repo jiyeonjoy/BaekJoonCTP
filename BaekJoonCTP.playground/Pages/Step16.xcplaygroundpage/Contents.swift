@@ -1,5 +1,16 @@
 import Foundation
 
+func s28352() {
+    let n = Int(readLine()!)!
+    var a = 6
+    if n > 10 {
+        for i in 11...n {
+            a *= i
+        }
+    }
+    print(a)
+}
+
 func s28295() {
     let list = ["N","E","S","W"]
     var a = 0
