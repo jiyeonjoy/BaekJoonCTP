@@ -1,5 +1,18 @@
 import Foundation
 
+func s28454() {
+    let a = readLine()!
+    var s = 0
+    let n = Int(readLine()!)!
+    for _ in 1...n {
+        let d = readLine()!
+        if a <= d {
+            s += 1
+        }
+    }
+    print(s)
+}
+
 func s28289() {
     let n = Int(readLine()!)!
     var a1 = 0
