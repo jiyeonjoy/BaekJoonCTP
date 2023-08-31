@@ -1,5 +1,49 @@
 import Foundation
 
+func s28453() {
+    readLine()
+    let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    var s = ""
+    for n in l {
+        var m = 0
+        if n >= 300 {
+            m = 1
+        } else if n >= 275 {
+            m = 2
+        } else if n >= 250 {
+            m = 3
+        } else {
+            m = 4
+        }
+        s += "\(m) "
+    }
+
+    s.removeLast()
+    print(s)
+}
+
+func s28691() {
+    let word = readLine()!
+    let map = [
+        "M":"MatKor",
+        "W":"WiCys",
+        "C":"CyKor",
+        "A":"AlKor",
+        "$":"$clear",
+    ]
+    print(map[word]!)
+}
+
+func s28444() {
+    let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let h = l[0]
+    let i = l[1]
+    let a = l[2]
+    let r = l[3]
+    let c = l[4]
+    print(h*i-a*r*c)
+}
+
 func s28352() {
     let n = Int(readLine()!)!
     var a = 6
