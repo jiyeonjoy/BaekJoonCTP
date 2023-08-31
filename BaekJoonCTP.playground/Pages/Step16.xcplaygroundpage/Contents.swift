@@ -1,5 +1,29 @@
 import Foundation
 
+func s28289() {
+    let n = Int(readLine()!)!
+    var a1 = 0
+    var a2 = 0
+    var a3 = 0
+    var a4 = 0
+    for _ in 1...n {
+        let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        if l[0] == 1 {
+            a4 += 1
+        } else if l[1] == 1 || l[1] == 2 {
+            a1 += 1
+        } else if l[1] == 3 {
+            a2 += 1
+        } else {
+            a3 += 1
+        }
+    }
+    print(a1)
+    print(a2)
+    print(a3)
+    print(a4)
+}
+
 func s28290() {
     let map = [
         "fdsajkl;":"in-out",
