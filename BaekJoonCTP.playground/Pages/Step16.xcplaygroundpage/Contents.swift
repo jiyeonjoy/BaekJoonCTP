@@ -1,5 +1,21 @@
 import Foundation
 
+func s28927() {
+    let maxL = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let maxM = 3*maxL[0]+20*maxL[1]+120*maxL[2]
+
+    let melL = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let melM = 3*melL[0]+20*melL[1]+120*melL[2]
+
+    if maxM > melM {
+        print("Max")
+    } else if maxM < melM {
+        print("Mel")
+    } else {
+        print("Draw")
+    }
+}
+
 func s28417() {
     let n = Int(readLine()!)!
     var maxV = 0
