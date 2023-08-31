@@ -1,5 +1,18 @@
 import Foundation
 
+func s28290() {
+    let map = [
+        "fdsajkl;":"in-out",
+        "jkl;fdsa":"in-out",
+        "asdf;lkj":"out-in",
+        ";lkjasdf":"out-in",
+        "asdfjkl;":"stairs",
+        ";lkjfdsa":"reverse"
+    ]
+    let k = readLine()!
+    print(map[k] ?? "molu")
+}
+
 func s28281() {
     let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
     let n = l[0]
