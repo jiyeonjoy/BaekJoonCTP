@@ -1,5 +1,23 @@
 import Foundation
 
+func s28249() {
+    let map = [
+        "Poblano": 1500,
+        "Mirasol": 6000,
+        "Serrano": 15500,
+        "Cayenne": 40000,
+        "Thai": 75000,
+        "Habanero": 125000,
+    ]
+
+    let n = Int(readLine()!)!
+    var a = 0
+    for _ in 1...n {
+        a += map[readLine()!] ?? 0
+    }
+    print(a)
+}
+
 func s29163() {
     readLine()
     let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
