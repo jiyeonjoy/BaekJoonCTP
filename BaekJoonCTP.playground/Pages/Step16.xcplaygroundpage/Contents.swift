@@ -1,5 +1,16 @@
 import Foundation
 
+func s28519() {
+    let l = readLine()!.split(separator: " ").map{ Int(String($0))! }.sorted()
+    let a = l[0]
+    let b = l[1]
+    if a == b {
+        print(a*2)
+    } else {
+        print(a*2+1)
+    }
+}
+
 func s28490() {
     let n = Int(readLine()!)!
     var maxV = 0
