@@ -1,5 +1,17 @@
 import Foundation
 
+func s29163() {
+    readLine()
+    let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let a = l.filter{ $0%2 == 0 }.count
+    let b = l.count-a
+    if a > b {
+        print("Happy")
+    } else {
+        print("Sad")
+    }
+}
+
 func s28214(_ l:[Int], _ list:[Int]) {
 //    let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
     let N = l[0]
