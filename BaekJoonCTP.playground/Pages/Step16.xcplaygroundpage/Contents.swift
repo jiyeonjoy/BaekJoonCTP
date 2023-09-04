@@ -1,5 +1,12 @@
 import Foundation
 
+func s28248() {
+    let p = Int(readLine()!)!
+    let c = Int(readLine()!)!
+    let a = 50*p-10*c+(p>c ? 500 : 0)
+    print(a)
+}
+
 func s28249() {
     let map = [
         "Poblano": 1500,
