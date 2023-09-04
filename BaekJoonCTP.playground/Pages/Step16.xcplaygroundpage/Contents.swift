@@ -1,5 +1,31 @@
 import Foundation
 
+func s28214(_ l:[Int], _ list:[Int]) {
+//    let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let N = l[0]
+    let K = l[1]
+    let P = l[2]
+    if P > K {
+        print(0)
+    } else {
+//        let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        var s = 0
+        for i in 0..<N {
+            var c = 0
+            for j in 0..<K {
+                c += list[i*K+j]
+                if c >= P {
+                    s += 1
+                    break
+                }
+            }
+        }
+        print(s)
+    }
+}
+
+s28214([3,2,1], [1,1,0,0,1,1])
+
 func s28927() {
     let maxL = readLine()!.split(separator: " ").map{ Int(String($0))! }
     let maxM = 3*maxL[0]+20*maxL[1]+120*maxL[2]
