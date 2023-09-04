@@ -1,5 +1,17 @@
 import Foundation
 
+func s28490() {
+    let n = Int(readLine()!)!
+    var maxV = 0
+    for _ in 1...n {
+        let c = readLine()!.split(separator: " ").map{ Int(String($0))! }.reduce(1, *)
+        if c > maxV {
+            maxV = c
+        }
+    }
+    print(maxV)
+}
+
 func s28248() {
     let p = Int(readLine()!)!
     let c = Int(readLine()!)!
