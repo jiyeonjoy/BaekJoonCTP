@@ -1,5 +1,25 @@
 import Foundation
 
+func s18309() {
+    var minT = -100
+    var maxT = -100
+    while true {
+        guard let line = readLine() else { break }
+        var list = line.split(separator: " ").map{ String($0) }
+        list.removeFirst()
+        var a = list.map{ Int($0)! }
+        let minA = a.min()!
+        let maxA = a.max()!
+        if minT == -100 || minT > minA {
+            minT = minA
+        }
+        if maxT == -100 || maxT < maxA {
+            maxT = maxA
+        }
+    }
+    print("\(minT) \(maxT)")
+}
+
 func s29546() {
     let n = Int(readLine()!)!
     var list:[String] = []
