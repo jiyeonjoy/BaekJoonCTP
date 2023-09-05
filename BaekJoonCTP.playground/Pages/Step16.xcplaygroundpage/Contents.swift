@@ -1,5 +1,15 @@
 import Foundation
 
+func s24387() {
+    let l1 = readLine()!.split(separator: " ").map{ Int(String($0))! }.sorted()
+    let l2 = readLine()!.split(separator: " ").map{ Int(String($0))! }.sorted()
+    var a = 0
+    for i in 0..<l1.count {
+        a += l1[i]*l2[i]
+    }
+    print(a)
+}
+
 func s17924() {
     let n = Int(readLine()!)!
     var s = 0
