@@ -1,5 +1,20 @@
 import Foundation
 
+func s29546() {
+    let n = Int(readLine()!)!
+    var list:[String] = []
+    for _ in 1...n {
+        list.append(readLine()!)
+    }
+    let m = Int(readLine()!)!
+    for _ in 1...m {
+        let l = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        for i in l[0]...l[1] {
+            print(list[i-1])
+        }
+    }
+}
+
 func s29340() {
     let l1 = readLine()!.map{ Int(String($0))! }
     let l2 = readLine()!.map{ Int(String($0))! }
