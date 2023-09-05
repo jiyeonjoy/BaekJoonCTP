@@ -1,5 +1,15 @@
 import Foundation
 
+func s29340() {
+    let l1 = readLine()!.map{ Int(String($0))! }
+    let l2 = readLine()!.map{ Int(String($0))! }
+    var a = ""
+    for i in 0..<l1.count {
+        a += "\(max(l1[i], l2[i]))"
+    }
+    print(a)
+}
+
 func s28648() {
     let n = Int(readLine()!)!
     var minV = -1
