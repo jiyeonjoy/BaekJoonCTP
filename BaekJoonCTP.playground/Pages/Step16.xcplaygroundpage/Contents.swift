@@ -1,5 +1,20 @@
 import Foundation
 
+func s6856() {
+    let a = Int(readLine()!)!
+    let b = Int(readLine()!)!
+    var c = 0
+    for i in 1...a {
+        if i >= 10 {
+            break
+        }
+        if 10-i <= b {
+            c += 1
+        }
+    }
+    print("There \(c != 1 ? "are" : "is") \(c) way\(c != 1 ? "s" : "") to get the sum 10.")
+}
+
 func s24387() {
     let l1 = readLine()!.split(separator: " ").map{ Int(String($0))! }.sorted()
     let l2 = readLine()!.split(separator: " ").map{ Int(String($0))! }.sorted()
