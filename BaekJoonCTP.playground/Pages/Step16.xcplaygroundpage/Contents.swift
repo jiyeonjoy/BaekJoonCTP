@@ -1,5 +1,17 @@
 import Foundation
 
+func s28648() {
+    let n = Int(readLine()!)!
+    var minV = -1
+    for _ in 1...n {
+        let sum = readLine()!.split(separator: " ").map{ Int(String($0))! }.reduce(0, +)
+        if minV == -1 || minV > sum {
+            minV = sum
+        }
+    }
+    print(minV)
+}
+
 func s28519() {
     let l = readLine()!.split(separator: " ").map{ Int(String($0))! }.sorted()
     let a = l[0]
