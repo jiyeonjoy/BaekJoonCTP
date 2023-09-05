@@ -1,5 +1,27 @@
 import Foundation
 
+func s17924() {
+    let n = Int(readLine()!)!
+    var map:[Int:Bool] = [:]
+    var list:[Int] = []
+    var s = 0
+    var e = 1000
+    for _ in 1...n {
+        let line = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        if line[0] > s {
+            s = line[0]
+        }
+        if line[1] < e {
+            e = line[1]
+        }
+    }
+    if e-s < 0 {
+        print("edward is right")
+    } else {
+        print("gunilla has a point")
+    }
+}
+
 func s28225() {
     let line = readLine()!.split(separator: " ").map{ Int(String($0))! }
     let n = line[0]
