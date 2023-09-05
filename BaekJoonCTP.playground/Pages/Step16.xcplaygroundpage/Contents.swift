@@ -1,5 +1,22 @@
 import Foundation
 
+func s28225() {
+    let line = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let n = line[0]
+    let f = Double(line[1])
+    var minT = Double(f)
+    var carNum = 0
+    for i in 1...n {
+        let l = readLine()!.split(separator: " ").map{ Double(String($0))! }
+        let t:Double = (f-l[0])/l[1]
+        if carNum == 0 || minT > t {
+            carNum = i
+            minT = t
+        }
+    }
+    print(carNum)
+}
+
 func s18309() {
     var minT = -100
     var maxT = -100
