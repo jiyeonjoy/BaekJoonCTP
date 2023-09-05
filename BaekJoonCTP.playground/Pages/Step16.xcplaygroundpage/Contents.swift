@@ -2,8 +2,6 @@ import Foundation
 
 func s17924() {
     let n = Int(readLine()!)!
-    var map:[Int:Bool] = [:]
-    var list:[Int] = []
     var s = 0
     var e = 1000
     for _ in 1...n {
