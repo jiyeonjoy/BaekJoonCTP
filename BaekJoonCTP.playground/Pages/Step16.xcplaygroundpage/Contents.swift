@@ -1,5 +1,22 @@
 import Foundation
 
+func s29752() {
+    let n = Int(readLine()!)!
+    let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    var maxCount = 0
+    var count = 0
+    for c in list {
+        if c > 0 {
+            count += 1
+        } else {
+            maxCount = max(maxCount, count)
+            count = 0
+        }
+    }
+    maxCount = max(maxCount, count)
+    print(maxCount)
+}
+
 func s30328() {
     let c = Int(readLine()!)!
     print(c*4000)
