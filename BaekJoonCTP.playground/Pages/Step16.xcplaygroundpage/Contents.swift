@@ -1,5 +1,12 @@
 import Foundation
 
+func s29751() {
+    let list = readLine()!.split(separator: " ").map{ Double(String($0))! }
+    let result = list[0]*list[1]*0.5
+    let str = String(format: "%.1f", result)
+    print(str)
+}
+
 func s6856() {
     let a = Int(readLine()!)!
     let b = Int(readLine()!)!
