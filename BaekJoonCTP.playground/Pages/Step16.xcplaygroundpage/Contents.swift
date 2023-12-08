@@ -1,5 +1,18 @@
 import Foundation
 
+func s30017() {
+    let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let a = list[0]
+    let b = list[1]
+    var result = 0
+    if a > b {
+        result = b+b+1
+    } else {
+        result = a+a-1
+    }
+    print(result)
+}
+
 func s29731() {
     let n = Int(readLine()!)!
     let list = [
