@@ -1,5 +1,25 @@
 import Foundation
 
+func s29736() {
+    let list1 = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let list2 = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let a = list1[0]
+    let b = list1[1]
+    let k = list2[0]
+    let x = list2[1]
+    var result = 0
+    for n in a...b {
+        if (n <= k && n >= k-x) || (n >= k && n <= k+x ) {
+            result += 1
+        }
+    }
+    if result > 0 {
+        print(result)
+    } else {
+        print("IMPOSSIBLE")
+    }
+}
+
 func s29699() {
     let n = Int(readLine()!)!
     let array = Array("WelcomeToSMUPC")
