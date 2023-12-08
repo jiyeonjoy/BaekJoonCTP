@@ -1,5 +1,10 @@
 import Foundation
 
+func s30328() {
+    let c = Int(readLine()!)!
+    print(c*4000)
+}
+
 func s30402() {
     for _ in 1...15 {
         let str = readLine()!
