@@ -1,5 +1,29 @@
 import Foundation
 
+func s29766() {
+    let array = Array(readLine()!)
+    let dksh = Array("DKSH")
+    var i = 0
+    var result = 0
+    for c in array {
+        if c == dksh[i] {
+            if i == 3 {
+                i = 0
+                result += 1
+            } else {
+                i += 1
+            }
+        } else {
+            if dksh[0] == c {
+                i = 1
+            } else {
+                i = 0
+            }
+        }
+    }
+    print(result)
+}
+
 func s30676() {
     let n = Int(readLine()!)!
     if n >= 620 {
