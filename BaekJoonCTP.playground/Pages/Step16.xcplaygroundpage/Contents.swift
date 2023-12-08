@@ -1,5 +1,15 @@
 import Foundation
 
+func s29863() {
+    let s = Int(readLine()!)!
+    let e = Int(readLine()!)!
+    if s >= 20 {
+        print(24-s+e)
+    } else {
+        print(e-s)
+    }
+}
+
 func s30454() {
     let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
     let n = list[0]
