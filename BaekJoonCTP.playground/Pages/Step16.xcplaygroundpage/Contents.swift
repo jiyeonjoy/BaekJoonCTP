@@ -1,5 +1,17 @@
 import Foundation
 
+func s30007() {
+    let n = Int(readLine()!)!
+    for _ in 1...n {
+        let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        let a = list[0]
+        let b = list[1]
+        let x = list[2]
+        let w = a*(x-1)+b
+        print(w)
+    }
+}
+
 func s29751() {
     let list = readLine()!.split(separator: " ").map{ Double(String($0))! }
     let result = list[0]*list[1]*0.5
