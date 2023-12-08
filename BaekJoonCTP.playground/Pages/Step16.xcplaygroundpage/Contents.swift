@@ -1,5 +1,31 @@
 import Foundation
 
+func s29731() {
+    let n = Int(readLine()!)!
+    let list = [
+        "Never gonna give you up",
+        "Never gonna let you down",
+        "Never gonna run around and desert you",
+        "Never gonna make you cry",
+        "Never gonna say goodbye",
+        "Never gonna tell a lie and hurt you",
+        "Never gonna stop"
+    ]
+    var isYes = false
+    for _ in 1...n {
+        let str = readLine()!
+        if !list.contains(str) {
+            isYes = true
+            break
+        }
+    }
+    if isYes {
+        print("Yes")
+    } else {
+        print("No")
+    }
+}
+
 func s29736() {
     let list1 = readLine()!.split(separator: " ").map{ Int(String($0))! }
     let list2 = readLine()!.split(separator: " ").map{ Int(String($0))! }
