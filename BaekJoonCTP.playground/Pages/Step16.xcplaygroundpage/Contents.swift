@@ -1,5 +1,28 @@
 import Foundation
 
+func s29725() {
+    let dic: [Character:Int] = [
+        "P": 1,
+        "N": 3,
+        "B": 3,
+        "R": 5,
+        "Q": 9,
+        "p": -1,
+        "n": -3,
+        "b": -3,
+        "r": -5,
+        "q": -9,
+    ]
+    var result = 0
+    for _ in 1...8 {
+        let list = Array(readLine()!)
+        for c in list {
+            result += dic[c] ?? 0
+        }
+    }
+    print(result)
+}
+
 func s30214() {
     let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
     let s1 = list[0]
