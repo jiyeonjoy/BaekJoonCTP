@@ -1,5 +1,23 @@
 import Foundation
 
+func s29738() {
+    let t = Int(readLine()!)!
+    for i in 1...t {
+        let n = Int(readLine()!)!
+        var result = ""
+        if n <= 25 {
+            result = "World Finals"
+        } else if n <= 1000 {
+            result = "Round 3"
+        } else if n <= 4500 {
+            result = "Round 2"
+        } else {
+            result = "Round 1"
+        }
+        print("Case #\(i): \(result)")
+    }
+}
+
 func s29766() {
     let array = Array(readLine()!)
     let dksh = Array("DKSH")
