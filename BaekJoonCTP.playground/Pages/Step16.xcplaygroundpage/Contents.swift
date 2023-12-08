@@ -1,5 +1,12 @@
 import Foundation
 
+func s29699() {
+    let n = Int(readLine()!)!
+    let array = Array("WelcomeToSMUPC")
+    let char = array[(n-1)%array.count]
+    print(char)
+}
+
 func s29790() {
     let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
     let n = list[0]
