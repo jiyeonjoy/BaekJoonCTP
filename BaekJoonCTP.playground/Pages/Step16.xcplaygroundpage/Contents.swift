@@ -1,5 +1,23 @@
 import Foundation
 
+func s30224() {
+    let str = readLine()!
+    let num = Int(str)!
+    if str.contains("7") {
+        if num%7 == 0 {
+            print(3)
+        } else {
+            print(2)
+        }
+    } else {
+        if num%7 == 0 {
+            print(1)
+        } else {
+            print(0)
+        }
+    }
+}
+
 func s29752() {
     let n = Int(readLine()!)!
     let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
