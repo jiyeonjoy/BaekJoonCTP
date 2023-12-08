@@ -1,5 +1,23 @@
 import Foundation
 
+func s30454() {
+    let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let n = list[0]
+    let l = list[1]
+    var a = 0
+    var b = 0
+    for _ in 1...n {
+        let c = readLine()!.split(separator: "0").compactMap{ String($0) }.count
+        if c == a {
+            b += 1
+        } else if c > a {
+            a = c
+            b = 1
+        }
+    }
+    print("\(a) \(b)")
+}
+
 func s30031() {
     let n = Int(readLine()!)!
     var result = 0
