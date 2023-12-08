@@ -1,5 +1,22 @@
 import Foundation
 
+func s30087() {
+    let dic = [
+        "Algorithm":"204",
+        "DataAnalysis":"207",
+        "ArtificialIntelligence":"302",
+        "CyberSecurity":"B101",
+        "Network":"303",
+        "Startup":"501",
+        "TestStrategy":"105",
+    ]
+    let n = Int(readLine()!)!
+    for _ in 1...n {
+        let str = readLine()!
+        print(dic[str] ?? "")
+    }
+}
+
 func s30033() {
     let n = Int(readLine()!)!
     let list1 = readLine()!.split(separator: " ").map{ Int(String($0))! }
