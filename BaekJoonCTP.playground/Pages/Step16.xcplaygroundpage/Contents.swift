@@ -1,5 +1,11 @@
 import Foundation
 
+func s30030() {
+    let b = Int(readLine()!)!
+    let a = b*10/11
+    print(a)
+}
+
 func s30007() {
     let n = Int(readLine()!)!
     for _ in 1...n {
