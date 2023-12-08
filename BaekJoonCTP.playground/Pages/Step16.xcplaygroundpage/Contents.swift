@@ -1,5 +1,24 @@
 import Foundation
 
+func s30676() {
+    let n = Int(readLine()!)!
+    if n >= 620 {
+        print("Red")
+    } else if n >= 590 {
+        print("Orange")
+    } else if n >= 570 {
+        print("Yellow")
+    } else if n >= 495 {
+        print("Green")
+    } else if n >= 450 {
+        print("Blue")
+    } else if n >= 425 {
+        print("Indigo")
+    } else {
+        print("Violet")
+    }
+}
+
 func s30087() {
     let dic = [
         "Algorithm":"204",
