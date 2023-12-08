@@ -1,5 +1,21 @@
 import Foundation
 
+func s29790() {
+    let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let n = list[0]
+    let u = list[1]
+    let l = list[2]
+    if n >= 1000 {
+        if u >= 8000 || l >= 260 {
+            print("Very Good")
+        } else {
+            print("Good")
+        }
+    } else {
+        print("Bad")
+    }
+}
+
 func s30030() {
     let b = Int(readLine()!)!
     let a = b*10/11
