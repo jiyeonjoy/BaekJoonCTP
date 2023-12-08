@@ -1,5 +1,24 @@
 import Foundation
 
+func s30031() {
+    let n = Int(readLine()!)!
+    var result = 0
+    for _ in 1...n {
+        let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+        let width = list[0]
+        if width == 136 {
+            result += 1000
+        } else if width == 142 {
+            result += 5000
+        } else if width == 148 {
+            result += 10000
+        } else {
+            result += 50000
+        }
+    }
+    print(result)
+}
+
 func s30224() {
     let str = readLine()!
     let num = Int(str)!
