@@ -1,5 +1,16 @@
 import Foundation
 
+func s30214() {
+    let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let s1 = list[0]
+    let s2 = list[1]
+    if s1*2 >= s2 {
+        print("E")
+    } else {
+        print("H")
+    }
+}
+
 func s29863() {
     let s = Int(readLine()!)!
     let e = Int(readLine()!)!
