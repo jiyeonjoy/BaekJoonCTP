@@ -1,5 +1,21 @@
 import Foundation
 
+func s30402() {
+    for _ in 1...15 {
+        let str = readLine()!
+        if str.contains("w") {
+            print("chunbae")
+            break
+        } else if str.contains("b") {
+            print("nabi")
+            break
+        } else if str.contains("g") {
+            print("yeongcheol")
+            break
+        }
+    }
+}
+
 func s29738() {
     let t = Int(readLine()!)!
     for i in 1...t {
