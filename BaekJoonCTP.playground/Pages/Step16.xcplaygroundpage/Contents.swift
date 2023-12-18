@@ -1,5 +1,36 @@
 import Foundation
 
+func s30008() {
+    let list1 = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let n = list1[0]
+    let list2 = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    var result = ""
+    for i in list2 {
+        let g = i*100/n
+        if g <= 4 {
+            result += "1 "
+        } else if g <= 11 {
+            result += "2 "
+        } else if g <= 23 {
+            result += "3 "
+        } else if g <= 40 {
+            result += "4 "
+        } else if g <= 60 {
+            result += "5 "
+        } else if g <= 77 {
+            result += "6 "
+        } else if g <= 89 {
+            result += "7 "
+        } else if g <= 96 {
+            result += "8 "
+        } else {
+            result += "9 "
+        }
+    }
+    result.removeLast()
+    print(result)
+}
+
 func s30501() {
     let n = Int(readLine()!)!
     for _ in 1...n {
