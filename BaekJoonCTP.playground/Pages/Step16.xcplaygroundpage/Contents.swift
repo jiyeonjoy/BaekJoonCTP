@@ -1,5 +1,16 @@
 import Foundation
 
+func s30501() {
+    let n = Int(readLine()!)!
+    for _ in 1...n {
+        let name = readLine()!
+        if name.contains("S") {
+            print(name)
+            break
+        }
+    }
+}
+
 func s28938() {
     let n = Int(readLine()!)!
     let sum = readLine()!.split(separator: " ").map{ Int(String($0))! }.reduce(0, +)
