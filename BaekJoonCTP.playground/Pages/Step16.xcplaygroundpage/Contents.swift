@@ -1,5 +1,17 @@
 import Foundation
 
+func s28938() {
+    let n = Int(readLine()!)!
+    let sum = readLine()!.split(separator: " ").map{ Int(String($0))! }.reduce(0, +)
+    if sum < 0 {
+        print("Left")
+    } else if sum == 0 {
+        print("Stay")
+    } else {
+        print("Right")
+    }
+}
+
 func s29725() {
     let dic: [Character:Int] = [
         "P": 1,
