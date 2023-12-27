@@ -1,5 +1,23 @@
 import Foundation
 
+func s30868() {
+    let t = Int(readLine()!)!
+    for _ in 1...t {
+        var n = Int(readLine()!)!
+        var result = ""
+        while n >= 5 {
+            result += "++++ "
+            n -= 5
+        }
+        if n > 0 {
+            for _ in 1...n {
+                result += "|"
+            }
+        }
+        print(result)
+    }
+}
+
 func s30008() {
     let list1 = readLine()!.split(separator: " ").map{ Int(String($0))! }
     let n = list1[0]
