@@ -1,5 +1,12 @@
 import Foundation
 
+func s30468() {
+    let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let sum = list.reduce(0, +) - list.last!
+    let result = max(list.last!*4 - sum, 0)
+    print(result)
+}
+
 func s30868() {
     let t = Int(readLine()!)!
     for _ in 1...t {
