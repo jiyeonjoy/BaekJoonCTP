@@ -1,5 +1,17 @@
 import Foundation
 
+func s30045() {
+    let n = Int(readLine()!)!
+    var result = 0
+    for _ in 1...n {
+        let str = readLine()!
+        if str.contains("01") || str.contains("OI") {
+            result += 1
+        }
+    }
+    print(result)
+}
+
 func s30468() {
     let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
     let sum = list.reduce(0, +) - list.last!
