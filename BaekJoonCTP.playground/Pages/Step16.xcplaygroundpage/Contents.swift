@@ -1,5 +1,17 @@
 import Foundation
 
+func s30999() {
+    let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    var result = 0
+    for _ in 1...list[0] {
+        let oc = readLine()!.filter{ $0 == "O" }.count
+        if oc > list[1]/2 {
+            result += 1
+        }
+    }
+    print(result)
+}
+
 func f30018() {
     let n = Int(readLine()!)!
     let list1 = readLine()!.split(separator: " ").map{ Int(String($0))! }
