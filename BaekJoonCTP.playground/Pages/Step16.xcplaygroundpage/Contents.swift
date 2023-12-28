@@ -1,5 +1,18 @@
 import Foundation
 
+func f30018() {
+    let n = Int(readLine()!)!
+    let list1 = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    let list2 = readLine()!.split(separator: " ").map{ Int(String($0))! }
+    var result = 0
+    for i in 0..<n {
+        if list1[i] < list2[i] {
+            result += list2[i]-list1[i]
+        }
+    }
+    print(result)
+}
+
 func s30045() {
     let n = Int(readLine()!)!
     var result = 0
