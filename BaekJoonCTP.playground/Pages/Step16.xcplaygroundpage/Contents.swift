@@ -1,5 +1,18 @@
 import Foundation
 
+func s29722() {
+    let list = readLine()!.split(separator: "-").map{ Int(String($0))! }
+    var y = list[0]
+    var m = list[1]
+    var d = list[2]
+    d += Int(readLine()!)!
+    m += (d-1)/30
+    d = d%30 == 0 ? 30 : d%30
+    y += (m-1)/12
+    m = m%12 == 0 ? 12 : m%12
+    print("\(y)-\(m > 9 ? "" : "0")\(m)-\(d > 9 ? "" : "0")\(d)")
+}
+
 func s30979() {
     let t = Int(readLine()!)!
     let n = Int(readLine()!)!
