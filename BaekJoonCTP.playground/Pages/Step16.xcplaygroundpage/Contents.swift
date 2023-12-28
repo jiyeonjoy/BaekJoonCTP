@@ -1,5 +1,16 @@
 import Foundation
 
+func s30979() {
+    let t = Int(readLine()!)!
+    let n = Int(readLine()!)!
+    let sum = readLine()!.split(separator: " ").map{ Int(String($0))! }.reduce(0, +)
+    if t <= sum {
+        print("Padaeng_i Happy")
+    } else {
+        print("Padaeng_i Cry")
+    }
+}
+
 func s30999() {
     let list = readLine()!.split(separator: " ").map{ Int(String($0))! }
     var result = 0
